@@ -11,7 +11,8 @@
 
 class SoccerPlayer: public Staff {
 public:
-    // int getSalary() = 0;
+    int getSalary() const;
+    int getEnsuranceValue() const;
 private:
     std::string position;
     std::string club;
@@ -19,8 +20,10 @@ private:
     unsigned short height;
     unsigned long marketPrice;
     int daysActive;
+    bool injured;
     // std::map<Call*, InfCall, Comparer>;
     int ensurance; // Varies depending on daysActive & marketPrice
+
 };
 
 

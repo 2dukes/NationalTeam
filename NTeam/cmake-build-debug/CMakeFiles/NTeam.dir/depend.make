@@ -13,6 +13,7 @@ CMakeFiles/NTeam.dir/Classes/Call.cpp.obj: ../Classes/Stats.h
 CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Date.cpp
 CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Date.h
 
+CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Call.h
 CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Date.h
 CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Game.cpp
 CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Game.h
@@ -41,11 +42,14 @@ CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.obj: ../Classes/OtherWorker.cpp
 CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.obj: ../Classes/OtherWorker.h
 CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.obj: ../Classes/Staff.h
 
+CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/Call.h
 CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/Game.h
 CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/InfCall.h
 CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/SoccerPlayer.cpp
 CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/SoccerPlayer.h
 CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/Staff.h
+CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/Stats.h
 
 CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj: ../Classes/Date.h
 CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj: ../Classes/Staff.cpp

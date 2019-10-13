@@ -4,12 +4,16 @@
 
 #include "SoccerPlayer.h"
 
-int SoccerPlayer::getSalary() const {
-    return salary;
-}
+
+SoccerPlayer::SoccerPlayer(std::string name, std::string role, Date birthDate, int salary, std::string position, std::string club,
+                           unsigned short weight, unsigned short height, unsigned long marketPrice,
+                           unsigned int daysActive, bool injured): Staff(role, name, birthDate, salary),
+                           position(position), club(club), weight(weight), height(height), marketPrice(marketPrice),
+                           daysActive(daysActive), injured(injured)
+                           {}
 
 int SoccerPlayer::getEnsuranceValue() const {
     if (injured)
-        return 0.05 * salary * daysActive * 3;
-    return 0.05 * salary * daysActive;
+        return 0.0000001 * marketPrice * daysActive * 3;
+    return 0.0000001 * marketPrice * daysActive;
 }

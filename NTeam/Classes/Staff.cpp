@@ -3,3 +3,7 @@
 //
 
 #include "Staff.h"
+
+Staff::Staff(std::string role, std::string name, Date birthDate, int salary): role(role),
+    name(name), birthDate(birthDate), salary(salary) {}
+

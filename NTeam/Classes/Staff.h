@@ -11,6 +11,7 @@
 
 class Staff { // It will be abstract class
 public:
+    Staff(std::string role, std::string name, Date birthDate, int salary);
     virtual int getSalary() = 0;
 
 protected:

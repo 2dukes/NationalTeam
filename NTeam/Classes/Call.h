@@ -5,6 +5,7 @@
 #ifndef NTEAM_CALL_H
 #define NTEAM_CALL_H
 
+#include <vector>
 #include "Game.h"
 
 class Call {

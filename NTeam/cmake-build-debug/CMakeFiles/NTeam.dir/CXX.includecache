@@ -11,12 +11,10 @@ Call.h
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Call.h
 
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Call.h
+vector
+-
 Game.h
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Game.h
-
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Date.cpp
-Date.h
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Date.h
 
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Date.h
 
@@ -31,10 +29,6 @@ Stats.h
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Stats.h
 vector
 -
-
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/InfCall.cpp
-InfCall.h
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/InfCall.h
 
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/InfCall.h
 Date.h
@@ -56,10 +50,6 @@ C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Call.h
 Game.h
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Game.h
 
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/OtherWorker.cpp
-OtherWorker.h
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/OtherWorker.h
-
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/OtherWorker.h
 Staff.h
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Staff.h
@@ -73,12 +63,10 @@ Staff.h
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Staff.h
 InfCall.h
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/InfCall.h
+Call.h
+C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Call.h
 map
 -
-
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Staff.cpp
-Staff.h
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Staff.h
 
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Staff.h
 string
@@ -86,23 +74,7 @@ string
 Date.h
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Date.h
 
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Stats.cpp
-Stats.h
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Stats.h
-
 C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Stats.h
 string
--
-
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/TechnicalTeam.cpp
-TechnicalTeam.h
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/TechnicalTeam.h
-
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/TechnicalTeam.h
-Staff.h
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/Classes/Staff.h
-
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/main.cpp
-iostream
 -
 

@@ -12,7 +12,7 @@ class Call {
 public:
 
 private:
-    std::vector<Game*> games;
+    // std::vector<Game*> games;
     Date begin;
     Date end;
     int id;

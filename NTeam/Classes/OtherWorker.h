@@ -7,8 +7,8 @@
 class OtherWorker: public Staff {
 public:
     OtherWorker(std::string r, std::string n, Date d, int sal);
-    virtual int info() const;
-    virtual int info(std::ostream &o) const;
+//    virtual int info() const;
+//    virtual int info(std::ostream &o) const;
 private:
 
 

@@ -16,17 +16,7 @@
       <change beforePath="$PROJECT_DIR$/Classes/Call.h" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Call.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/OtherWorker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/OtherWorker.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/OtherWorker.h" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/OtherWorker.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/SoccerPlayer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/SoccerPlayer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/SoccerPlayer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/SoccerPlayer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Staff.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Staff.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Staff.h" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Staff.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Call.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Call.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Game.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/NTeam.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/NTeam.exe" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,11 +73,8 @@
       <workItem from="1570964090696" duration="187000" />
 <<<<<<< Updated upstream
       <workItem from="1570969269557" duration="893000" />
-      <workItem from="1570977723368" duration="6936000" />
-=======
-      <workItem from="1570964385031" duration="13000" />
-      <workItem from="1570980717046" duration="1856000" />
->>>>>>> Stashed changes
+      <workItem from="1570977723368" duration="7256000" />
+      <workItem from="1570989204230" duration="298000" />
     </task>
     <servers />
   </component>

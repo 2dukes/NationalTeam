@@ -1,0 +1,4 @@
+No ficheiro SoccerPlayers.txt:
+- Em Calls: ID da convocatória em que participou - ID da informação
+da convocatória em que participou (contém todas as estatísticas do
+jogador nesta convocatória)

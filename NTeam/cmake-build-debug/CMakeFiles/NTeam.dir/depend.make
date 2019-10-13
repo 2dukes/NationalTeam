@@ -54,5 +54,10 @@ CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj: ../Classes/Staff.h
 CMakeFiles/NTeam.dir/Classes/Stats.cpp.obj: ../Classes/Stats.cpp
 CMakeFiles/NTeam.dir/Classes/Stats.cpp.obj: ../Classes/Stats.h
 
+CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj: ../Classes/Staff.h
+CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj: ../Classes/TechnicalTeam.cpp
+CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj: ../Classes/TechnicalTeam.h
+
 CMakeFiles/NTeam.dir/main.cpp.obj: ../main.cpp
 

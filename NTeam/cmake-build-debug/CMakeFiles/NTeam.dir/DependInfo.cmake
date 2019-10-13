@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.cpp" "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj"
   "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.cpp" "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj"
   "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.cpp" "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Stats.cpp.obj"
+  "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.cpp" "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj"
   "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/main.cpp" "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

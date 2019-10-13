@@ -134,6 +134,12 @@
 		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.h">
 			<Option target="NTeam"/>
 		</Unit>
+		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.cpp">
+			<Option target="NTeam"/>
+		</Unit>
+		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h">
+			<Option target="NTeam"/>
+		</Unit>
 		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/main.cpp">
 			<Option target="NTeam"/>
 		</Unit>

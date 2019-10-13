@@ -365,6 +365,33 @@ Classes/Stats.cpp.s:
 	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Stats.cpp.s
 .PHONY : Classes/Stats.cpp.s
 
+Classes/TechnicalTeam.obj: Classes/TechnicalTeam.cpp.obj
+
+.PHONY : Classes/TechnicalTeam.obj
+
+# target to build an object file
+Classes/TechnicalTeam.cpp.obj:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj
+.PHONY : Classes/TechnicalTeam.cpp.obj
+
+Classes/TechnicalTeam.i: Classes/TechnicalTeam.cpp.i
+
+.PHONY : Classes/TechnicalTeam.i
+
+# target to preprocess a source file
+Classes/TechnicalTeam.cpp.i:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.i
+.PHONY : Classes/TechnicalTeam.cpp.i
+
+Classes/TechnicalTeam.s: Classes/TechnicalTeam.cpp.s
+
+.PHONY : Classes/TechnicalTeam.s
+
+# target to generate assembly for a file
+Classes/TechnicalTeam.cpp.s:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.s
+.PHONY : Classes/TechnicalTeam.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -428,6 +455,9 @@ help:
 	@echo ... Classes/Stats.obj
 	@echo ... Classes/Stats.i
 	@echo ... Classes/Stats.s
+	@echo ... Classes/TechnicalTeam.obj
+	@echo ... Classes/TechnicalTeam.i
+	@echo ... Classes/TechnicalTeam.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

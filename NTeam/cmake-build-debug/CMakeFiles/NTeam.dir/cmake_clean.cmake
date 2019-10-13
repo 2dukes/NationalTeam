@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj"
   "CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj"
   "CMakeFiles/NTeam.dir/Classes/Stats.cpp.obj"
+  "CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj"
   "CMakeFiles/NTeam.dir/main.cpp.obj"
   "NTeam.exe"
   "NTeam.exe.manifest"

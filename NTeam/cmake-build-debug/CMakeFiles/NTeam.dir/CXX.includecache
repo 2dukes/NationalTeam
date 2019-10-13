@@ -14,10 +14,6 @@ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call
 Game.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Game.h
 
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.cpp
-Date.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
-
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
 
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Game.cpp
@@ -31,10 +27,6 @@ Stats.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.h
 vector
 -
-
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/InfCall.cpp
-InfCall.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/InfCall.h
 
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/InfCall.h
 Date.h
@@ -56,17 +48,9 @@ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call
 Game.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Game.h
 
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.cpp
-OtherWorker.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.h
-
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.h
 Staff.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
-
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.cpp
-SoccerPlayer.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
 
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
 Staff.h
@@ -76,25 +60,21 @@ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/InfC
 map
 -
 
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.cpp
-Staff.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
-
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
 string
 -
 Date.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
 
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.cpp
-Stats.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.h
-
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.h
 string
 -
 
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/main.cpp
-iostream
--
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.cpp
+TechnicalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
+Staff.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
 

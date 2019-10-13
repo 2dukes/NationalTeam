@@ -18,10 +18,11 @@ private:
     std::string country;
     std::string stadium;
     // Jogadores Convocados -> Jogadores Participantes são os convocados com KMS percorridos
-    std::vector<SoccerPlayer*> calledPlayers;
+
+    // std::map<SoccerPlayer*, Stats*, Comparer>;
     Date time;
     std::string refereeTeam; // Or Class...
-    std::vector<Stats*> statistics;
+
 };
 
 

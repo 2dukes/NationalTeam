@@ -11,14 +11,15 @@
 
 class Staff { // It will be abstract class
 public:
-    Staff(std::string role, std::string name, Date birthDate, int salary);
+    Staff(unsigned int i, std::string role, std::string name, Date birthDate);
     virtual int getSalary() = 0;
-
+    void info(std::ostream &os) const;
+    unsigned int getId() const;
 protected:
+    unsigned int id;
     std::string role;
     std::string name;
     Date birthDate;
-    int salary;
 };
 
 

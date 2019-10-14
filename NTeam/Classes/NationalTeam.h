@@ -13,11 +13,14 @@
 
 class NationalTeam {
 public:
+    NationalTeam() { };
+    bool CreateOtherWorker();
 
 private:
+    std::vector<OtherWorker*> workers;
     std::vector<SoccerPlayer*> players;
-    std::vector<OtherWorker> workers;
-    std::vector<Call*> calls; // Don't know if it will be removed
+    std::vector<InfCall*> InfCalls;
+    std::vector<Call*> calls;
     std::vector<Game*> games;
 };
 

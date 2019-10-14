@@ -6,13 +6,13 @@
 #define NTEAM_SOCCERPLAYER_H
 
 #include "Staff.h"
-#include "InfCall.h"
 #include "Call.h"
 #include <map>
 
+
 class SoccerPlayer: public Staff {
 public:
-    SoccerPlayer(std::string name, std::string role, Date birthDate, int salary, std::string position,
+    SoccerPlayer(unsigned int, std::string name, std::string role, Date birthDate, int salary, std::string position,
             std::string club, unsigned short weight, unsigned short height,
                  unsigned long marketPrice, unsigned int daysActive, bool injured);
     std::string getName() const;
@@ -34,7 +34,7 @@ private:
     unsigned long marketPrice;  // market price in €
     unsigned int daysActive;
     bool injured;
-    //std::map<Call*, InfCall, Comparer>;
+    std::vector<Call*> calls;
     int ensurance; // Varies depending on daysActive, marketPrice and injury status
 
 };

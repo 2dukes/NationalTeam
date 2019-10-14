@@ -1,4 +1,7 @@
 No ficheiro SoccerPlayers.txt:
 - Em Calls: ID da convocatória em que participou - ID da informação
 da convocatória em que participou (contém todas as estatísticas do
-jogador nesta convocatória)
+jogador nesta convocatória, incluindo data de chegada e data de partida)
+
+Games.txt:
+- Em Individual Statistics: ID jogador - ID estatistica individual

@@ -9,6 +9,8 @@
 
 class InfCall {
 private:
+    unsigned int id;
+    unsigned int SoccerPlayerId;
     Date begin;
     Date end;
     int dailyEnsurance; // Varies depending on marketPrice & injured

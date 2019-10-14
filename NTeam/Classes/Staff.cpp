@@ -3,7 +3,22 @@
 //
 
 #include "Staff.h"
+#include <fstream>
 
-Staff::Staff(std::string role, std::string name, Date birthDate, int salary): role(role),
-    name(name), birthDate(birthDate), salary(salary) {}
+using namespace std;
 
+Staff::Staff(unsigned int i, std::string role, std::string name, Date birthDate): id(i), role(role),
+    name(name), birthDate(birthDate) {}
+
+void Staff::info(ostream &os) const
+{
+    os << "ID: " << id << "\n";
+    os << "Name: " << name << "\n";
+    os << "Birth: " << birthDate << "\n";
+    os << "Role: " << role << "\n";
+}
+
+unsigned int Staff::getId() const
+{
+    return id;
+}

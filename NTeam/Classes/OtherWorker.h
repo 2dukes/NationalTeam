@@ -6,12 +6,12 @@
 
 class OtherWorker: public Staff {
 public:
-    OtherWorker(std::string r, std::string n, Date d, int sal);
-//    virtual int info() const;
+    OtherWorker(unsigned int id, std::string role, std::string name, Date birth, int sal);
+    int getSalary();
+    void info(std::ostream &os) const;
 //    virtual int info(std::ostream &o) const;
 private:
-
-
+    int salary;
 };
 
 

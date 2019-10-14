@@ -5,9 +5,8 @@
 #ifndef NTEAM_GAME_H
 #define NTEAM_GAME_H
 
-
-#include "SoccerPlayer.h"
 #include "Stats.h"
+#include "Date.h"
 #include <vector>
 
 class Game {
@@ -18,8 +17,7 @@ private:
     std::string country;
     std::string stadium;
     // Jogadores Convocados -> Jogadores Participantes são os convocados com KMS percorridos
-
-    // std::map<SoccerPlayer*, Stats*, Comparer>;
+    std::vector<Stats*> individualStatistics;
     Date time;
     std::string refereeTeam; // Or Class...
 

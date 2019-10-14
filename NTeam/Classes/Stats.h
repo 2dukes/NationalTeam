@@ -11,6 +11,8 @@ class Stats {
 public:
 
 private:
+    unsigned int id;
+    unsigned int soccerPlayerId;
     unsigned short goals;
     unsigned short passes;
     unsigned short kms;

@@ -11,13 +11,7 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a67552d-4125-40d1-897f-ecf519bcb1a2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/Call.h" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/Call.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/OtherWorker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/OtherWorker.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Classes/OtherWorker.h" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/OtherWorker.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/NTeam.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/NTeam.exe" afterDir="false" />
-    </list>
+    <list default="true" id="3a67552d-4125-40d1-897f-ecf519bcb1a2" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,10 +65,12 @@
       <workItem from="1570788015029" duration="29000" />
       <workItem from="1570831498912" duration="82000" />
       <workItem from="1570964090696" duration="187000" />
-<<<<<<< Updated upstream
-      <workItem from="1570969269557" duration="893000" />
-      <workItem from="1570977723368" duration="7256000" />
-      <workItem from="1570989204230" duration="298000" />
+      <workItem from="1570964385031" duration="13000" />
+      <workItem from="1570980717046" duration="1856000" />
+      <workItem from="1570986216391" duration="5312000" />
+      <workItem from="1570994556923" duration="2114000" />
+      <workItem from="1571039790102" duration="6190000" />
+      <workItem from="1571046712376" duration="2426000" />
     </task>
     <servers />
   </component>

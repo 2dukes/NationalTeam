@@ -7,15 +7,18 @@
 
 #include <vector>
 #include "Game.h"
+#include "Date.h"
+#include "InfCall.h"
 
 class Call {
 public:
 
 private:
-    // std::vector<Game*> games;
+    unsigned int id;
+    std::vector<Game*> games;
+    std::vector<InfCall*> Infs;
     Date begin;
     Date end;
-    int id;
     int housing_food;
 };
 

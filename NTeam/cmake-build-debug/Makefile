@@ -392,6 +392,33 @@ Classes/TechnicalTeam.cpp.s:
 	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.s
 .PHONY : Classes/TechnicalTeam.cpp.s
 
+NecessaryFunctions_NameSpaces.obj: NecessaryFunctions_NameSpaces.cpp.obj
+
+.PHONY : NecessaryFunctions_NameSpaces.obj
+
+# target to build an object file
+NecessaryFunctions_NameSpaces.cpp.obj:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj
+.PHONY : NecessaryFunctions_NameSpaces.cpp.obj
+
+NecessaryFunctions_NameSpaces.i: NecessaryFunctions_NameSpaces.cpp.i
+
+.PHONY : NecessaryFunctions_NameSpaces.i
+
+# target to preprocess a source file
+NecessaryFunctions_NameSpaces.cpp.i:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.i
+.PHONY : NecessaryFunctions_NameSpaces.cpp.i
+
+NecessaryFunctions_NameSpaces.s: NecessaryFunctions_NameSpaces.cpp.s
+
+.PHONY : NecessaryFunctions_NameSpaces.s
+
+# target to generate assembly for a file
+NecessaryFunctions_NameSpaces.cpp.s:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.s
+.PHONY : NecessaryFunctions_NameSpaces.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -418,6 +445,33 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+menuPresent.obj: menuPresent.cpp.obj
+
+.PHONY : menuPresent.obj
+
+# target to build an object file
+menuPresent.cpp.obj:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/menuPresent.cpp.obj
+.PHONY : menuPresent.cpp.obj
+
+menuPresent.i: menuPresent.cpp.i
+
+.PHONY : menuPresent.i
+
+# target to preprocess a source file
+menuPresent.cpp.i:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/menuPresent.cpp.i
+.PHONY : menuPresent.cpp.i
+
+menuPresent.s: menuPresent.cpp.s
+
+.PHONY : menuPresent.s
+
+# target to generate assembly for a file
+menuPresent.cpp.s:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/menuPresent.cpp.s
+.PHONY : menuPresent.cpp.s
 
 # Help Target
 help:
@@ -458,9 +512,15 @@ help:
 	@echo ... Classes/TechnicalTeam.obj
 	@echo ... Classes/TechnicalTeam.i
 	@echo ... Classes/TechnicalTeam.s
+	@echo ... NecessaryFunctions_NameSpaces.obj
+	@echo ... NecessaryFunctions_NameSpaces.i
+	@echo ... NecessaryFunctions_NameSpaces.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... menuPresent.obj
+	@echo ... menuPresent.i
+	@echo ... menuPresent.s
 .PHONY : help
 
 

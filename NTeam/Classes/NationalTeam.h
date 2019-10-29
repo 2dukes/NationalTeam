@@ -14,7 +14,17 @@
 class NationalTeam {
 public:
     NationalTeam() { };
+
+    /* Gets */
+    std::string getName() const;
+
+    /* Sets */
+    std::string setName(std::string name); /* Returns string because of menu's 1st option */
+
+    /* OtherMethods */
     bool CreateOtherWorker();
+    bool AlterOtherWorker();
+    void addWorker(OtherWorker* oW);
 
 private:
     std::vector<OtherWorker*> workers;
@@ -22,6 +32,7 @@ private:
     std::vector<InfCall*> InfCalls;
     std::vector<Call*> calls;
     std::vector<Game*> games;
+    std::string name;
 };
 
 

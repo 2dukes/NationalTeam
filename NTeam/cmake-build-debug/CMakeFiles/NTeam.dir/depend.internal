@@ -31,6 +31,7 @@ CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
 CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.obj
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.cpp
@@ -57,6 +58,10 @@ CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.cpp
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
+CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.cpp
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
 CMakeFiles/NTeam.dir/main.cpp.obj
  ../Classes/Call.h
  ../Classes/Date.h
@@ -68,3 +73,16 @@ CMakeFiles/NTeam.dir/main.cpp.obj
  ../Classes/Staff.h
  ../Classes/Stats.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/main.cpp
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h
+CMakeFiles/NTeam.dir/menuPresent.cpp.obj
+ ../Classes/Call.h
+ ../Classes/Date.h
+ ../Classes/Game.h
+ ../Classes/InfCall.h
+ ../Classes/NationalTeam.h
+ ../Classes/OtherWorker.h
+ ../Classes/SoccerPlayer.h
+ ../Classes/Staff.h
+ ../Classes/Stats.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.cpp
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h

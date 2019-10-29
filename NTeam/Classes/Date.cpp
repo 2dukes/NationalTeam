@@ -5,6 +5,7 @@
 #include "Date.h"
 #include <sstream>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
@@ -25,9 +26,14 @@ Date::Date(string date) {
         throw WrongDateFormat(date); // Throw exception on error
     else
     {
-        day = (unsigned short)stoi(dayS);
-        month = (unsigned short)stoi(monthS);
-        year = (unsigned short)stoi(yearS);
+        try {
+            day = (unsigned short)stoi(dayS);
+            month = (unsigned short)stoi(monthS);
+            year = (unsigned short)stoi(yearS);
+        }
+        catch(...) {
+            throw WrongDateFormat(date);
+        }
     }
 
 }

@@ -12,12 +12,12 @@
 
 class SoccerPlayer: public Staff {
 public:
-    SoccerPlayer(unsigned int, std::string name, std::string role, Date birthDate, int salary, std::string position,
+    SoccerPlayer(unsigned int id, std::string name, std::string role, Date birthDate, float salary, std::string position,
             std::string club, unsigned short weight, unsigned short height,
                  unsigned long marketPrice, unsigned int daysActive, bool injured);
     std::string getName() const;
     Date getBirthDay() const;
-    int getSalary() const;
+//    int getSalary() const {};
     std::string getPosition() const;
     std::string getClub();
     unsigned short getWeight() const;

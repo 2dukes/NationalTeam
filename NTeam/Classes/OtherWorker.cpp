@@ -7,15 +7,25 @@
 
 using namespace std;
 
-OtherWorker::OtherWorker(unsigned int id, string role, string name, Date birth, int sal): Staff (id, role, name, birth)
+OtherWorker::OtherWorker(unsigned int id, string role, string name, Date birth, float sal): Staff (id, role, name, birth)
 {
     salary = sal;
 }
 
-int OtherWorker::getSalary()
+/* Gets */
+
+float OtherWorker::getSalary() const
 {
     return salary;
 }
+
+/* Sets */
+
+void OtherWorker::setSalary(float salary) {
+    this->salary = salary;
+}
+
+/* OtherMethods */
 
 void OtherWorker::info(ostream &os) const
 {

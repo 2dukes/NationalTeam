@@ -12,11 +12,24 @@
 class Staff { // It will be abstract class
 public:
     Staff(unsigned int i, std::string role, std::string name, Date birthDate);
-    virtual int getSalary() = 0;
-    void info(std::ostream &os) const;
+
+    /* Gets */
     unsigned int getId() const;
+    std::string getRole() const;
+    std::string getName() const;
+    Date getDate() const;
+    virtual float getSalary() const = 0;
+
+    /* Sets */
+    void setRole(std::string role);
+    void setName(std::string name);
+    void setDate(Date date);
+
+    /* Other Methods */
+    virtual void info(std::ostream &os) const;
+
 protected:
-    unsigned int id;
+    const unsigned int id; // Const because it's immutable
     std::string role;
     std::string name;
     Date birthDate;

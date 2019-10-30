@@ -1,3 +1,0 @@
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir
-C:/Users/Tiago/Desktop/AEDA/Projeto 1/NationalTeam/NTeam/cmake-build-debug/CMakeFiles/rebuild_cache.dir

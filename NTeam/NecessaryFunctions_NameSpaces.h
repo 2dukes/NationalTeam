@@ -6,12 +6,16 @@
 #define NTEAM_NECESSARYFUNCTIONS_NAMESPACES_H
 
 #include <string>
+#include "Classes/Staff.h"
 
-namespace verifyInputs
-{
+namespace verifyInputs {
     bool verifyString(std::string auxStr);
     bool verifyDate(std::string auxStr);
     bool verifyNumber();
+}
+
+namespace getWorkers {
+    Staff * WorkerLookUp();
 }
 
 #endif //NTEAM_NECESSARYFUNCTIONS_NAMESPACES_H

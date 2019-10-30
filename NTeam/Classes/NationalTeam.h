@@ -24,10 +24,10 @@ public:
     /* OtherMethods */
     bool CreateOtherWorker();
     bool AlterOtherWorker();
-    void addWorker(OtherWorker* oW);
+    void addWorker(Staff* oW);
 
 private:
-    std::vector<OtherWorker*> workers;
+    std::vector<Staff*> workers; // Technical Team and OtherWorkers
     std::vector<SoccerPlayer*> players;
     std::vector<InfCall*> InfCalls;
     std::vector<Call*> calls;

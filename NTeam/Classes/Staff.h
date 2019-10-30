@@ -28,6 +28,8 @@ public:
     /* Other Methods */
     virtual void info(std::ostream &os) const;
 
+    virtual ~Staff() { };
+
 protected:
     const unsigned int id; // Const because it's immutable
     std::string role;

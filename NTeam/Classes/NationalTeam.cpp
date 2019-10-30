@@ -67,7 +67,7 @@ bool NationalTeam::CreateOtherWorker()
         id = 1;
 
     cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
-    OtherWorker *oW = new OtherWorker(id, auxRole, auxName, birth, auxSalary);
+    Staff *oW = new OtherWorker(id, auxRole, auxName, birth, auxSalary);
     oW->info(cout);
     string answer;
     do
@@ -93,36 +93,36 @@ bool NationalTeam::CreateOtherWorker()
 
 bool AlterOtherWorker()
 {
-    return true;
-//    string reader;
-//    bool flag = true, toggle = true;
-//    int repetition = 0, option;
-//
-////    cout << string(100, '\n');
-////    cout << explorer << endl << endl;
-////    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-//
-//    while(flag)
-//    {
-//        cout << "Look for an \'Other Worker\' using: " << endl; cout << "1. Name\n2. Role\n3. Birth Date\n4. Salary\n0. Back\n\n";
-//        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n'); cout << endl;
-//        switch(option)
-//        {
-//            case 0:
-//                return false;
-//            case 1:
-//                cout << "Name: ";
-//                getline(cin, reader);
-//                while (reader.empty() || cin.eof())
-//                {
-//                    cerr << "Invalid Option! Please enter a valid input." << endl;
-//                    cout << endl << "Name: "; getline(cin, reader);
-//                }
-//
-//        }
-//        flag = false;
-//    }
-//
+    string reader;
+    bool flag = true, toggle = true;
+    int repetition = 0, option;
+
+//    cout << string(100, '\n');
+//    cout << explorer << endl << endl;
+//    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
+//    WorkerLookUp()
+    while(flag)
+    {
+        cout << "Look for a \'Worker\' using: " << endl; cout << "1. Name\n2. Role\n3. Birth Date\n4. Salary\n0. Back\n\n";
+        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n'); cout << endl;
+        switch(option)
+        {
+            case 0:
+                return false;
+            case 1:
+                cout << "Name: ";
+                getline(cin, reader);
+                while (reader.empty() || cin.eof())
+                {
+                    cerr << "Invalid Option! Please enter a valid input." << endl;
+                    cout << endl << "Name: "; getline(cin, reader);
+                }
+
+        }
+        flag = false;
+    }
+
 //    while (toggle)
 //    {
 //        if (repetition == 0)
@@ -216,7 +216,7 @@ bool AlterOtherWorker()
 //    }
 }
 
-void NationalTeam::addWorker(OtherWorker *oW)
+void NationalTeam::addWorker(Staff *oW)
 {
     workers.push_back(oW);
 }

@@ -1,5 +1,6 @@
 #include "NecessaryFunctions_NameSpaces.h"
 #include "Classes/Date.h"
+
 #include <string>
 #include <iostream>
 
@@ -37,4 +38,11 @@ namespace verifyInputs
         }
         return false;
     }
+}
+
+namespace getWorkers {
+//    Staff* WorkerLookUp()
+//    {
+//
+//    }
 }

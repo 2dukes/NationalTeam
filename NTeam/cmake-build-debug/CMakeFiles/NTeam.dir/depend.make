@@ -59,6 +59,7 @@ CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj: ../Classes/TechnicalTeam.cpp
 CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj: ../Classes/TechnicalTeam.h
 
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/Staff.h
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../NecessaryFunctions_NameSpaces.cpp
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 

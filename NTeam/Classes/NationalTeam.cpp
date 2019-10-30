@@ -43,7 +43,7 @@ Staff* NationalTeam::WorkerLookUp()
     {
         auxPerson.clear();
         ct = false;
-        std::cout << "Look for a \'Worker\' using: " << std::endl; std::cout << "1. Name\n2. Role\n3. Birth Date\n4. Salary\n0. Back\n\n";
+        std::cout << "Look for a \'Worker\' using: " << std::endl; std::cout << "1. Name\n2. Role\n3. Birth Date\n4. Salary\n5. ID\n0. Back\n\n";
         std::cin >> option; std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); std::cout << std::endl;
         switch(option)
         {
@@ -210,6 +210,25 @@ Staff* NationalTeam::WorkerLookUp()
 
                     }
                 }
+                std::cout << "No Corresponding Worker Found..." << std::endl;
+                break;
+            }
+            case 5:
+            {
+                // Salary
+                int id;
+                do {
+                    std::cout << "ID:";
+                    std::cin >> id;
+                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                } while(verifyInputs::verifyNumber());
+
+                for(auto &x: workers)
+                {
+                    if(x->getId() == id)
+                        return x;
+                }
+
                 std::cout << "No Corresponding Worker Found..." << std::endl;
                 break;
             }

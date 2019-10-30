@@ -68,6 +68,7 @@ CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/OtherWork
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/SoccerPlayer.h
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/Staff.h
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/Stats.h
+CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/TechnicalTeam.h
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../NecessaryFunctions_NameSpaces.cpp
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 
@@ -80,6 +81,7 @@ CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/OtherWorker.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/SoccerPlayer.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/Staff.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/Stats.h
+CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/TechnicalTeam.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../main.cpp
 CMakeFiles/NTeam.dir/main.cpp.obj: ../menuPresent.h
@@ -93,6 +95,7 @@ CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/OtherWorker.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/SoccerPlayer.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/Staff.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/Stats.h
+CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/TechnicalTeam.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../menuPresent.cpp
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../menuPresent.h

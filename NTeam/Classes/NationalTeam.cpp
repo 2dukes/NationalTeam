@@ -60,7 +60,7 @@ Staff* NationalTeam::WorkerLookUp()
                     getline(std::cin, name);
                 } while(verifyInputs::verifyString(name));
 
-                for(auto &x: workers)
+                for(auto &x: otherWorkers)
                 {
                     if((x->getName()).find(name) != std::string::npos)
                     {
@@ -100,7 +100,7 @@ Staff* NationalTeam::WorkerLookUp()
                     getline(std::cin, role);
                 } while(verifyInputs::verifyString(role));
 
-                for(auto &x: workers)
+                for(auto &x: otherWorkers)
                 {
                     if(x->getRole() == role)
                     {
@@ -142,7 +142,7 @@ Staff* NationalTeam::WorkerLookUp()
                 } while(verifyInputs::verifyDate(birth));
                 Date dBirth = Date(birth);
 
-                for(auto &x: workers)
+                for(auto &x: otherWorkers)
                 {
                     if(x->getDate() == dBirth)
                     {
@@ -183,7 +183,7 @@ Staff* NationalTeam::WorkerLookUp()
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 } while(verifyInputs::verifyNumber());
 
-                for(auto &x: workers)
+                for(auto &x: otherWorkers)
                 {
                     if(x->getSalary() == salary)
                     {
@@ -223,7 +223,7 @@ Staff* NationalTeam::WorkerLookUp()
                     std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                 } while(verifyInputs::verifyNumber());
 
-                for(auto &x: workers)
+                for(auto &x: otherWorkers)
                 {
                     if(x->getId() == id)
                         return x;
@@ -270,8 +270,8 @@ bool NationalTeam::CreateOtherWorker()
     } while(verifyInputs::verifyNumber());
 
     unsigned int id;
-    if(workers.size() > 0)
-        id = workers.at(workers.size() - 1)->getId() + 1; // We suppose all Ids are incremented by 1
+    if(otherWorkers.size() > 0)
+        id = otherWorkers.at(otherWorkers.size() - 1)->getId() + 1; // We suppose all Ids are incremented by 1
     else
         id = 1;
 
@@ -342,10 +342,10 @@ bool NationalTeam::readOtherWorkersFile(string filename) {
 }
 
 bool NationalTeam::deleteWorker() {
-    Staff *oW;
-    for (auto it = workers.begin(); it != workers.end(); it++) {
+    Staff *oW = WorkerLookUp();
+    for (auto it = otherWorkers.begin(); it != otherWorkers.end(); it++) {
         if ((*it)->getId() == oW->getId()) {
-            workers.erase(it);
+            otherWorkers.erase(it);
             return true;
         }
     }
@@ -353,120 +353,108 @@ bool NationalTeam::deleteWorker() {
 }
 
 
-bool AlterOtherWorker()
+bool NationalTeam::AlterOtherWorker()
 {
-    return true;
     string reader;
     bool flag = true, toggle = true;
     int repetition = 0, option;
 
-//    cout << string(100, '\n');
+    cout << string(100, '\n');
 //    cout << explorer << endl << endl;
-//    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+    Staff *person = WorkerLookUp();
+    if(person == NULL)
+        return false;
 
+    while (toggle)
+    {
+        if (repetition == 0)
+        {
+            cout << endl << "What do you want to change?\n";
+            repetition++;
+        }
+        else
+            cout << "Do you want to change anything else?\n";
 
+        cout << "1. Name\n2. Role\n3. Birth Date\n4. Salary\n0. Back\n\n";
+        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << endl;
 
-//    while (toggle)
-//    {
-//        if (repetition == 0)
-//        {
-//            cout << endl << "What do you want to change?\n";
-//            repetition++;
-//        }
-//        else
-//            cout << "Do you want to change anything else?\n";
-//        cout << "1. Name\n2. Role\n3. Birth Date\n4. Salary\n0. Back\n\n";
-//        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
-//        cout << endl;
-//
-//        switch (option)
-//        {
-//            case 0:
-//            {
-//                toggle = false;
-//                break;
-//            }
-//            case 1:
-//            {
-//                cout << "New Name: "; getline(cin, reader);
-//                while (reader.empty() || cin.eof())
-//                {
-//                    cerr << "Invalid Option! Please enter a valid input." << endl;
-//                    cout << endl << "New Name: "; getline(cin, reader);
-//                }
-//                break;
-//            }
-//            case 2:
-//            {
-//                do
-//                {
-//                    cout << "VAT Number: "; cin >> VAT;
-//                    if (cin.eof())
-//                        return name;
-//                    if (cin.fail())
-//                    {
-//                        cin.clear();
-//                        cerr << "Invalid Option! Please enter a 9 digit VAT." << endl << endl;
-//                    }
-//                    else
-//                    {
-//                        flag = VATConfirm(VAT);
-//                        if (flag)
-//                            cerr << "Invalid Option! Please enter a 9 digit VAT." << endl << endl;
-//                        else if (VAT <= 0)
-//                            cerr << "Invalid input! Please consider changing your number." << endl;
-//                    }
-//                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-//                } while (flag || (VAT <= 0));
-//                setVATnumber(VAT);
-//                break;
-//            }
-//            case 3:
-//            {
-//                cout << "URL: "; getline(cin, reader);
-//                while (reader.empty() && !cin.eof())
-//                {
-//                    cerr << "Invalid Option! Please enter a valid input." << endl;
-//                    cout << endl << "URL: "; getline(cin, reader);
-//                }
-//                if (cin.eof())
-//                    return name;
-//                trim(reader);
-//                setURL(reader);
-//                break;
-//            }
-//            case 4:
-//            {
-//                cout << "Address (Street / Door Number / Floor / Zip Code / Location): "; getline(cin, reader);
-//                while ((reader.empty() || adrConfirm(reader)) && !cin.eof())
-//                {
-//                    cerr << "Invalid Option! Please enter a valid input." << endl;
-//                    cout << endl << "Address (Street / Door Number / Floor / Zip Code / Location): "; getline(cin, reader);
-//                }
-//                if (cin.eof())
-//                    return name;
-//                trim(reader);
-//                Address NewAdress(reader);
-//                setAddress(NewAdress);
-//                break;
-//            }
-//        }
-//        if (toggle)
-//        {
-//            cout << endl << "Agency successfully altered!" << endl << endl;
-//            // OtherWorkerInfoHasChanged = true;
-//        }
-//    }
+        switch (option)
+        {
+            case 0:
+            {
+                toggle = false;
+                break;
+            }
+            case 1:
+            {
+                string auxName;
+                do
+                {
+                    cout << "New Name:";
+                    getline(cin, auxName);
+                } while(verifyInputs::verifyString(auxName));
+
+                person->setName(auxName);
+                break;
+            }
+            case 2:
+            {
+                string auxRole;
+                do
+                {
+                    cout << "New Role:";
+                    getline(cin, auxRole);
+                } while(verifyInputs::verifyString(auxRole));
+
+                person->setRole(auxRole);
+                break;
+            }
+            case 3:
+            {
+                string auxBirth;
+                do
+                {
+                    cout << "Birth Date (YYYY/MM/DD):";
+                    getline(cin, auxBirth);
+
+                } while(verifyInputs::verifyDate(auxBirth));
+                Date birth = Date(auxBirth);
+
+                person->setDate(birth);
+                break;
+            }
+            case 4:
+            {
+                float auxSalary;
+                do {
+                    cout << "Salary:";
+                    cin >> auxSalary;
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                } while(verifyInputs::verifyNumber());
+
+                person->setSalary(auxSalary);
+                break;
+            }
+        }
+        if (toggle)
+        {
+            cout << endl << "Worker successfully altered!" << endl << endl << "Press Enter to Continue...";
+            cin.get();
+            // OtherWorkerInfoHasChanged = true;
+        }
+    }
+    return true;
 }
 
 void NationalTeam::addWorker(Staff *oW)
 {
-    workers.push_back(oW);
+    otherWorkers.push_back(oW);
 }
 
 const vector<Staff*>& NationalTeam::getWorkers()
 {
-    return workers;
+    return otherWorkers;
 }
 

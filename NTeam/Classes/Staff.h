@@ -24,6 +24,7 @@ public:
     void setRole(std::string role);
     void setName(std::string name);
     void setDate(Date date);
+    virtual void setSalary(float salary) = 0;
 
     /* Other Methods */
     virtual void info(std::ostream &os) const;

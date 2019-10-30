@@ -69,6 +69,7 @@ CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.cpp
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
 CMakeFiles/NTeam.dir/main.cpp.obj
@@ -81,6 +82,7 @@ CMakeFiles/NTeam.dir/main.cpp.obj
  ../Classes/SoccerPlayer.h
  ../Classes/Staff.h
  ../Classes/Stats.h
+ ../Classes/TechnicalTeam.h
  ../NecessaryFunctions_NameSpaces.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/main.cpp
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h
@@ -94,6 +96,7 @@ CMakeFiles/NTeam.dir/menuPresent.cpp.obj
  ../Classes/SoccerPlayer.h
  ../Classes/Staff.h
  ../Classes/Stats.h
+ ../Classes/TechnicalTeam.h
  ../NecessaryFunctions_NameSpaces.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.cpp
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h

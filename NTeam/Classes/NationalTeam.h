@@ -8,6 +8,7 @@
 #include <vector>
 #include "SoccerPlayer.h"
 #include "OtherWorker.h"
+#include "TechnicalTeam.h"
 #include "Call.h"
 #include "Game.h"
 #include "../NecessaryFunctions_NameSpaces.h"
@@ -32,7 +33,8 @@ public:
 
     Staff* WorkerLookUp();
 private:
-    std::vector<Staff*> workers; // Technical Team and OtherWorkers
+    std::vector<Staff*> otherWorkers; // OtherWorkers
+    std::vector<Staff*> technicalTeam;
     std::vector<SoccerPlayer*> players;
     std::vector<InfCall*> InfCalls;
     std::vector<Call*> calls;

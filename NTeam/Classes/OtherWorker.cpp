@@ -25,6 +25,7 @@ void OtherWorker::setSalary(float salary) {
     this->salary = salary;
 }
 
+
 /* OtherMethods */
 
 void OtherWorker::info(ostream &os) const

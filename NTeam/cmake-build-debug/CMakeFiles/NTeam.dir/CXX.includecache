@@ -6,74 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../Classes/Call.h
-vector
--
-Game.h
-../Classes/Game.h
-Date.h
-../Classes/Date.h
-InfCall.h
-../Classes/InfCall.h
-
-../Classes/Date.h
-string
--
-
-../Classes/Game.h
-Stats.h
-../Classes/Stats.h
-Date.h
-../Classes/Date.h
-vector
--
-
-../Classes/InfCall.h
-Date.h
-../Classes/Date.h
-
-../Classes/NationalTeam.h
-vector
--
-SoccerPlayer.h
-../Classes/SoccerPlayer.h
-OtherWorker.h
-../Classes/OtherWorker.h
-Call.h
-../Classes/Call.h
-Game.h
-../Classes/Game.h
-../NecessaryFunctions_NameSpaces.h
-../NecessaryFunctions_NameSpaces.h
-
-../Classes/OtherWorker.h
-Staff.h
-../Classes/Staff.h
-
-../Classes/SoccerPlayer.h
-Staff.h
-../Classes/Staff.h
-Call.h
-../Classes/Call.h
-map
--
-
-../Classes/Staff.h
-string
--
-Date.h
-../Classes/Date.h
-
-../Classes/Stats.h
-string
--
-
-../NecessaryFunctions_NameSpaces.h
-string
--
-Classes/Staff.h
-../Classes/Staff.h
-
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call.h
 vector
 -
@@ -127,6 +59,8 @@ SoccerPlayer.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
 OtherWorker.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.h
+TechnicalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
 Call.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call.h
 Game.h
@@ -165,20 +99,4 @@ string
 -
 Classes/Staff.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
-
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/main.cpp
-iostream
--
-NationalTeam.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NationalTeam.h
-menuPresent.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h
-
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h
-vector
--
-string
--
-NationalTeam.h
-C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NationalTeam.h
 

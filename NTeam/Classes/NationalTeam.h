@@ -8,6 +8,7 @@
 #include <vector>
 #include "SoccerPlayer.h"
 #include "OtherWorker.h"
+#include "TechnicalTeam.h"
 #include "Call.h"
 #include "Game.h"
 
@@ -25,6 +26,8 @@ public:
     bool CreateOtherWorker();
     bool AlterOtherWorker();
     void addWorker(Staff* oW);
+    bool deleteWorker();
+    bool readOtherWorkersFile(std::string filename);
 
 private:
     std::vector<Staff*> workers; // Technical Team and OtherWorkers

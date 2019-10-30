@@ -95,3 +95,9 @@ ostream& operator<<(ostream& out, const Date & date) {
     out << date.year << "/" << date.month << "/" << date.day;
     return out;
 }
+
+std::istream &operator>>(istream &in, Date & date) {
+    string dateString;
+    getline(in, dateString);
+    date = Date(dateString);
+}

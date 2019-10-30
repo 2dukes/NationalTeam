@@ -6,6 +6,9 @@
 #include <iostream>
 #include <new>
 #include <limits>
+#include <fstream>
+#include <string>
+#include <sstream>
 #include "../NecessaryFunctions_NameSpaces.h"
 
 using namespace std;
@@ -93,6 +96,7 @@ bool NationalTeam::CreateOtherWorker()
 
 bool AlterOtherWorker()
 {
+    return true;
     string reader;
     bool flag = true, toggle = true;
     int repetition = 0, option;
@@ -219,4 +223,58 @@ bool AlterOtherWorker()
 void NationalTeam::addWorker(Staff *oW)
 {
     workers.push_back(oW);
+}
+
+
+
+bool NationalTeam::readOtherWorkersFile(string filename) {
+    ifstream f;
+    f.open(filename);
+    unsigned int id;
+    string name, aux;
+    char delim = ' ';
+    Date birthday;
+    string function;
+    unsigned long salary;
+    if (f.is_open()) {
+        while(!f.eof()) {
+            getline(f, aux, delim);
+            f >> id;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, name);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> birthday;
+            getline(f, aux, delim);
+            getline(f, function);
+            getline(f, aux, delim);
+            f >> salary;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux); // linha em branco
+
+            Staff* staff = new OtherWorker(id, function, name, birthday, salary);
+            addWorker(staff);
+
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error reading the file " << filename << endl;
+        return false;
+    }
+}
+
+bool NationalTeam::deleteWorker() {
+    Staff *oW;
+    for (auto it = workers.begin(); it != workers.end(); it++) {
+        if ((*it)->getId() == oW->getId()) {
+            workers.erase(it);
+            return true;
+        }
+    }
+    return false;
 }

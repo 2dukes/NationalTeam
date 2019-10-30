@@ -33,3 +33,7 @@ void OtherWorker::info(ostream &os) const
     os << "Salary: " << salary << "\n";
 }
 
+bool OtherWorker::operator==(const OtherWorker &oW) const {
+    return id == oW.getId();
+}
+

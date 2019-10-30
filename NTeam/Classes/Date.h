@@ -39,6 +39,7 @@ public:
     // other methods
 
     friend std::ostream& operator<<(std::ostream& out, const Date & date); // overload of operator << (display the formatted date on a ostream)
+    friend std::istream& operator>>(std::istream& in, Date & date);
 
 };
 

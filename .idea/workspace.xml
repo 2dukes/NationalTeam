@@ -11,7 +11,58 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="774292d6-dadb-49db-84f2-0ff256b98b43" name="Default Changelist" comment="" />
+    <list default="true" id="774292d6-dadb-49db-84f2-0ff256b98b43" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/Classes/Date.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/Classes/Date.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/Classes/Date.h" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/Classes/Date.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/Classes/NationalTeam.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/Classes/NationalTeam.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/Classes/NationalTeam.h" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/Classes/NationalTeam.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/Classes/OtherWorker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/Classes/OtherWorker.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/Classes/OtherWorker.h" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/Classes/OtherWorker.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeRCCompiler.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CMakeSystem.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdC/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/3.15.3/CompilerIdCXX/a.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Call.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Call.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Date.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Date.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Game.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Game.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Stats.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Stats.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/flags.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/includes_CXX.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/includes_CXX.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/main.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/menuPresent.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/menuPresent.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/NTeam.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/clion-environment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/NTeam.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/NTeam.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/NTeam.exe" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/NTeam.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NTeam/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/NTeam/main.cpp" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +80,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
@@ -62,6 +114,7 @@
       <updated>1572357273433</updated>
       <workItem from="1572357274968" duration="13697000" />
       <workItem from="1572427374660" duration="1152000" />
+      <workItem from="1572429460666" duration="5859000" />
     </task>
     <servers />
   </component>

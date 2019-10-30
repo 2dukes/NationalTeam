@@ -79,8 +79,12 @@
   <component name="ProjectId" id="1SsfYqLId3lE2m4zpeXQTgosHgM" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+<<<<<<< Updated upstream
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
+=======
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../NationalTeam - Copy" />
+>>>>>>> Stashed changes
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">

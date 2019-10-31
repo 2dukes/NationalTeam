@@ -1,10 +1,8 @@
 #include "NecessaryFunctions_NameSpaces.h"
-#include "Classes/Date.h"
 #include "Classes/NationalTeam.h"
 
 #include <string>
-#include <iostream>
-#include <limits>
+
 
 namespace verifyInputs
 {
@@ -34,13 +32,48 @@ namespace verifyInputs
     {
         if (std::cin.fail() || std::cin.eof())
         {
-            std::cerr << "Invalid Option! Please enter a valid input." << std::endl;
+            std::cout << "Invalid Option! Please enter a valid input." << std::endl;
             return true;
         }
         return false;
     }
 }
 
-namespace getWorkers {
+namespace readOperations {
+    std::string readString(std::string parameter)
+    {
+        std::string auxStr;
+        do
+        {
+            std::cout << parameter;
+            getline(std::cin, auxStr);
+        } while(verifyInputs::verifyString(auxStr));
+        return auxStr;
+    }
+
+    Date readDate()
+    {
+        std::string auxBirth;
+        do
+        {
+            std::cout << "Birth Date (YYYY/MM/DD):";
+            getline(std::cin, auxBirth);
+
+        } while(verifyInputs::verifyDate(auxBirth));
+        return Date(auxBirth);
+    }
+
+    std::string confirmAnswer()
+    {
+        std::string answer;
+        while(true)
+        {
+            getline(std::cin, answer);
+            if(answer == "Y" || answer == "y" || answer == "N" || answer == "n")
+                break;
+            std::cout << "Invalid Option! Please enter a valid input." << std::endl;
+        }
+        return answer;
+    }
 
 }

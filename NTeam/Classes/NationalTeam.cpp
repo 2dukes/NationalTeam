@@ -24,7 +24,7 @@ string NationalTeam::getName() const
 
 /* Sets */
 
-string NationalTeam::setName(string name)
+string NationalTeam::setName(string &name)
 {
     this->name = name;
     return name;
@@ -32,242 +32,16 @@ string NationalTeam::setName(string name)
 
 /* Other Methods */
 
-Staff* NationalTeam::WorkerLookUp()
+bool NationalTeam::createOtherWorker()
 {
+    string auxName = readOperations::readString("Name:");
 
-    bool ct;
-    std::string reader;
-    int option;
-    std::vector<Staff*> auxPerson;
-    while(true)
-    {
-        auxPerson.clear();
-        ct = false;
-        std::cout << "Look for a \'Worker\' using: " << std::endl; std::cout << "1. Name\n2. Role\n3. Birth Date\n4. Salary\n5. ID\n0. Back\n\n";
-        std::cin >> option; std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); std::cout << std::endl;
-        switch(option)
-        {
-            case 0:
-                return NULL;
-            case 1:
-            {
-                // Name
-                std::string name;
+    Date birth = readOperations::readDate();
 
-                do
-                {
-                    std::cout << "Name:";
-                    getline(std::cin, name);
-                } while(verifyInputs::verifyString(name));
+    string auxRole = readOperations::readString("Role:");
 
-                for(auto &x: otherWorkers)
-                {
-                    if((x->getName()).find(name) != std::string::npos)
-                    {
-                        auxPerson.push_back(x);
-                        ct = true;
-                        x->info(std::cout);
-                        std::cout << std::endl;
-                    }
-                }
-
-                if(ct)
-                {
-                    std::cout << "Enter the ID of The Choosen One: " << std::endl;
-                    try {
-                        std::cin >> option;
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        for(auto &x: auxPerson)
-                        {
-                            if(x->getId() == option)
-                                return x;
-                        }
-                    }
-                    catch (...) {
-
-                    }
-                }
-                std::cout << "No Corresponding Worker Found..." << std::endl;
-                break;
-            }
-            case 2:
-            {
-                // Role
-                std::string role;
-                do
-                {
-                    std::cout << "Role:";
-                    getline(std::cin, role);
-                } while(verifyInputs::verifyString(role));
-
-                for(auto &x: otherWorkers)
-                {
-                    if(x->getRole() == role)
-                    {
-                        auxPerson.push_back(x);
-                        ct = true;
-                        x->info(std::cout);
-                        std::cout << std::endl;
-                    }
-                }
-
-                if(ct)
-                {
-                    std::cout << "Enter the ID of The Choosen One: " << std::endl;
-                    try {
-                        std::cin >> option;
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        for(auto &x: auxPerson)
-                        {
-                            if(x->getId() == option)
-                                return x;
-                        }
-                    }
-                    catch (...) {
-
-                    }
-                }
-                std::cout << "No Corresponding Worker Found..." << std::endl;
-                break;
-            }
-            case 3:
-            {
-                // Birth Date
-                std::string birth;
-                do
-                {
-                    std::cout << "Birth Date (YYYY/MM/DD):";
-                    getline(std::cin, birth);
-
-                } while(verifyInputs::verifyDate(birth));
-                Date dBirth = Date(birth);
-
-                for(auto &x: otherWorkers)
-                {
-                    if(x->getDate() == dBirth)
-                    {
-                        auxPerson.push_back(x);
-                        ct = true;
-                        x->info(std::cout);
-                        std::cout << std::endl;
-                    }
-                }
-
-                if(ct)
-                {
-                    std::cout << "Enter the ID of The Choosen One: " << std::endl;
-                    try {
-                        std::cin >> option;
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        for(auto &x: auxPerson)
-                        {
-                            if(x->getId() == option)
-                                return x;
-                        }
-                    }
-                    catch (...) {
-
-                    }
-                }
-                std::cout << "No Corresponding Worker Found..." << std::endl;
-                break;
-
-            }
-            case 4:
-            {
-                // Salary
-                float salary;
-                do {
-                    std::cout << "Salary:";
-                    std::cin >> salary;
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                } while(verifyInputs::verifyNumber());
-
-                for(auto &x: otherWorkers)
-                {
-                    if(x->getSalary() == salary)
-                    {
-                        auxPerson.push_back(x);
-                        ct = true;
-                        x->info(std::cout);
-                        std::cout << std::endl;
-                    }
-                }
-
-                if(ct)
-                {
-                    std::cout << "Enter the ID of The Choosen One: " << std::endl;
-                    try {
-                        std::cin >> option;
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        for(auto &x: auxPerson)
-                        {
-                            if(x->getId() == option)
-                                return x;
-                        }
-                    }
-                    catch (...) {
-
-                    }
-                }
-                std::cout << "No Corresponding Worker Found..." << std::endl;
-                break;
-            }
-            case 5:
-            {
-                // Salary
-                int id;
-                do {
-                    std::cout << "ID:";
-                    std::cin >> id;
-                    std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                } while(verifyInputs::verifyNumber());
-
-                for(auto &x: otherWorkers)
-                {
-                    if(x->getId() == id)
-                        return x;
-                }
-
-                std::cout << "No Corresponding Worker Found..." << std::endl;
-                break;
-            }
-        }
-    }
-}
-
-bool NationalTeam::CreateOtherWorker()
-{
-    string auxName;
-    do
-    {
-        cout << "Name:";
-        getline(cin, auxName);
-    } while(verifyInputs::verifyString(auxName));
-
-
-    string auxBirth;
-    do
-    {
-        cout << "Birth Date (YYYY/MM/DD):";
-        getline(cin, auxBirth);
-
-    } while(verifyInputs::verifyDate(auxBirth));
-    Date birth = Date(auxBirth);
-
-    string auxRole;
-    do
-    {
-        cout << "Role:";
-        getline(cin, auxRole);
-    } while(verifyInputs::verifyString(auxRole));
-
-    float auxSalary;
-    do {
-        cout << "Salary:";
-        cin >> auxSalary;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-    } while(verifyInputs::verifyNumber());
+    float auxSalary = 0.0;
+    auxSalary = readOperations::readNumber("Salary:", auxSalary);
 
     unsigned int id;
     if(otherWorkers.size() > 0)
@@ -278,15 +52,11 @@ bool NationalTeam::CreateOtherWorker()
     cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
     Staff *oW = new OtherWorker(id, auxRole, auxName, birth, auxSalary);
     oW->info(cout);
-    string answer;
-    do
-    {
-        getline(cin, answer);
-    } while(answer != "Y" && answer != "y" && answer != "N" && answer != "n");
+    string answer = readOperations::confirmAnswer();
 
     if(answer == "Y" || answer == "y")
     {
-        addWorker(oW);
+        addOtherWorker(oW);
         cout << "Data successfully inserted!" << endl;
         return true;
         /* In the future to save all info inside a file */
@@ -308,7 +78,7 @@ bool NationalTeam::readOtherWorkersFile(string filename) {
     char delim = ' ';
     Date birthday;
     string function;
-    unsigned long salary;
+    float salary;
     if (f.is_open()) {
         while(!f.eof()) {
             getline(f, aux, delim);
@@ -328,8 +98,8 @@ bool NationalTeam::readOtherWorkersFile(string filename) {
             f.ignore(1000, '\n');
             getline(f, aux); // linha em branco
 
-            Staff* staff = new OtherWorker(id, function, name, birthday, salary);
-            addWorker(staff);
+            Staff* oW = new OtherWorker(id, function, name, birthday, salary);
+            addOtherWorker(oW);
 
         }
         f.close();
@@ -341,19 +111,21 @@ bool NationalTeam::readOtherWorkersFile(string filename) {
     }
 }
 
-bool NationalTeam::deleteWorker() {
-    Staff *oW = WorkerLookUp();
+bool NationalTeam::deleteOtherWorker() {
+    Staff *oW = workerLookUp(otherWorkers);
+    if(oW == NULL)
+        return false;
     for (auto it = otherWorkers.begin(); it != otherWorkers.end(); it++) {
-        if ((*it)->getId() == oW->getId()) {
+        if (*(*it) == *oW) {
             otherWorkers.erase(it);
+            cout << endl << "Other Worker successfully removed!" << endl << endl;
             return true;
         }
     }
     return false;
 }
 
-
-bool NationalTeam::AlterOtherWorker()
+bool NationalTeam::alterOtherWorker()
 {
     string reader;
     bool flag = true, toggle = true;
@@ -362,7 +134,7 @@ bool NationalTeam::AlterOtherWorker()
     cout << string(100, '\n');
 //    cout << explorer << endl << endl;
 
-    Staff *person = WorkerLookUp();
+    Staff *person = workerLookUp(otherWorkers);
     if(person == NULL)
         return false;
 
@@ -389,72 +161,51 @@ bool NationalTeam::AlterOtherWorker()
             }
             case 1:
             {
-                string auxName;
-                do
-                {
-                    cout << "New Name:";
-                    getline(cin, auxName);
-                } while(verifyInputs::verifyString(auxName));
-
+                string auxName = readOperations::readString("New Name:");
                 person->setName(auxName);
                 break;
             }
             case 2:
             {
-                string auxRole;
-                do
-                {
-                    cout << "New Role:";
-                    getline(cin, auxRole);
-                } while(verifyInputs::verifyString(auxRole));
-
+                string auxRole = readOperations::readString("New Role:");
                 person->setRole(auxRole);
                 break;
             }
             case 3:
             {
-                string auxBirth;
-                do
-                {
-                    cout << "Birth Date (YYYY/MM/DD):";
-                    getline(cin, auxBirth);
-
-                } while(verifyInputs::verifyDate(auxBirth));
-                Date birth = Date(auxBirth);
-
+                Date birth = readOperations::readDate();
                 person->setDate(birth);
                 break;
             }
             case 4:
             {
-                float auxSalary;
-                do {
-                    cout << "Salary:";
-                    cin >> auxSalary;
-                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                } while(verifyInputs::verifyNumber());
-
+                float auxSalary = 0.0;
+                auxSalary = readOperations::readNumber("New Salary:", auxSalary);
                 person->setSalary(auxSalary);
                 break;
             }
         }
         if (toggle)
         {
-            cout << endl << "Worker successfully altered!" << endl << endl << "Press Enter to Continue...";
-            cin.get();
+            cout << endl << "Worker successfully altered!" << endl;
             // OtherWorkerInfoHasChanged = true;
         }
     }
     return true;
 }
 
-void NationalTeam::addWorker(Staff *oW)
+void NationalTeam::addOtherWorker(Staff *oW)
 {
     otherWorkers.push_back(oW);
 }
 
-const vector<Staff*>& NationalTeam::getWorkers()
+vector<Staff*>& NationalTeam::getOtherWorkers()
 {
     return otherWorkers;
 }
 
+void NationalTeam::displayOtherWorkers() const {
+    std::cout << std::endl;
+    for(auto &x: otherWorkers)
+        x->info(std::cout);
+}

@@ -55,6 +55,12 @@ sstream
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.h
 vector
 -
+limits
+-
+iostream
+-
+algorithm
+-
 SoccerPlayer.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
 OtherWorker.h
@@ -96,6 +102,10 @@ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staf
 
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
 string
+-
+iostream
+-
+limits
 -
 Classes/Staff.h
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h

@@ -16,7 +16,7 @@ public:
 
     /* Other Methods */
     void info(std::ostream &os) const;
-    bool operator==(const OtherWorker &oW) const;
+
 private:
     float salary;
 };

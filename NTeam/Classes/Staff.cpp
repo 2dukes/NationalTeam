@@ -58,3 +58,7 @@ void Staff::info(ostream &os) const
     os << "Birth: " << birthDate << "\n";
     os << "Role: " << role << "\n";
 }
+
+bool Staff::operator==(const Staff &worker) const {
+    return id == worker.getId();
+}

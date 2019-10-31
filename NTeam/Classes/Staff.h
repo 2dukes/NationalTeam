@@ -30,6 +30,7 @@ public:
     virtual void info(std::ostream &os) const;
 
     virtual ~Staff() { };
+    bool operator==(const Staff &worker) const;
 
 protected:
     const unsigned int id; // Const because it's immutable

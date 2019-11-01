@@ -1,0 +1,45 @@
+Player ID: 1
+Game ID: 1000
+Goals: 2
+Assists: 1
+Shots: 6
+Shots on target: 4
+Passes: 54
+Travelled distance: 10
+Played minutes: 90
+Yellow cards: 0
+Red cards: 0
+Injured: false
+Fouls: 2
+
+::::::::::
+
+Player ID: 2
+Game ID: 1000
+Goals: 0
+Assists: 1
+Shots: 3
+Shots on target: 1
+Passes: 57
+Travelled distance: 9
+Played minutes: 83
+Yellow cards: 1
+Red cards: 0
+Injured: false
+Fouls: 3
+
+::::::::::
+
+Player ID: 3
+Game ID: 1000
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1

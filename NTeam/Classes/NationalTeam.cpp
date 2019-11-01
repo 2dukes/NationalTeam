@@ -96,7 +96,7 @@ bool NationalTeam::readOtherWorkersFile(string filename) {
             f >> salary;
             f.clear();
             f.ignore(1000, '\n');
-            getline(f, aux); // linha em branco
+            getline(f, aux); // blank line
 
             Staff* oW = new OtherWorker(id, function, name, birthday, salary);
             addOtherWorker(oW);
@@ -208,4 +208,88 @@ void NationalTeam::displayOtherWorkers() const {
     std::cout << std::endl;
     for(auto &x: otherWorkers)
         x->info(std::cout);
+}
+
+bool NationalTeam::readSoccerPlayersFile(string filename) {
+    ifstream f;
+    f.open(filename);
+    unsigned int id, daysActive;
+    string name, position, club, isInjuredString, aux;
+    char delim = ' ';
+    Date birthday;
+    float salary, weight, height;
+    bool isInjured;
+    unsigned long marketPrice, ensurance;
+    if (f.is_open()) {
+        while(!f.eof()) {
+            getline(f, aux, delim);
+            f >> id;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, name);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> birthday;
+            getline(f, aux, delim);
+            getline(f, position);
+            getline(f, aux, delim);
+            getline(f, club);
+            getline(f, aux, delim);
+            f >> weight;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> height;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> marketPrice;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> salary;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> daysActive;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, isInjuredString);
+            if (isInjuredString == "true")
+                isInjured = true;
+            else if (isInjuredString == "false")
+                isInjured = false;
+            else {
+                cerr << "Error reading the file " << filename << endl;
+                return false;
+            }
+            getline(f, aux, delim);
+            f >> ensurance;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux); // THIS IS THE CALL INFORMATION, WE NEED TO TREAT THIS CASE!!
+            getline(f, aux, delim); // blank line
+
+            //SoccerPlayer* sP = new SoccerPlayer(id, name, position, birthday, salary,
+                    //position, club, weight, height, marketPrice, daysActive, isInjured);
+            //addOtherSoccerPlayer(sP);
+
+
+
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error reading the file " << filename << endl;
+        return false;
+    }
+
+}
+
+void NationalTeam::addOtherSoccerPlayer(SoccerPlayer *sP) {
+    players.push_back(sP);
 }

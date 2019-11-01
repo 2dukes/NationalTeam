@@ -40,6 +40,12 @@ public:
     template<class Type>
     Type workerLookUp(std::vector<Type> &workers); // Type varies as: OtherWorker*, TechnicalTeam*, SoccerPlayer*...
     // According to the Internet, it should be defined on the .h
+
+    /* SoccerPlayer Methods */
+    void addOtherSoccerPlayer(SoccerPlayer* sP);
+    bool readSoccerPlayersFile(std::string filename);
+
+
 private:
     std::vector<Staff*> otherWorkers; // OtherWorkers
     std::vector<TechnicalTeam*> technicalTeam;

@@ -14,6 +14,8 @@ private:
     std::string playerName;
     Date begin;
     Date end;
+    Date injuredStart;
+    Date injuredEnd;
     int dailyEnsurance; // Varies depending on marketPrice & injured
 };
 

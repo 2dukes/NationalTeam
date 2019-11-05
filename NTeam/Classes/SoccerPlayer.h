@@ -32,9 +32,8 @@ private:
     unsigned short height;  // height in cm
     unsigned long marketPrice;  // market price in €
     unsigned int daysActive;
-    bool injured;
-    int ensurance; // Varies depending on daysActive, marketPrice and injury status
 
+    int ensurance; // Varies depending on daysActive, marketPrice and injury status
 };
 
 

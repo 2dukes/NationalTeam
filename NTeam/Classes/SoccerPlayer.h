@@ -6,7 +6,6 @@
 #define NTEAM_SOCCERPLAYER_H
 
 #include "Staff.h"
-#include "Call.h"
 #include <map>
 
 
@@ -34,7 +33,6 @@ private:
     unsigned long marketPrice;  // market price in €
     unsigned int daysActive;
     bool injured;
-    std::vector<Call*> calls;
     int ensurance; // Varies depending on daysActive, marketPrice and injury status
 
 };

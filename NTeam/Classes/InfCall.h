@@ -11,11 +11,10 @@ class InfCall {
 private:
     unsigned int id;
     unsigned int SoccerPlayerId;
+    std::string playerName;
     Date begin;
     Date end;
     int dailyEnsurance; // Varies depending on marketPrice & injured
-    bool injured;
-    Date date_injured;
 };
 
 

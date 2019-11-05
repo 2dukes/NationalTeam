@@ -53,6 +53,7 @@ private:
     std::vector<InfCall*> InfCalls;
     std::vector<Call*> calls;
     std::vector<Game*> games;
+    std::vector<GameStats*> gameStats;
     std::string name;
 };
 

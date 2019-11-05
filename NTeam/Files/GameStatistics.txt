@@ -15,6 +15,8 @@ Fouls: 15
 Opposing team fouls: 27
 Yellow cards: 3
 Opposing team yellow cards: 6
+Yellow cards: 1
+Opposing team yellow cards: 0
 Offsides: 5
 Opposing team offsides: 2
 Corners: 7
@@ -41,6 +43,8 @@ Fouls: 15
 Opposing team fouls: 27
 Yellow cards: 3
 Opposing team yellow cards: 6
+Yellow cards: 0
+Opposing team yellow cards: 0
 Offsides: 5
 Opposing team offsides: 2
 Corners: 7
@@ -67,6 +71,8 @@ Fouls: 15
 Opposing team fouls: 27
 Yellow cards: 3
 Opposing team yellow cards: 6
+Yellow cards: 0
+Opposing team yellow cards: 1
 Offsides: 5
 Opposing team offsides: 2
 Corners: 7

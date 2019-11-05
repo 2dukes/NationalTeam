@@ -10,7 +10,6 @@ Salary: 31000000
 Days Active: 5840
 Injured: false
 Ensurance: 58400
-Calls: 10 - 25; 11 - 34; 12 - 57
 
 ::::::::::
 
@@ -26,7 +25,6 @@ Salary: 1000000
 Days Active: 840
 Injured: true
 Ensurance: 252
-Calls: 10 - 23; 11 - 35; 12 - 57; 13 - 75
 
 ::::::::::
 
@@ -42,4 +40,3 @@ Salary: 7000000
 Days Active: 3000
 Injured: false
 Ensurance: 15000
-Calls: 10 - 26; 11 - 36

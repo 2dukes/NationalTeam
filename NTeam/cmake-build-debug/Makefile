@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam"
+CMAKE_SOURCE_DIR = "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cma
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -202,6 +202,33 @@ Classes/Game.s: Classes/Game.cpp.s
 Classes/Game.cpp.s:
 	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Game.cpp.s
 .PHONY : Classes/Game.cpp.s
+
+Classes/GameStats.obj: Classes/GameStats.cpp.obj
+
+.PHONY : Classes/GameStats.obj
+
+# target to build an object file
+Classes/GameStats.cpp.obj:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj
+.PHONY : Classes/GameStats.cpp.obj
+
+Classes/GameStats.i: Classes/GameStats.cpp.i
+
+.PHONY : Classes/GameStats.i
+
+# target to preprocess a source file
+Classes/GameStats.cpp.i:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/GameStats.cpp.i
+.PHONY : Classes/GameStats.cpp.i
+
+Classes/GameStats.s: Classes/GameStats.cpp.s
+
+.PHONY : Classes/GameStats.s
+
+# target to generate assembly for a file
+Classes/GameStats.cpp.s:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/GameStats.cpp.s
+.PHONY : Classes/GameStats.cpp.s
 
 Classes/InfCall.obj: Classes/InfCall.cpp.obj
 
@@ -491,6 +518,9 @@ help:
 	@echo ... Classes/Game.obj
 	@echo ... Classes/Game.i
 	@echo ... Classes/Game.s
+	@echo ... Classes/GameStats.obj
+	@echo ... Classes/GameStats.i
+	@echo ... Classes/GameStats.s
 	@echo ... Classes/InfCall.obj
 	@echo ... Classes/InfCall.i
 	@echo ... Classes/InfCall.s

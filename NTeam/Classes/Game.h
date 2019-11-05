@@ -7,18 +7,22 @@
 
 #include "Stats.h"
 #include "Date.h"
+#include "GameStats.h"
 #include <vector>
 
 class Game {
 public:
 
 private:
-    std::string cidade;
+    std::string city;
     std::string country;
     std::string stadium;
+    std::string oppositeTeam;
+    std::vector<std::string> oppositeTeamParticipants;
     // Jogadores Convocados -> Jogadores Participantes são os convocados com KMS percorridos
     std::vector<Stats*> individualStatistics;
     Date time;
+    GameStats* gameStats;
     std::string refereeTeam; // Or Class...
 
 };

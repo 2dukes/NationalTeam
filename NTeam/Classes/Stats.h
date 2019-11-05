@@ -6,6 +6,7 @@
 #define NTEAM_STATS_H
 
 #include <string>
+#include "Date.h"
 
 class Stats {
 public:
@@ -13,10 +14,15 @@ public:
 private:
     unsigned int id;
     unsigned int soccerPlayerId;
+    std::string playerName;
     unsigned short goals;
+    unsigned short assists;
     unsigned short passes;
-    unsigned short kms;
-    std::string cards; // Information that could be parsed in the future
+    unsigned short shots, shotsOnTarget;
+    unsigned short travelledDistance;
+    unsigned short playedMinutes;
+    unsigned short yellowCards, redCards;
+    unsigned short fouls;
     bool injured;
 };
 

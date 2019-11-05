@@ -7,21 +7,21 @@
 
 class OtherWorker: public Staff {
 public:
-    OtherWorker(unsigned int id, std::string role, std::string name, Date birth, float sal);
+    OtherWorker(unsigned int id, std::string role, unsigned int sal, std::string name, Date birth);
 
     /* Gets */
-    int getSalary() const;
+    unsigned int getSalary() const;
     std::string getRole() const;
 
     /* Sets */
-    void setSalary(int salary);
+    void setSalary(unsigned int salary);
     void setRole(std::string role);
 
     /* Other Methods */
     void info(std::ostream &os) const;
 
 private:
-    int salary;
+    unsigned int salary;
     std::string role;
 };
 

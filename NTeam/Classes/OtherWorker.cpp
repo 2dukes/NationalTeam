@@ -7,7 +7,7 @@
 
 using namespace std;
 
-OtherWorker::OtherWorker(unsigned int id, string role, string name, Date birth, float sal): Staff (id, name, birth)
+OtherWorker::OtherWorker(unsigned int id, string role, unsigned int sal, string name, Date birth): Staff (id, name, birth)
 {
     this->role = role;
     salary = sal;
@@ -15,7 +15,7 @@ OtherWorker::OtherWorker(unsigned int id, string role, string name, Date birth, 
 
 /* Gets */
 
-int OtherWorker::getSalary() const
+unsigned int OtherWorker::getSalary() const
 {
     return salary;
 }
@@ -32,7 +32,7 @@ void OtherWorker::setRole(std::string role)
     this->role = role;
 }
 
-void OtherWorker::setSalary(int salary) {
+void OtherWorker::setSalary(unsigned int salary) {
     this->salary = salary;
 }
 

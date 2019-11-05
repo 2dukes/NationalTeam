@@ -40,7 +40,7 @@ bool NationalTeam::createOtherWorker()
 
     string auxRole = readOperations::readString("Role:");
 
-    float auxSalary = 0.0;
+    unsigned int auxSalary = 0;
     auxSalary = readOperations::readNumber("Salary:", auxSalary);
 
     unsigned int id;
@@ -50,7 +50,7 @@ bool NationalTeam::createOtherWorker()
         id = 1;
 
     cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
-    OtherWorker *oW = new OtherWorker(id, auxRole, auxName, birth, auxSalary);
+    OtherWorker *oW = new OtherWorker(id, auxRole, auxSalary, auxName, birth);
     oW->info(cout);
     string answer = readOperations::confirmAnswer();
 
@@ -73,12 +73,11 @@ bool NationalTeam::createOtherWorker()
 bool NationalTeam::readOtherWorkersFile(string filename) {
     ifstream f;
     f.open(filename);
-    unsigned int id;
+    unsigned int id, salary;
     string name, aux;
     char delim = ' ';
     Date birthday;
     string function;
-    float salary;
     if (f.is_open()) {
         while(!f.eof()) {
             getline(f, aux, delim);
@@ -98,7 +97,7 @@ bool NationalTeam::readOtherWorkersFile(string filename) {
             f.ignore(1000, '\n');
             getline(f, aux); // blank line
 
-            OtherWorker* oW = new OtherWorker(id, function, name, birthday, salary);
+            OtherWorker* oW = new OtherWorker(id, function, salary, name, birthday);
             addOtherWorker(oW);
 
         }
@@ -216,12 +215,11 @@ bool NationalTeam::readSoccerPlayersFile(string filename) {
     ifstream f;
     f.open(filename);
     unsigned int id, daysActive;
-    string name, position, club, isInjuredString, aux;
+    string name, position, club, aux;
     char delim = ' ';
     Date birthday;
-    float salary, weight, height;
-    bool isInjured;
-    unsigned long marketPrice, ensurance;
+    unsigned short weight, height;
+    unsigned long marketPrice;
     if (f.is_open()) {
         while(!f.eof()) {
             getline(f, aux, delim);
@@ -246,40 +244,20 @@ bool NationalTeam::readSoccerPlayersFile(string filename) {
             f.clear();
             f.ignore(1000, '\n');
             getline(f, aux, delim);
+            getline(f, aux, delim);
             f >> marketPrice;
             f.clear();
             f.ignore(1000, '\n');
             getline(f, aux, delim);
-            f >> salary;
-            f.clear();
-            f.ignore(1000, '\n');
             getline(f, aux, delim);
             f >> daysActive;
             f.clear();
             f.ignore(1000, '\n');
-            getline(f, aux, delim);
-            getline(f, isInjuredString);
-            if (isInjuredString == "true")
-                isInjured = true;
-            else if (isInjuredString == "false")
-                isInjured = false;
-            else {
-                cerr << "Error reading the file " << filename << endl;
-                return false;
-            }
-            getline(f, aux, delim);
-            f >> ensurance;
-            f.clear();
-            f.ignore(1000, '\n');
-            getline(f, aux, delim);
-            getline(f, aux); // THIS IS THE CALL INFORMATION, WE NEED TO TREAT THIS CASE!!
-            getline(f, aux, delim); // blank line
+            getline(f, aux, '\n');  // blank line
 
-            //SoccerPlayer* sP = new SoccerPlayer(id, name, position, birthday, salary,
-                    //position, club, weight, height, marketPrice, daysActive, isInjured);
-            //addSoccerPlayer(sP);
-
-
+            SoccerPlayer* sP = new SoccerPlayer(id, name, birthday, position,
+                    club, weight, height, marketPrice, daysActive);
+            addSoccerPlayer(sP);
 
         }
         f.close();

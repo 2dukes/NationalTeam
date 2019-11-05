@@ -17,7 +17,7 @@ public:
     unsigned int getId() const;
     std::string getName() const;
     Date getDate() const;
-    virtual int getSalary() const = 0;
+    virtual unsigned int getSalary() const = 0;
 
     /* Sets */
     void setName(std::string name);

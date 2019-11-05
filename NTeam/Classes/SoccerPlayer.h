@@ -16,7 +16,7 @@ public:
                  unsigned long marketPrice, unsigned int daysActive);
 
     /* Gets */
-    int getSalary() const;
+    unsigned int getSalary() const;
     std::string getPosition() const;
     std::string getClub() const;
     unsigned short getWeight() const;
@@ -25,6 +25,13 @@ public:
     unsigned int getDaysActive() const;
 
     /* Sets */
+    void setPosition(std::string position);
+    void setClub(std::string club);
+    void setWeight(unsigned short weight);
+    void setHeight(unsigned short height);
+    void setMarketPrice(unsigned long marketPrice);
+    void setDaysActive(unsigned int daysActive);
+
 
     /* OtherMethods */
     void info(std::ostream &os) const;

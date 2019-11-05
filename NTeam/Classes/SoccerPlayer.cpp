@@ -15,8 +15,8 @@ SoccerPlayer::SoccerPlayer(unsigned int id, std::string name, Date birthDate, st
 
 /* Gets */
 
-int SoccerPlayer::getSalary() const {
-    return 0.0000001 * marketPrice * daysActive;
+unsigned int SoccerPlayer::getSalary() const {
+    return (unsigned int) 0.0000001 * marketPrice * daysActive;
 }
 
 string SoccerPlayer::getPosition() const {
@@ -52,4 +52,28 @@ void SoccerPlayer::info(std::ostream &os) const {
     os << "Height: " << height << "\n";
     os << "Market Price: " << marketPrice << "\n";
     os << "Days Active: " << weight << "\n";
+}
+
+void SoccerPlayer::setPosition(std::string position) {
+    this->position = position;
+}
+
+void SoccerPlayer::setClub(std::string club) {
+    this->club = club;
+}
+
+void SoccerPlayer::setWeight(unsigned short weight) {
+    this->weight = weight;
+}
+
+void SoccerPlayer::setHeight(unsigned short height) {
+    this->height = height;
+}
+
+void SoccerPlayer::setMarketPrice(unsigned long marketPrice) {
+    this->marketPrice = marketPrice;
+}
+
+void SoccerPlayer::setDaysActive(unsigned int daysActive) {
+    this->daysActive = daysActive;
 }

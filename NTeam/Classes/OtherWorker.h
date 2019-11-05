@@ -2,6 +2,7 @@
 #define NTEAM_OTHERWORKER_H
 
 #include "Staff.h"
+#include <string>
 
 
 class OtherWorker: public Staff {
@@ -9,16 +10,19 @@ public:
     OtherWorker(unsigned int id, std::string role, std::string name, Date birth, float sal);
 
     /* Gets */
-    float getSalary() const;
+    int getSalary() const;
+    std::string getRole() const;
 
     /* Sets */
-    void setSalary(float salary);
+    void setSalary(int salary);
+    void setRole(std::string role);
 
     /* Other Methods */
     void info(std::ostream &os) const;
 
 private:
-    float salary;
+    int salary;
+    std::string role;
 };
 
 

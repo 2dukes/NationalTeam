@@ -30,7 +30,7 @@ string NationalTeam::setName(string &name)
     return name;
 }
 
-/* Other Methods */
+/* OtherWorker Methods */
 
 bool NationalTeam::createOtherWorker()
 {
@@ -50,7 +50,7 @@ bool NationalTeam::createOtherWorker()
         id = 1;
 
     cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
-    Staff *oW = new OtherWorker(id, auxRole, auxName, birth, auxSalary);
+    OtherWorker *oW = new OtherWorker(id, auxRole, auxName, birth, auxSalary);
     oW->info(cout);
     string answer = readOperations::confirmAnswer();
 
@@ -98,7 +98,7 @@ bool NationalTeam::readOtherWorkersFile(string filename) {
             f.ignore(1000, '\n');
             getline(f, aux); // blank line
 
-            Staff* oW = new OtherWorker(id, function, name, birthday, salary);
+            OtherWorker* oW = new OtherWorker(id, function, name, birthday, salary);
             addOtherWorker(oW);
 
         }
@@ -112,7 +112,7 @@ bool NationalTeam::readOtherWorkersFile(string filename) {
 }
 
 bool NationalTeam::deleteOtherWorker() {
-    Staff *oW = workerLookUp(otherWorkers);
+    OtherWorker *oW = workerLookUp(otherWorkers);
     if(oW == NULL)
         return false;
     for (auto it = otherWorkers.begin(); it != otherWorkers.end(); it++) {
@@ -134,7 +134,7 @@ bool NationalTeam::alterOtherWorker()
     cout << string(100, '\n');
 //    cout << explorer << endl << endl;
 
-    Staff *person = workerLookUp(otherWorkers);
+    OtherWorker *person = workerLookUp(otherWorkers);
     if(person == NULL)
         return false;
 
@@ -194,12 +194,12 @@ bool NationalTeam::alterOtherWorker()
     return true;
 }
 
-void NationalTeam::addOtherWorker(Staff *oW)
+void NationalTeam::addOtherWorker(OtherWorker *oW)
 {
     otherWorkers.push_back(oW);
 }
 
-vector<Staff*>& NationalTeam::getOtherWorkers()
+vector<OtherWorker*>& NationalTeam::getOtherWorkers()
 {
     return otherWorkers;
 }
@@ -209,6 +209,8 @@ void NationalTeam::displayOtherWorkers() const {
     for(auto &x: otherWorkers)
         x->info(std::cout);
 }
+
+/* SoccerPlayer Methods */
 
 bool NationalTeam::readSoccerPlayersFile(string filename) {
     ifstream f;
@@ -275,7 +277,7 @@ bool NationalTeam::readSoccerPlayersFile(string filename) {
 
             //SoccerPlayer* sP = new SoccerPlayer(id, name, position, birthday, salary,
                     //position, club, weight, height, marketPrice, daysActive, isInjured);
-            //addOtherSoccerPlayer(sP);
+            //addSoccerPlayer(sP);
 
 
 
@@ -290,6 +292,48 @@ bool NationalTeam::readSoccerPlayersFile(string filename) {
 
 }
 
-void NationalTeam::addOtherSoccerPlayer(SoccerPlayer *sP) {
+void NationalTeam::addSoccerPlayer(SoccerPlayer *sP) {
     players.push_back(sP);
+}
+
+bool NationalTeam::createSoccerPlayer()
+{
+    string auxName = readOperations::readString("Name:");
+    Date birth = readOperations::readDate();
+    string auxPosition = readOperations::readString("Position:");
+    string auxClub = readOperations::readString("Club:");
+    unsigned short auxWeight = 0;
+    auxWeight = readOperations::readNumber("Weight: ", auxWeight);
+    unsigned short auxHeight = 0;
+    auxHeight = readOperations::readNumber("Height: ", auxHeight);
+    unsigned long marketPrice = 0;
+    marketPrice = readOperations::readNumber("Market Price: ", marketPrice);
+    unsigned int daysActive = 0;
+    daysActive = readOperations::readNumber("Days Active: ", daysActive);
+
+    unsigned int id;
+    if(players.size() > 0)
+        id = players.at(players.size() - 1)->getId() + 1; // We suppose all Ids are incremented by 1
+    else
+        id = 1;
+
+    cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
+    SoccerPlayer *sP = new SoccerPlayer(id, auxName, birth, auxPosition, auxClub, auxWeight, auxHeight, marketPrice, daysActive);
+    sP->info(cout);
+    string answer = readOperations::confirmAnswer();
+
+    if(answer == "Y" || answer == "y")
+    {
+        addSoccerPlayer(sP);
+        cout << "Data successfully inserted!" << endl;
+        return true;
+        /* In the future to save all info inside a file */
+        //  ofstream out_stream("../Files/OtherWorkers.txt", ios::app);
+        //  oW.info(out_stream);
+    }
+    cout << "Data not inserted." << endl;
+    delete sP;
+    return false;
+
+    // NATIONALTEAM DESTRUCTOR SHOULD DESTRUCT ALL VECTORS BECAUSE THEY'RE ALLOCATED DYNAMICALLY
 }

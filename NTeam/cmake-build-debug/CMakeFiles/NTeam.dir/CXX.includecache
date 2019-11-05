@@ -1,0 +1,278 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Classes/Call.h
+vector
+-
+Game.h
+../Classes/Game.h
+Date.h
+../Classes/Date.h
+SoccerPlayer.h
+../Classes/SoccerPlayer.h
+InfCall.h
+../Classes/InfCall.h
+
+../Classes/Date.h
+string
+-
+
+../Classes/Game.h
+Stats.h
+../Classes/Stats.h
+Date.h
+../Classes/Date.h
+GameStats.h
+../Classes/GameStats.h
+vector
+-
+
+../Classes/GameStats.h
+
+../Classes/InfCall.h
+Date.h
+../Classes/Date.h
+
+../Classes/NationalTeam.h
+vector
+-
+limits
+-
+iostream
+-
+algorithm
+-
+SoccerPlayer.h
+../Classes/SoccerPlayer.h
+OtherWorker.h
+../Classes/OtherWorker.h
+TechnicalTeam.h
+../Classes/TechnicalTeam.h
+Call.h
+../Classes/Call.h
+Game.h
+../Classes/Game.h
+../NecessaryFunctions_NameSpaces.h
+../NecessaryFunctions_NameSpaces.h
+
+../Classes/OtherWorker.h
+Staff.h
+../Classes/Staff.h
+string
+-
+
+../Classes/SoccerPlayer.h
+Staff.h
+../Classes/Staff.h
+map
+-
+
+../Classes/Staff.h
+string
+-
+Date.h
+../Classes/Date.h
+
+../Classes/Stats.h
+string
+-
+Date.h
+../Classes/Date.h
+
+../Classes/TechnicalTeam.h
+Staff.h
+../Classes/Staff.h
+
+../NecessaryFunctions_NameSpaces.h
+string
+-
+iostream
+-
+limits
+-
+Classes/Staff.h
+../Classes/Staff.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call.cpp
+Call.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call.h
+vector
+-
+Game.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Game.h
+Date.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
+SoccerPlayer.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
+InfCall.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/InfCall.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
+string
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Game.h
+Stats.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.h
+Date.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
+GameStats.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/GameStats.h
+vector
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/GameStats.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/InfCall.h
+Date.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.cpp
+NationalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.h
+TechnicalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
+../NecessaryFunctions_NameSpaces.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
+iostream
+-
+new
+-
+limits
+-
+fstream
+-
+string
+-
+sstream
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.h
+vector
+-
+limits
+-
+iostream
+-
+algorithm
+-
+SoccerPlayer.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
+OtherWorker.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.h
+TechnicalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
+Call.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call.h
+Game.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Game.h
+../NecessaryFunctions_NameSpaces.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.cpp
+iostream
+-
+string
+-
+Staff.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
+OtherWorker.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.h
+fstream
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.h
+Staff.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
+string
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.cpp
+SoccerPlayer.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
+iostream
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
+Staff.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
+map
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.cpp
+Staff.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
+fstream
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
+string
+-
+Date.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Stats.h
+string
+-
+Date.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.cpp
+TechnicalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
+Staff.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.cpp
+NecessaryFunctions_NameSpaces.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
+Classes/NationalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.h
+string
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
+string
+-
+iostream
+-
+limits
+-
+Classes/Staff.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/main.cpp
+iostream
+-
+NationalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NationalTeam.h
+menuPresent.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.cpp
+menuPresent.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h
+fstream
+-
+iostream
+-
+limits
+-
+
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/menuPresent.h
+vector
+-
+string
+-
+NationalTeam.h
+C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NationalTeam.h
+

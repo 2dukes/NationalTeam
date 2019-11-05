@@ -12,6 +12,7 @@ public:
     // int getSalary() = 0;
 private:
     int salary;
+    std::string role;
     // Other parameters pending...
 };
 

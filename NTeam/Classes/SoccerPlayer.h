@@ -11,20 +11,24 @@
 
 class SoccerPlayer: public Staff {
 public:
-    SoccerPlayer(unsigned int id, std::string name, std::string role, Date birthDate, float salary, std::string position,
+    SoccerPlayer(unsigned int id, std::string name, Date birthDate, std::string position,
             std::string club, unsigned short weight, unsigned short height,
-                 unsigned long marketPrice, unsigned int daysActive, bool injured);
-    std::string getName() const;
-    Date getBirthDay() const;
-//    int getSalary() const {};
+                 unsigned long marketPrice, unsigned int daysActive);
+
+    /* Gets */
+    int getSalary() const;
     std::string getPosition() const;
-    std::string getClub();
+    std::string getClub() const;
     unsigned short getWeight() const;
     unsigned short getHeight() const;
     unsigned long getMarketPrice() const;
     unsigned int getDaysActive() const;
-    bool isInjured() const;
-    int getEnsuranceValue() const;
+
+    /* Sets */
+
+    /* OtherMethods */
+    void info(std::ostream &os) const;
+
 private:
     std::string position;
     std::string club;
@@ -32,8 +36,6 @@ private:
     unsigned short height;  // height in cm
     unsigned long marketPrice;  // market price in €
     unsigned int daysActive;
-
-    int ensurance; // Varies depending on daysActive, marketPrice and injury status
 };
 
 

@@ -22,7 +22,7 @@ public:
 
     /* Gets */
     std::string getName() const;
-    std::vector<Staff*>& getOtherWorkers(); // Inserted...
+    std::vector<OtherWorker*>& getOtherWorkers(); // Inserted...
 
     /* Sets */
     std::string setName(std::string &name); /* Returns string because of menu's 1st option */
@@ -30,7 +30,7 @@ public:
     /* OtherWorkers Methods */
     bool createOtherWorker();
     bool alterOtherWorker();
-    void addOtherWorker(Staff* oW);
+    void addOtherWorker(OtherWorker* oW);
     bool deleteOtherWorker();
     bool readOtherWorkersFile(std::string filename);
 
@@ -42,12 +42,13 @@ public:
     // According to the Internet, it should be defined on the .h
 
     /* SoccerPlayer Methods */
-    void addOtherSoccerPlayer(SoccerPlayer* sP);
+    void addSoccerPlayer(SoccerPlayer* sP);
     bool readSoccerPlayersFile(std::string filename);
+    bool createSoccerPlayer();
 
 
 private:
-    std::vector<Staff*> otherWorkers; // OtherWorkers
+    std::vector<OtherWorker*> otherWorkers; // OtherWorkers
     std::vector<TechnicalTeam*> technicalTeam;
     std::vector<SoccerPlayer*> players;
     std::vector<InfCall*> InfCalls;

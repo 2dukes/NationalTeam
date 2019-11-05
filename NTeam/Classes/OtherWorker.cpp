@@ -7,21 +7,32 @@
 
 using namespace std;
 
-OtherWorker::OtherWorker(unsigned int id, string role, string name, Date birth, float sal): Staff (id, role, name, birth)
+OtherWorker::OtherWorker(unsigned int id, string role, string name, Date birth, float sal): Staff (id, name, birth)
 {
+    this->role = role;
     salary = sal;
 }
 
 /* Gets */
 
-float OtherWorker::getSalary() const
+int OtherWorker::getSalary() const
 {
     return salary;
 }
 
+string OtherWorker::getRole() const
+{
+    return role;
+}
+
 /* Sets */
 
-void OtherWorker::setSalary(float salary) {
+void OtherWorker::setRole(std::string role)
+{
+    this->role = role;
+}
+
+void OtherWorker::setSalary(int salary) {
     this->salary = salary;
 }
 
@@ -31,6 +42,7 @@ void OtherWorker::setSalary(float salary) {
 void OtherWorker::info(ostream &os) const
 {
     Staff::info(os);
+    os << "Role: " << role << "\n";
     os << "Salary: " << salary << "\n";
     os << "\n" << "::::::::::" << "\n\n";
 }

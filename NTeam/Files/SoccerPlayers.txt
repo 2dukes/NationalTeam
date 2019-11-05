@@ -8,8 +8,6 @@ Height: 187
 Market Price: 100000000
 Salary: 31000000
 Days Active: 5840
-Injured: false
-Ensurance: 58400
 
 ::::::::::
 
@@ -23,8 +21,6 @@ Height: 163
 Market Price: 10000000
 Salary: 1000000
 Days Active: 840
-Injured: true
-Ensurance: 252
 
 ::::::::::
 
@@ -38,5 +34,3 @@ Height: 169
 Market Price: 50000000
 Salary: 7000000
 Days Active: 3000
-Injured: false
-Ensurance: 15000

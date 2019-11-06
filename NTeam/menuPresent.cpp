@@ -36,7 +36,7 @@ void mainMenu(NationalTeam nTeam) {
     cout << string(100, '\n');
     vector<string> mainChoices = { "1. Display", "2. Update National Team Info", "3. Manage", "4. To be Implemented...", "5. To be Implemented...", "6. To be Implemented...", "7. To be Implemented...", "8. To be Implemented...", "9. To be Implemented...","10. To be Implemented...","11. To be Implemented...","0. Exit" };
     vector<string> manageChoices = { "1. Create", "2. Alter", "3. Remove", "0. Main Menu" };
-    vector<string> manageSecundaryChoices = { "1. OtherWorker", "2. Etc..", "0. Previous Menu" };
+    vector<string> manageSecundaryChoices = { "1. OtherWorker", "2. SoccerPlayer", "0. Previous Menu" };
     vector<string> viewAvailablePackChoices = { "1. Other Workers", "2. Technical Team", "3. Soccer Players", "0. Main Menu" };
     vector<string> viewSoldPackChoices = { "1. Acording to a Specific Client", "2. Acording to All Clients", "0. Main Menu" };
     vector<string> viewRecommendedChoices = { "1. For a Specific Client", "2. For All Clients", "0. Main Menu" };
@@ -91,7 +91,7 @@ void mainMenu(NationalTeam nTeam) {
                     {
                         /// Display | Soccer Players
                         string auxiliarExplorer = mainChoices.at(mainMenu - 1) + " | " + viewAvailablePackChoices.at(option - 1);
-
+                        nTeam.displaySoccerPlayers();
                         cout << "Press any key to continue...";
                         cin.get();
                         break;
@@ -134,9 +134,10 @@ void mainMenu(NationalTeam nTeam) {
                                     }
                                     case 2:
                                     {
-                                        // Create | Packs
+                                        // Create | SoccerPlayer
                                         string auxiliarExplorer = mainChoices.at(mainMenu - 1) + " | " + manageChoices.at(option1 - 1) + " | " + manageSecundaryChoices.at(option2 - 1);
 
+                                        nTeam.createSoccerPlayer();
                                         cout << "Press any key to continue...";
                                         cin.get();
                                         break;
@@ -150,6 +151,7 @@ void mainMenu(NationalTeam nTeam) {
                                     {
                                         // Alter | OtherWorker
                                         string auxiliarExplorer = mainChoices.at(mainMenu - 1) + " | " + manageChoices.at(option1 - 1) + " | " + manageSecundaryChoices.at(option2 - 1);
+
                                         nTeam.alterOtherWorker();
                                         cout << "Press any key to continue...";
                                         cin.get();
@@ -157,9 +159,10 @@ void mainMenu(NationalTeam nTeam) {
                                     }
                                     case 2:
                                     {
-                                        // Alter | Pack
+                                        // Alter | SoccerPlayer
                                         string auxiliarExplorer = mainChoices.at(mainMenu - 1) + " | " + manageChoices.at(option1 - 1) + " | " + manageSecundaryChoices.at(option2 - 1);
 
+                                        nTeam.alterSoccerPlayer();
                                         cout << "Press any key to continue...";
                                         cin.get();
                                         break;
@@ -175,6 +178,7 @@ void mainMenu(NationalTeam nTeam) {
                                     {
                                         // Remove | OtherWorker
                                         string auxiliarExplorer = mainChoices.at(mainMenu - 1) + " | " + manageChoices.at(option1 - 1) + " | " + manageSecundaryChoices.at(option2 - 1);
+
                                         nTeam.deleteOtherWorker();
                                         cout << "Press any key to continue...";
                                         cin.get();
@@ -182,9 +186,10 @@ void mainMenu(NationalTeam nTeam) {
                                     }
                                     case 2:
                                     {
-                                        // Remove | Pack
+                                        // Remove | SoccerPlayer
                                         string auxiliarExplorer = mainChoices.at(mainMenu - 1) + " | " + manageChoices.at(option1 - 1) + " | " + manageSecundaryChoices.at(option2 - 1);
 
+                                        nTeam.deleteSoccerPlayer();
                                         cout << "Press any key to continue...";
                                         cin.get();
                                         break;

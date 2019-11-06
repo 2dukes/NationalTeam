@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/NTeam.dir/Classes/Call.cpp.obj"
   "CMakeFiles/NTeam.dir/Classes/Date.cpp.obj"
+  "CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj"
   "CMakeFiles/NTeam.dir/Classes/Game.cpp.obj"
   "CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj"
   "CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj"

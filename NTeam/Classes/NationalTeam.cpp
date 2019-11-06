@@ -126,8 +126,7 @@ bool NationalTeam::deleteOtherWorker() {
 
 bool NationalTeam::alterOtherWorker()
 {
-    string reader;
-    bool flag = true, toggle = true;
+    bool toggle = true;
     int repetition = 0, option;
 
     cout << string(100, '\n');
@@ -209,6 +208,13 @@ void NationalTeam::displayOtherWorkers() const {
         x->info(std::cout);
 }
 
+void NationalTeam::displaySoccerPlayers() const
+{
+    std::cout << std::endl;
+    for(auto &x: players)
+        x->info(std::cout);
+}
+
 /* SoccerPlayer Methods */
 
 bool NationalTeam::readSoccerPlayersFile(string filename) {
@@ -281,13 +287,13 @@ bool NationalTeam::createSoccerPlayer()
     string auxPosition = readOperations::readString("Position:");
     string auxClub = readOperations::readString("Club:");
     unsigned short auxWeight = 0;
-    auxWeight = readOperations::readNumber("Weight: ", auxWeight);
+    auxWeight = readOperations::readNumber("Weight (KG):", auxWeight);
     unsigned short auxHeight = 0;
-    auxHeight = readOperations::readNumber("Height: ", auxHeight);
+    auxHeight = readOperations::readNumber("Height (CM):", auxHeight);
     unsigned long marketPrice = 0;
-    marketPrice = readOperations::readNumber("Market Price: ", marketPrice);
+    marketPrice = readOperations::readNumber("Market Price:", marketPrice);
     unsigned int daysActive = 0;
-    daysActive = readOperations::readNumber("Days Active: ", daysActive);
+    daysActive = readOperations::readNumber("Days Active:", daysActive);
 
     unsigned int id;
     if(players.size() > 0)
@@ -314,4 +320,155 @@ bool NationalTeam::createSoccerPlayer()
     return false;
 
     // NATIONALTEAM DESTRUCTOR SHOULD DESTRUCT ALL VECTORS BECAUSE THEY'RE ALLOCATED DYNAMICALLY
+}
+
+bool NationalTeam::alterSoccerPlayer()
+{
+    bool toggle = true;
+    int repetition = 0, option;
+
+    cout << string(100, '\n');
+//    cout << explorer << endl << endl;
+
+    SoccerPlayer *person = workerLookUp(players);
+    if(person == NULL)
+        return false;
+
+    while (toggle)
+    {
+        if (repetition == 0)
+        {
+            cout << endl << "What do you want to change?\n";
+            repetition++;
+        }
+        else
+            cout << "Do you want to change anything else?\n";
+
+        cout << "1. Name\n2. Birth Date\n3. Position\n4. Club\n5. Weight\n6. Height\n7. Market Price\n8. Days Active\n0. Back\n\n";
+        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << endl;
+
+        switch (option)
+        {
+            case 0:
+            {
+                toggle = false;
+                break;
+            }
+            case 1: /* Name */
+            {
+                string auxName = readOperations::readString("New Name:");
+                person->setName(auxName);
+                break;
+            }
+            case 2: /* Birth Date */
+            {
+                Date birth = readOperations::readDate();
+                person->setDate(birth);
+                break;
+            }
+            case 3: /* Position */
+            {
+                string auxPosition = readOperations::readString("New Position:");
+                person->setPosition(auxPosition);
+                break;
+            }
+            case 4: /* Club */
+            {
+                string auxClub = readOperations::readString("New Club:");
+                person->setClub(auxClub);
+                break;
+            }
+            case 5: /* Weight */
+            {
+                unsigned short auxWeight = 0;
+                auxWeight = readOperations::readNumber("New Weight (KG):", auxWeight);
+                person->setWeight(auxWeight);
+                break;
+            }
+            case 6: /* Height */
+            {
+                unsigned short auxHeight = 0;
+                auxHeight = readOperations::readNumber("New Height (CM):", auxHeight);
+                person->setHeight(auxHeight);
+                break;
+            }
+            case 7: /* MarketPrice */
+            {
+                unsigned long auxMarketPrice = 0;
+                auxMarketPrice = readOperations::readNumber("New Market Price:", auxMarketPrice);
+                person->setMarketPrice(auxMarketPrice);
+                break;
+            }
+            case 8: /* Days Active */
+            {
+                unsigned int auxDaysActive = 0;
+                auxDaysActive = readOperations::readNumber("New Days Active:", auxDaysActive);
+                person->setDaysActive(auxDaysActive);
+                break;
+            }
+        }
+        if (toggle)
+        {
+            cout << endl << "Player successfully altered!" << endl;
+            // OtherWorkerInfoHasChanged = true;
+        }
+    }
+    return true;
+}
+
+bool NationalTeam::deleteSoccerPlayer(){
+    SoccerPlayer *sP = workerLookUp(players);
+    if(sP == NULL)
+        return false;
+    for (auto it = players.begin(); it != players.end(); it++) {
+        if (*(*it) == *sP) {
+            players.erase(it);
+            cout << endl << "Soccer Player successfully removed!" << endl << endl;
+            return true;
+        }
+    }
+    return false;
+}
+
+
+/* Games */
+bool NationalTeam::readGamesFile(std::string filename) {
+    ifstream f;
+    f.open(filename);
+    string aux, city, country, stadium, oppositeTeam;
+    char delim = ' ';
+    unsigned int id, gameStatistics;
+    //vector<string>
+
+    if (f.is_open()) {
+        while(!f.eof()) {
+            getline(f, aux, delim);
+            f >> id;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, country);
+            getline(f, aux, delim);
+            getline(f, stadium);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, oppositeTeam);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux);
+//            generalFunctions::separate_string(aux);
+
+
+
+
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error reading the file " << filename << endl;
+        return false;
+    }
 }

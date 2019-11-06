@@ -4,6 +4,8 @@
 
 #include "SoccerPlayer.h"
 #include <iostream>
+#include <fstream>
+
 using namespace std;
 
 SoccerPlayer::SoccerPlayer(unsigned int id, std::string name, Date birthDate, std::string position, std::string club,
@@ -16,7 +18,7 @@ SoccerPlayer::SoccerPlayer(unsigned int id, std::string name, Date birthDate, st
 /* Gets */
 
 unsigned int SoccerPlayer::getSalary() const {
-    return (unsigned int) 0.0000001 * marketPrice * daysActive;
+    return  0.0000001 * marketPrice * daysActive;
 }
 
 string SoccerPlayer::getPosition() const {
@@ -46,12 +48,16 @@ unsigned int SoccerPlayer::getDaysActive() const {
 /* Other Methods */
 
 void SoccerPlayer::info(std::ostream &os) const {
+    Staff::info(os);
     os << "Position: " << position << "\n";
     os << "Club: " << club << "\n";
     os << "Weight: " << weight << "\n";
     os << "Height: " << height << "\n";
     os << "Market Price: " << marketPrice << "\n";
-    os << "Days Active: " << weight << "\n";
+    os << "Days Active: " << daysActive << "\n";
+    if(os.rdbuf() == std::cout.rdbuf()) // http://www.cplusplus.com/reference/ios/ios/rdbuf/
+        os << "Insurance: " << getSalary() << "\n";
+    os << "\n" << "::::::::::" << "\n\n";
 }
 
 void SoccerPlayer::setPosition(std::string position) {

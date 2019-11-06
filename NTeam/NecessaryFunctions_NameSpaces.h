@@ -8,6 +8,7 @@
 #include <string>
 #include <iostream>
 #include <limits>
+#include <vector>
 #include "Classes/Staff.h"
 
 namespace verifyInputs {
@@ -31,6 +32,12 @@ namespace readOperations {
         } while(verifyInputs::verifyNumber());
         return auxNum;
     }
+}
+
+namespace generalFunctions {
+    std::ostream & coutVectorString(std::ostream &os, const std::vector<std::string> &v);
+    void trim(std::string &str);
+    std::vector<std::string> separate_string(std::string str, char separator);
 }
 
 #endif //NTEAM_NECESSARYFUNCTIONS_NAMESPACES_H

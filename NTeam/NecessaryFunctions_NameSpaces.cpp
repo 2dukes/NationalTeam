@@ -3,7 +3,6 @@
 
 #include <string>
 
-
 namespace verifyInputs
 {
     bool verifyString(std::string auxStr)
@@ -32,6 +31,8 @@ namespace verifyInputs
     {
         if (std::cin.fail() || std::cin.eof())
         {
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
             std::cout << "Invalid Option! Please enter a valid input." << std::endl;
             return true;
         }
@@ -76,4 +77,40 @@ namespace readOperations {
         return answer;
     }
 
+}
+
+namespace generalFunctions {
+    std::ostream & coutVectorString(std::ostream &os, const std::vector<std::string> &v) {
+        for (auto it = v.begin(); it != v.end() - 1; it++) {
+            os << *it << ", ";
+        }
+        os << v.at(v.size() - 1);
+        return os;
+    }
+
+    void trim(std::string &str) {
+        size_t pos = str.find_first_not_of(' ');
+        str.erase(0, pos);
+        pos = str.find_last_not_of(' ');
+        if (std::string::npos != pos)
+            str.erase(pos + 1);
+    }
+
+    std::vector<std::string> separate_string(std::string str, char separator) {
+        std::vector<std::string> str_fields;
+        std::string temp = "";
+        str += separator;
+
+        for(size_t i = 0; i < str.size(); i++){
+            if (str[i] == separator){
+                trim(temp);
+                str_fields.push_back(temp);
+                temp = "";
+            } else {
+                temp += str[i];
+            }
+        }
+
+        return str_fields;
+    }
 }

@@ -5,8 +5,9 @@
 int main() {
     std::cout << "Hello, World!" << std::endl;
     NationalTeam N;
-    N.readSoccerPlayersFile("../Files/SoccerPlayers.txt");
     N.readOtherWorkersFile("../Files/OtherWorkers.txt");
+    N.readSoccerPlayersFile("../Files/SoccerPlayers.txt");
+    mainMenu(N);
 
     return 0;
 }

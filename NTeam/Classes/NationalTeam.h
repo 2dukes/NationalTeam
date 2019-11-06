@@ -15,6 +15,7 @@
 #include "Call.h"
 #include "Game.h"
 #include "../NecessaryFunctions_NameSpaces.h"
+#include "Exceptions.h"
 
 class NationalTeam {
 public:
@@ -36,16 +37,23 @@ public:
 
     /* Other Methods */
     void displayOtherWorkers() const;
+    void displaySoccerPlayers() const;
 
     template<class Type>
     Type workerLookUp(std::vector<Type> &workers); // Type varies as: OtherWorker*, TechnicalTeam*, SoccerPlayer*...
+    template<class Type>
+    Type& getPersonByID(std::vector<Type> &persons, int id);
     // According to the Internet, it should be defined on the .h
 
     /* SoccerPlayer Methods */
-    void addSoccerPlayer(SoccerPlayer* sP);
-    bool readSoccerPlayersFile(std::string filename);
     bool createSoccerPlayer();
+    bool alterSoccerPlayer();
+    void addSoccerPlayer(SoccerPlayer* sP);
+    bool deleteSoccerPlayer();
+    bool readSoccerPlayersFile(std::string filename);
 
+    /* Game Methods */
+    bool readGamesFile(std::string filename);
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers
@@ -59,6 +67,21 @@ private:
 };
 
 template<class Type>
+Type& NationalTeam::getPersonByID(std::vector<Type> &persons, int id)
+{
+    if(id < 1)
+        throw NoPersonFound("ID Not Valid..."); // IDs smaller than 1 are not allowed
+    else
+    {
+        for (auto &x: persons) {
+            if (x->getId() == id)
+                return x;
+        }
+    }
+    throw NoPersonFound("No Corresponding Person Found...");
+}
+
+template<class Type>
 Type NationalTeam::workerLookUp(std::vector<Type> &workers)
 {
 
@@ -70,7 +93,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
     {
         auxPerson.clear();
         ct = false;
-        std::cout << "Look for a \'Worker\' using: " << std::endl; std::cout << "1. Name\n2. Role\n3. Birth Date\n4. Salary\n5. ID\n0. Back\n\n";
+        std::cout << "Look for a \'Worker\' using: " << std::endl; std::cout << "1. Name\n2. Birth Date\n3. Salary\n4. ID\n0. Back\n\n";
         std::cin >> option; std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); std::cout << std::endl;
         switch(option)
         {
@@ -92,6 +115,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     {
                         auxPerson.push_back(x);
                         ct = true;
+                        std::cout << std::endl;
                         x->info(std::cout);
                         std::cout << std::endl;
                     }
@@ -103,55 +127,17 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        for(auto &x: auxPerson)
-                        {
-                            if(x->getId() == option)
-                                return x;
-                        }
+                        return getPersonByID(auxPerson, option);
                     }
-                    catch (...) {
-
+                    catch (NoPersonFound &e) {
+                        std::cout << e.getError() << std::endl;
                     }
                 }
-                std::cout << std::endl << "No Corresponding Worker Found..." << std::endl << std::endl;
+                else
+                    std::cout << std::endl << "No Corresponding Person Found..." << std::endl << std::endl;
                 break;
             }
             case 2:
-            {
-                // Role
-                std::string role = readOperations::readString("Role:");
-
-                for(auto &x: workers)
-                {
-                    if(x->getRole() == role)
-                    {
-                        auxPerson.push_back(x);
-                        ct = true;
-                        x->info(std::cout);
-                        std::cout << std::endl;
-                    }
-                }
-
-                if(ct)
-                {
-                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl;
-                    try {
-                        std::cin >> option;
-                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        for(auto &x: auxPerson)
-                        {
-                            if(x->getId() == option)
-                                return x;
-                        }
-                    }
-                    catch (...) {
-
-                    }
-                }
-                std::cout << std::endl << "No Corresponding Worker Found..." << std::endl << std::endl;
-                break;
-            }
-            case 3:
             {
                 // Birth Date
                 Date dBirth = readOperations::readDate();
@@ -162,6 +148,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     {
                         auxPerson.push_back(x);
                         ct = true;
+                        std::cout << std::endl;
                         x->info(std::cout);
                         std::cout << std::endl;
                     }
@@ -173,21 +160,18 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        for(auto &x: auxPerson)
-                        {
-                            if(x->getId() == option)
-                                return x;
-                        }
+                        return getPersonByID(auxPerson, option);
                     }
-                    catch (...) {
-
+                    catch (NoPersonFound &e) {
+                        std::cout << e.getError() << std::endl;
                     }
                 }
-                std::cout << std::endl << "No Corresponding Worker Found..." << std::endl << std::endl;
+                else
+                    std::cout << std::endl << "No Corresponding Person Found..." << std::endl << std::endl;
                 break;
 
             }
-            case 4:
+            case 3:
             {
                 // Salary
                 float salary;
@@ -199,6 +183,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     {
                         auxPerson.push_back(x);
                         ct = true;
+                        std::cout << std::endl;
                         x->info(std::cout);
                         std::cout << std::endl;
                     }
@@ -210,32 +195,29 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        for(auto &x: auxPerson)
-                        {
-                            if(x->getId() == option)
-                                return x;
-                        }
+                        return getPersonByID(auxPerson, option);
                     }
-                    catch (...) {
-
+                    catch (NoPersonFound &e) {
+                        std::cout << e.getError() << std::endl;
                     }
                 }
-                std::cout << std::endl << "No Corresponding Worker Found..." << std::endl << std::endl;
+                else
+                    std::cout << std::endl << "No Corresponding Person Found..." << std::endl << std::endl;
                 break;
             }
-            case 5:
+            case 4:
             {
                 // ID
                 int id;
                 id = readOperations::readNumber("ID: ", id);
 
-                for(auto &x: workers)
-                {
-                    if(x->getId() == id)
-                        return x;
+                try {
+                    return getPersonByID(auxPerson, id);
+                }
+                catch (NoPersonFound &e) {
+                    std::cout << e.getError() << std::endl;
                 }
 
-                std::cout << std::endl << "No Corresponding Worker Found..." << std::endl << std::endl;
                 break;
             }
         }

@@ -14,11 +14,16 @@ CMakeFiles/NTeam.dir/Classes/Call.cpp.obj: ../Classes/Stats.h
 CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Date.cpp
 CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Date.h
 
+CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj: ../Classes/Exceptions.cpp
+CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj: ../Classes/Exceptions.h
+
 CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Date.h
 CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Game.cpp
 CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Game.h
 CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/GameStats.h
+CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Staff.h
 CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../Classes/Stats.h
+CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 
 CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj: ../Classes/GameStats.cpp
 CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj: ../Classes/GameStats.h
@@ -29,6 +34,7 @@ CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj: ../Classes/InfCall.h
 
 CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj: ../Classes/Call.h
 CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj: ../Classes/Exceptions.h
 CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj: ../Classes/Game.h
 CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj: ../Classes/GameStats.h
 CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj: ../Classes/InfCall.h
@@ -66,6 +72,7 @@ CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj: ../Classes/TechnicalTeam.h
 
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/Call.h
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/Exceptions.h
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/Game.h
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/GameStats.h
 CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../Classes/InfCall.h
@@ -80,6 +87,7 @@ CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj: ../NecessaryFunction
 
 CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/Call.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/Exceptions.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/Game.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/GameStats.h
 CMakeFiles/NTeam.dir/main.cpp.obj: ../Classes/InfCall.h
@@ -95,6 +103,7 @@ CMakeFiles/NTeam.dir/main.cpp.obj: ../menuPresent.h
 
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/Call.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/Exceptions.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/Game.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/GameStats.h
 CMakeFiles/NTeam.dir/menuPresent.cpp.obj: ../Classes/InfCall.h

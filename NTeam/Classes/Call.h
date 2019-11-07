@@ -13,12 +13,18 @@
 
 class Call {
 public:
+    Call(unsigned int id, std::string competition, std::vector<Game*> games, std::vector<InfCall*> infs,
+            std::vector<SoccerPlayer*> players, Date begin, Date end, int housing_food);
+
+    /* Gets */
+
+    /* Sets */
 
 private:
     unsigned int id;
     std::string competition; // Friendly, Euro, WorldCup
     std::vector<Game*> games;
-    std::vector<InfCall*> Infs;
+    std::vector<InfCall*> infs;
     std::vector<SoccerPlayer*> players; // Jogadores Convocados
     Date begin;
     Date end;

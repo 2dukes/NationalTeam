@@ -2,6 +2,7 @@ ID: 1
 Competition: Friendly
 Begin Date: 12/03/2010
 End Date: 25/03/2010
+House-Food: 2000
 Games: 1000; 1001; 1002
 PlayersID: 15, 16, 17, 18, 19, 20 ...
 InfCalls: 3; 5
@@ -12,6 +13,7 @@ ID: 2
 Competition: Euro
 Begin Date: 12/05/2010
 End Date: 25/05/2010
+House-Food: 1500
 Games: 1003; 1004; 1005
 PlayersID: 15, 16, 17, 18, 19, 20, 24
 InfCalls: 1
@@ -20,6 +22,7 @@ InfCalls: 1
 
 ID: 3
 Competition: Euro
+House-Food: 3500
 Begin Date: 12/07/2010
 End Date: 25/07/2010
 Games: 1006; 1007; 1008

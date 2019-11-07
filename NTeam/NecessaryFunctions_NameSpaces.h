@@ -23,8 +23,9 @@ namespace readOperations {
     std::string confirmAnswer();
 
     template <class T> // https://dev-notes.eu/2018/08/c++-namespace-template-functions/
-    T readNumber(std::string parameter, T &auxNum)
+    T readNumber(std::string parameter)
     {
+        T auxNum;
         do {
             std::cout << parameter;
             std::cin >> auxNum;

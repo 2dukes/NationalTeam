@@ -7,7 +7,9 @@ int main() {
     NationalTeam N;
     N.readOtherWorkersFile("../Files/OtherWorkers.txt");
     N.readSoccerPlayersFile("../Files/SoccerPlayers.txt");
-    mainMenu(N);
+    N.readGameStatisticsFile("../Files/GameStatistics.txt");
+    N.createCall();
+//    mainMenu(N);
 
     return 0;
 }

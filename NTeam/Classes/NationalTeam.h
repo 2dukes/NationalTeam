@@ -29,6 +29,7 @@ public:
     std::string setName(std::string &name); /* Returns string because of menu's 1st option */
 
     /* OtherWorkers Methods */
+    unsigned int OtherWorkersgetLastID();
     bool createOtherWorker();
     bool alterOtherWorker();
     void addOtherWorker(OtherWorker* oW);
@@ -39,10 +40,12 @@ public:
     void displayOtherWorkers() const;
     void displaySoccerPlayers() const;
 
-    template<class Type>
+    template <class Type>
     Type workerLookUp(std::vector<Type> &workers); // Type varies as: OtherWorker*, TechnicalTeam*, SoccerPlayer*...
-    template<class Type>
-    Type& getPersonByID(std::vector<Type> &persons, int id);
+    template <class Type>
+    Type& getByID(std::vector<Type> &elements, int id);
+    template <class Type>
+    unsigned int getLastID(std::vector<Type> & elements);
     // According to the Internet, it should be defined on the .h
 
     /* SoccerPlayer Methods */
@@ -54,6 +57,12 @@ public:
 
     /* Game Methods */
     bool readGamesFile(std::string filename);
+
+    /* Call Methods */
+    bool createCall();
+
+    /* GameStats Methods */
+    bool readGameStatisticsFile(std::string filename);
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers
@@ -67,13 +76,22 @@ private:
 };
 
 template<class Type>
-Type& NationalTeam::getPersonByID(std::vector<Type> &persons, int id)
+unsigned int NationalTeam::getLastID(std::vector<Type> &elements)
+{
+    if(elements.size() > 0)
+        return elements.at(elements.size() - 1)->getId() + 1; // We suppose all Ids are incremented by 1
+    else
+        return 1;
+}
+
+template<class Type>
+Type& NationalTeam::getByID(std::vector<Type> &elements, int id)
 {
     if(id < 1)
         throw NoPersonFound("ID Not Valid..."); // IDs smaller than 1 are not allowed
     else
     {
-        for (auto &x: persons) {
+        for (auto &x: elements) {
             if (x->getId() == id)
                 return x;
         }
@@ -93,7 +111,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
     {
         auxPerson.clear();
         ct = false;
-        std::cout << "Look for a \'Worker\' using: " << std::endl; std::cout << "1. Name\n2. Birth Date\n3. Salary\n4. ID\n0. Back\n\n";
+        std::cout << "Look for a \'Person\' using: " << std::endl; std::cout << "1. Name\n2. Birth Date\n3. Salary\n4. ID\n0. Back\n\n";
         std::cin >> option; std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); std::cout << std::endl;
         switch(option)
         {
@@ -127,7 +145,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        return getPersonByID(auxPerson, option);
+                        return getByID(auxPerson, option);
                     }
                     catch (NoPersonFound &e) {
                         std::cout << e.getError() << std::endl;
@@ -160,7 +178,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        return getPersonByID(auxPerson, option);
+                        return getByID(auxPerson, option);
                     }
                     catch (NoPersonFound &e) {
                         std::cout << e.getError() << std::endl;
@@ -174,8 +192,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
             case 3:
             {
                 // Salary
-                float salary;
-                salary = readOperations::readNumber("Salary:", salary);
+                float salary = readOperations::readNumber<float>("Salary:");
 
                 for(auto &x: workers)
                 {
@@ -195,7 +212,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-                        return getPersonByID(auxPerson, option);
+                        return getByID(auxPerson, option);
                     }
                     catch (NoPersonFound &e) {
                         std::cout << e.getError() << std::endl;
@@ -208,11 +225,10 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
             case 4:
             {
                 // ID
-                int id;
-                id = readOperations::readNumber("ID: ", id);
+                int id = readOperations::readNumber<int>("ID: ");
 
                 try {
-                    return getPersonByID(auxPerson, id);
+                    return getByID(workers, id);
                 }
                 catch (NoPersonFound &e) {
                     std::cout << e.getError() << std::endl;

@@ -15,5 +15,12 @@ private:
     std::string error;
 };
 
+class NoStatisticFound {
+public:
+    NoStatisticFound(std::string e): error(e) {}
+    std::string getError() {return error;}
+private:
+    std::string error;
+};
 
 #endif //NTEAM_EXCEPTIONS_H

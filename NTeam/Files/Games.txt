@@ -6,7 +6,7 @@ Stadium: Alvalade
 Opposite Team: Luxemburgo
 Opposite Team Participants: Anthony Moris, Dirk Carlson, Maxime Channot, Gerson, Jans, Thill, Bohnert, Barreiro, Rodrigues, Turpel
 Refereeing Team: Tim Tam Tum, Shium Jhim, Hirv Jesv, Kjhr Inrm
-Game Statistics: 500
+Game Statistics: 1000
 Individual Statistics: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11
 
 ::::::::::
@@ -19,5 +19,5 @@ Stadium: Luz
 Opposite Team: Espanha
 Opposite Team Participants: Anthony Moris, Dirk Carlson, Maxime Channot, Gerson, Jans, Thill, Bohnert, Barreiro, Rodrigues, Turpel
 Refereeing Team: Tim Tam Tum, Shium Jhim, Hirv Jesv, Kjhr Inrm
-Game Statistics: 501
+Game Statistics: 1001
 Individual Statistics: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11

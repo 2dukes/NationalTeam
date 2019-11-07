@@ -40,14 +40,9 @@ bool NationalTeam::createOtherWorker()
 
     string auxRole = readOperations::readString("Role:");
 
-    unsigned int auxSalary = 0;
-    auxSalary = readOperations::readNumber("Salary:", auxSalary);
+    unsigned int auxSalary = readOperations::readNumber<unsigned int>("Salary:");
 
-    unsigned int id;
-    if(otherWorkers.size() > 0)
-        id = otherWorkers.at(otherWorkers.size() - 1)->getId() + 1; // We suppose all Ids are incremented by 1
-    else
-        id = 1;
+    unsigned int id = getLastID(otherWorkers);
 
     cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
     OtherWorker *oW = new OtherWorker(id, auxRole, auxSalary, auxName, birth);
@@ -159,26 +154,29 @@ bool NationalTeam::alterOtherWorker()
             }
             case 1:
             {
+                cout << "Previous Name: " << person->getName() << endl;
                 string auxName = readOperations::readString("New Name:");
                 person->setName(auxName);
                 break;
             }
             case 2:
             {
+                cout << "Previous Role: " << person->getRole() << endl;
                 string auxRole = readOperations::readString("New Role:");
                 person->setRole(auxRole);
                 break;
             }
             case 3:
             {
+                cout << "Previous Birth Date: " << person->getDate() << endl;
                 Date birth = readOperations::readDate();
                 person->setDate(birth);
                 break;
             }
             case 4:
             {
-                float auxSalary = 0.0;
-                auxSalary = readOperations::readNumber("New Salary:", auxSalary);
+                cout << "Previous Salary: " << person->getSalary() << endl;
+                float auxSalary = readOperations::readNumber<float>("New Salary:");
                 person->setSalary(auxSalary);
                 break;
             }
@@ -286,20 +284,12 @@ bool NationalTeam::createSoccerPlayer()
     Date birth = readOperations::readDate();
     string auxPosition = readOperations::readString("Position:");
     string auxClub = readOperations::readString("Club:");
-    unsigned short auxWeight = 0;
-    auxWeight = readOperations::readNumber("Weight (KG):", auxWeight);
-    unsigned short auxHeight = 0;
-    auxHeight = readOperations::readNumber("Height (CM):", auxHeight);
-    unsigned long marketPrice = 0;
-    marketPrice = readOperations::readNumber("Market Price:", marketPrice);
-    unsigned int daysActive = 0;
-    daysActive = readOperations::readNumber("Days Active:", daysActive);
+    unsigned short auxWeight =  readOperations::readNumber<unsigned short>("Weight (KG):");
+    unsigned short auxHeight = readOperations::readNumber<unsigned short>("Height (CM):");
+    unsigned long marketPrice = readOperations::readNumber<unsigned long>("Market Price:");
+    unsigned int daysActive = readOperations::readNumber<unsigned int>("Days Active:");
 
-    unsigned int id;
-    if(players.size() > 0)
-        id = players.at(players.size() - 1)->getId() + 1; // We suppose all Ids are incremented by 1
-    else
-        id = 1;
+    unsigned int id = getLastID(players);
 
     cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
     SoccerPlayer *sP = new SoccerPlayer(id, auxName, birth, auxPosition, auxClub, auxWeight, auxHeight, marketPrice, daysActive);
@@ -357,53 +347,57 @@ bool NationalTeam::alterSoccerPlayer()
             }
             case 1: /* Name */
             {
+                cout << "Previous Name: " << person->getName() << endl;
                 string auxName = readOperations::readString("New Name:");
                 person->setName(auxName);
                 break;
             }
             case 2: /* Birth Date */
             {
+                cout << "Previous Birth Date: " << person->getDate() << endl;
                 Date birth = readOperations::readDate();
                 person->setDate(birth);
                 break;
             }
             case 3: /* Position */
             {
+                cout << "Previous Position: " << person->getPosition() << endl;
                 string auxPosition = readOperations::readString("New Position:");
                 person->setPosition(auxPosition);
                 break;
             }
             case 4: /* Club */
             {
+                cout << "Previous Club: " << person->getClub() << endl;
                 string auxClub = readOperations::readString("New Club:");
                 person->setClub(auxClub);
                 break;
             }
             case 5: /* Weight */
             {
-                unsigned short auxWeight = 0;
-                auxWeight = readOperations::readNumber("New Weight (KG):", auxWeight);
+                cout << "Previous Weight: " << person->getWeight() << endl;
+                unsigned short auxWeight = readOperations::readNumber<unsigned short>("New Weight (KG):");
                 person->setWeight(auxWeight);
                 break;
             }
             case 6: /* Height */
             {
-                unsigned short auxHeight = 0;
-                auxHeight = readOperations::readNumber("New Height (CM):", auxHeight);
+                cout << "Previous Height: " << person->getHeight() << endl;
+                unsigned short auxHeight = readOperations::readNumber<unsigned short>("New Height (CM):");
                 person->setHeight(auxHeight);
                 break;
             }
             case 7: /* MarketPrice */
             {
-                unsigned long auxMarketPrice = 0;
-                auxMarketPrice = readOperations::readNumber("New Market Price:", auxMarketPrice);
+                cout << "Previous Market Price: " << person->getMarketPrice() << endl;
+                unsigned long auxMarketPrice = readOperations::readNumber<unsigned long>("New Market Price:");
                 person->setMarketPrice(auxMarketPrice);
                 break;
             }
             case 8: /* Days Active */
             {
-                unsigned int auxDaysActive = 0;
-                auxDaysActive = readOperations::readNumber("New Days Active:", auxDaysActive);
+                cout << "Previous Days Active: " << person->getDaysActive() << endl;
+                unsigned int auxDaysActive = readOperations::readNumber<unsigned int>("New Days Active:");
                 person->setDaysActive(auxDaysActive);
                 break;
             }
@@ -431,15 +425,15 @@ bool NationalTeam::deleteSoccerPlayer(){
     return false;
 }
 
-
 /* Games */
 bool NationalTeam::readGamesFile(std::string filename) {
     ifstream f;
     f.open(filename);
     string aux, city, country, stadium, oppositeTeam;
     char delim = ' ';
-    unsigned int id, gameStatistics;
-    //vector<string>
+    unsigned int id, gameStatisticsId;
+    vector<string> oppositeTeamParticipants;
+    vector<string> refereeingTeam;
 
     if (f.is_open()) {
         while(!f.eof()) {
@@ -460,9 +454,199 @@ bool NationalTeam::readGamesFile(std::string filename) {
             getline(f, aux);
 //            generalFunctions::separate_string(aux);
 
+            oppositeTeamParticipants = generalFunctions::separate_string(aux, ',');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux);
+            refereeingTeam = generalFunctions::separate_string(aux, ',');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> gameStatisticsId;
+            cout << "THIS: " << gameStatisticsId << endl;
+            f.clear();
+            f.ignore(1000, '\n');
+            getByID(gameStats, gameStatisticsId);
 
+            // I HAVEN'T DEALT THE INDIVIDUAL STATISTICS YET!!!
 
+            }
+            f.close();
+            return true;
+    }
+    else {
+        cerr << "Error reading the file " << filename << endl;
+        return false;
+    }
 
+}
+
+/* Calls */
+
+bool NationalTeam::createCall()
+{
+    unsigned int counter = 0;
+    vector<SoccerPlayer*> auxSoccerPlayers;
+    string playerList = "";
+    unsigned int numPlayers = readOperations::readNumber<unsigned int>("Number of Players to Insert (12 - 24):");
+
+    cout << endl << endl << "1 - Player Selection:" << endl;
+    while(counter != numPlayers)
+    {
+        SoccerPlayer* player = workerLookUp(players);
+        auxSoccerPlayers.push_back(player);
+        playerList += player->getName();
+        counter++;
+        cout << endl << "Players Already Inserted [ " << counter << " ]: " << playerList << endl << endl;
+        playerList += ", ";
+    }
+
+    // Still to finish...
+    return true;
+
+}
+
+bool NationalTeam::readGameStatisticsFile(std::string filename) {
+    ifstream f;
+    f.open(filename);
+    string aux;
+    char delim = ' ';
+    unsigned int gameId;
+    unsigned short goals, oppositionGoals, shots, oppositionShots, shotsTarget, oppositionShotsTarget, possession,
+            passes, oppositionPasses, passAccuracy, oppositionPassAccuracy, fouls, oppositionFouls, yellowCards, oppositionYellowCards,
+            redCards, oppositionRedCards, offsides, oppositionOffsides, corners, oppositionCorners, injuries, oppositionInjuries;
+
+    if (f.is_open()) {
+        while (!f.eof()) {
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> gameId;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> goals;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionGoals;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> shots;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionShots;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> shotsTarget;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionShotsTarget;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> possession;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> passes;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionPasses;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> passAccuracy;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionPassAccuracy;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> fouls;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionFouls;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> yellowCards;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionYellowCards;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> redCards;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionRedCards;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> offsides;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionOffsides;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> corners;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionFouls;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> injuries;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> oppositionInjuries;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, '\n');  // blank line
         }
         f.close();
         return true;

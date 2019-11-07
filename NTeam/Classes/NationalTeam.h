@@ -14,6 +14,7 @@
 #include "TechnicalTeam.h"
 #include "Call.h"
 #include "Game.h"
+#include "IndividualStatistics.h"
 #include "../NecessaryFunctions_NameSpaces.h"
 #include "Exceptions.h"
 
@@ -56,13 +57,20 @@ public:
     bool readSoccerPlayersFile(std::string filename);
 
     /* Game Methods */
+    void addGame(Game* game);
     bool readGamesFile(std::string filename);
 
     /* Call Methods */
     bool createCall();
 
     /* GameStats Methods */
+    void addGameStatistics(GameStats* gStats);
     bool readGameStatisticsFile(std::string filename);
+
+    /* IndividualStatistics Methods */
+    void addIndividualStatistic(IndividualStatistics* iStat);
+    bool readIndividualStatisticsFile(std::string filename);
+
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers
@@ -72,6 +80,7 @@ private:
     std::vector<Call*> calls;
     std::vector<Game*> games;
     std::vector<GameStats*> gameStats;
+    std::vector<IndividualStatistics*> individualStats;
     std::string name;
 };
 

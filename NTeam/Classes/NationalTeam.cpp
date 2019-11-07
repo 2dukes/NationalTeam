@@ -426,14 +426,25 @@ bool NationalTeam::deleteSoccerPlayer(){
 }
 
 /* Games */
+
+void NationalTeam::addGame(Game* game) {
+    games.push_back(game);
+}
+
+// NOT TESTED YET!!!
 bool NationalTeam::readGamesFile(std::string filename) {
     ifstream f;
     f.open(filename);
     string aux, city, country, stadium, oppositeTeam;
     char delim = ' ';
     unsigned int id, gameStatisticsId;
+    Date date;
     vector<string> oppositeTeamParticipants;
     vector<string> refereeingTeam;
+    GameStats* gameStatsPtr;
+    vector<string> individualStatsVectorString;
+    vector<int> individualStatsVectorInt;
+    vector<IndividualStatistics *> individualStatistics;
 
     if (f.is_open()) {
         while(!f.eof()) {
@@ -441,6 +452,8 @@ bool NationalTeam::readGamesFile(std::string filename) {
             f >> id;
             f.clear();
             f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> date;
             getline(f, aux, delim);
             getline(f, country);
             getline(f, aux, delim);
@@ -452,8 +465,6 @@ bool NationalTeam::readGamesFile(std::string filename) {
             getline(f, aux, delim);
             getline(f, aux, delim);
             getline(f, aux);
-//            generalFunctions::separate_string(aux);
-
             oppositeTeamParticipants = generalFunctions::separate_string(aux, ',');
             getline(f, aux, delim);
             getline(f, aux, delim);
@@ -462,12 +473,21 @@ bool NationalTeam::readGamesFile(std::string filename) {
             getline(f, aux, delim);
             getline(f, aux, delim);
             f >> gameStatisticsId;
-            cout << "THIS: " << gameStatisticsId << endl;
             f.clear();
             f.ignore(1000, '\n');
-            getByID(gameStats, gameStatisticsId);
+            gameStatsPtr = getByID(gameStats, gameStatisticsId);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux);
+            individualStatsVectorString = generalFunctions::separate_string(aux, ',');
+            individualStatsVectorInt = generalFunctions::convert_vector_str_to_int(individualStatsVectorString);
+            for (auto &x: individualStatsVectorInt) {
+                individualStatistics.push_back(getByID(individualStatistics, x));
+            }
 
-            // I HAVEN'T DEALT THE INDIVIDUAL STATISTICS YET!!!
+            Game* game = new Game(id, date, city, country, stadium, oppositeTeam, oppositeTeamParticipants,
+                              refereeingTeam, gameStatsPtr, individualStatistics);
+            addGame(game);
 
             }
             f.close();
@@ -503,6 +523,13 @@ bool NationalTeam::createCall()
     // Still to finish...
     return true;
 
+}
+
+
+/* Game Statistics */
+
+void NationalTeam::addGameStatistics(GameStats* gStats) {
+    gameStats.push_back(gStats);
 }
 
 bool NationalTeam::readGameStatisticsFile(std::string filename) {
@@ -647,6 +674,12 @@ bool NationalTeam::readGameStatisticsFile(std::string filename) {
             f.clear();
             f.ignore(1000, '\n');
             getline(f, aux, '\n');  // blank line
+
+            GameStats* gStats = new GameStats(gameId, goals, oppositionGoals, shots, oppositionShots, shotsTarget, oppositionShotsTarget,
+                    possession, passes, oppositionPasses, passAccuracy, oppositionPassAccuracy,fouls, oppositionFouls, offsides, oppositionOffsides,
+                    corners, oppositionCorners, yellowCards, oppositionYellowCards, redCards, oppositionRedCards, injuries, oppositionInjuries);
+            addGameStatistics(gStats);
+
         }
         f.close();
         return true;
@@ -656,3 +689,104 @@ bool NationalTeam::readGameStatisticsFile(std::string filename) {
         return false;
     }
 }
+
+
+/* Individual Statistics */
+
+void NationalTeam::addIndividualStatistic(IndividualStatistics* iStat) {
+    individualStats.push_back(iStat);
+}
+
+bool NationalTeam::readIndividualStatisticsFile(std::string filename) {
+    ifstream f;
+    f.open(filename);
+    string aux, injuredString;
+    char delim = ' ';
+    unsigned int id, playerID, gameID;
+    unsigned short goals, assists, shots, shotsTarget, passes, travelledDistance, playedMinutes, yellowCards, redCards, injured, fouls;
+
+    if (f.is_open()) {
+        while (!f.eof()) {
+            getline(f, aux, delim);
+            f >> id;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> playerID;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> gameID;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> goals;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> assists;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> shots;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> shotsTarget;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> passes;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> playedMinutes;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> yellowCards;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> redCards;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, injuredString);
+            if (injuredString == "false")
+                injured = false;
+            else
+                injured = true;
+            getline(f, aux, delim);
+            f >> fouls;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, '\n');  // blank line
+
+            IndividualStatistics* iStats = new IndividualStatistics(id, playerID, gameID, goals, assists,
+                    passes, shots, shotsTarget, travelledDistance, playedMinutes, yellowCards, redCards,
+                    fouls, injured);
+            addIndividualStatistic(iStats);
+
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error reading the file " << filename << endl;
+        return false;
+    }
+}
+
+
+
+
+
+

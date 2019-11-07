@@ -5,7 +5,7 @@
 #ifndef NTEAM_GAME_H
 #define NTEAM_GAME_H
 
-#include "Stats.h"
+#include "IndividualStatistics.h"
 #include "Date.h"
 #include "GameStats.h"
 #include <vector>
@@ -14,7 +14,7 @@ class Game {
 public:
     Game(unsigned int id, Date date, std::string city, std::string country, std::string stadium,
          std::string oppositeTeam, std::vector<std::string> oppositeTeamParticipants, std::vector<std::string> refereeTeam,
-         GameStats* gameStats, std::vector<Stats*> individualStatistics);
+         GameStats* gameStats, std::vector<IndividualStatistics*> individualStatistics);
 
     /* Gets */
     unsigned int getId() const;
@@ -26,7 +26,7 @@ public:
     std::vector<std::string> getOppositeTeamParticipants() const;
     std::vector<std::string> getRefereeTeam() const;
     GameStats* getGameStats() const;
-    std::vector<Stats*> getIndividualStatistics() const;
+    std::vector<IndividualStatistics*> getIndividualStatistics() const;
 
     /* Sets */
     void setId(unsigned int id);
@@ -38,7 +38,7 @@ public:
     void setOppositeTeamParticipants(const std::vector<std::string> &oppositeTeamParticipants);
     void setRefereeTeam(const std::vector<std::string> &refereeTeam);
     void setGameStats(GameStats* gameStats);
-    void setIndividualStatistics(const std::vector<Stats*> setIndividualStatistics);
+    void setIndividualStatistics(const std::vector<IndividualStatistics*> setIndividualStatistics);
 
 
     /* OtherMethods */
@@ -56,7 +56,7 @@ private:
     // Jogadores Convocados -> Jogadores Participantes são os convocados com KMS percorridos
     std::vector<std::string> refereeTeam;
     GameStats* gameStats;
-    std::vector<Stats*> individualStatistics;
+    std::vector<IndividualStatistics*> individualStatistics;
 };
 
 

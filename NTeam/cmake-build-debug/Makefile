@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam"
+CMAKE_SOURCE_DIR = "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTea
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Tiago\Desktop\AEDA\Projeto 1\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -257,6 +257,33 @@ Classes/GameStats.cpp.s:
 	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/GameStats.cpp.s
 .PHONY : Classes/GameStats.cpp.s
 
+Classes/IndividualStatistics.obj: Classes/IndividualStatistics.cpp.obj
+
+.PHONY : Classes/IndividualStatistics.obj
+
+# target to build an object file
+Classes/IndividualStatistics.cpp.obj:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj
+.PHONY : Classes/IndividualStatistics.cpp.obj
+
+Classes/IndividualStatistics.i: Classes/IndividualStatistics.cpp.i
+
+.PHONY : Classes/IndividualStatistics.i
+
+# target to preprocess a source file
+Classes/IndividualStatistics.cpp.i:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.i
+.PHONY : Classes/IndividualStatistics.cpp.i
+
+Classes/IndividualStatistics.s: Classes/IndividualStatistics.cpp.s
+
+.PHONY : Classes/IndividualStatistics.s
+
+# target to generate assembly for a file
+Classes/IndividualStatistics.cpp.s:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.s
+.PHONY : Classes/IndividualStatistics.cpp.s
+
 Classes/InfCall.obj: Classes/InfCall.cpp.obj
 
 .PHONY : Classes/InfCall.obj
@@ -392,33 +419,6 @@ Classes/Staff.cpp.s:
 	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Staff.cpp.s
 .PHONY : Classes/Staff.cpp.s
 
-Classes/Stats.obj: Classes/Stats.cpp.obj
-
-.PHONY : Classes/Stats.obj
-
-# target to build an object file
-Classes/Stats.cpp.obj:
-	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Stats.cpp.obj
-.PHONY : Classes/Stats.cpp.obj
-
-Classes/Stats.i: Classes/Stats.cpp.i
-
-.PHONY : Classes/Stats.i
-
-# target to preprocess a source file
-Classes/Stats.cpp.i:
-	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Stats.cpp.i
-.PHONY : Classes/Stats.cpp.i
-
-Classes/Stats.s: Classes/Stats.cpp.s
-
-.PHONY : Classes/Stats.s
-
-# target to generate assembly for a file
-Classes/Stats.cpp.s:
-	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Stats.cpp.s
-.PHONY : Classes/Stats.cpp.s
-
 Classes/TechnicalTeam.obj: Classes/TechnicalTeam.cpp.obj
 
 .PHONY : Classes/TechnicalTeam.obj
@@ -551,6 +551,9 @@ help:
 	@echo ... Classes/GameStats.obj
 	@echo ... Classes/GameStats.i
 	@echo ... Classes/GameStats.s
+	@echo ... Classes/IndividualStatistics.obj
+	@echo ... Classes/IndividualStatistics.i
+	@echo ... Classes/IndividualStatistics.s
 	@echo ... Classes/InfCall.obj
 	@echo ... Classes/InfCall.i
 	@echo ... Classes/InfCall.s
@@ -566,9 +569,6 @@ help:
 	@echo ... Classes/Staff.obj
 	@echo ... Classes/Staff.i
 	@echo ... Classes/Staff.s
-	@echo ... Classes/Stats.obj
-	@echo ... Classes/Stats.i
-	@echo ... Classes/Stats.s
 	@echo ... Classes/TechnicalTeam.obj
 	@echo ... Classes/TechnicalTeam.i
 	@echo ... Classes/TechnicalTeam.s

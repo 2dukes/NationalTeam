@@ -12,9 +12,10 @@ using namespace std;
 
 Game::Game(unsigned int id, Date date, string city, string country, string stadium,
            string oppositeTeam, vector<string> oppositeTeamParticipants,
-           vector<string> refereeTeam, GameStats *gameStats, vector<Stats *> individualStatistics) {
+           vector<string> refereeTeam, GameStats *gameStats, vector<IndividualStatistics *> individualStatistics) {
     this->id = id;
     this->date = date;
+    this->city = city;
     this->country = country;
     this-> stadium = stadium;
     this-> oppositeTeam = oppositeTeam;
@@ -60,7 +61,7 @@ GameStats *Game::getGameStats() const {
     return gameStats;
 }
 
-vector<Stats *> Game::getIndividualStatistics() const {
+vector<IndividualStatistics *> Game::getIndividualStatistics() const {
     return individualStatistics;
 }
 
@@ -100,7 +101,7 @@ void Game::setGameStats(GameStats *gameStats) {
     this->gameStats = gameStats;
 }
 
-void Game::setIndividualStatistics(const vector<Stats *> setIndividualStatistics) {
+void Game::setIndividualStatistics(const vector<IndividualStatistics *> setIndividualStatistics) {
     this->individualStatistics = individualStatistics;
 }
 

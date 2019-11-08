@@ -57,6 +57,7 @@ public:
     bool readSoccerPlayersFile(std::string filename);
 
     /* Game Methods */
+    bool createGame();
     void addGame(Game* game);
     bool readGamesFile(std::string filename);
 
@@ -64,6 +65,7 @@ public:
     bool createCall();
 
     /* GameStats Methods */
+    bool createGameStatistics(unsigned int gameID);
     void addGameStatistics(GameStats* gStats);
     bool readGameStatisticsFile(std::string filename);
 
@@ -167,11 +169,19 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
             case 2:
             {
                 // Birth Date
-                Date dBirth = readOperations::readDate();
+                Date dBirth1, dBirth2;
+                do
+                {
+                    dBirth1 = readOperations::readDate("Smaller birth Date (DD/MM/YYYY):");
+                    dBirth2 = readOperations::readDate("Bigger birth Date (DD/MM/YYYY):");
+                    if(dBirth2 <= dBirth1)
+                        std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+                } while(!(dBirth1 <= dBirth2));
+
 
                 for(auto &x: workers)
                 {
-                    if(x->getDate() == dBirth)
+                    if(generalFunctions::checkBetweenDates(dBirth1, x->getDate(), dBirth2))
                     {
                         auxPerson.push_back(x);
                         ct = true;
@@ -201,11 +211,19 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
             case 3:
             {
                 // Salary
-                float salary = readOperations::readNumber<float>("Salary:");
+                float smallerSalary, biggerSalary;
+                do
+                {
+                    smallerSalary = readOperations::readNumber<float>("Smaller Salary:");
+                    biggerSalary = readOperations::readNumber<float>("Bigger Salary:");
+                    if(smallerSalary > biggerSalary)
+                        std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+                } while(smallerSalary > biggerSalary);
+
 
                 for(auto &x: workers)
                 {
-                    if(x->getSalary() == salary)
+                    if(x->getSalary() >= smallerSalary && x->getSalary() <= biggerSalary)
                     {
                         auxPerson.push_back(x);
                         ct = true;

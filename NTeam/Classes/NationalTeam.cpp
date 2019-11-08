@@ -36,7 +36,7 @@ bool NationalTeam::createOtherWorker()
 {
     string auxName = readOperations::readString("Name:");
 
-    Date birth = readOperations::readDate();
+    Date birth = readOperations::readDate("Birth Date (DD/MM/YYYY):");
 
     string auxRole = readOperations::readString("Role:");
 
@@ -169,7 +169,7 @@ bool NationalTeam::alterOtherWorker()
             case 3:
             {
                 cout << "Previous Birth Date: " << person->getDate() << endl;
-                Date birth = readOperations::readDate();
+                Date birth = readOperations::readDate("New Birth Date (DD/MM/YYYY):");
                 person->setDate(birth);
                 break;
             }
@@ -281,7 +281,7 @@ void NationalTeam::addSoccerPlayer(SoccerPlayer *sP) {
 bool NationalTeam::createSoccerPlayer()
 {
     string auxName = readOperations::readString("Name:");
-    Date birth = readOperations::readDate();
+    Date birth = readOperations::readDate("Birth Date (DD/MM/YYYY):");
     string auxPosition = readOperations::readString("Position:");
     string auxClub = readOperations::readString("Club:");
     unsigned short auxWeight =  readOperations::readNumber<unsigned short>("Weight (KG):");
@@ -355,7 +355,7 @@ bool NationalTeam::alterSoccerPlayer()
             case 2: /* Birth Date */
             {
                 cout << "Previous Birth Date: " << person->getDate() << endl;
-                Date birth = readOperations::readDate();
+                Date birth = readOperations::readDate("New Birth Date (DD/MM/YYYY):");
                 person->setDate(birth);
                 break;
             }
@@ -426,6 +426,24 @@ bool NationalTeam::deleteSoccerPlayer(){
 }
 
 /* Games */
+
+bool NationalTeam::createGame() {
+    Date date = readOperations::readDate("Game date:");
+    string city = readOperations::readString("City:");
+    string country = readOperations::readString("Country:");
+    string oppositeTeam = readOperations::readString("Opposite Team:");
+    string oppositeTeamParticipantsString = readOperations::readString("Opposite Team Participants: (in the format player1, player2, etc.)");
+    // STILL NEED TO CHECK IF THE INPUT WAS CORRECT!!!!!!
+    vector<string> oppositeTeamParticipants = generalFunctions::separate_string(oppositeTeamParticipantsString, ',');
+
+    string refereeingTeamString = readOperations::readString("Refereeing Team: (in the format referee1, referee2, etc.)");
+    // STILL NEED TO CHECK IF THE INPUT WAS CORRECT!!!!!!
+    vector<string> refereeingTeam = generalFunctions::separate_string(refereeingTeamString, ',');
+
+    // NEED TO CREATE A NEW GAME STATISTICS AND INDIVIDUAL STATISTICS
+
+    return true;
+}
 
 void NationalTeam::addGame(Game* game) {
     games.push_back(game);
@@ -530,6 +548,52 @@ bool NationalTeam::createCall()
 
 void NationalTeam::addGameStatistics(GameStats* gStats) {
     gameStats.push_back(gStats);
+}
+
+bool NationalTeam::createGameStatistics(unsigned int gameID) {
+    unsigned short goals = readOperations::readNumber<unsigned short>("Goals:");
+    unsigned short oppositionGoals = readOperations::readNumber<unsigned short>("Opposing Team Goals:");
+    unsigned short shots = readOperations::readNumber<unsigned short>("Shots:");
+    unsigned short oppositionShots = readOperations::readNumber<unsigned short>("Opposing Team shots:");
+    unsigned short shotsTarget = readOperations::readNumber<unsigned short>("Shots on Target:");
+    unsigned short oppositionShotsTarget = readOperations::readNumber<unsigned short>("Opposing Team Shots on Target:");
+    unsigned short possession = readOperations::readNumber<unsigned short>("Possession:");
+    unsigned short passes = readOperations::readNumber<unsigned short>("Passes:");
+    unsigned short oppositionPasses = readOperations::readNumber<unsigned short>("Opposing Team passes:");
+    unsigned short passAccuracy = readOperations::readNumber<unsigned short>("Pass Accuracy:");
+    unsigned short oppositionPassAccuracy = readOperations::readNumber<unsigned short>("Opposing Team Pass Accuracy:");
+    unsigned short fouls = readOperations::readNumber<unsigned short>("Fouls:");
+    unsigned short oppositionFouls = readOperations::readNumber<unsigned short>("Opposing Team Fouls:");
+    unsigned short yellowCards = readOperations::readNumber<unsigned short>("Yellow Cards:");
+    unsigned short oppositionYellowCards = readOperations::readNumber<unsigned short>("Opposing Yellow Cards:");
+    unsigned short redCards = readOperations::readNumber<unsigned short>("Red Cards:");
+    unsigned short oppositionRedCards = readOperations::readNumber<unsigned short>("Opposing Team Red Cards:");
+    unsigned short offsides = readOperations::readNumber<unsigned short>("Offsides:");
+    unsigned short oppositionOffsides = readOperations::readNumber<unsigned short>("Opposing Team Offsides:");
+    unsigned short corners = readOperations::readNumber<unsigned short>("Corners:");
+    unsigned short oppositionCorners = readOperations::readNumber<unsigned short>("Opposing Team Corners:");
+    unsigned short injuries = readOperations::readNumber<unsigned short>("Injuries:");
+    unsigned short oppositionInjuries = readOperations::readNumber<unsigned short>("Opposing Team Injuries:");
+
+    cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
+    GameStats *gStats = new GameStats(gameID, goals, oppositionGoals, shots, oppositionShots, shotsTarget, oppositionShotsTarget,
+                                      possession, passes, oppositionPasses, passAccuracy, oppositionPassAccuracy, fouls, oppositionFouls, offsides, oppositionOffsides,
+                                      corners, oppositionCorners, yellowCards, oppositionYellowCards, redCards, oppositionRedCards, injuries, oppositionInjuries);
+    gStats->info(cout);
+    string answer = readOperations::confirmAnswer();
+
+    if(answer == "Y" || answer == "y")
+    {
+        addGameStatistics(gStats);
+        cout << "Data successfully inserted!" << endl;
+        return true;
+        /* In the future to save all info inside a file */
+        //  ofstream out_stream("../Files/OtherWorkers.txt", ios::app);
+        //  oW.info(out_stream);
+    }
+    cout << "Data not inserted." << endl;
+    delete gStats;
+    return false;
 }
 
 bool NationalTeam::readGameStatisticsFile(std::string filename) {

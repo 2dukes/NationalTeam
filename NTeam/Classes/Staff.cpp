@@ -21,7 +21,7 @@ string Staff::getName() const
     return name;
 }
 
-Date Staff::getDate() const
+Date& Staff::getDate()
 {
     return birthDate;
 }

@@ -5,6 +5,7 @@
 #ifndef NTEAM_GAMESTATS_H
 #define NTEAM_GAMESTATS_H
 
+#include <iostream>
 
 class GameStats {
 public:
@@ -67,6 +68,9 @@ public:
     void setOppositionRedCards(unsigned short oppositionRedCards);
     void setInjuries(unsigned short injuries);
     void setOppositionInjuries(unsigned short oppositionInjuries);
+
+    /* Other Methods */
+    void info(std::ostream &os) const;
 
 private:
     unsigned int id;

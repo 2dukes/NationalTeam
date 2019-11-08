@@ -4,6 +4,8 @@
 
 #include "GameStats.h"
 
+using namespace std;
+
 GameStats::GameStats(unsigned int id, unsigned short goals, unsigned short oppositionGoals, unsigned short shots,
                      unsigned short oppositionShots, unsigned short shotsTarget,unsigned short oppositionShotsTarget,
                      unsigned short possession, unsigned short passes, unsigned short oppositionPasses,
@@ -227,4 +229,32 @@ void GameStats::setInjuries(unsigned short injuries) {
 
 void GameStats::setOppositionInjuries(unsigned short oppositionInjuries) {
     this->oppositionInjuries = oppositionInjuries;
+}
+
+void GameStats::info(ostream &os) const {
+    os << "Goals: " << goals << endl;
+    os << "Opposing Team Goals: " << oppositionGoals << endl;
+    os << "Shots: " << shots << endl;
+    os << "Opposing Team Shots: " << oppositionShots << endl;
+    os << "Shots on Target: " << shotsTarget << endl;
+    os << "Opposing Team Shots on Target: " << oppositionShotsTarget << endl;
+    os << "Possession: " << possession << endl;
+    os << "Opposing Team Possession: " << 100 - possession << endl;
+    os << "Passes: " << passes << endl;
+    os << "Opposing Team Passes: " << oppositionPasses << endl;
+    os << "Pass Accuracy: " << passAccuracy << endl;
+    os << "Opposing Team Pass Accuracy: " << oppositionPassAccuracy << endl;
+    os << "Fouls: " << fouls << endl;
+    os << "Opposing Team Fouls: " << oppositionFouls << endl;
+    os << "Yellow Cards: " << yellowCards << endl;
+    os << "Opposing Yellow Cards: " << oppositionsYellowCards << endl;
+    os << "Red Cards: " << redCards << endl;
+    os << "Opposing Red Cards: " << oppositionRedCards << endl;
+    os << "Offsides: " << offsides << endl;
+    os << "Opposing Offsides: " << oppositionOffsides << endl;
+    os << "Corners: " << corners << endl;
+    os << "Opposing Team Corners: " << oppositionCorners << endl;
+    os << "Injuries: " << injuries << endl;
+    os << "Opposing Team Injuries: " << oppositionInjuries << endl;
+    os << endl;
 }

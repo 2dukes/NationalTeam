@@ -52,12 +52,12 @@ namespace readOperations {
         return auxStr;
     }
 
-    Date readDate()
+    Date readDate(std::string parameter)
     {
         std::string auxBirth;
         do
         {
-            std::cout << "Birth Date (YYYY/MM/DD):";
+            std::cout << parameter;
             getline(std::cin, auxBirth);
 
         } while(verifyInputs::verifyDate(auxBirth));
@@ -113,6 +113,7 @@ namespace generalFunctions {
 
         return str_fields;
     }
+
     std::vector<int> convert_vector_str_to_int(std::vector<std::string> v) {
         std::vector<int> vec;
         std::string temp;
@@ -123,5 +124,29 @@ namespace generalFunctions {
             vec.push_back(stoi(temp));
         }
         return vec;
+    }
+
+    /* Date Functions */
+    bool leapYear(int year)
+    {
+        if (year % 4 == 0 && year % 100 != 0)
+            return true;
+        else if (year % 4 == 0 && year % 400 == 0)
+            return true;
+        return false;
+    }
+
+    unsigned int numDays(int year, int month)
+    {
+        unsigned int d[12] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+        if (month == 2 && leapYear(year))
+            return 29;
+        else
+            return d[month - 1];
+    }
+
+    bool checkBetweenDates(Date &shorter, Date &mid, Date &higher)
+    {
+        return (shorter <= mid && mid <= higher);
     }
 }

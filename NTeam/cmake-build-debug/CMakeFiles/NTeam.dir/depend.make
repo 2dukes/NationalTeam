@@ -13,6 +13,8 @@ CMakeFiles/NTeam.dir/Classes/Call.cpp.obj: ../Classes/Staff.h
 
 CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Date.cpp
 CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Staff.h
+CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 
 CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj: ../Classes/Exceptions.cpp
 CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj: ../Classes/Exceptions.h

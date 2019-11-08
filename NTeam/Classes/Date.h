@@ -28,7 +28,7 @@ public:
     unsigned short getDay() const;
     unsigned short getMonth() const;
     unsigned getYear() const;
-    std::string getDate() const; // get the date on the form of a string (year/month/day)
+    std::string getDate() const; // get the date on the form of a string (day/month/year)
 
     // SET methods
 
@@ -41,6 +41,7 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const Date & date); // overload of operator << (display the formatted date on a ostream)
     friend std::istream& operator>>(std::istream& in, Date & date);
     bool operator==(const Date &d1) const;
+    friend bool operator<=(Date &date1, Date &date2);
 
 };
 

@@ -4,6 +4,8 @@
 
 #include "Staff.h"
 #include <fstream>
+#include <iomanip>
+#include <iostream>
 
 using namespace std;
 
@@ -26,6 +28,11 @@ Date& Staff::getDate()
     return birthDate;
 }
 
+string Staff::getDate(int) const
+{
+    return birthDate.getDate();
+}
+
 /* Sets */
 
 void Staff::setName(std::string name)
@@ -45,6 +52,12 @@ void Staff::info(ostream &os) const
     os << "ID: " << id << "\n";
     os << "Name: " << name << "\n";
     os << "Birth: " << birthDate << "\n";
+}
+
+void Staff::info() const
+{
+    cout << left << setw(10) << id << left << setw(65) << name <<
+         left << setw(20) << birthDate.getDate();
 }
 
 bool Staff::operator==(const Staff &worker) const {

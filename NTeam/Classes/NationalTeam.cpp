@@ -8,7 +8,7 @@
 #include <iostream>
 #include <new>
 #include <limits>
-
+#include <iomanip>
 #include <fstream>
 #include <string>
 #include <sstream>
@@ -46,7 +46,9 @@ bool NationalTeam::createOtherWorker()
 
     cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
     OtherWorker *oW = new OtherWorker(id, auxRole, auxSalary, auxName, birth);
-    oW->info(cout);
+    oW->header();
+    oW->info();
+    cout << endl << endl;
     string answer = readOperations::confirmAnswer();
 
     if(answer == "Y" || answer == "y")
@@ -201,16 +203,23 @@ vector<OtherWorker*>& NationalTeam::getOtherWorkers()
 }
 
 void NationalTeam::displayOtherWorkers() const {
-    std::cout << std::endl;
-    for(auto &x: otherWorkers)
-        x->info(std::cout);
+    OtherWorker::header();
+    for(auto &worker: otherWorkers)
+    {
+        worker->info();
+        cout << endl;
+    }
 }
 
 void NationalTeam::displaySoccerPlayers() const
 {
-    std::cout << std::endl;
-    for(auto &x: players)
-        x->info(std::cout);
+    SoccerPlayer::header();
+    for(auto &player: players)
+    {
+        player->info();
+        cout << endl;
+    }
+
 }
 
 /* SoccerPlayer Methods */
@@ -293,7 +302,9 @@ bool NationalTeam::createSoccerPlayer()
 
     cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
     SoccerPlayer *sP = new SoccerPlayer(id, auxName, birth, auxPosition, auxClub, auxWeight, auxHeight, marketPrice, daysActive);
-    sP->info(cout);
+    sP->header();
+    sP->info();
+    cout << endl << endl;
     string answer = readOperations::confirmAnswer();
 
     if(answer == "Y" || answer == "y")
@@ -428,6 +439,7 @@ bool NationalTeam::deleteSoccerPlayer(){
 /* Games */
 
 bool NationalTeam::createGame() {
+    unsigned int id = getLastID(games);
     Date date = readOperations::readDate("Game date:");
     string city = readOperations::readString("City:");
     string country = readOperations::readString("Country:");
@@ -440,8 +452,9 @@ bool NationalTeam::createGame() {
     // STILL NEED TO CHECK IF THE INPUT WAS CORRECT!!!!!!
     vector<string> refereeingTeam = generalFunctions::separate_string(refereeingTeamString, ',');
 
-    // NEED TO CREATE A NEW GAME STATISTICS AND INDIVIDUAL STATISTICS
+    GameStats* gameStats = createGameStatistics(id);
 
+    // NEED TO CREATE INDIVIDUAL STATISTICS
     return true;
 }
 
@@ -520,25 +533,72 @@ bool NationalTeam::readGamesFile(std::string filename) {
 
 /* Calls */
 
+bool sortPlayers(const SoccerPlayer* player1, const SoccerPlayer* player2)
+{
+    return player1->getId() < player2->getId();
+}
+
+
 bool NationalTeam::createCall()
 {
+
     unsigned int counter = 0;
     vector<SoccerPlayer*> auxSoccerPlayers;
-    string playerList = "";
-    unsigned int numPlayers = readOperations::readNumber<unsigned int>("Number of Players to Insert (12 - 24):");
+    unsigned int numPlayers = 0;
+
+    while(true)
+    {
+        numPlayers = readOperations::readNumber<unsigned int>("Number of Players to Insert (12 - 24):");
+        if(numPlayers < 12 || numPlayers > 24)
+            cout << "Please Insert a Value Between 12 and 24." << endl;
+        else
+            break;
+    }
 
     cout << endl << endl << "1 - Player Selection:" << endl;
+
     while(counter != numPlayers)
     {
         SoccerPlayer* player = workerLookUp(players);
-        auxSoccerPlayers.push_back(player);
-        playerList += player->getName();
+        if(player == NULL)
+            return false;
+
+
+
+        sort(auxSoccerPlayers.begin(), auxSoccerPlayers.end(), sortPlayers);
+        if(binary_search(auxSoccerPlayers.begin(), auxSoccerPlayers.end(), player, sortPlayers))
+        {
+            cout << endl << "Player Already Inserted! Try again..." << endl;
+            continue;
+        }
+        else
+        {
+            auxSoccerPlayers.push_back(player);
+            player->header();
+            for(auto &x: auxSoccerPlayers)
+            {
+                x->info();
+                cout << endl;
+            }
+        }
+
+        createInfCalls(player->getId());
         counter++;
-        cout << endl << "Players Already Inserted [ " << counter << " ]: " << playerList << endl << endl;
-        playerList += ", ";
+        cout << endl << "Players Remaining Inserted [ " << (numPlayers - counter) << " ]: " <<  endl << endl;
+
     }
 
-    // Still to finish...
+    string competition = readOperations::readString("Competition:");
+    Date begDate, endDate;
+    do
+    {
+        begDate = readOperations::readDate("Arrive Date (DD/MM/YYYY):");
+        endDate = readOperations::readDate("Left Date (DD/MM/YYYY):");
+        if(endDate <= begDate)
+            std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+    } while(!(begDate <= endDate));
+    int housing_food = readOperations::readNumber<int>("Housing and Food Costs:");
+
     return true;
 
 }
@@ -550,7 +610,7 @@ void NationalTeam::addGameStatistics(GameStats* gStats) {
     gameStats.push_back(gStats);
 }
 
-bool NationalTeam::createGameStatistics(unsigned int gameID) {
+GameStats* NationalTeam::createGameStatistics(unsigned int gameID) {
     unsigned short goals = readOperations::readNumber<unsigned short>("Goals:");
     unsigned short oppositionGoals = readOperations::readNumber<unsigned short>("Opposing Team Goals:");
     unsigned short shots = readOperations::readNumber<unsigned short>("Shots:");
@@ -586,14 +646,14 @@ bool NationalTeam::createGameStatistics(unsigned int gameID) {
     {
         addGameStatistics(gStats);
         cout << "Data successfully inserted!" << endl;
-        return true;
+        return gStats;
         /* In the future to save all info inside a file */
         //  ofstream out_stream("../Files/OtherWorkers.txt", ios::app);
         //  oW.info(out_stream);
     }
     cout << "Data not inserted." << endl;
     delete gStats;
-    return false;
+    return NULL;
 }
 
 bool NationalTeam::readGameStatisticsFile(std::string filename) {
@@ -761,6 +821,56 @@ void NationalTeam::addIndividualStatistic(IndividualStatistics* iStat) {
     individualStats.push_back(iStat);
 }
 
+IndividualStatistics *NationalTeam::createIndividualStatistics(unsigned int gameID, unsigned int playerID) {
+    unsigned int id = getLastID(individualStats);
+    unsigned short goals = readOperations::readNumber<unsigned short>("Goals:");
+    unsigned short assists = readOperations::readNumber<unsigned short>("Assists:");
+    unsigned short shots = readOperations::readNumber<unsigned short>("Shots:");
+    unsigned short shotsTarget = readOperations::readNumber<unsigned short>("Shots on Target:");
+    unsigned short passes = readOperations::readNumber<unsigned short>("Passes:");
+    unsigned short travelledDistance = readOperations::readNumber<unsigned short>("Travelled Distance (in Km):");
+    unsigned short playedMinutes = readOperations::readNumber<unsigned short>("Played Minutes:");
+    unsigned short yellowCards = readOperations::readNumber<unsigned short>("Yellow Cards:");
+    unsigned short redCards = readOperations::readNumber<unsigned short>("Red Cards:");
+    unsigned short fouls = readOperations::readNumber<unsigned short>("Fouls:");
+    bool injured;
+    bool validInjured;
+    do {
+        string injuredString = readOperations::readString("Injured? (true / false)");
+        if (injuredString == "false") {
+            injured = false;
+            validInjured = true;
+        }
+        else if (injuredString == "true") {
+            injured = true;
+            validInjured = true;
+        }
+        else
+            validInjured = false;
+    } while (!validInjured);
+
+    IndividualStatistics* iStat = new IndividualStatistics(id, playerID, gameID, goals, assists, passes, shots,
+                                                           shotsTarget, travelledDistance, playedMinutes, yellowCards, redCards, fouls, injured);
+
+    addIndividualStatistic(iStat);
+
+    return iStat;
+}
+
+// TO DO
+bool NationalTeam::alterIndividualStatistic() {
+    bool toggle = true;
+    int repetition = 0, option;
+
+    cout << string(100, '\n');
+//    cout << explorer << endl << endl;
+
+    int id;
+    IndividualStatistics* iStat = getByID(individualStats, id);
+
+    return true;
+}
+
 bool NationalTeam::readIndividualStatisticsFile(std::string filename) {
     ifstream f;
     f.open(filename);
@@ -850,7 +960,41 @@ bool NationalTeam::readIndividualStatisticsFile(std::string filename) {
 }
 
 
+/* InfCalls */
 
+bool NationalTeam::createInfCalls(unsigned int sPId)
+{
+    cout << endl;
+    Date arriveDate, leftDate;
+    do
+    {
+        arriveDate = readOperations::readDate("Arrive Date (DD/MM/YYYY):");
+        leftDate = readOperations::readDate("Left Date (DD/MM/YYYY):");
+        if(leftDate <= arriveDate)
+            std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+    } while(!(arriveDate <= leftDate));
 
+    unsigned int id = getLastID(players);
+
+    cout << endl << "Are you sure you want to insert the following data? (Y|N)" << endl << endl;
+    InfCall* inf = new InfCall(id, sPId, arriveDate, leftDate);
+
+    string answer = readOperations::confirmAnswer();
+
+    if(answer == "Y" || answer == "y")
+    {
+        addInfCalls(inf);
+        return true;
+
+    }
+    cout << "Data not inserted..." << endl;
+    delete inf;
+    return false;
+}
+
+void NationalTeam::addInfCalls(InfCall *inf)
+{
+    infCalls.push_back(inf);
+}
 
 

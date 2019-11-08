@@ -35,6 +35,8 @@ public:
 
     /* OtherMethods */
     void info(std::ostream &os) const;
+    void info() const;
+    static void header();
 
 private:
     std::string position;

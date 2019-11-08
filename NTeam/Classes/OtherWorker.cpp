@@ -4,6 +4,7 @@
 #include "Staff.h"
 #include "OtherWorker.h"
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -47,4 +48,16 @@ void OtherWorker::info(ostream &os) const
     os << "\n" << "::::::::::" << "\n\n";
 }
 
+void OtherWorker::info() const
+{
+    Staff::info();
+    cout << left << setw(20) << salary << left << setw(25) << role;
+}
 
+void OtherWorker::header()
+{
+    std::cout << std::endl;
+    std::cout << std::left << std::setw(10) << "ID" << std::left << std::setw(65) << "Name"<< std::left << std::setw(20) << "Birth Date"
+              << std::left << std::setw(20) << "Salary" << std::left << std::setw(25) << "Role" << std::endl;
+    std::cout << "==============================================================================================================================================================================================================================" << endl;
+}

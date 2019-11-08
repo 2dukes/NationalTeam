@@ -9,11 +9,22 @@
 
 class TechnicalTeam: public Staff {
 public:
-    // int getSalary() = 0;
+    TechnicalTeam(unsigned int id, std::string role, unsigned int sal, std::string name, Date birth);
+
+    /* Gets */
+    unsigned int getSalary() const;
+    std::string getRole() const;
+
+    /* Sets */
+    void setSalary(unsigned int salary);
+    void setRole(std::string);
+
+    /* Other Methods */
+    void info(std::ostream &os) const;
+
 private:
-    int salary;
+    unsigned int salary;
     std::string role;
-    // Other parameters pending...
 };
 
 

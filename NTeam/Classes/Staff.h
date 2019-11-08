@@ -17,6 +17,7 @@ public:
     unsigned int getId() const;
     std::string getName() const;
     Date& getDate();
+    std::string getDate(int) const;
     virtual unsigned int getSalary() const = 0;
 
     /* Sets */
@@ -25,6 +26,7 @@ public:
 
     /* Other Methods */
     virtual void info(std::ostream &os) const;
+    virtual void info() const;
 
     virtual ~Staff() { };
     bool operator==(const Staff &worker) const;

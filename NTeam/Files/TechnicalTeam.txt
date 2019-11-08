@@ -1,26 +1,23 @@
 ID: 1500
 Name: Fernando Santos
-Role: Head coach
 Birthdate: 10/10/1954
-Age: 65
+Role: Head coach
 Salary: 1500000
 
 ::::::::::
 
 ID: 1501
 Name: Ilidio Vale
-Role: Assistant Coach
 Birthdate: 10/10/1954
-Age: 65
+Role: Assistant Coach
 Salary: 150000
 
 ::::::::::
 
 ID: 1502
 Name: Ricardo Santos
-Role: Assistant Coach
 Birthdate: 10/10/1954
-Age: 65
+Role: Assistant Coach
 Salary: 150000
 
 ::::::::::
@@ -29,14 +26,13 @@ ID: 1503
 Name: Jorge Rosario
 Role: Assistant Coach
 Birthdate: 10/10/1954
-Age: 65
+Role: Assistant Coach
 Salary: 150000
 
 ::::::::::
 
 ID: 1504
 Name: Fernando Justino
-Role: Goalkeeping Coach
 Birthdate: 10/10/1954
-Age: 65
+Role: Goalkeeping Coach
 Salary: 150000

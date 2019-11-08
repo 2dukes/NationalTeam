@@ -8,15 +8,24 @@
 #include "Date.h"
 
 class InfCall {
+public:
+    InfCall(unsigned int id, unsigned int soccerPlayerId, Date arrived, Date left);
+
+    /* Gets */
+    unsigned int getID();
+    unsigned int getSoccerPlayerId();
+    Date getDateArrived();
+    Date getDateLeft();
+
+    /* Sets */
+    void setDateArrived(Date date);
+    void setDateLeft(Date date);
+
 private:
     unsigned int id;
-    unsigned int SoccerPlayerId;
-    std::string playerName;
-    Date begin;
-    Date end;
-    Date injuredStart;
-    Date injuredEnd;
-    int dailyEnsurance; // Varies depending on marketPrice & injured
+    unsigned int soccerPlayerId;
+    Date arrived;
+    Date left;
 };
 
 

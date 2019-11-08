@@ -5,6 +5,7 @@
 #include "SoccerPlayer.h"
 #include <iostream>
 #include <fstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -60,6 +61,17 @@ void SoccerPlayer::info(std::ostream &os) const {
     os << "\n" << "::::::::::" << "\n\n";
 }
 
+
+void SoccerPlayer::info() const
+{
+    Staff::info();
+    cout << left << setw(20) << position <<
+         left << setw(25) << club << left << setw(15) << weight <<
+         left << setw(15) << height << left << setw(20) << getSalary() <<
+         left << setw(20) << marketPrice <<
+         left << setw(20) << daysActive;
+}
+
 void SoccerPlayer::setPosition(std::string position) {
     this->position = position;
 }
@@ -82,4 +94,13 @@ void SoccerPlayer::setMarketPrice(unsigned long marketPrice) {
 
 void SoccerPlayer::setDaysActive(unsigned int daysActive) {
     this->daysActive = daysActive;
+}
+
+void SoccerPlayer::header()
+{
+    std::cout << std::endl;
+    std::cout << std::left << std::setw(10) << "ID" << std::left << std::setw(65) << "Name"<< std::left << std::setw(20) << "Birth Date"
+              << std::left << std::setw(20) << "Position" << std::left << std::setw(25) << "Club" << std::left << std::setw(15) << "Weight"
+              << std::left << std::setw(15) << "Height" << std::left << setw(20) << "Salary" << std::left << std::setw(20) << "Market Price" << std::left << std::setw(20) << "Days Active" << std::endl;
+    std::cout << "==============================================================================================================================================================================================================================" << endl;
 }

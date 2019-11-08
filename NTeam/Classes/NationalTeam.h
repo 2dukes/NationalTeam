@@ -30,7 +30,6 @@ public:
     std::string setName(std::string &name); /* Returns string because of menu's 1st option */
 
     /* OtherWorkers Methods */
-    unsigned int OtherWorkersgetLastID();
     bool createOtherWorker();
     bool alterOtherWorker();
     void addOtherWorker(OtherWorker* oW);
@@ -65,20 +64,26 @@ public:
     bool createCall();
 
     /* GameStats Methods */
-    bool createGameStatistics(unsigned int gameID);
+    GameStats* createGameStatistics(unsigned int gameID);
     void addGameStatistics(GameStats* gStats);
     bool readGameStatisticsFile(std::string filename);
 
     /* IndividualStatistics Methods */
+    IndividualStatistics* createIndividualStatistics(unsigned int gameID, unsigned int playerID);
     void addIndividualStatistic(IndividualStatistics* iStat);
+    bool alterIndividualStatistic();
     bool readIndividualStatisticsFile(std::string filename);
+
+    /* InfCalls */
+    bool createInfCalls(unsigned int sPId);
+    void addInfCalls(InfCall* inf);
 
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers
     std::vector<TechnicalTeam*> technicalTeam;
     std::vector<SoccerPlayer*> players;
-    std::vector<InfCall*> InfCalls;
+    std::vector<InfCall*> infCalls;
     std::vector<Call*> calls;
     std::vector<Game*> games;
     std::vector<GameStats*> gameStats;
@@ -144,22 +149,29 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     {
                         auxPerson.push_back(x);
                         ct = true;
-                        std::cout << std::endl;
-                        x->info(std::cout);
+                    }
+                }
+                if(!auxPerson.empty())
+                {
+                    auxPerson.at(0)->header(); // Print corresponding header
+                    for(auto &x: auxPerson)
+                    {
+                        x->info();
                         std::cout << std::endl;
                     }
                 }
 
+
                 if(ct)
                 {
-                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl;
+                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl << std::endl;
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         return getByID(auxPerson, option);
                     }
                     catch (NoPersonFound &e) {
-                        std::cout << e.getError() << std::endl;
+                        std::cout << std::endl << e.getError() << std::endl << std::endl;
                     }
                 }
                 else
@@ -185,22 +197,29 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     {
                         auxPerson.push_back(x);
                         ct = true;
-                        std::cout << std::endl;
-                        x->info(std::cout);
+                    }
+                }
+
+                if(!auxPerson.empty())
+                {
+                    auxPerson.at(0)->header(); // Print corresponding header
+                    for(auto &x: auxPerson)
+                    {
+                        x->info();
                         std::cout << std::endl;
                     }
                 }
 
                 if(ct)
                 {
-                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl;
+                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl << std::endl;
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         return getByID(auxPerson, option);
                     }
                     catch (NoPersonFound &e) {
-                        std::cout << e.getError() << std::endl;
+                        std::cout << std::endl << e.getError() << std::endl << std::endl;
                     }
                 }
                 else
@@ -227,22 +246,29 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     {
                         auxPerson.push_back(x);
                         ct = true;
-                        std::cout << std::endl;
-                        x->info(std::cout);
+                    }
+                }
+
+                if(!auxPerson.empty())
+                {
+                    auxPerson.at(0)->header(); // Print corresponding header
+                    for(auto &x: auxPerson)
+                    {
+                        x->info();
                         std::cout << std::endl;
                     }
                 }
 
                 if(ct)
                 {
-                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl;
+                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl << std::endl;
                     try {
                         std::cin >> option;
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         return getByID(auxPerson, option);
                     }
                     catch (NoPersonFound &e) {
-                        std::cout << e.getError() << std::endl;
+                        std::cout << std::endl << e.getError() << std::endl << std::endl;
                     }
                 }
                 else
@@ -258,7 +284,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                     return getByID(workers, id);
                 }
                 catch (NoPersonFound &e) {
-                    std::cout << e.getError() << std::endl;
+                    std::cout << std::endl << e.getError() << std::endl << std::endl;
                 }
 
                 break;

@@ -19,6 +19,8 @@ public:
 
     /* Other Methods */
     void info(std::ostream &os) const;
+    void info() const;
+    static void header();
 
 private:
     unsigned int salary;

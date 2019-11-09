@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "TechnicalTeam.h"
+#include <iomanip>
 
 TechnicalTeam::TechnicalTeam(unsigned int id, std::string role, unsigned int sal, std::string name, Date birth): Staff(id, name, birth) {
     this->role = role;
@@ -26,9 +27,15 @@ void TechnicalTeam::setRole(std::string) {
     this->role = role;
 }
 
-void TechnicalTeam::info(std::ostream &os) const {
-    Staff::info(os);
-    os << "Role: " << role << "\n";
-    os << "Salary: " << salary << "\n";
-    os << "\n" << "::::::::::" << "\n\n";
+void TechnicalTeam::info() const {
+    Staff::info();
+    std::cout << std::left << std::setw(20) << salary << std::left << std::setw(25) << role;
+}
+
+void TechnicalTeam::header()
+{
+    std::cout << std::endl;
+    std::cout << std::left << std::setw(10) << "ID" << std::left << std::setw(65) << "Name"<< std::left << std::setw(20) << "Birth Date"
+              << std::left << std::setw(20) << "Salary" << std::left << std::setw(25) << "Role" << std::endl;
+    std::cout << "==============================================================================================================================================================================================================================" << std::endl;
 }

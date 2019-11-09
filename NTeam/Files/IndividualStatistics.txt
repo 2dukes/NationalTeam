@@ -1,6 +1,5 @@
 ﻿ID: 2000
 Player ID: 1
-Game ID: 1000
 Goals: 2
 Assists: 1
 Shots: 6
@@ -17,8 +16,6 @@ Fouls: 2
 
 ID: 2001
 Player ID: 2
-PlayerName: Roberto Alcides Díaz
-Game ID: 1000
 Goals: 0
 Assists: 1
 Shots: 3
@@ -35,7 +32,210 @@ Fouls: 3
 
 ID: 2002
 Player ID: 3
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2003
+Player ID: 4
 Game ID: 1000
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2004
+Player ID: 5
+Game ID: 1000
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2005
+Player ID: 1
+Game ID: 1001
+Goals: 0
+Assists: 1
+Shots: 3
+Shots on target: 1
+Passes: 57
+Travelled distance: 9
+Played minutes: 83
+Yellow cards: 1
+Red cards: 0
+Injured: false
+Fouls: 3
+
+::::::::::
+
+ID: 2006
+Player ID: 2
+Game ID: 1001
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2007
+Player ID: 3
+Game ID: 1001
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2008
+Player ID: 4
+Game ID: 1001
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2009
+Player ID: 5
+Game ID: 1001
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2010
+Player ID: 1
+Game ID: 1002
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2011
+Player ID: 2
+Game ID: 1002
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2012
+Player ID: 3
+Game ID: 1002
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2013
+Player ID: 4
+Game ID: 1002
+Goals: 0
+Assists: 0
+Shots: 2
+Shots on target: 1
+Passes: 41
+Travelled distance: 6
+Played minutes: 53
+Yellow cards: 0
+Red cards: 0
+Injured: true
+Fouls: 1
+
+::::::::::
+
+ID: 2014
+Player ID: 5
+Game ID: 1002
 Goals: 0
 Assists: 0
 Shots: 2

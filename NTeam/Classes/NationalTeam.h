@@ -35,11 +35,15 @@ public:
     void addOtherWorker(OtherWorker* oW);
     bool deleteOtherWorker();
     bool readOtherWorkersFile(std::string filename);
+    bool writeOtherWorkersFile(std::string filename);
 
     /* Other Methods */
     void displayOtherWorkers() const;
     void displaySoccerPlayers() const;
+    void displayGames() const;
+    void displayTechnicalTeamMembers() const;
 
+    /* Other Methods (templates) */
     template <class Type>
     Type workerLookUp(std::vector<Type> &workers); // Type varies as: OtherWorker*, TechnicalTeam*, SoccerPlayer*...
     template <class Type>
@@ -54,30 +58,44 @@ public:
     void addSoccerPlayer(SoccerPlayer* sP);
     bool deleteSoccerPlayer();
     bool readSoccerPlayersFile(std::string filename);
+    bool writeSoccerPlayersFile(std::string filename);
 
     /* Game Methods */
-    bool createGame();
+    Game* createGame(std::vector<SoccerPlayer*> soccerPlayers);
     void addGame(Game* game);
     bool readGamesFile(std::string filename);
+    bool writeGamesFile(std::string filename);
 
     /* Call Methods */
     bool createCall();
+    void addCall(Call* call);
+    bool readCallsFile(std::string filename);
 
     /* GameStats Methods */
     GameStats* createGameStatistics(unsigned int gameID);
     void addGameStatistics(GameStats* gStats);
     bool readGameStatisticsFile(std::string filename);
+    bool writeGamesStatisticsFile(std::string filename);
 
     /* IndividualStatistics Methods */
-    IndividualStatistics* createIndividualStatistics(unsigned int gameID, unsigned int playerID);
+    IndividualStatistics* createIndividualStatistics(unsigned int playerID);
     void addIndividualStatistic(IndividualStatistics* iStat);
     bool alterIndividualStatistic();
     bool readIndividualStatisticsFile(std::string filename);
+    bool writeIndividualStatisticsFile(std::string filename);
 
     /* InfCalls */
-    bool createInfCalls(unsigned int sPId);
-    void addInfCalls(InfCall* inf);
+    bool readInfCalls(std::string filename);
+    InfCall* createInfCalls(unsigned int sPId);
+    void addInfCall(InfCall* inf);
 
+    /* TechnicalTeam Methods */
+    void addTechnicalTeamMember(TechnicalTeam* tTeam);
+    bool readTechnicalTeamFile(std::string filename);
+    bool createTechnicalTeamMember();
+    bool alterTechnicalTeamMember();
+    bool deleteTechnicalTeamMember();
+    bool writeTechicalTeamFile(std::string filename);
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers
@@ -104,7 +122,7 @@ template<class Type>
 Type& NationalTeam::getByID(std::vector<Type> &elements, int id)
 {
     if(id < 1)
-        throw NoPersonFound("ID Not Valid..."); // IDs smaller than 1 are not allowed
+        throw NoObjectFound("ID Not Valid..."); // IDs smaller than 1 are not allowed
     else
     {
         for (auto &x: elements) {
@@ -112,7 +130,7 @@ Type& NationalTeam::getByID(std::vector<Type> &elements, int id)
                 return x;
         }
     }
-    throw NoPersonFound("No Corresponding Person Found...");
+    throw NoObjectFound("No Corresponding Person Found...");
 }
 
 template<class Type>
@@ -170,7 +188,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         return getByID(auxPerson, option);
                     }
-                    catch (NoPersonFound &e) {
+                    catch (NoObjectFound &e) {
                         std::cout << std::endl << e.getError() << std::endl << std::endl;
                     }
                 }
@@ -218,7 +236,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         return getByID(auxPerson, option);
                     }
-                    catch (NoPersonFound &e) {
+                    catch (NoObjectFound &e) {
                         std::cout << std::endl << e.getError() << std::endl << std::endl;
                     }
                 }
@@ -267,7 +285,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
                         return getByID(auxPerson, option);
                     }
-                    catch (NoPersonFound &e) {
+                    catch (NoObjectFound &e) {
                         std::cout << std::endl << e.getError() << std::endl << std::endl;
                     }
                 }
@@ -283,7 +301,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                 try {
                     return getByID(workers, id);
                 }
-                catch (NoPersonFound &e) {
+                catch (NoObjectFound &e) {
                     std::cout << std::endl << e.getError() << std::endl << std::endl;
                 }
 

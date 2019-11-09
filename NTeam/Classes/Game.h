@@ -43,6 +43,8 @@ public:
 
     /* OtherMethods */
     void info(std::ostream &os) const;
+    static void header();
+    void info() const;
 
 
 private:

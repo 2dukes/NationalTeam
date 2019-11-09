@@ -73,7 +73,7 @@ public:
     void info(std::ostream &os) const;
 
 private:
-    unsigned int id;
+    unsigned int id; // Same ID as The game...
     unsigned int goals, oppositionGoals;
     unsigned short shots, oppositionShots;
     unsigned short shotsTarget, oppositionShotsTarget;

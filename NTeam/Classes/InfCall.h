@@ -12,7 +12,7 @@ public:
     InfCall(unsigned int id, unsigned int soccerPlayerId, Date arrived, Date left);
 
     /* Gets */
-    unsigned int getID();
+    unsigned int getId();
     unsigned int getSoccerPlayerId();
     Date getDateArrived();
     Date getDateLeft();

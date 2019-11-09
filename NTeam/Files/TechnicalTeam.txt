@@ -1,6 +1,6 @@
 ID: 1500
 Name: Fernando Santos
-Birthdate: 10/10/1954
+Birth Date: 10/10/1954
 Role: Head coach
 Salary: 1500000
 
@@ -8,7 +8,7 @@ Salary: 1500000
 
 ID: 1501
 Name: Ilidio Vale
-Birthdate: 10/10/1954
+Birth Date: 10/10/1954
 Role: Assistant Coach
 Salary: 150000
 
@@ -16,7 +16,7 @@ Salary: 150000
 
 ID: 1502
 Name: Ricardo Santos
-Birthdate: 10/10/1954
+Birth Date: 10/10/1954
 Role: Assistant Coach
 Salary: 150000
 
@@ -24,8 +24,7 @@ Salary: 150000
 
 ID: 1503
 Name: Jorge Rosario
-Role: Assistant Coach
-Birthdate: 10/10/1954
+Birth Date: 10/10/1954
 Role: Assistant Coach
 Salary: 150000
 
@@ -33,6 +32,6 @@ Salary: 150000
 
 ID: 1504
 Name: Fernando Justino
-Birthdate: 10/10/1954
+Birth Date: 10/10/1954
 Role: Goalkeeping Coach
 Salary: 150000

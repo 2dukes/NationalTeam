@@ -4,6 +4,7 @@
 
 #include "Game.h"
 #include <iostream>
+#include <iomanip>
 
 #include "../NecessaryFunctions_NameSpaces.h"
 
@@ -107,12 +108,38 @@ void Game::setIndividualStatistics(const vector<IndividualStatistics *> setIndiv
 
 // NOT TESTED YET!!!
 void Game::info(ostream &os) const {
+    os << "ID: " << id << endl;
     os << "Date: " << date << endl;
     os << "City: " << city << endl;
     os << "Country: " << country << endl;
     os << "Stadium: " << stadium << endl;
     os << "Opposite Team: " << oppositeTeam << endl;
-    os << "Opposite Team Participants: ";
-    generalFunctions::coutVectorString(os ,oppositeTeamParticipants);
+    os << "Opposite Team Participants: " << generalFunctions::coutVectorString(oppositeTeamParticipants) << endl;
+    os << "Refereeing Team: " << generalFunctions::coutVectorString(refereeTeam);
+    os << "Game Statistics: " << gameStats->getId() << endl;
+    os << "Individual Statistics: ";
+    vector<string> individualStatsVectorString;
+    for (auto it = individualStatistics.begin(); it != individualStatistics.end(); it++) {
+        individualStatsVectorString.push_back(to_string((*it)->getId()));
+    }
+    os << generalFunctions::coutVectorString(individualStatsVectorString);
     os << endl;
+    os << "\n" << "::::::::::" << "\n\n";
+}
+
+void Game::info() const
+{
+    cout << left << setw(10) << id <<
+         left << setw(15) << date.getDate() << left << setw(20) << city <<
+         left << setw(20) << country << left << setw(25) << stadium <<
+         left << setw(20) << oppositeTeam << left << setw(80) << generalFunctions::coutVectorString(refereeTeam);
+}
+
+void Game::header()
+{
+    std::cout << std::endl;
+    std::cout << std::left << std::setw(10) << "ID" << std::left << std::setw(15) << "Date"
+              << std::left << std::setw(20) << "City" << std::left << std::setw(20) << "Country" << std::left << std::setw(25) << "Stadium"
+              << std::left << std::setw(20) << "Opposite Team" << std::left << std::setw(80) << "Referee Team" << endl;
+    std::cout << "===================================================================================================================================================================================================================" << endl;
 }

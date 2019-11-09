@@ -10,7 +10,7 @@
 
 class IndividualStatistics {
 public:
-    IndividualStatistics(unsigned int id, unsigned int soccerPlayerID, unsigned int gameID, unsigned short goals, unsigned short assists, unsigned short passes,
+    IndividualStatistics(unsigned int id, unsigned int soccerPlayerID, unsigned short goals, unsigned short assists, unsigned short passes,
                          unsigned short shots, unsigned short shotsTarget, unsigned short travelledDistance,
                          unsigned short playedMinutes, unsigned short yellowCards, unsigned short redCards,
                          unsigned short  fouls, bool injured);
@@ -18,7 +18,6 @@ public:
     /* Gets */
     unsigned int getId() const;
     unsigned int getSoccerPlayerID() const;
-    unsigned int getGameID() const;
     unsigned short getGoals() const;
     unsigned short getAssists() const;
     unsigned short getPasses() const;
@@ -33,7 +32,6 @@ public:
 
     /* Sets */
     void setSoccerPlayerID(unsigned int soccerPlayerID);
-    void setGameID(unsigned int gameID);
     void setGoals(unsigned short goals);
     void setAssists(unsigned short assists);
     void setPasses(unsigned short passes);
@@ -48,7 +46,7 @@ public:
 
 
 private:
-    unsigned int id, soccerPlayerID, gameID;
+    unsigned int id, soccerPlayerID;
     unsigned short goals;
     unsigned short assists;
     unsigned short passes;

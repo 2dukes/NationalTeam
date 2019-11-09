@@ -16,3 +16,8 @@ Call::Call(unsigned int id, std::string competition, std::vector<Game*> games, s
     this->end = end;
     this->housing_food = housing_food;
 }
+
+unsigned int Call::getId() const
+{
+    return id;
+}

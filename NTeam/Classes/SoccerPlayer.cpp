@@ -3,6 +3,7 @@
 //
 
 #include "SoccerPlayer.h"
+#include "../NecessaryFunctions_NameSpaces.h"
 #include <iostream>
 #include <fstream>
 #include <iomanip>
@@ -56,8 +57,6 @@ void SoccerPlayer::info(std::ostream &os) const {
     os << "Height: " << height << "\n";
     os << "Market Price: " << marketPrice << "\n";
     os << "Days Active: " << daysActive << "\n";
-    if(os.rdbuf() == std::cout.rdbuf()) // http://www.cplusplus.com/reference/ios/ios/rdbuf/
-        os << "Insurance: " << getSalary() << "\n";
     os << "\n" << "::::::::::" << "\n\n";
 }
 
@@ -65,11 +64,12 @@ void SoccerPlayer::info(std::ostream &os) const {
 void SoccerPlayer::info() const
 {
     Staff::info();
-    cout << left << setw(20) << position <<
-         left << setw(25) << club << left << setw(15) << weight <<
-         left << setw(15) << height << left << setw(20) << getSalary() <<
+    cout << left << setw(15) << position <<
+         left << setw(20) << club << left << setw(10) << weight <<
+         left << setw(10) << height << left << setw(10) << getSalary() <<
          left << setw(20) << marketPrice <<
-         left << setw(20) << daysActive;
+         left << setw(10) << daysActive;
+
 }
 
 void SoccerPlayer::setPosition(std::string position) {
@@ -99,8 +99,8 @@ void SoccerPlayer::setDaysActive(unsigned int daysActive) {
 void SoccerPlayer::header()
 {
     std::cout << std::endl;
-    std::cout << std::left << std::setw(10) << "ID" << std::left << std::setw(65) << "Name"<< std::left << std::setw(20) << "Birth Date"
-              << std::left << std::setw(20) << "Position" << std::left << std::setw(25) << "Club" << std::left << std::setw(15) << "Weight"
-              << std::left << std::setw(15) << "Height" << std::left << setw(20) << "Salary" << std::left << std::setw(20) << "Market Price" << std::left << std::setw(20) << "Days Active" << std::endl;
-    std::cout << "==============================================================================================================================================================================================================================" << endl;
+    std::cout << std::left << std::setw(5) << "ID" << std::left << std::setw(50) << "Name"<< std::left << std::setw(10) << "Birth Date"
+              << std::left << std::setw(15) << "Position" << std::left << std::setw(20) << "Club" << std::left << std::setw(10) << "Weight"
+              << std::left << std::setw(10) << "Height" << std::left << setw(10) << "Salary" << std::left << std::setw(20) << "Market Price" << std::left << std::setw(10) << "Days Active" << std::endl;
+    std::cout << "===================================================================================================================================================================================================================" << endl;
 }

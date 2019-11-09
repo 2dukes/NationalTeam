@@ -36,7 +36,7 @@ namespace readOperations {
 }
 
 namespace generalFunctions {
-    std::ostream & coutVectorString(std::ostream &os, const std::vector<std::string> &v);
+    std::string coutVectorString(const std::vector<std::string> &v);
     void trim(std::string &str);
     std::vector<std::string> separate_string(std::string str, char separator);
     std::vector<int> convert_vector_str_to_int(std::vector<std::string> v);

@@ -37,7 +37,7 @@ void mainMenu(NationalTeam nTeam) {
     vector<string> mainChoices = { "1. Display", "2. Update National Team Info", "3. Manage", "4. To be Implemented...", "5. To be Implemented...", "6. To be Implemented...", "7. To be Implemented...", "8. To be Implemented...", "9. To be Implemented...","10. To be Implemented...","11. To be Implemented...","0. Exit" };
     vector<string> manageChoices = { "1. Create", "2. Alter", "3. Remove", "0. Main Menu" };
     vector<string> manageSecundaryChoices = { "1. OtherWorker", "2. SoccerPlayer", "0. Previous Menu" };
-    vector<string> viewAvailablePackChoices = { "1. Other Workers", "2. Technical Team", "3. Soccer Players", "0. Main Menu" };
+    vector<string> viewAvailablePackChoices = { "1. Other Workers", "2. Technical Team", "3. Soccer Players", "4. Games", "0. Main Menu" };
     vector<string> viewSoldPackChoices = { "1. Acording to a Specific Client", "2. Acording to All Clients", "0. Main Menu" };
     vector<string> viewRecommendedChoices = { "1. For a Specific Client", "2. For All Clients", "0. Main Menu" };
 
@@ -92,6 +92,15 @@ void mainMenu(NationalTeam nTeam) {
                         /// Display | Soccer Players
                         string auxiliarExplorer = mainChoices.at(mainMenu - 1) + " | " + viewAvailablePackChoices.at(option - 1);
                         nTeam.displaySoccerPlayers();
+                        cout << endl << endl << "Press any key to continue...";
+                        cin.get();
+                        break;
+                    }
+                    case 4:
+                    {
+                        /// Display | Games
+                        string auxiliarExplorer = mainChoices.at(mainMenu - 1) + " | " + viewAvailablePackChoices.at(option - 1);
+                        nTeam.displayGames();
                         cout << endl << endl << "Press any key to continue...";
                         cin.get();
                         break;

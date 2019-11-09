@@ -7,9 +7,9 @@
 
 #include <string>
 
-class NoPersonFound {
+class NoObjectFound {
 public:
-    NoPersonFound(std::string e): error(e) { }
+    NoObjectFound(std::string e): error(e) { }
     std::string getError() { return error; }
 private:
     std::string error;
@@ -18,6 +18,14 @@ private:
 class NoStatisticFound {
 public:
     NoStatisticFound(std::string e): error(e) { }
+    std::string getError() { return error; }
+private:
+    std::string error;
+};
+
+class WrongStatistic {
+public:
+    WrongStatistic(std::string e): error(e) { }
     std::string getError() { return error; }
 private:
     std::string error;

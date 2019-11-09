@@ -232,6 +232,7 @@ void GameStats::setOppositionInjuries(unsigned short oppositionInjuries) {
 }
 
 void GameStats::info(ostream &os) const {
+    os << "ID: " << id << endl;
     os << "Goals: " << goals << endl;
     os << "Opposing Team Goals: " << oppositionGoals << endl;
     os << "Shots: " << shots << endl;
@@ -256,5 +257,5 @@ void GameStats::info(ostream &os) const {
     os << "Opposing Team Corners: " << oppositionCorners << endl;
     os << "Injuries: " << injuries << endl;
     os << "Opposing Team Injuries: " << oppositionInjuries << endl;
-    os << endl;
+    os << "\n" << "::::::::::" << "\n\n";
 }

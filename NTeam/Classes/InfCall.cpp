@@ -11,10 +11,11 @@ InfCall::InfCall(unsigned int id, unsigned int soccerPlayerId, Date arrived, Dat
     this->left = left;
 }
 
-unsigned int InfCall::getID()
+unsigned int InfCall::getId()
 {
     return id;
 }
+
 
 unsigned int InfCall::getSoccerPlayerId()
 {

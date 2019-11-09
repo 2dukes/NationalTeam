@@ -17,7 +17,7 @@ public:
             std::vector<SoccerPlayer*> players, Date begin, Date end, int housing_food);
 
     /* Gets */
-
+    unsigned int getId() const;
     /* Sets */
 
 private:

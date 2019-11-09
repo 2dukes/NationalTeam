@@ -81,12 +81,13 @@ namespace readOperations {
 }
 
 namespace generalFunctions {
-    std::ostream & coutVectorString(std::ostream &os, const std::vector<std::string> &v) {
+    std::string coutVectorString(const std::vector<std::string> &v) {
+        std::string str = "";
         for (auto it = v.begin(); it != v.end() - 1; it++) {
-            os << *it << ", ";
+            str += *it + ", ";
         }
-        os << v.at(v.size() - 1);
-        return os;
+        str += v.at(v.size() - 1);
+        return str;
     }
 
     void trim(std::string &str) {

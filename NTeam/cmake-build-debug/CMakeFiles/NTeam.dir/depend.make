@@ -62,6 +62,7 @@ CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/Date.h
 CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/SoccerPlayer.cpp
 CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/SoccerPlayer.h
 CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../Classes/Staff.h
+CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 
 CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj: ../Classes/Date.h
 CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj: ../Classes/Staff.cpp

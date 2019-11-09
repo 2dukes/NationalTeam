@@ -4,7 +4,7 @@
 
 #include "IndividualStatistics.h"
 
-IndividualStatistics::IndividualStatistics(unsigned int id, unsigned int soccerPlayerID, unsigned int gameID, unsigned short goals,
+IndividualStatistics::IndividualStatistics(unsigned int id, unsigned int soccerPlayerID, unsigned short goals,
         unsigned short assists, unsigned short passes, unsigned short shots, unsigned short shotsTarget,
         unsigned short travelledDistance, unsigned short playedMinutes, unsigned short yellowCards, unsigned short redCards,
         unsigned short fouls, bool injured) {
@@ -30,10 +30,6 @@ unsigned int IndividualStatistics::getId() const {
 
 unsigned int IndividualStatistics::getSoccerPlayerID() const {
     return soccerPlayerID;
-}
-
-unsigned int IndividualStatistics::getGameID() const {
-    return gameID;
 }
 
 unsigned short IndividualStatistics::getGoals() const {
@@ -83,10 +79,6 @@ bool IndividualStatistics::getInjured() const {
 
 void IndividualStatistics::setSoccerPlayerID(unsigned int soccerPlayerID) {
     this->soccerPlayerID = soccerPlayerID;
-}
-
-void IndividualStatistics::setGameID(unsigned int gameID) {
-    this->gameID = gameID;
 }
 
 void IndividualStatistics::setGoals(unsigned short goals) {

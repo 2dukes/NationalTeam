@@ -20,7 +20,8 @@ public:
     void setRole(std::string);
 
     /* Other Methods */
-    void info(std::ostream &os) const;
+    void info() const;
+    void header();
 
 private:
     unsigned int salary;

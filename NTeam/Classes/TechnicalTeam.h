@@ -17,7 +17,7 @@ public:
 
     /* Sets */
     void setSalary(unsigned int salary);
-    void setRole(std::string);
+    void setRole(std::string role);
 
     /* Other Methods */
     void info() const;

@@ -23,7 +23,7 @@ void TechnicalTeam::setSalary(unsigned int salary) {
     this->salary = salary;
 }
 
-void TechnicalTeam::setRole(std::string) {
+void TechnicalTeam::setRole(std::string role) {
     this->role = role;
 }
 

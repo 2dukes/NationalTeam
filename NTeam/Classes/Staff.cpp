@@ -28,11 +28,6 @@ Date& Staff::getDate()
     return birthDate;
 }
 
-string Staff::getDate(int) const
-{
-    return birthDate.getDate();
-}
-
 /* Sets */
 
 void Staff::setName(std::string name)

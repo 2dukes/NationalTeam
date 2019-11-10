@@ -64,7 +64,7 @@ public:
     void setOppositionCorners(unsigned short oppositionCorners);
     void setYellowCards(unsigned short yellowCards);
     void setOppositionYellowCards(unsigned short oppositionYellowCards);
-    void setRedCards(unsigned short reCards);
+    void setRedCards(unsigned short redCards);
     void setOppositionRedCards(unsigned short oppositionRedCards);
     void setInjuries(unsigned short injuries);
     void setOppositionInjuries(unsigned short oppositionInjuries);

@@ -216,8 +216,8 @@ void GameStats::setOppositionYellowCards(unsigned short oppositionYellowCards) {
     this->oppositionsYellowCards = oppositionYellowCards;
 }
 
-void GameStats::setRedCards(unsigned short reCards) {
-    this->redCards = reCards;
+void GameStats::setRedCards(unsigned short redCards) {
+    this->redCards = redCards;
 }
 
 void GameStats::setOppositionRedCards(unsigned short oppositionRedCards) {

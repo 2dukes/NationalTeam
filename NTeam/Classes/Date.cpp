@@ -7,6 +7,7 @@
 #include <string>
 #include <iostream>
 #include "../NecessaryFunctions_NameSpaces.h"
+#include <iomanip>
 
 using namespace std;
 
@@ -105,7 +106,7 @@ void Date::setYear(unsigned &year) {
 
 ostream& operator<<(ostream& out, const Date & date) {
 
-    out << date.day << "/" << date.month << "/" << date.year;
+    out << setfill('0') << setw(2) << date.day << "/" << setfill('0') << setw(2) << date.month << "/" << setfill('0') << setw(4) << date.year;
     return out;
 }
 
@@ -126,7 +127,8 @@ bool operator<=(Date &date1, Date &date2)
     if(date1.year == date2.year)
     {
         if(date1.month == date2.month)
-            return date1.day <= date2.day;
+        {return date1.day <= date2.day;
+        }
         else
             return date1.month < date2.month;
     }

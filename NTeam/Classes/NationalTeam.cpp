@@ -11,7 +11,9 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
-#include <sstream>
+#include <chrono>
+#include <ratio>
+#include <ctime>
 
 using namespace std;
 
@@ -224,17 +226,40 @@ void NationalTeam::displaySoccerPlayers() const
 
 void NationalTeam::displayGames() const
 {
-    Game::header();
     for(auto &game: games)
     {
+        Game::header();
         game->info();
         cout << endl;
     }
 }
 
 void NationalTeam::displayTechnicalTeamMembers() const {
-
+    TechnicalTeam::header();
+    for(auto &member: technicalTeam) {
+        member->info();
+        cout << endl;
+    }
 }
+
+void NationalTeam::displayCallsPlayers() const
+{
+    for(auto &x: calls)
+    {
+        x->infoPlayers();
+        cout << endl << endl << ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" << endl;
+    }
+}
+
+void NationalTeam::displayCallsGames() const
+{
+    for(auto &x: calls)
+    {
+        x->infoGames();
+        cout << endl << endl <<":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::" << endl;
+    }
+}
+
 
 /* SoccerPlayer Methods */
 
@@ -452,13 +477,391 @@ bool NationalTeam::deleteSoccerPlayer(){
 
 /* Games */
 
-Game* NationalTeam::createGame(vector<SoccerPlayer*> soccerPlayers) {
+bool NationalTeam::alterGameGlobalOpposite(Game* game)
+{
+    bool toggle = true;
+    int repetition = 0, option;
+    GameStats* stats = game->getGameStats();
+    cout << string(100, '\n');
+//    cout << explorer << endl << endl;
+
+    while (toggle)
+    {
+        if (repetition == 0)
+        {
+            cout << endl << "What do you want to change?\n";
+            repetition++;
+        }
+        else
+            cout << "Do you want to change anything else?\n";
+
+        cout << "1. Opposition Goals\n2. Opposition Shots\n3. Opposition Shots on Target\n"
+                "4. Opposition Passes\n5. Opposition Pass Accuracy\n6. Opposition Fouls\n"
+                "7. Opposition Offsides\n8. Opposition Corners\n9. Opposition Yellow Cards\n10. Opposition Red Cards\n"
+                "11. Opposition Injuries\n0. Back\n\n";
+        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << endl;
+
+        switch (option)
+        {
+            case 0:
+            {
+                toggle = false;
+                break;
+            }
+            case 1:
+            {
+                cout << "Opposition Goals: " << stats->getOppositionGoals() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Goals:");
+                stats->setOppositionGoals(aux);
+                break;
+            }
+            case 2:
+            {
+                cout << "Opposition Shots: " << stats->getOppositionShots() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Shots:");
+                stats->setOppositionShots(aux);
+                break;
+            }
+            case 3:
+            {
+                cout << "Opposition Shots on Target: " << stats->getOppositionShotsTarget() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Shots on Target:");
+                stats->setOppositionShotsTarget(aux);
+                break;
+            }
+            case 4:
+            {
+                cout << "Opposition Passes: " << stats->getOppositionPasses() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Passes:");
+                stats->setOppositionPasses(aux);
+                break;
+            }
+            case 5:
+            {
+                cout << "Opposition Pass Accuracy: " << stats->getOppositionPassAccuracy() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Pass Accuracy:");
+                stats->setOppositionPassAccuracy(aux);
+                break;
+            }
+            case 6:
+            {
+                cout << "Opposition Fouls: " << stats->getOppositionFouls() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Fouls:");
+                stats->setOppositionFouls(aux);
+                break;
+            }
+            case 7:
+            {
+                cout << "Opposition Offsides: " << stats->getOppositionOffsides() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Offsides:");
+                stats->setOppositionOffsides(aux);
+                break;
+            }
+            case 8:
+            {
+                cout << "Opposition Corners: " << stats->getOppositionCorners() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Corners:");
+                stats->setOppositionCorners(aux);
+                break;
+            }
+            case 9:
+            {
+                cout << "Opposition Yellow Cards: " << stats->getOppositionYellowCards() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Yellow Cards:");
+                stats->setOppositionYellowCards(aux);
+                break;
+            }
+            case 10:
+            {
+                cout << "Opposition Red Cards: " << stats->getOppositionRedCards() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Red Cards:");
+                stats->setOppositionRedCards(aux);
+                break;
+            }
+            case 11:
+            {
+                cout << "Opposition Injuries: " << stats->getOppositionInjuries() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Opposition Injuries:");
+                stats->setOppositionInjuries(aux);
+                break;
+            }
+        }
+        if (toggle)
+        {
+            cout << endl << "Game Statistics successfully altered!" << endl;
+        }
+    }
+    return true;
+}
+
+bool NationalTeam::alterGameGlobal(Game* game)
+{
+    bool toggle = true;
+    int repetition = 0, option;
+    GameStats* stats = game->getGameStats();
+    cout << string(100, '\n');
+//    cout << explorer << endl << endl;
+
+    while (toggle)
+    {
+        if (repetition == 0)
+        {
+            cout << endl << "What do you want to change?\n";
+            repetition++;
+        }
+        else
+            cout << "Do you want to change anything else?\n";
+
+        cout << "1. Goals\n2. Shots\n3. Shots on Target\n4. Possession\n"
+                "5. Passes\n6.  Pass Accuracy\n7. Fouls\n8. Offsides\n"
+                "9. Corners\n10. Yellow Cards\n11. Red Cards\n"
+                "12. Injuries\n0. Back\n\n";
+        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << endl;
+
+        switch (option)
+        {
+            case 0:
+            {
+                toggle = false;
+                break;
+            }
+            case 1:
+            {
+                cout << "Goals: " << stats->getGoals() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Goals:");
+                stats->setGoals(aux);
+                break;
+            }
+            case 2:
+            {
+                cout << "Shots: " << stats->getShots() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Shots:");
+                stats->setShots(aux);
+                break;
+            }
+            case 3:
+            {
+                cout << "Shots on Target: " << stats->getShotsTarget() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Shots on Target:");
+                stats->setShotsTarget(aux);
+                break;
+            }
+            case 4:
+            {
+                cout << "Possession: " << stats->getPossession() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Possession:");
+                stats->setPossession(aux);
+                break;
+            }
+            case 5:
+            {
+                cout << "Passes: " << stats->getPasses() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Passes:");
+                stats->setPasses(aux);
+                break;
+            }
+            case 6:
+            {
+                cout << "Pass Accuracy: " << stats->getPassAccuracy() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Pass Accuracy:");
+                stats->setPassAccuracy(aux);
+                break;
+            }
+            case 7:
+            {
+                cout << "Fouls: " << stats->getFouls() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Fouls:");
+                stats->setFouls(aux);
+                break;
+            }
+            case 8:
+            {
+                cout << "Offsides: " << stats->getOffsides() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Offsides:");
+                stats->setOffsides(aux);
+                break;
+            }
+            case 9:
+            {
+                cout << "Corners: " << stats->getCorners() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Corners:");
+                stats->setCorners(aux);
+                break;
+            }
+            case 10:
+            {
+                cout << "Yellow Cards: " << stats->getYellowCards() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Yellow Cards:");
+                stats->setYellowCards(aux);
+                break;
+            }
+            case 11:
+            {
+                cout << "Red Cards: " << stats->getRedCards() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Red Cards:");
+                stats->setRedCards(aux);
+                break;
+            }
+            case 12:
+            {
+                cout << "Injuries: " << stats->getInjuries() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Injuries:");
+                stats->setInjuries(aux);
+                break;
+            }
+        }
+        if (toggle)
+        {
+            cout << endl << "Game Statistics successfully altered!" << endl;
+        }
+    }
+    return true;
+}
+
+bool NationalTeam::alterPlayerStats(vector<IndividualStatistics*> stats, unsigned int playerID)
+{
+    bool toggle = true;
+    int repetition = 0, option;
+
+    IndividualStatistics* st;
+    for(auto &x: stats)
+    {
+        if(x->getSoccerPlayerID() == playerID)
+        {
+            st = x;
+            break;
+        }
+    }
+
+    cout << string(100, '\n');
+//    cout << explorer << endl << endl;
+
+    while (toggle)
+    {
+        if (repetition == 0)
+        {
+            cout << endl << "What do you want to change?\n";
+            repetition++;
+        }
+        else
+            cout << "Do you want to change anything else?\n";
+
+        cout << "1. Goals\n2. Assists\n3. Passes\n4. Shots\n5. Shots on Target\n6. Travelled Distance\n7. Played Minutes\n"
+                "8. Yellow Cards\n9. Red Cards\n10. Fouls\n11. Injured\n0. Back\n\n";
+        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << endl;
+
+        switch (option)
+        {
+            case 0:
+            {
+                toggle = false;
+                break;
+            }
+            case 1:
+            {
+                cout << "Goals: " << st->getGoals() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Goals:");
+                st->setGoals(aux);
+                break;
+            }
+            case 2:
+            {
+                cout << "Assists: " << st->getAssists() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Assists:");
+                st->setAssists(aux);
+                break;
+            }
+            case 3:
+            {
+                cout << "Passes: " << st->getPasses() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Passes:");
+                st->setPasses(aux);
+                break;
+            }
+            case 4:
+            {
+                cout << "Shots: " << st->getShots() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Shots:");
+                st->setShots(aux);
+                break;
+            }
+            case 5:
+            {
+                cout << "Shots on Target: " << st->getShotsTarget() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Shots on Target:");
+                st->setShotsTarget(aux);
+                break;
+            }
+            case 6:
+            {
+                cout << "Travelled Distance: " << st->getTravelledDistance() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Travelled Distance:");
+                st->setTravelledDistance(aux);
+                break;
+            }
+            case 7:
+            {
+                cout << "Played Minutes: " << st->getPlayedMinutes() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Played Minutes:");
+                st->setPlayedMinutes(aux);
+                break;
+            }
+            case 8:
+            {
+                cout << "Yellow Cards: " << st->getYellowCards() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Yellow Cards:");
+                st->setYellowCards(aux);
+                break;
+            }
+            case 9:
+            {
+                cout << "Red Cards: " << st->getRedCards() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Red Cards:");
+                st->setRedCards(aux);
+                break;
+            }
+            case 10:
+            {
+                cout << "Fouls: " << st->getFouls() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Fouls:");
+                st->setFouls(aux);
+                break;
+            }
+            case 11:
+            {
+                cout << "Injured: " << st->getInjured() << endl;
+                unsigned short aux = readOperations::readNumber<unsigned short>("New Injured:");
+                st->setInjured(aux);
+                break;
+            }
+        }
+        if (toggle)
+        {
+            cout << endl << "Individual Statistics successfully altered!" << endl;
+        }
+    }
+    return true;
+}
+
+Game* NationalTeam::createGame(vector<SoccerPlayer*> soccerPlayers, Date begin, Date end) {
 
     vector<string> oppositeTeamParticipants;
     vector<string> refereeTeam;
     cout << endl;
+    Date date;
     unsigned int id = getLastID(games);
-    Date date = readOperations::readDate("Game date:");
+    while(true)
+    {
+        date = readOperations::readDate("Game date (DD/MM/YYYY):");
+        if(!generalFunctions::checkBetweenDates(begin, date, end))
+            std::cout << "Inserted date has to be between" << " " << begin.getDate() << " and " << end.getDate() << " !" << std::endl << std::endl;
+        else
+            break;
+    }
+
     string city = readOperations::readString("City:");
     string country = readOperations::readString("Country:");
     string stadium = readOperations::readString("Stadium:");
@@ -488,29 +891,33 @@ Game* NationalTeam::createGame(vector<SoccerPlayer*> soccerPlayers) {
         ct++;
     }
 
-    GameStats* gameStats;
+    GameStats* gameStatsAux;
     while(true)
     {
-        gameStats = createGameStatistics(id);
-        if(gameStats != NULL)
+        gameStatsAux = createGameStatistics(id);
+        gameStats.push_back(gameStatsAux);
+        if(gameStatsAux != NULL)
             break;
     }
 
     vector<IndividualStatistics*> individualStatistics;
+    IndividualStatistics* AuxStats;
     ct = 0;
 
-    unsigned int goals = 0;
-    unsigned short shots = 0, shotsTarget = 0, passes = 0, fouls = 0, yellowCards = 0, redCards = 0, injuries = 0;
+    unsigned int goals;
+    unsigned short shots, shotsTarget, passes, fouls, yellowCards, redCards, injuries;
 
     while(ct != soccerPlayers.size())
     {
+        goals = 0, shots = 0, shotsTarget = 0, passes = 0, fouls = 0, yellowCards = 0, redCards = 0, injuries = 0;
         cout << endl << endl;
         soccerPlayers.at(ct)->header();
         soccerPlayers.at(ct)->info();
         cout << endl << endl;
         try {
 
-            individualStatistics.push_back(createIndividualStatistics(soccerPlayers.at(ct)->getId()));
+            AuxStats = createIndividualStatistics(soccerPlayers.at(ct)->getId());
+
             for(auto &x: individualStatistics)
             {
                 goals += x->getGoals();
@@ -522,10 +929,21 @@ Game* NationalTeam::createGame(vector<SoccerPlayer*> soccerPlayers) {
                 redCards += x->getRedCards();
                 injuries += x->getInjured();
             }
-            if(goals > gameStats->getGoals() || shots > gameStats->getShots()
-            || shotsTarget > gameStats->getShotsTarget() || passes > gameStats->getPasses()
-            || fouls > gameStats->getFouls() || yellowCards > gameStats->getYellowCards() || redCards > gameStats->getRedCards() || injuries > gameStats->getInjuries())
+            goals += AuxStats->getGoals();
+            shots += AuxStats->getShots();
+            shotsTarget += AuxStats->getShotsTarget();
+            passes += AuxStats->getPasses();
+            fouls += AuxStats->getFouls();
+            yellowCards += AuxStats->getYellowCards();
+            redCards += AuxStats->getRedCards();
+            injuries += AuxStats->getInjured();
+
+            if(goals != gameStatsAux->getGoals() || shots != gameStatsAux->getShots()
+            || shotsTarget != gameStatsAux->getShotsTarget() || passes != gameStatsAux->getPasses()
+            || fouls != gameStatsAux->getFouls() || yellowCards != gameStatsAux->getYellowCards() || redCards != gameStatsAux->getRedCards() || injuries != gameStatsAux->getInjuries())
                 throw WrongStatistic("Incorrect Statistic! Try again...");
+
+            individualStatistics.push_back(AuxStats);
         }
         catch(WrongStatistic &e) {
             cout << endl << e.getError() << endl << endl;
@@ -535,7 +953,8 @@ Game* NationalTeam::createGame(vector<SoccerPlayer*> soccerPlayers) {
     }
 
     Game* game = new  Game(id, date, city, country, stadium, oppositeTeam, oppositeTeamParticipants, refereeTeam,
-    gameStats, individualStatistics);
+                           gameStatsAux, individualStatistics);
+    games.push_back(game);
 
     return game;
 }
@@ -602,10 +1021,12 @@ bool NationalTeam::readGamesFile(std::string filename) {
             Game* game = new Game(id, date, city, country, stadium, oppositeTeam, oppositeTeamParticipants,
                               refereeingTeam, gameStatsPtr, individualStatistics);
             addGame(game);
-
-            }
-            f.close();
-            return true;
+            individualStatsVectorString.clear();
+            individualStatsVectorInt.clear();
+            individualStatistics.clear();
+        }
+        f.close();
+        return true;
     }
     else {
         cerr << "Error reading the file " << filename << endl;
@@ -615,6 +1036,148 @@ bool NationalTeam::readGamesFile(std::string filename) {
 }
 
 /* Calls */
+
+bool NationalTeam::removeCall()
+{
+    unsigned int callId;
+    Call* call;
+
+    /* Call Search */
+    while(true)
+    {
+        try {
+            callId = readOperations::readNumber<unsigned int>("Call ID:");
+            call = getByID(calls, callId);
+            break;
+        }
+        catch(NoObjectFound &e) {
+            cout << endl << e.getError() << endl << endl;
+        }
+    }
+//    cout << "STEP 0" << endl;
+    vector<InfCall*> auxInfCalls = call->getInfs();
+    vector<InfCall*>::iterator iTr1;
+    for(auto &x: auxInfCalls)
+    {
+//        cout << "ENTERED" << endl;
+        for(iTr1 = infCalls.begin(); iTr1 != infCalls.end(); iTr1++)
+        {
+            if(x->getId() == (*iTr1)->getId())
+            {
+                iTr1 = infCalls.erase(iTr1);
+                break;
+            }
+        }
+        delete x;
+//        cout << "LEFT" << endl;
+    }
+//    cout << "STEP 1" << endl;
+    vector<Game*> auxGames = call->getGames();
+    vector<Game*>::iterator iTr2;
+    vector<IndividualStatistics*>::iterator iTr3;
+    vector<GameStats*>::iterator iTr4;
+    for(auto &x: auxGames)
+    {
+//        cout << "ENTERED" << endl;
+        for(iTr2 = games.begin(); iTr2 != games.end(); iTr2++)
+        {
+            if((*iTr2)->getId() == x->getId())
+            {
+                iTr2 = games.erase(iTr2);
+                break;
+            }
+        }
+//        cout << "P1" << endl;
+        for(auto &w: x->getIndividualStatistics())
+        {
+            for(iTr3 = individualStats.begin(); iTr3 != individualStats.end(); iTr3++)
+            {
+                if(w->getId() == (*iTr3)->getId())
+                {
+                    iTr3 = individualStats.erase(iTr3);
+                    break;
+                }
+            }
+            delete w;
+        }
+//        cout << "P2" << endl;
+        for(iTr4 = gameStats.begin(); iTr4 != gameStats.end(); iTr4++)
+        {
+            if(x->getGameStats()->getId() == (*iTr4)->getId())
+            {
+                iTr4 = gameStats.erase(iTr4);
+                break;
+            }
+        }
+//        cout << "P3" << endl;
+        delete x->getGameStats();
+        delete x;
+//        cout << "LEFT" << endl;
+    }
+//    cout << "STEP 2" << endl;
+    vector<Call*>::iterator iTr5;
+
+    for(iTr5 = calls.begin(); iTr5 != calls.end(); iTr5++)
+    {
+        if(call->getId() == (*iTr5)->getId())
+        {
+            iTr5 = calls.erase(iTr5);
+            break;
+        }
+    }
+    delete call;
+
+    cout << "Call Successfully Deleted!" << endl;
+
+    return true;
+}
+
+bool NationalTeam::alterCall()
+{
+    unsigned int callId, gameId;
+    Call* call;
+    Game* game;
+
+    /* Call Search */
+    while(true)
+    {
+        try{
+            callId = readOperations::readNumber<unsigned int>("Call ID:");
+            call = getByID(calls, callId);
+            break;
+        }
+        catch(NoObjectFound &e) {
+            cout << endl << e.getError() << endl << endl;
+        }
+    }
+
+    /* Game Search */
+    while(true)
+    {
+        try{
+            gameId = readOperations::readNumber<unsigned int>("Game ID:");
+            game = getByID(call->getGames(), gameId);
+            break;
+        }
+        catch(NoObjectFound &e) {
+            cout << endl << e.getError() << endl << endl;
+        }
+    }
+
+    cout << "Update Opposite Team Game Statistics? (Y | N = Global and Player Individual Game Statistic)" << endl;
+    string answer = readOperations::confirmAnswer();
+
+    if(answer == "Y" || answer == "y")
+        alterGameGlobalOpposite(game);
+    else
+    {
+        /* Any Flimsy Info is At your Own Risk */
+        alterGameGlobal(game);
+        SoccerPlayer* player = workerLookUp(call->getPlayers());
+        alterPlayerStats(game->getIndividualStatistics(), player->getId());
+    }
+    return true;
+}
 
 bool NationalTeam::readCallsFile(std::string filename){
     ifstream f;
@@ -633,6 +1196,7 @@ bool NationalTeam::readCallsFile(std::string filename){
 
     if (f.is_open()) {
         while(!f.eof()) {
+
             getline(f, aux, delim);
             f >> id;
             f.clear();
@@ -676,7 +1240,9 @@ bool NationalTeam::readCallsFile(std::string filename){
 
             Call* call = new Call(id, competition, gamesVec, infsVec, playersVec, bDate, eDate, housing_food);
             addCall(call);
-
+            gamesVec.clear();
+            infsVec.clear();
+            playersVec.clear();
         }
         f.close();
         return true;
@@ -711,12 +1277,52 @@ bool NationalTeam::createCall()
     Date begDate, endDate;
     do
     {
-        begDate = readOperations::readDate("Beggining Date (DD/MM/YYYY):");
+        while(true)
+        {
+            begDate = readOperations::readDate("Beggining Date (DD/MM/YYYY):");
+            bool flag = false;
+            for(auto &x: calls)
+            {
+                Date d1 = x->getBeginDate();
+                Date d2 = x->getEndDate();
+                if(generalFunctions::checkBetweenDates(d1, begDate, d2))
+                    flag = true;
+            }
+            if(flag)
+               cout << endl << endl << "There\'s a another Summon created in the same Period..." << endl << endl;
+            else
+                break;
+        }
+
         endDate = readOperations::readDate("End Date (DD/MM/YYYY):");
-        if(endDate <= begDate)
+        if(!(begDate <= endDate))
             std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
     } while(!(begDate <= endDate));
     int housing_food = readOperations::readNumber<int>("Housing and Food Costs (Per Player):");
+
+    using std::chrono::system_clock;
+
+    std::tm timeinfo1 = std::tm();
+    timeinfo1.tm_year = begDate.getYear() - 1900 ;   // year: 2000
+    timeinfo1.tm_mon = begDate.getMonth() - 1;      // month: january
+    timeinfo1.tm_mday = begDate.getDay();
+    std::time_t tt1 = std::mktime (&timeinfo1);
+
+    std::tm timeinfo2 = std::tm();
+    timeinfo2.tm_year = endDate.getYear() - 1900;   // year: 2000
+    timeinfo2.tm_mon = endDate.getMonth() - 1;      // month: january
+    timeinfo2.tm_mday = endDate.getDay();
+    std::time_t tt2 = std::mktime (&timeinfo2);
+
+    system_clock::time_point tp1 = system_clock::from_time_t (tt1);
+    system_clock::time_point tp2 = system_clock::from_time_t (tt2);
+    system_clock::duration d = tp2 - tp1;
+
+    // convert to number of days:
+    typedef std::chrono::duration<int,std::ratio<60*60*24>> days_type;
+    days_type ndays = std::chrono::duration_cast<days_type> (d);
+
+    unsigned int days = ndays.count();
 
     while(true)
     {
@@ -752,6 +1358,7 @@ bool NationalTeam::createCall()
                 x->info();
                 cout << endl;
             }
+            player->setDaysActive(player->getDaysActive() + days);
         }
 
         InfCall* inf = createInfCalls(player->getId());
@@ -760,6 +1367,7 @@ bool NationalTeam::createCall()
             inf->setDateArrived(begDate);
             inf->setDateLeft(endDate);
         }
+        infs.push_back(inf);
 
         counter++;
         cout << endl << "Players Remaining [ " << (numPlayers - counter) << " ]: " <<  endl << endl;
@@ -776,16 +1384,18 @@ bool NationalTeam::createCall()
             break;
     }
 
-    vector<Game*> games;
+    vector<Game*> gamesAux;
     counter = 0;
     while(counter != numGames)
     {
-        games.push_back(createGame(auxSoccerPlayers));
+        gamesAux.push_back(createGame(auxSoccerPlayers, begDate, endDate));
         counter++;
     }
 
-    Call* call = new Call(callID, competition, games, infs, players, begDate, endDate, housing_food);
+    Call* call = new Call(callID, competition, gamesAux, infs, auxSoccerPlayers, begDate, endDate, housing_food);
     addCall(call);
+
+    // Still need to add Days Active to players!
 
     cout << "Summon successfully created!" << endl;
     return true;
@@ -814,9 +1424,26 @@ GameStats* NationalTeam::createGameStatistics(unsigned int gameID) {
             break;
     }
 
-    unsigned short possession = readOperations::readNumber<unsigned short>("\nPossession:");
+    unsigned short possession;
+    while(true)
+    {
+        possession = readOperations::readNumber<unsigned short>("\nPossession (%):");
+        if(possession < 0 || possession > 100)
+            cout << "Possession has to be Between 0 an 100!" << endl;
+        else
+            break;
+    }
+
     unsigned short passes = readOperations::readNumber<unsigned short>("\nPasses:");
-    unsigned short passAccuracy = readOperations::readNumber<unsigned short>("\nPass Accuracy:");
+    unsigned short passAccuracy;
+    while(true)
+    {
+        passAccuracy = readOperations::readNumber<unsigned short>("\nPass Accuracy (%):");
+        if(passAccuracy < 0 || passAccuracy > 100)
+            cout << "Pass Accuracy has to be Between 0 an 100!" << endl;
+        else
+            break;
+    }
     unsigned short fouls = readOperations::readNumber<unsigned short>("\nFouls:");
     unsigned short yellowCards = readOperations::readNumber<unsigned short>("\nYellow Cards:");
     unsigned short redCards = readOperations::readNumber<unsigned short>("\nRed Cards:");
@@ -993,7 +1620,7 @@ bool NationalTeam::readGameStatisticsFile(std::string filename) {
             getline(f, aux, delim);
             getline(f, aux, delim);
             getline(f, aux, delim);
-            f >> oppositionFouls;
+            f >> oppositionCorners;
             f.clear();
             f.ignore(1000, '\n');
             getline(f, aux, delim);
@@ -1031,6 +1658,21 @@ void NationalTeam::addIndividualStatistic(IndividualStatistics* iStat) {
 
 IndividualStatistics *NationalTeam::createIndividualStatistics(unsigned int playerID) {
     unsigned int id = getLastID(individualStats);
+
+    cout << endl << "Player above participated in the game? (Y|N)" << endl << endl;
+    string answer = readOperations::confirmAnswer();
+    IndividualStatistics* iStat;
+
+    if(answer == "N" || answer == "n")
+    {
+        cout << endl << "Did It Got Injured? (Y|N)" << endl << endl;
+        answer = readOperations::confirmAnswer();
+        if(answer == "Y" || answer == "y")
+            iStat = new IndividualStatistics(id, playerID, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1);
+        else
+            iStat = new IndividualStatistics(id, playerID, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        return iStat;
+    }
 
     unsigned short goals = readOperations::readNumber<unsigned short>("\nGoals:");
     unsigned short assists = readOperations::readNumber<unsigned short>("\nAssists:");
@@ -1070,7 +1712,7 @@ IndividualStatistics *NationalTeam::createIndividualStatistics(unsigned int play
     if(injuredString == "Y" || injuredString == "y")
         injured = true;
 
-    IndividualStatistics* iStat = new IndividualStatistics(id, playerID, goals, assists, passes, shots,
+    iStat = new IndividualStatistics(id, playerID, goals, assists, passes, shots,
                                                                shotsTarget, travelledDistance, playedMinutes, yellowCards, redCards, fouls, injured);
 
     return iStat;
@@ -1233,6 +1875,7 @@ InfCall* NationalTeam::createInfCalls(unsigned int sPId)
     if(sameDate == "Y" || sameDate == "y")
     {
         InfCall* inf = new InfCall(id, sPId, arriveDate, leftDate);
+        addInfCall(inf);
         return inf;
     }
 
@@ -1240,12 +1883,13 @@ InfCall* NationalTeam::createInfCalls(unsigned int sPId)
     {
         arriveDate = readOperations::readDate("Arrive Date (DD/MM/YYYY):");
         leftDate = readOperations::readDate("Left Date (DD/MM/YYYY):");
-        if(leftDate <= arriveDate)
+        if(!(leftDate <= arriveDate))
             std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
     } while(!(arriveDate <= leftDate));
 
 
     InfCall* inf = new InfCall(id, sPId, arriveDate, leftDate);
+    addInfCall(inf);
 
     return inf;
 }
@@ -1281,7 +1925,6 @@ bool NationalTeam::readTechnicalTeamFile(std::string filename) {
             getline(f, aux, delim);
             getline(f, aux, delim);
             f >> birthday;
-            cout << birthday.getDate() << endl;
             getline(f, aux, delim);
             getline(f, function);
             getline(f, aux, delim);
@@ -1490,6 +2133,179 @@ bool NationalTeam::writeIndividualStatisticsFile(std::string filename) {
             f << "Fouls: " << (*it)->getFouls();
 
             if (it != individualStats.end() - 1)
+                f << endl << endl << "::::::::::" << endl << endl;
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}
+
+bool NationalTeam::writeGamesStatisticsFile(std::string filename) {
+    ofstream f;
+    f.open(filename, ios::out);
+    if (f.is_open()) {
+        for (auto it = gameStats.begin(); it != gameStats.end(); it++) {
+            f << "Game ID: " << (*it)->getId() << endl;
+            f << "Goals: " << (*it)->getGoals() << endl;
+            f << "Opposing team goals: " << (*it)->getOppositionGoals() << endl;
+            f << "Shots: " << (*it)->getShots() << endl;
+            f << "Opposing team shots: " << (*it)->getOppositionShots() << endl;
+            f << "Shots on target: " << (*it)->getShotsTarget() << endl;
+            f << "Opposing team shots on target: " << (*it)->getOppositionShotsTarget() << endl;
+            f << "Possession: " << (*it)->getPossession() << endl;
+            f << "Passes: " << (*it)->getPasses() << endl;
+            f << "Opposing team passes: " << (*it)->getOppositionPasses() << endl;
+            f << "Pass accuracy: " << (*it)->getPassAccuracy() << endl;
+            f << "Opposing team pass accuracy: " << (*it)->getOppositionPassAccuracy() << endl;
+            f << "Fouls: " << (*it)->getFouls() << endl;
+            f << "Opposing team fouls: " << (*it)->getOppositionFouls() << endl;
+            cout << "OPPOSING TEAM FOULS: " << (*it)->getOppositionFouls() << endl;
+            f << "Yellow cards: " << (*it)->getYellowCards() << endl;
+            f << "Opposing team yellow cards: " << (*it)->getOppositionYellowCards() << endl;
+            f << "Red cards: " << (*it)->getRedCards() << endl;
+            f << "Opposing team red cards: " << (*it)->getOppositionRedCards() << endl;
+            f << "Offsides: " << (*it)->getOffsides() << endl;
+            f << "Opposing team offsides: " << (*it)->getOppositionOffsides() << endl;
+            f << "Corners: " << (*it)->getCorners() << endl;
+            f << "Opposing team corners: " << (*it)->getOppositionCorners() << endl;
+            f << "Injuries: " << (*it)->getInjuries() << endl;
+            f << "Opposing team injuries: " << (*it)->getOppositionInjuries();
+
+            if (it != gameStats.end() - 1)
+                f << endl << endl << "::::::::::" << endl << endl;
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}
+
+bool NationalTeam::writeGamesFile(std::string filename) {
+    ofstream f;
+    f.open(filename, ios::out);
+    if (f.is_open()) {
+        for (auto it = games.begin(); it != games.end(); it++) {
+            f << "ID: " << (*it)->getId() << endl;
+            f << "Date: " << (*it)->getDate() << endl;
+            f << "City: " << (*it)->getCity() << endl;
+            f << "Country: " << (*it)->getCountry() << endl;
+            f << "Stadium: " << (*it)->getStadium() << endl;
+            f << "Opposite Team: " << (*it)->getOppositeTeam() << endl;
+            f << "Opposite Team Participants: " << generalFunctions::coutVectorString((*it)->getOppositeTeamParticipants()) << endl;
+            f << "Refereeing Team: " << generalFunctions::coutVectorString((*it)->getRefereeTeam()) << endl;
+            f << "Game Statistics: " << (*it)->getGameStats()->getId() << endl;
+            f << "Individual Statistics: ";
+            vector<string> individualStatsVectorString;
+            vector<IndividualStatistics*> individualStatistics = (*it)->getIndividualStatistics();
+            for (auto it = individualStatistics.begin(); it != individualStatistics.end(); it++) {
+                individualStatsVectorString.push_back(to_string((*it)->getId()));
+            }
+            f << generalFunctions::coutVectorString(individualStatsVectorString);
+            individualStatistics.clear();
+            individualStatsVectorString.clear();
+
+            if (it != games.end() - 1)
+                f << endl << endl << "::::::::::" << endl << endl;
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}
+
+bool NationalTeam::writeTechnicalTeamFile(std::string filename) {
+    ofstream f;
+    f.open(filename, ios::out);
+    if (f.is_open()) {
+        for (auto it = technicalTeam.begin(); it != technicalTeam.end(); it++) {
+            f << "ID: " << (*it)->getId() << endl;
+            f << "Name: " << (*it)->getName() << endl;
+            f << "Birth Date: " << (*it)->getDate() << endl;
+            f << "Function: " << (*it)->getRole() << endl;
+            f << "Salary: " << (*it)->getSalary();
+            if (it != technicalTeam.end() - 1)
+                f << endl << endl << "::::::::::" << endl << endl;
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}
+
+bool NationalTeam::writeCallsFile(std::string filename) {
+    ofstream f;
+    f.open(filename, ios::out);
+    if (f.is_open()) {
+        for (auto it = calls.begin(); it != calls.end(); it++) {
+            f << "ID: " << (*it)->getId() << endl;
+            f << "Competition: " << (*it)->getCompetition() << endl;
+            f << "Begin Date: " << (*it)->getBeginDate() << endl;
+            f << "End Date: " << (*it)->getEndDate() << endl;
+            f << "House-Food: " << (*it)->getHousingFood() << endl;
+            f << "Games: ";
+            vector<Game*> gamesVector = (*it)->getGames();
+            vector<string> gamesVectorString;
+            for (auto it = gamesVector.begin(); it != gamesVector.end(); it++) {
+                gamesVectorString.push_back(to_string((*it)->getId()));
+            }
+            f << generalFunctions::coutVectorString(gamesVectorString);
+            gamesVector.clear();
+            gamesVectorString.clear();
+            f << endl << "PlayersID: ";
+            vector<SoccerPlayer*> soccerPlayersVector = (*it)->getPlayers();
+            vector<string> soccerPlayersVectorString;
+            for (auto it = soccerPlayersVector.begin(); it != soccerPlayersVector.end(); it++) {
+                soccerPlayersVectorString.push_back(to_string((*it)->getId()));
+            }
+            f << generalFunctions::coutVectorString(soccerPlayersVectorString);
+            soccerPlayersVector.clear();
+            soccerPlayersVectorString.clear();
+            f << endl << "InfCalls: ";
+            vector<InfCall*> infCallsVector = (*it)->getInfs();
+            vector<string> infCallsVectorString;
+            for (auto it = infCallsVector.begin(); it != infCallsVector.end(); it++) {
+                infCallsVectorString.push_back(to_string((*it)->getId()));
+            }
+            f << generalFunctions::coutVectorString(infCallsVectorString);
+            infCallsVector.clear();
+            infCallsVectorString.clear();
+
+            if (it != calls.end() - 1)
+                f << endl << endl << "::::::::::" << endl << endl;
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}
+
+bool NationalTeam::writeInfCallsFile(std::string filename) {
+    ofstream f;
+    f.open(filename, ios::out);
+    if (f.is_open()) {
+        for (auto it = infCalls.begin(); it != infCalls.end(); it++) {
+            f << "ID: " << (*it)->getId() << endl;
+            f << "Player ID: " << (*it)->getSoccerPlayerId() << endl;
+            f << "Arrived Date: " << (*it)->getDateArrived() << endl;
+            f << "Left Date: " << (*it)->getDateLeft();
+
+            if (it != infCalls.end() - 1)
                 f << endl << endl << "::::::::::" << endl << endl;
         }
         f.close();

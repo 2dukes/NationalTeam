@@ -30,9 +30,20 @@ CMakeFiles/NTeam.dir/Classes/Game.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj: ../Classes/GameStats.cpp
 CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj: ../Classes/GameStats.h
 
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/Call.h
 CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/Date.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/Exceptions.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/Game.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/GameStats.h
 CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/IndividualStatistics.cpp
 CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/IndividualStatistics.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/InfCall.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/NationalTeam.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/OtherWorker.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/SoccerPlayer.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/Staff.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../Classes/TechnicalTeam.h
+CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 
 CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj: ../Classes/Date.h
 CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj: ../Classes/InfCall.cpp

@@ -68,7 +68,7 @@ void SoccerPlayer::info() const
          left << setw(20) << club << left << setw(10) << weight <<
          left << setw(10) << height << left << setw(10) << getSalary() <<
          left << setw(20) << marketPrice <<
-         left << setw(10) << daysActive;
+         left << setw(20) << daysActive;
 
 }
 
@@ -99,7 +99,7 @@ void SoccerPlayer::setDaysActive(unsigned int daysActive) {
 void SoccerPlayer::header()
 {
     std::cout << std::endl;
-    std::cout << std::left << std::setw(5) << "ID" << std::left << std::setw(50) << "Name"<< std::left << std::setw(10) << "Birth Date"
+    std::cout << std::left << std::setw(5) << "ID" << std::left << std::setw(50) << "Name"<< std::left << std::setw(15) << "Birth Date"
               << std::left << std::setw(15) << "Position" << std::left << std::setw(20) << "Club" << std::left << std::setw(10) << "Weight"
               << std::left << std::setw(10) << "Height" << std::left << setw(10) << "Salary" << std::left << std::setw(20) << "Market Price" << std::left << std::setw(10) << "Days Active" << std::endl;
     std::cout << "===================================================================================================================================================================================================================" << endl;

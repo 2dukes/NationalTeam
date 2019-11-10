@@ -149,6 +149,6 @@ namespace generalFunctions {
 
     bool checkBetweenDates(Date &shorter, Date &mid, Date &higher)
     {
-        return (shorter <= mid && mid <= higher);
+        return ((shorter <= mid) && (mid <= higher));
     }
 }

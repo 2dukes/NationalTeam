@@ -21,6 +21,9 @@ public:
     void setDateArrived(Date date);
     void setDateLeft(Date date);
 
+    /* Other Methods */
+    static void header();
+    void info();
 private:
     unsigned int id;
     unsigned int soccerPlayerId;

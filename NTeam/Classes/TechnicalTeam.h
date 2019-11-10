@@ -21,7 +21,7 @@ public:
 
     /* Other Methods */
     void info() const;
-    void header();
+    static void header();
 
 private:
     unsigned int salary;

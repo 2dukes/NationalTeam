@@ -32,5 +32,5 @@ Stadium: Luz
 Opposite Team: Espanha
 Opposite Team Participants: Anthony Moris, Dirk Carlson, Maxime Channot, Gerson, Jans, Thill, Bohnert, Barreiro, Rodrigues, Turpel
 Refereeing Team: Tim Tam Tum, Shium Jhim, Hirv Jesv, Kjhr Inrm
-Game Statistics: 1001
+Game Statistics: 1002
 Individual Statistics: 2002

@@ -132,7 +132,10 @@ void Game::info() const
     cout << left << setw(10) << id <<
          left << setw(15) << date.getDate() << left << setw(20) << city <<
          left << setw(20) << country << left << setw(25) << stadium <<
-         left << setw(20) << oppositeTeam << left << setw(80) << generalFunctions::coutVectorString(refereeTeam);
+         left << setw(20) << oppositeTeam << endl << endl << "Opposition Team Participants: " <<
+         left << setw(80) << generalFunctions::coutVectorString(oppositeTeamParticipants) <<
+         endl << "Referee Team: " <<
+         left << setw(80) << generalFunctions::coutVectorString(refereeTeam) << endl;
 }
 
 void Game::header()
@@ -140,6 +143,6 @@ void Game::header()
     std::cout << std::endl;
     std::cout << std::left << std::setw(10) << "ID" << std::left << std::setw(15) << "Date"
               << std::left << std::setw(20) << "City" << std::left << std::setw(20) << "Country" << std::left << std::setw(25) << "Stadium"
-              << std::left << std::setw(20) << "Opposite Team" << std::left << std::setw(80) << "Referee Team" << endl;
+              << std::left << std::setw(20) << "Opposite Team" << endl;
     std::cout << "===================================================================================================================================================================================================================" << endl;
 }

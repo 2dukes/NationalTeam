@@ -18,6 +18,7 @@ GameStats::GameStats(unsigned int id, unsigned short goals, unsigned short oppos
     this->goals = goals;
     this->oppositionGoals = oppositionGoals;
     this->shots = shots;
+    this->oppositionShots = oppositionShots;
     this->shotsTarget = shotsTarget;
     this->oppositionShotsTarget = oppositionShotsTarget;
     this->possession = possession;
@@ -30,7 +31,7 @@ GameStats::GameStats(unsigned int id, unsigned short goals, unsigned short oppos
     this->offsides = offsides;
     this->oppositionOffsides = oppositionOffsides;
     this->corners = corners;
-    this->oppositionCorners = corners;
+    this->oppositionCorners = oppositionCorners;
     this->yellowCards = yellowCards;
     this->oppositionsYellowCards = oppositionYellowCards;
     this->redCards = redCards;
@@ -257,5 +258,5 @@ void GameStats::info(ostream &os) const {
     os << "Opposing Team Corners: " << oppositionCorners << endl;
     os << "Injuries: " << injuries << endl;
     os << "Opposing Team Injuries: " << oppositionInjuries << endl;
-    os << "\n" << "::::::::::" << "\n\n";
+    os << "\n" << ":::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::";
 }

@@ -16,7 +16,7 @@ End Date: 25/05/2010
 House-Food: 1500
 Games: 1000
 PlayersID: 1, 2
-InfCalls: 1, 3
+InfCalls: 1, 2
 
 ::::::::::
 

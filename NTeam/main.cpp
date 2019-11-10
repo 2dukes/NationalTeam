@@ -14,12 +14,13 @@ int main() {
     N.readGamesFile("../Files/Games.txt");
     N.readInfCalls("../Files/InfCalls.txt");
     N.readCallsFile("../Files/Calls.txt");
-//    N.displayGames();
+//    N.displayCallsPlayers();
 //    N.createCall();
 //    N.displaySoccerPlayers();
 //    N.displayOtherWorkers();
-//    system("pause");
-//    mainMenu(N);
+//    N.displayCallsGames();
+//    N.writeCallsFile("../Files/Calls.txt");
+    mainMenu(N);
 //    N.createCall();
     return 0;
 }

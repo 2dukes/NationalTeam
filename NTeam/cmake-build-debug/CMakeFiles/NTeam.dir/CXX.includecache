@@ -69,7 +69,11 @@ fstream
 -
 string
 -
-sstream
+chrono
+-
+ratio
+-
+ctime
 -
 
 C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.h

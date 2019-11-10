@@ -3,6 +3,11 @@
 //
 
 #include "IndividualStatistics.h"
+#include <iomanip>
+#include <iostream>
+#include "NationalTeam.h"
+
+using namespace std;
 
 IndividualStatistics::IndividualStatistics(unsigned int id, unsigned int soccerPlayerID, unsigned short goals,
         unsigned short assists, unsigned short passes, unsigned short shots, unsigned short shotsTarget,
@@ -125,3 +130,14 @@ void IndividualStatistics::setInjured(bool injured) {
     this->injured = injured;
 }
 
+void IndividualStatistics::header()
+{
+    cout << left << setw(5) << "ID" <<
+         left << setw(10) << "Goals" <<
+         left << setw(10) << "Assists" << left << setw(10) << "Shots" <<
+         left << setw(20) << "Shots on Target" << left << setw(10) << "Passes" <<
+         left << setw(5) << "KMS" << left << setw(20) << "Played Minutes" <<
+         left << setw(10) << "Yellows" << left << setw(10) << "Reds" <<
+         left << setw(10) << "Injured" << left << setw(10) << "Fouls" << endl << endl;
+
+}

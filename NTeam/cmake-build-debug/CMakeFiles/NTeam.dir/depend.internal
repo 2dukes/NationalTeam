@@ -31,9 +31,20 @@ CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/GameStats.cpp
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/GameStats.h
 CMakeFiles/NTeam.dir/Classes/IndividualStatistics.cpp.obj
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Call.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Exceptions.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Game.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/GameStats.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/IndividualStatistics.cpp
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/IndividualStatistics.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/InfCall.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Staff.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/TechnicalTeam.h
+ C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/NecessaryFunctions_NameSpaces.h
 CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h
  C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/InfCall.cpp

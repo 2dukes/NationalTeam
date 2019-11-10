@@ -42,6 +42,8 @@ public:
     void displaySoccerPlayers() const;
     void displayGames() const;
     void displayTechnicalTeamMembers() const;
+    void displayCallsPlayers() const;
+    void displayCallsGames() const;
 
     /* Other Methods (templates) */
     template <class Type>
@@ -61,8 +63,11 @@ public:
     bool writeSoccerPlayersFile(std::string filename);
 
     /* Game Methods */
-    Game* createGame(std::vector<SoccerPlayer*> soccerPlayers);
+    Game* createGame(std::vector<SoccerPlayer*> soccerPlayers, Date begin, Date end);
     void addGame(Game* game);
+    bool alterGameGlobal(Game* game);
+    bool alterGameGlobalOpposite(Game* game);
+    bool alterPlayerStats(std::vector<IndividualStatistics*> stats, unsigned int playerID);
     bool readGamesFile(std::string filename);
     bool writeGamesFile(std::string filename);
 
@@ -70,6 +75,9 @@ public:
     bool createCall();
     void addCall(Call* call);
     bool readCallsFile(std::string filename);
+    bool alterCall();
+    bool removeCall();
+    bool writeCallsFile(std::string filename);
 
     /* GameStats Methods */
     GameStats* createGameStatistics(unsigned int gameID);
@@ -88,6 +96,7 @@ public:
     bool readInfCalls(std::string filename);
     InfCall* createInfCalls(unsigned int sPId);
     void addInfCall(InfCall* inf);
+    bool writeInfCallsFile(std::string filename);
 
     /* TechnicalTeam Methods */
     void addTechnicalTeamMember(TechnicalTeam* tTeam);
@@ -95,7 +104,7 @@ public:
     bool createTechnicalTeamMember();
     bool alterTechnicalTeamMember();
     bool deleteTechnicalTeamMember();
-    bool writeTechicalTeamFile(std::string filename);
+    bool writeTechnicalTeamFile(std::string filename);
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers
@@ -204,7 +213,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                 {
                     dBirth1 = readOperations::readDate("Smaller birth Date (DD/MM/YYYY):");
                     dBirth2 = readOperations::readDate("Bigger birth Date (DD/MM/YYYY):");
-                    if(dBirth2 <= dBirth1)
+                    if(!(dBirth2 <= dBirth1))
                         std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
                 } while(!(dBirth1 <= dBirth2));
 

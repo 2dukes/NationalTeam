@@ -44,6 +44,8 @@ public:
     void setFouls(unsigned short fouls);
     void setInjured(bool injured);
 
+    /* Other Methods */
+    void header();
 
 private:
     unsigned int id, soccerPlayerID;

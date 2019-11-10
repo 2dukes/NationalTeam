@@ -34,7 +34,7 @@ void mainMenu(NationalTeam nTeam) {
     string nTeamName = nTeam.getName();
 
     cout << string(100, '\n');
-    vector<string> mainChoices = { "1. Display", "2. Update National Team Info", "3. Manage", "4. To be Implemented...", "5. To be Implemented...", "6. To be Implemented...", "7. To be Implemented...", "8. To be Implemented...", "9. To be Implemented...","10. To be Implemented...","11. To be Implemented...","0. Exit" };
+    vector<string> mainChoices = { "1. Display", "2. Update National Team Info", "3. Manage", "4. Calls in which a player participated", "5. Games in a call in which a player participated", "6. To be Implemented...", "7. To be Implemented...", "8. To be Implemented...", "9. To be Implemented...","10. To be Implemented...","11. To be Implemented...","0. Exit" };
     vector<string> manageChoices = { "1. Create", "2. Alter", "3. Remove", "0. Main Menu" };
     vector<string> manageSecundaryChoices = { "1. OtherWorker", "2. SoccerPlayer", "3. Call", "0. Previous Menu" };
     vector<string> viewAvailablePackChoices = { "1. Other Workers", "2. Technical Team", "3. Soccer Players", "4. Games", "5. Call Games", "6. Call Players", "0. Main Menu" };
@@ -266,6 +266,9 @@ void mainMenu(NationalTeam nTeam) {
             {
                 // Option 4.
                 string auxiliarExplorer = mainChoices.at(mainMenu - 1);
+
+                nTeam.playerCallsForMenu();
+
                 cout << "Press any key to continue...";
                 cin.get();
                 break;
@@ -275,6 +278,7 @@ void mainMenu(NationalTeam nTeam) {
                 // Option 5.
                 string auxiliarExplorer = mainChoices.at(mainMenu - 1);
 
+                nTeam.playerGamesForMenu();
 
                 cout << "Press any key to continue...";
                 cin.get();

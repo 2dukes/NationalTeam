@@ -1037,6 +1037,83 @@ bool NationalTeam::readGamesFile(std::string filename) {
 
 /* Calls */
 
+Call *NationalTeam::callLookUp() {
+    bool ct;
+    int option;
+    vector<Call *> auxCall;
+    while (true) {
+        ct = false;
+        auxCall.clear();
+        std::cout << "Look for a Call using: " << std::endl;
+        std::cout << "1. ID\n2. Date\n0. Back\n\n";
+        std::cin >> option;
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << std::endl;
+        switch (option) {
+            case 0:
+                return NULL;
+            case 1: {
+                // ID
+                int id = readOperations::readNumber<int>("ID: ");
+
+                try {
+                    return getByID(calls, id);
+                }
+                catch (NoObjectFound &e) {
+                    std::cout << std::endl << e.getError() << std::endl << std::endl;
+                }
+
+                break;
+
+            }
+            case 2: {
+                // Date
+                Date d1, d2;
+                do {
+                    d1 = readOperations::readDate("Smaller Date (DD/MM/YYYY):");
+                    d2 = readOperations::readDate("Bigger Date (DD/MM/YYYY):");
+                    if (!(d2 <= d1))
+                        std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl
+                                  << std::endl;
+                } while (!(d1 <= d2));
+
+
+                for (auto &x: calls) {
+                    if (generalFunctions::checkBetweenDates(d1, x->getBeginDate(), d2) ||
+                        generalFunctions::checkBetweenDates(d1, x->getEndDate(), d2)) {
+                        auxCall.push_back(x);
+                        ct = true;
+                    }
+                }
+
+                if (!auxCall.empty()) {
+                    auxCall.at(0)->header(); // Print corresponding header
+                    for (auto &x: auxCall) {
+                        x->infoGames();
+                        std::cout << std::endl;
+                    }
+                }
+
+                if (ct) {
+                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl << std::endl;
+                    try {
+                        std::cin >> option;
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        return getByID(auxCall, option);
+                    }
+                    catch (NoObjectFound &e) {
+                        std::cout << std::endl << e.getError() << std::endl << std::endl;
+                    }
+                } else
+                    std::cout << std::endl << "No Corresponding Call Found..." << std::endl << std::endl;
+                break;
+
+
+            }
+        }
+    }
+}
+
 bool NationalTeam::removeCall()
 {
     unsigned int callId;
@@ -1870,7 +1947,7 @@ InfCall* NationalTeam::createInfCalls(unsigned int sPId)
     cout << "\nSame Beggining and End Date as the Summon? (Y|N)\n";
     string sameDate = readOperations::confirmAnswer();
 
-    unsigned int id = getLastID(players);
+    unsigned int id = getLastID(infCalls);
 
     if(sameDate == "Y" || sameDate == "y")
     {
@@ -2303,7 +2380,8 @@ bool NationalTeam::writeInfCallsFile(std::string filename) {
             f << "ID: " << (*it)->getId() << endl;
             f << "Player ID: " << (*it)->getSoccerPlayerId() << endl;
             f << "Arrived Date: " << (*it)->getDateArrived() << endl;
-            f << "Left Date: " << (*it)->getDateLeft();
+            f << "Left Date: " << (*it)->getDateLeft() << endl;
+            f << "Injured: " << (*it)->getIsInjured();
 
             if (it != infCalls.end() - 1)
                 f << endl << endl << "::::::::::" << endl << endl;
@@ -2316,3 +2394,75 @@ bool NationalTeam::writeInfCallsFile(std::string filename) {
         return false;
     }
 }
+
+// Assumo que sempre que alguém participa numa convocatória, recebe o salário completo
+unsigned long NationalTeam::overallCostsOfNationalTeam() {
+    unsigned long total = 0;
+    for (auto itCalls = calls.begin(); itCalls != calls.end(); itCalls++) {
+        total += (*itCalls)->getHousingFood();
+        for (auto itTechnicalTeam = technicalTeam.begin(); itTechnicalTeam != technicalTeam.end(); itTechnicalTeam++) {
+            total += (*itTechnicalTeam)->getSalary();
+        }
+        for (auto itOtherWorkers = otherWorkers.begin(); itOtherWorkers != otherWorkers.end(); itOtherWorkers++) {
+            total += (*itOtherWorkers)->getSalary();
+        }
+        vector<SoccerPlayer*> soccerPlayerOfCall = (*itCalls)->getPlayers();
+        vector<Game*> gamesOfCall = (*itCalls)->getGames();
+        for (auto itGames = gamesOfCall.begin(); itGames != gamesOfCall.end(); itGames++) {
+            vector<IndividualStatistics*> indStats = (*itGames)->getIndividualStatistics();
+            for (auto itStat = indStats.begin(); itStat != indStats.end(); itStat++) {
+
+            }
+        }
+    }
+    return total;
+}
+
+vector<Call*> NationalTeam::playerCalls(SoccerPlayer* sP) {
+    vector<Call*> result;
+    for (auto it = calls.begin(); it!= calls.end(); it++) {
+        if (generalFunctions::inVector((*it)->getPlayers(), sP))
+            result.push_back(*it);
+    }
+    return result;
+}
+
+void NationalTeam::playerCallsForMenu() {
+    SoccerPlayer* sP = workerLookUp(players);
+    vector<Call*> playerCallsVector = playerCalls(sP);
+    for (auto it = playerCallsVector.begin(); it != playerCallsVector.end(); it++) {
+        displayCallsGames();
+    }
+}
+
+
+vector<Game *> NationalTeam::playerGames(SoccerPlayer* sP, Call* call) {
+    vector<Game*> result;
+    vector<Game*> callGames = call->getGames();
+    vector<IndividualStatistics*> indStats;
+    for (auto it = callGames.begin(); it != callGames.end(); it++) {
+        indStats = (*it)->getIndividualStatistics();
+        for (auto itr = indStats.begin(); itr != indStats.end(); itr++) {
+            if ((*itr)->getSoccerPlayerID() == sP->getId()) {
+                result.push_back(*it);
+                break;
+            }
+        }
+        indStats.clear();
+    }
+    return result;
+}
+
+void NationalTeam::playerGamesForMenu() {
+    SoccerPlayer* sP = workerLookUp(players);
+    Call* call = callLookUp();
+    vector<Game*> gamesVector = playerGames(sP, call);
+    for (auto it = gamesVector.begin(); it != gamesVector.end(); it++) {
+        (*it)->info(cout);
+    }
+}
+
+
+
+
+

@@ -16,10 +16,12 @@ public:
     unsigned int getSoccerPlayerId();
     Date getDateArrived();
     Date getDateLeft();
+    bool getIsInjured();
 
     /* Sets */
     void setDateArrived(Date date);
     void setDateLeft(Date date);
+    void setIsInjured(bool isInjured);
 
     /* Other Methods */
     static void header();
@@ -29,6 +31,7 @@ private:
     unsigned int soccerPlayerId;
     Date arrived;
     Date left;
+    bool isInjured;
 };
 
 

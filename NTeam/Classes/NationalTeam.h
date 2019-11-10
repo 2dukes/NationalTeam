@@ -78,6 +78,7 @@ public:
     bool alterCall();
     bool removeCall();
     bool writeCallsFile(std::string filename);
+    Call* callLookUp();
 
     /* GameStats Methods */
     GameStats* createGameStatistics(unsigned int gameID);
@@ -105,6 +106,15 @@ public:
     bool alterTechnicalTeamMember();
     bool deleteTechnicalTeamMember();
     bool writeTechnicalTeamFile(std::string filename);
+
+    /* Features */
+    std::vector<Call*> playerCalls(SoccerPlayer* sP); // Calls em que o jogador participou
+    void playerCallsForMenu();
+    std::vector<Game*> playerGames(SoccerPlayer* sP, Call* call); // Jogos em que o jogador participou numa determinada call
+    void playerGamesForMenu();
+
+    unsigned long overallCostsOfNationalTeam(); // custos globais (de sempre) para toda a seleção
+
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers

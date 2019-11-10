@@ -147,7 +147,7 @@ namespace generalFunctions {
             return d[month - 1];
     }
 
-    bool checkBetweenDates(Date &shorter, Date &mid, Date &higher)
+    bool checkBetweenDates(Date shorter, Date mid, Date higher)
     {
         return ((shorter <= mid) && (mid <= higher));
     }

@@ -1087,9 +1087,8 @@ Call *NationalTeam::callLookUp() {
                 }
 
                 if (!auxCall.empty()) {
-                    auxCall.at(0)->header(); // Print corresponding header
                     for (auto &x: auxCall) {
-                        x->infoGames();
+                        x->info();
                         std::cout << std::endl;
                     }
                 }
@@ -2430,8 +2429,9 @@ vector<Call*> NationalTeam::playerCalls(SoccerPlayer* sP) {
 void NationalTeam::playerCallsForMenu() {
     SoccerPlayer* sP = workerLookUp(players);
     vector<Call*> playerCallsVector = playerCalls(sP);
+    cout << endl << endl << "Calls: " << endl << endl;
     for (auto it = playerCallsVector.begin(); it != playerCallsVector.end(); it++) {
-        displayCallsGames();
+        (*it)->info();
     }
 }
 
@@ -2456,10 +2456,96 @@ vector<Game *> NationalTeam::playerGames(SoccerPlayer* sP, Call* call) {
 void NationalTeam::playerGamesForMenu() {
     SoccerPlayer* sP = workerLookUp(players);
     Call* call = callLookUp();
+    cout << endl << endl << "Games:" << endl << endl;
     vector<Game*> gamesVector = playerGames(sP, call);
     for (auto it = gamesVector.begin(); it != gamesVector.end(); it++) {
         (*it)->info(cout);
     }
+}
+
+void NationalTeam::showCallStats() {
+    Call* call = callLookUp();
+    vector<Game*> callGames = call->getGames();
+    unsigned short goals = 0, shots = 0, shotsTarget = 0, possession = 0, passes = 0, passAccuracy = 0, fouls = 0,
+    offsides = 0, corners = 0, yellowCards = 0, redCards = 0, injuries = 0;
+    GameStats* stat;
+    for (auto it = callGames.begin(); it != callGames.end(); it++) {
+        stat = (*it)->getGameStats();
+        goals += stat->getGoals();
+        shots += stat->getShots();
+        shotsTarget += stat->getShotsTarget();
+        possession += stat->getPossession();
+        passes += stat->getPasses();
+        passAccuracy += stat->getPassAccuracy();
+        fouls += stat->getFouls();
+        offsides += stat->getOffsides();
+        corners += stat->getCorners();
+        yellowCards += stat->getYellowCards();
+        redCards += stat->getRedCards();
+        injuries += stat->getInjuries();
+    }
+    possession /= callGames.size();
+    passAccuracy /= callGames.size();
+
+    cout << endl << endl << "Statistics of the call:" << endl << endl;
+    cout << "Goals: " << goals << endl;
+    cout << "Shots: " << shots << endl;
+    cout << "Shots on Target: " << shotsTarget << endl;
+    cout << "Average Possession: " << possession << endl;
+    cout << "Passes: " << passes << endl;
+    cout << "Average Passe Accuracy: " << passAccuracy << endl;
+    cout << "Fouls: " << fouls << endl;
+    cout << "Offsides: " << offsides << endl;
+    cout << "Corners: " << corners << endl;
+    cout << "Yellow Cards: " << yellowCards << endl;
+    cout << "Red Cards: " << redCards << endl;
+    cout << "Injuries: " << injuries << endl << endl;
+}
+
+void NationalTeam::showGlobalStats() {
+
+    vector<Game*> callGames;
+    unsigned short goals = 0, shots = 0, shotsTarget = 0, possession = 0, passes = 0, passAccuracy = 0, fouls = 0,
+            offsides = 0, corners = 0, yellowCards = 0, redCards = 0, injuries = 0;
+    GameStats* stat;
+    unsigned int countGames = 0;
+    for (auto itr = calls.begin(); itr != calls.end(); itr++) {
+        callGames = (*itr)->getGames();
+        countGames += callGames.size();
+        for (auto it = callGames.begin(); it != callGames.end(); it++) {
+            stat = (*it)->getGameStats();
+            goals += stat->getGoals();
+            shots += stat->getShots();
+            shotsTarget += stat->getShotsTarget();
+            possession += stat->getPossession();
+            passes += stat->getPasses();
+            passAccuracy += stat->getPassAccuracy();
+            fouls += stat->getFouls();
+            offsides += stat->getOffsides();
+            corners += stat->getCorners();
+            yellowCards += stat->getYellowCards();
+            redCards += stat->getRedCards();
+            injuries += stat->getInjuries();
+        }
+        callGames.clear();
+    }
+
+    possession /= countGames;
+    passAccuracy /= countGames;
+
+    cout << endl << endl << "Global Statiscs:" << endl << endl;
+    cout << "Goals: " << goals << endl;
+    cout << "Shots: " << shots << endl;
+    cout << "Shots on Target: " << shotsTarget << endl;
+    cout << "Average Possession: " << possession << endl;
+    cout << "Passes: " << passes << endl;
+    cout << "Average Passe Accuracy: " << passAccuracy << endl;
+    cout << "Fouls: " << fouls << endl;
+    cout << "Offsides: " << offsides << endl;
+    cout << "Corners: " << corners << endl;
+    cout << "Yellow Cards: " << yellowCards << endl;
+    cout << "Red Cards: " << redCards << endl;
+    cout << "Injuries: " << injuries << endl << endl;
 }
 
 

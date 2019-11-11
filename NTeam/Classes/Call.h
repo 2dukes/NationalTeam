@@ -37,6 +37,7 @@ public:
 
     /* Other Methods */
     static void header();
+    void info();
     void infoPlayers();
     void infoGames();
     void infoStats();

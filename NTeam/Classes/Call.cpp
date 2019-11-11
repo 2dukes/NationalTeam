@@ -3,6 +3,7 @@
 //
 
 #include "Call.h"
+#include "../NecessaryFunctions_NameSpaces.h"
 #include <iomanip>
 #include <iostream>
 
@@ -118,6 +119,37 @@ void Call::header()
     std::cout << "===================================================================================================================================================================================================================" << std::endl;
 }
 
+void Call::info() {
+    cout << "ID: " << id << endl;
+    cout << "Competition: " << competition << endl;
+    cout << "Begin Date: " << begin << endl;
+    cout << "End Date: " << end << endl;
+    cout << "House-Food: " << housing_food << endl;
+    cout << "Games: ";
+    vector<string> gamesVectorString;
+    for (auto it = games.begin(); it != games.end(); it++) {
+        gamesVectorString.push_back(to_string((*it)->getId()));
+    }
+    cout << generalFunctions::coutVectorString(gamesVectorString);
+    gamesVectorString.clear();
+    cout << endl << "PlayersID: ";
+    vector<string> soccerPlayersVectorString;
+    for (auto it = players.begin(); it != players.end(); it++) {
+        soccerPlayersVectorString.push_back(to_string((*it)->getId()));
+    }
+    cout << generalFunctions::coutVectorString(soccerPlayersVectorString);
+    soccerPlayersVectorString.clear();
+    cout << endl << "InfCalls: ";
+    vector<string> infCallsVectorString;
+    for (auto it = infs.begin(); it != infs.end(); it++) {
+        infCallsVectorString.push_back(to_string((*it)->getId()));
+    }
+    cout << generalFunctions::coutVectorString(infCallsVectorString);
+    infCallsVectorString.clear();
+
+    cout << endl << endl << "::::::::::" << endl << endl;
+}
+
 
 
 void Call::setCompetition(std::string competition) {
@@ -147,3 +179,5 @@ void Call::setEndDate(Date end) {
 void Call::setHousingFood(unsigned int housing_food) {
     this->housing_food = housing_food;
 }
+
+

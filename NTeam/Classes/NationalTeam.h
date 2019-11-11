@@ -113,6 +113,9 @@ public:
     std::vector<Game*> playerGames(SoccerPlayer* sP, Call* call); // Jogos em que o jogador participou numa determinada call
     void playerGamesForMenu();
 
+    void showCallStats();
+    void showGlobalStats();
+
     unsigned long overallCostsOfNationalTeam(); // custos globais (de sempre) para toda a seleção
 
 

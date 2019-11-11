@@ -10,6 +10,7 @@ CMakeFiles/NTeam.dir/Classes/Call.cpp.obj: ../Classes/IndividualStatistics.h
 CMakeFiles/NTeam.dir/Classes/Call.cpp.obj: ../Classes/InfCall.h
 CMakeFiles/NTeam.dir/Classes/Call.cpp.obj: ../Classes/SoccerPlayer.h
 CMakeFiles/NTeam.dir/Classes/Call.cpp.obj: ../Classes/Staff.h
+CMakeFiles/NTeam.dir/Classes/Call.cpp.obj: ../NecessaryFunctions_NameSpaces.h
 
 CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Date.cpp
 CMakeFiles/NTeam.dir/Classes/Date.cpp.obj: ../Classes/Date.h

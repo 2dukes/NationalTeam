@@ -2349,9 +2349,7 @@ bool NationalTeam::writeInfCallsFile(std::string filename) {
             f << "ID: " << (*it)->getId() << endl;
             f << "Player ID: " << (*it)->getSoccerPlayerId() << endl;
             f << "Arrived Date: " << (*it)->getDateArrived() << endl;
-            f << "Left Date: " << (*it)->getDateLeft() << endl;
-            f << "Injured: " << (*it)->getIsInjured();
-
+            f << "Left Date: " << (*it)->getDateLeft();
             if (it != infCalls.end() - 1)
                 f << endl << endl << "::::::::::" << endl << endl;
         }

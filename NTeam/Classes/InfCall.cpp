@@ -60,11 +60,3 @@ void InfCall::header()
               << std::left << std::setw(20) << "Arrived Date" << std::left << std::setw(20) << "Left Date" << std::endl;
     std::cout << "===================================================================================================================================================================================================================" << std::endl;
 }
-
-bool InfCall::getIsInjured() {
-    return isInjured;
-}
-
-void InfCall::setIsInjured(bool isInjured) {
-    this->isInjured = isInjured;
-}

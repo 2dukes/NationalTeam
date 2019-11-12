@@ -20,7 +20,7 @@ SoccerPlayer::SoccerPlayer(unsigned int id, std::string name, Date birthDate, st
 /* Gets */
 
 unsigned int SoccerPlayer::getSalary() const {
-    return  0.0000001 * marketPrice * daysActive;
+    return  0.0000005 * marketPrice * daysActive;
 }
 
 string SoccerPlayer::getPosition() const {

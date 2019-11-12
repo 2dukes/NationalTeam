@@ -40,7 +40,6 @@ public:
     void info();
     void infoPlayers();
     void infoGames();
-    void infoStats();
 
 private:
     unsigned int id;

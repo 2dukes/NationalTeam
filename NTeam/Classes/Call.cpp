@@ -106,11 +106,6 @@ void Call::infoGames()
     }
 }
 
-void Call::infoStats()
-{
-
-}
-
 void Call::header()
 {
     std::cout << std::endl;

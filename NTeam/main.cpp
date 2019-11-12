@@ -4,7 +4,7 @@
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
-    NationalTeam N;
+    NationalTeam N("National Team");
 //    N.readGamesFile("../Files/Games.txt");
     N.readTechnicalTeamFile("../Files/TechnicalTeam.txt");
     N.readOtherWorkersFile("../Files/OtherWorkers.txt");
@@ -18,6 +18,12 @@ int main() {
 //    N.createCall();
 //    N.displaySoccerPlayers();
 //    N.displayOtherWorkers();
+//    N.getPlayerTotalCost();
+//    N.getTeamTotalCost();
+//    N.getNationalTeamTotalCost();
+//    N.getMonthlyPlayerTotalCost();
+//    N.getMonthlyNationalTeamTotalCost();
+//    system("pause");
 //    N.displayCallsGames();
 //    N.writeCallsFile("../Files/Calls.txt");
     mainMenu(N);

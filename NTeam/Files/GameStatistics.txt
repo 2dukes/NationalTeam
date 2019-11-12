@@ -42,7 +42,7 @@ Opposing team fouls: 27
 Yellow cards: 3
 Opposing team yellow cards: 6
 Red cards: 0
-Opposing team Red cards: 0
+Opposing team red cards: 0
 Offsides: 5
 Opposing team offsides: 2
 Corners: 7
@@ -67,9 +67,9 @@ Opposing team pass accuracy: 83
 Fouls: 15
 Opposing team fouls: 27
 Yellow cards: 3
-Opposing team Yellow cards: 6
+Opposing team yellow cards: 6
 Red cards: 0
-Opposing team Red cards: 1
+Opposing team red cards: 1
 Offsides: 5
 Opposing team offsides: 2
 Corners: 7

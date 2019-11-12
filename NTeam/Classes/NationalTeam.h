@@ -20,7 +20,7 @@
 
 class NationalTeam {
 public:
-    NationalTeam() { };
+    NationalTeam(std::string n):name(n) { };
 
     /* Gets */
     std::string getName() const;
@@ -89,7 +89,6 @@ public:
     /* IndividualStatistics Methods */
     IndividualStatistics* createIndividualStatistics(unsigned int playerID);
     void addIndividualStatistic(IndividualStatistics* iStat);
-    bool alterIndividualStatistic();
     bool readIndividualStatisticsFile(std::string filename);
     bool writeIndividualStatisticsFile(std::string filename);
 
@@ -113,11 +112,21 @@ public:
     std::vector<Game*> playerGames(SoccerPlayer* sP, Call* call); // Jogos em que o jogador participou numa determinada call
     void playerGamesForMenu();
 
+    /* Costs */
+    void getPlayerTotalCost();
+    unsigned int getTeamTotalCost();
+    void getNationalTeamTotalCost();
+    void getMonthlyPlayerTotalCost();
+    void getMonthlyTeamTotalCost();
+    void getMonthlyNationalTeamTotalCost();
+
     void showCallStats();
     void showGlobalStats();
 
-    unsigned long overallCostsOfNationalTeam(); // custos globais (de sempre) para toda a seleção
+    void showPlayerGlobalStats();
+    void showPlayerCallStats();
 
+    virtual ~NationalTeam();
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers
@@ -167,7 +176,7 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
     {
         auxPerson.clear();
         ct = false;
-        std::cout << "Look for a \'Person\' using: " << std::endl; std::cout << "1. Name\n2. Birth Date\n3. Salary\n4. ID\n0. Back\n\n";
+        std::cout << std::endl << "Look for a \'Person\' using: " << std::endl; std::cout << "1. Name\n2. Birth Date\n3. Salary\n4. ID\n0. Back\n\n";
         std::cin >> option; std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); std::cout << std::endl;
         switch(option)
         {
@@ -226,8 +235,10 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
                 {
                     dBirth1 = readOperations::readDate("Smaller birth Date (DD/MM/YYYY):");
                     dBirth2 = readOperations::readDate("Bigger birth Date (DD/MM/YYYY):");
-                    if(!(dBirth2 <= dBirth1))
+                    if(dBirth2 <= dBirth1)
                         std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+                    else
+                        break;
                 } while(!(dBirth1 <= dBirth2));
 
 

@@ -2,7 +2,7 @@ ID: 200
 Name: Zezinho do Tintol
 Birth Date: 01/10/1969
 Function: Masseuse
-Salary: 50000
+Salary: 1500
 
 ::::::::::
 
@@ -10,7 +10,7 @@ ID: 201
 Name: Exemplo de Nome
 Birth Date: 06/11/1957
 Function: Doctor
-Salary: 120000
+Salary: 1200
 
 ::::::::::
 
@@ -18,4 +18,4 @@ ID: 202
 Name: Outro Nome
 Birth Date: 14/05/1974
 Function: Wardrobe Director
-Salary: 30000
+Salary: 3000

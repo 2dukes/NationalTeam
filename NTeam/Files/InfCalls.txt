@@ -2,7 +2,7 @@ ID: 1
 Player ID: 1
 Arrived Date: 09/11/2019
 Left Date: 20/11/2019
-Injured: false
+Injured: 0
 
 ::::::::::
 
@@ -10,7 +10,7 @@ ID: 2
 Player ID: 2
 Arrived Date: 10/11/2019
 Left Date: 19/11/2019
-Injured: false
+Injured: 0
 
 ::::::::::
 
@@ -18,4 +18,4 @@ ID: 3
 Player ID: 3
 Arrived Date: 15/11/2019
 Left Date: 19/11/2019
-Injured: true
+Injured: 0

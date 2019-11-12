@@ -11,6 +11,6 @@
 
 int displays(std::vector<std::string> &displays, std::string explorer, std::string &agencyName);
 
-void mainMenu(NationalTeam nTeam);
+void mainMenu(NationalTeam &nTeam);
 
 #endif //NTEAM_MENUPRESENT_H

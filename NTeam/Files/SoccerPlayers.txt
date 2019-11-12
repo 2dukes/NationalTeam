@@ -6,7 +6,7 @@ Club: Juventus
 Weight: 84
 Height: 187
 Market Price: 100000000
-Days Active: 5840
+Days Active: 1540
 
 ::::::::::
 

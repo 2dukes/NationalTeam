@@ -55,6 +55,7 @@ namespace generalFunctions {
     bool leapYear(int year);
     unsigned int numDays(int year, int month);
     bool checkBetweenDates(Date shorter, Date mid, Date higher);
+    unsigned int getDays(Date begDate, Date endDate);
 }
 
 #endif //NTEAM_NECESSARYFUNCTIONS_NAMESPACES_H

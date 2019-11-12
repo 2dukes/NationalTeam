@@ -1044,7 +1044,7 @@ Call *NationalTeam::callLookUp() {
     while (true) {
         ct = false;
         auxCall.clear();
-        std::cout << "Look for a Call using: " << std::endl;
+        std::cout << std::endl << "Look for a Call using: " << std::endl;
         std::cout << "1. ID\n2. Date\n0. Back\n\n";
         std::cin >> option;
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -1072,9 +1072,11 @@ Call *NationalTeam::callLookUp() {
                 do {
                     d1 = readOperations::readDate("Smaller Date (DD/MM/YYYY):");
                     d2 = readOperations::readDate("Bigger Date (DD/MM/YYYY):");
-                    if (!(d2 <= d1))
+                    if (d2 <= d1)
                         std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl
                                   << std::endl;
+                    else
+                        break;
                 } while (!(d1 <= d2));
 
 
@@ -1344,6 +1346,11 @@ bool sortPlayers(const SoccerPlayer* player1, const SoccerPlayer* player2)
 bool NationalTeam::createCall()
 {
 
+//    if(players.size() <= 12)
+//    {
+//        cout << endl << "Not enough Players To Assign To The Call..." << endl << endl;
+//        return;
+//    }
     unsigned int counter = 0;
     vector<SoccerPlayer*> auxSoccerPlayers;
     vector<InfCall*> infs;
@@ -1376,29 +1383,7 @@ bool NationalTeam::createCall()
     } while(!(begDate <= endDate));
     int housing_food = readOperations::readNumber<int>("Housing and Food Costs (Per Player):");
 
-    using std::chrono::system_clock;
-
-    std::tm timeinfo1 = std::tm();
-    timeinfo1.tm_year = begDate.getYear() - 1900 ;   // year: 2000
-    timeinfo1.tm_mon = begDate.getMonth() - 1;      // month: january
-    timeinfo1.tm_mday = begDate.getDay();
-    std::time_t tt1 = std::mktime (&timeinfo1);
-
-    std::tm timeinfo2 = std::tm();
-    timeinfo2.tm_year = endDate.getYear() - 1900;   // year: 2000
-    timeinfo2.tm_mon = endDate.getMonth() - 1;      // month: january
-    timeinfo2.tm_mday = endDate.getDay();
-    std::time_t tt2 = std::mktime (&timeinfo2);
-
-    system_clock::time_point tp1 = system_clock::from_time_t (tt1);
-    system_clock::time_point tp2 = system_clock::from_time_t (tt2);
-    system_clock::duration d = tp2 - tp1;
-
-    // convert to number of days:
-    typedef std::chrono::duration<int,std::ratio<60*60*24>> days_type;
-    days_type ndays = std::chrono::duration_cast<days_type> (d);
-
-    unsigned int days = ndays.count();
+    unsigned int days = generalFunctions::getDays(begDate, endDate);
 
     while(true)
     {
@@ -1793,20 +1778,6 @@ IndividualStatistics *NationalTeam::createIndividualStatistics(unsigned int play
 
     return iStat;
 
-}
-
-// TO DO
-bool NationalTeam::alterIndividualStatistic() {
-    bool toggle = true;
-    int repetition = 0, option;
-
-    cout << string(100, '\n');
-//    cout << explorer << endl << endl;
-
-    int id;
-    IndividualStatistics* iStat = getByID(individualStats, id);
-
-    return true;
 }
 
 bool NationalTeam::readIndividualStatisticsFile(std::string filename) {
@@ -2239,7 +2210,6 @@ bool NationalTeam::writeGamesStatisticsFile(std::string filename) {
             f << "Opposing team pass accuracy: " << (*it)->getOppositionPassAccuracy() << endl;
             f << "Fouls: " << (*it)->getFouls() << endl;
             f << "Opposing team fouls: " << (*it)->getOppositionFouls() << endl;
-            cout << "OPPOSING TEAM FOULS: " << (*it)->getOppositionFouls() << endl;
             f << "Yellow cards: " << (*it)->getYellowCards() << endl;
             f << "Opposing team yellow cards: " << (*it)->getOppositionYellowCards() << endl;
             f << "Red cards: " << (*it)->getRedCards() << endl;
@@ -2394,29 +2364,6 @@ bool NationalTeam::writeInfCallsFile(std::string filename) {
     }
 }
 
-// Assumo que sempre que alguém participa numa convocatória, recebe o salário completo
-unsigned long NationalTeam::overallCostsOfNationalTeam() {
-    unsigned long total = 0;
-    for (auto itCalls = calls.begin(); itCalls != calls.end(); itCalls++) {
-        total += (*itCalls)->getHousingFood();
-        for (auto itTechnicalTeam = technicalTeam.begin(); itTechnicalTeam != technicalTeam.end(); itTechnicalTeam++) {
-            total += (*itTechnicalTeam)->getSalary();
-        }
-        for (auto itOtherWorkers = otherWorkers.begin(); itOtherWorkers != otherWorkers.end(); itOtherWorkers++) {
-            total += (*itOtherWorkers)->getSalary();
-        }
-        vector<SoccerPlayer*> soccerPlayerOfCall = (*itCalls)->getPlayers();
-        vector<Game*> gamesOfCall = (*itCalls)->getGames();
-        for (auto itGames = gamesOfCall.begin(); itGames != gamesOfCall.end(); itGames++) {
-            vector<IndividualStatistics*> indStats = (*itGames)->getIndividualStatistics();
-            for (auto itStat = indStats.begin(); itStat != indStats.end(); itStat++) {
-
-            }
-        }
-    }
-    return total;
-}
-
 vector<Call*> NationalTeam::playerCalls(SoccerPlayer* sP) {
     vector<Call*> result;
     for (auto it = calls.begin(); it!= calls.end(); it++) {
@@ -2428,7 +2375,14 @@ vector<Call*> NationalTeam::playerCalls(SoccerPlayer* sP) {
 
 void NationalTeam::playerCallsForMenu() {
     SoccerPlayer* sP = workerLookUp(players);
+    if(sP == NULL)
+        return;
     vector<Call*> playerCallsVector = playerCalls(sP);
+    if(playerCallsVector.empty())
+    {
+        cout << "Player didn't Participated in any Summon\'s." << endl;
+        return;
+    }
     cout << endl << endl << "Calls: " << endl << endl;
     for (auto it = playerCallsVector.begin(); it != playerCallsVector.end(); it++) {
         (*it)->info();
@@ -2455,9 +2409,19 @@ vector<Game *> NationalTeam::playerGames(SoccerPlayer* sP, Call* call) {
 
 void NationalTeam::playerGamesForMenu() {
     SoccerPlayer* sP = workerLookUp(players);
+    if(sP == NULL)
+        return;
+    cout << endl << endl;
     Call* call = callLookUp();
+    if(call == NULL)
+        return;
     cout << endl << endl << "Games:" << endl << endl;
     vector<Game*> gamesVector = playerGames(sP, call);
+    if(gamesVector.empty())
+    {
+        cout << "Player didn't Participated in this Summon." << endl;
+        return;
+    }
     for (auto it = gamesVector.begin(); it != gamesVector.end(); it++) {
         (*it)->info(cout);
     }
@@ -2465,6 +2429,8 @@ void NationalTeam::playerGamesForMenu() {
 
 void NationalTeam::showCallStats() {
     Call* call = callLookUp();
+    if(call == NULL)
+        return;
     vector<Game*> callGames = call->getGames();
     unsigned short goals = 0, shots = 0, shotsTarget = 0, possession = 0, passes = 0, passAccuracy = 0, fouls = 0,
     offsides = 0, corners = 0, yellowCards = 0, redCards = 0, injuries = 0;
@@ -2549,6 +2515,393 @@ void NationalTeam::showGlobalStats() {
 }
 
 
+/* Costs */
 
 
+bool sortPerDate(const Call* call1, const Call* call2)
+{
+    Date d1 = call1->getBeginDate();
+    Date d2 = call2->getBeginDate();
+    return !(d1 <= d2);
+}
 
+void NationalTeam::getPlayerTotalCost()
+{
+    SoccerPlayer* sP = workerLookUp(players);
+    unsigned int daysActive = sP->getDaysActive();
+    unsigned int salary = 0, days;
+    bool flagInjured;
+    sort(calls.begin(), calls.end(), sortPerDate); /* Order Calls from the last to the first */
+    for(auto &call: calls)
+    {
+        sort(call->getPlayers().begin(), call->getPlayers().end(), sortPlayers);
+        if(binary_search(call->getPlayers().begin(), call->getPlayers().end(), sP, sortPlayers))
+        {
+            flagInjured = false;
+            days = generalFunctions::getDays(call->getBeginDate(), call->getEndDate());
+            sP->setDaysActive(sP->getDaysActive() - days);
+            salary += sP->getSalary() * days;
+            for(auto &game: call->getGames())
+            {
+                for(auto stats: game->getIndividualStatistics())
+                {
+                    if(stats->getSoccerPlayerID() == sP->getId())
+                    {
+                        flagInjured = stats->getInjured();
+                        if(flagInjured)
+                        {
+                            salary *= 3; /* Triplica o valor */
+                            break;
+                        }
+                    }
+                }
+                if(flagInjured)
+                    break;
+            }
+            salary += call->getHousingFood();
+        }
+    }
+    sP->setDaysActive(daysActive); // Repõem os DaysActive
+    cout << endl << "Global Costs of " << sP->getName() << " Was " << salary << " euros" << endl;
+}
+
+unsigned int NationalTeam::getTeamTotalCost()
+{
+
+    unsigned int salary = 0, days, daysActive, totalSalaries = 0;
+    bool flagInjured;
+    sort(calls.begin(), calls.end(), sortPerDate); /* Order Calls from the last to the first */
+    for(auto &sP: players)
+    {
+        daysActive = sP->getDaysActive();
+        salary = 0;
+        for(auto &call: calls)
+        {
+            sort(call->getPlayers().begin(), call->getPlayers().end(), sortPlayers);
+            if(binary_search(call->getPlayers().begin(), call->getPlayers().end(), sP, sortPlayers))
+            {
+                flagInjured = false;
+                days = generalFunctions::getDays(call->getBeginDate(), call->getEndDate());
+                sP->setDaysActive(sP->getDaysActive() - days);
+                salary += sP->getSalary() * days;
+                for(auto &game: call->getGames())
+                {
+                    for(auto stats: game->getIndividualStatistics())
+                    {
+                        if(stats->getSoccerPlayerID() == sP->getId())
+                        {
+                            flagInjured = stats->getInjured();
+                            if(flagInjured)
+                            {
+                                salary *= 3; /* Triplica o valor */
+                                break;
+                            }
+                        }
+                    }
+                    if(flagInjured)
+                        break;
+                }
+                salary += call->getHousingFood();
+            }
+        }
+        sP->setDaysActive(daysActive); // Repõem os DaysActive
+        totalSalaries += salary;
+    }
+
+//    cout << endl << "Global Costs of the Entire Team Was " << totalSalaries << " euros" << endl;
+    return totalSalaries;
+}
+
+void NationalTeam::getNationalTeamTotalCost()
+{
+    unsigned int totalCosts = getTeamTotalCost();
+    /* Calls already ordered */
+    Date firstCall = calls.at(calls.size() - 1)->getBeginDate();
+    Date lastCall = calls.at(0)->getEndDate();
+    unsigned int yearDiff = lastCall.getYear() - firstCall.getYear();
+    unsigned int monthsPassed;
+    if(yearDiff == 0)
+        monthsPassed = lastCall.getMonth() - firstCall.getMonth() + 1; // Including the first month
+    else
+        monthsPassed = 12 - firstCall.getMonth() + lastCall.getMonth() + 1; // Including the first month
+//    cout << endl << monthsPassed << endl;
+    for(auto &x: otherWorkers)
+        totalCosts += monthsPassed * x->getSalary();
+    for(auto &x: technicalTeam)
+        totalCosts += monthsPassed * x->getSalary();
+    cout << endl << "Total Money Spent Was " << totalCosts << " euros" << endl;
+}
+
+void NationalTeam::getMonthlyPlayerTotalCost()
+{
+    unsigned int year = readOperations::readNumber<unsigned int>("Year:");
+    unsigned int month;
+    while(true)
+    {
+        month = readOperations::readNumber<unsigned int>("Month (1 - 12):");
+        if(month < 1 || month > 12)
+            cout << endl << "Month Should Be Between 1 and 12." << endl;
+        else
+            break;
+    }
+    SoccerPlayer* sP = workerLookUp(players);
+    unsigned int daysActive = sP->getDaysActive();
+    unsigned int salary = 0, days;
+    bool flagInjured;
+    sort(calls.begin(), calls.end(), sortPerDate); /* Order Calls from the last to the first */
+    for(auto &call: calls)
+    {
+        sort(call->getPlayers().begin(), call->getPlayers().end(), sortPlayers);
+        if(binary_search(call->getPlayers().begin(), call->getPlayers().end(), sP, sortPlayers))
+        {
+            flagInjured = false;
+            days = generalFunctions::getDays(call->getBeginDate(), call->getEndDate());
+            sP->setDaysActive(sP->getDaysActive() - days);
+
+            if(call->getBeginDate().getMonth() == month && call->getBeginDate().getYear() == year)
+            {
+                salary += sP->getSalary() * days;
+                for(auto &game: call->getGames())
+                {
+                    for(auto stats: game->getIndividualStatistics())
+                    {
+                        if(stats->getSoccerPlayerID() == sP->getId())
+                        {
+                            flagInjured = stats->getInjured();
+                            if(flagInjured)
+                            {
+                                salary *= 3; /* Triplica o valor */
+                                break;
+                            }
+                        }
+                    }
+                    if(flagInjured)
+                        break;
+                }
+                salary += call->getHousingFood();
+            }
+        }
+    }
+    sP->setDaysActive(daysActive); // Repõem os DaysActive
+    cout << endl << "Global Costs of " << sP->getName() << " Was " << salary << " euros" << endl;
+
+}
+
+void NationalTeam::getMonthlyTeamTotalCost()
+{
+    unsigned int year = readOperations::readNumber<unsigned int>("Year:");
+    unsigned int month;
+    while(true)
+    {
+        month = readOperations::readNumber<unsigned int>("Month (1 - 12):");
+        if(month < 1 || month > 12)
+            cout << endl << "Month Should Be Between 1 and 12." << endl;
+        else
+            break;
+    }
+    unsigned int salary = 0, days, daysActive, totalSalaries = 0;
+    bool flagInjured;
+    sort(calls.begin(), calls.end(), sortPerDate); /* Order Calls from the last to the first */
+    for(auto &sP: players)
+    {
+        daysActive = sP->getDaysActive();
+        salary = 0;
+        for(auto &call: calls)
+        {
+            sort(call->getPlayers().begin(), call->getPlayers().end(), sortPlayers);
+            if(binary_search(call->getPlayers().begin(), call->getPlayers().end(), sP, sortPlayers))
+            {
+                flagInjured = false;
+                days = generalFunctions::getDays(call->getBeginDate(), call->getEndDate());
+                sP->setDaysActive(sP->getDaysActive() - days);
+                if(call->getBeginDate().getMonth() == month && call->getBeginDate().getYear() == year)
+                {
+                    salary += sP->getSalary() * days;
+                    for(auto &game: call->getGames())
+                    {
+                        for(auto stats: game->getIndividualStatistics())
+                        {
+                            if(stats->getSoccerPlayerID() == sP->getId())
+                            {
+                                flagInjured = stats->getInjured();
+                                if(flagInjured)
+                                {
+                                    salary *= 3; /* Triplica o valor */
+                                    break;
+                                }
+                            }
+                        }
+                        if(flagInjured)
+                            break;
+                    }
+                    salary += call->getHousingFood();
+                }
+            }
+        }
+        sP->setDaysActive(daysActive); // Repõem os DaysActive
+        totalSalaries += salary;
+    }
+
+    cout << endl << "Global Costs of the Entire Team Was " << totalSalaries << " euros" << endl;
+}
+
+void NationalTeam::getMonthlyNationalTeamTotalCost()
+{
+    unsigned int year = readOperations::readNumber<unsigned int>("Year:");
+    unsigned int month;
+    while(true)
+    {
+        month = readOperations::readNumber<unsigned int>("Month (1 - 12):");
+        if(month < 1 || month > 12)
+            cout << endl << "Month Should Be Between 1 and 12." << endl;
+        else
+            break;
+    }
+    unsigned int salary = 0, days, daysActive, totalSalaries = 0;
+    bool flagInjured;
+    sort(calls.begin(), calls.end(), sortPerDate); /* Order Calls from the last to the first */
+    for(auto &sP: players)
+    {
+        daysActive = sP->getDaysActive();
+        salary = 0;
+        for(auto &call: calls)
+        {
+            sort(call->getPlayers().begin(), call->getPlayers().end(), sortPlayers);
+            if(binary_search(call->getPlayers().begin(), call->getPlayers().end(), sP, sortPlayers))
+            {
+                flagInjured = false;
+                days = generalFunctions::getDays(call->getBeginDate(), call->getEndDate());
+                sP->setDaysActive(sP->getDaysActive() - days);
+                if(call->getBeginDate().getMonth() == month && call->getBeginDate().getYear() == year)
+                {
+                    salary += sP->getSalary() * days;
+                    for(auto &game: call->getGames())
+                    {
+                        for(auto stats: game->getIndividualStatistics())
+                        {
+                            if(stats->getSoccerPlayerID() == sP->getId())
+                            {
+                                flagInjured = stats->getInjured();
+                                if(flagInjured)
+                                {
+                                    salary *= 3; /* Triplica o valor */
+                                    break;
+                                }
+                            }
+                        }
+                        if(flagInjured)
+                            break;
+                    }
+                    salary += call->getHousingFood();
+                }
+            }
+        }
+        sP->setDaysActive(daysActive); // Repõem os DaysActive
+        totalSalaries += salary;
+    }
+    cout << totalSalaries << endl;
+    /* 1 Month each */
+    for(auto &x: otherWorkers)
+        totalSalaries += x->getSalary();
+    for(auto &x: technicalTeam)
+        totalSalaries += x->getSalary();
+    cout << endl << "Total Money Spent Was " << totalSalaries << " euros" << endl;
+}
+
+void NationalTeam::showPlayerGlobalStats() {
+    SoccerPlayer* sP = workerLookUp(players);
+    if(sP == NULL)
+        return;
+    unsigned short goals = 0, assists = 0, shots = 0, shotsTarget = 0, passes = 0, travelledDistance = 0, playedMinutes = 0,
+            yellowCards = 0, redCards = 0, injuries = 0, fouls = 0;
+    for (auto it = individualStats.begin(); it != individualStats.end(); it++) {
+        if ((*it)->getSoccerPlayerID() == sP->getId()) {
+            goals += (*it)->getGoals();
+            assists += (*it)->getAssists();
+            shots += (*it)->getShots();
+            shotsTarget += (*it)->getShotsTarget();
+            passes += (*it)->getPasses();
+            travelledDistance += (*it)->getTravelledDistance();
+            playedMinutes += (*it)->getPlayedMinutes();
+            yellowCards += (*it)->getYellowCards();
+            redCards += (*it)->getRedCards();
+            fouls += (*it)->getFouls();
+            if ((*it)->getInjured())
+                injuries++;
+        }
+    }
+    cout << endl << endl;
+    cout << "Goals: " << goals << endl;
+    cout << "Assists: " << assists << endl;
+    cout << "Shots: " << shots << endl;
+    cout << "Shots on Target: " << shotsTarget << endl;
+    cout << "Passes: " << passes << endl;
+    cout << "Travelled Distance: " << travelledDistance << endl;
+    cout << "Played Minutes: " << playedMinutes << endl;
+    cout << "Yellow Cards: " << yellowCards << endl;
+    cout << "Red Cards: " << redCards << endl;
+    cout << "Fouls: " << fouls << endl;
+    cout << "Injuries: " << injuries << endl << endl;
+}
+
+void NationalTeam::showPlayerCallStats() {
+    SoccerPlayer* sP = workerLookUp(players);
+    if(sP == NULL)
+        return;
+    Call* call = callLookUp();
+    if(call == NULL)
+        return;
+    if(call->getGames().empty())
+    {
+        cout << endl << "No Statistics to Show..." << endl << endl;
+        return;
+    }
+    vector<Game*> callGames = call->getGames();
+    vector<IndividualStatistics*> individualStatsVector;
+    unsigned short goals = 0, assists = 0, shots = 0, shotsTarget = 0, passes = 0, travelledDistance = 0, playedMinutes = 0,
+            yellowCards = 0, redCards = 0, injuries = 0, fouls = 0;
+    for (auto it = callGames.begin(); it != callGames.end(); it++) {
+        individualStatsVector = (*it)->getIndividualStatistics();
+        for (auto itr = individualStatsVector.begin(); itr != individualStatsVector.end(); itr++) {
+            if ((*itr)->getSoccerPlayerID() == (sP)->getId()) {
+                goals += (*itr)->getGoals();
+                assists += (*itr)->getAssists();
+                shots += (*itr)->getShots();
+                shotsTarget += (*itr)->getShotsTarget();
+                passes += (*itr)->getPasses();
+                travelledDistance += (*itr)->getTravelledDistance();
+                playedMinutes += (*itr)->getPlayedMinutes();
+                yellowCards += (*itr)->getYellowCards();
+                redCards += (*itr)->getRedCards();
+                fouls += (*itr)->getFouls();
+                if ((*itr)->getInjured())
+                    injuries++;
+            }
+        }
+        individualStatsVector.clear();
+    }
+    cout << endl << endl;
+    cout << "Goals: " << goals << endl;
+    cout << "Assists: " << assists << endl;
+    cout << "Shots: " << shots << endl;
+    cout << "Shots on Target: " << shotsTarget << endl;
+    cout << "Passes: " << passes << endl;
+    cout << "Travelled Distance: " << travelledDistance << endl;
+    cout << "Played Minutes: " << playedMinutes << endl;
+    cout << "Yellow Cards: " << yellowCards << endl;
+    cout << "Red Cards: " << redCards << endl;
+    cout << "Fouls: " << fouls << endl;
+    cout << "Injuries: " << injuries << endl << endl;
+}
+
+NationalTeam::~NationalTeam()
+{
+    writeTechnicalTeamFile("../Files/TechnicalTeam.txt");
+    writeOtherWorkersFile("../Files/OtherWorkers.txt");
+    writeSoccerPlayersFile("../Files/SoccerPlayers.txt");
+    writeGamesStatisticsFile("../Files/GameStatistics.txt");
+    writeIndividualStatisticsFile("../Files/IndividualStatistics.txt");
+    writeGamesFile("../Files/Games.txt");
+    writeInfCallsFile("../Files/InfCalls.txt");
+    writeCallsFile("../Files/Calls.txt");
+}

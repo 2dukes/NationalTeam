@@ -3,9 +3,9 @@ Competition: Friendly
 Begin Date: 12/03/2010
 End Date: 25/03/2010
 House-Food: 2000
-Games: 1000, 1001, 1002
-PlayersID: 1, 2, 3
-InfCalls: 1, 2, 3
+Games: 1000
+PlayersID: 1, 3
+InfCalls: 1, 3
 
 ::::::::::
 
@@ -26,5 +26,5 @@ Begin Date: 12/07/2010
 End Date: 25/07/2010
 House-Food: 500
 Games: 1001, 1002
-PlayersID: 1
+PlayersID: 2
 InfCalls: 1

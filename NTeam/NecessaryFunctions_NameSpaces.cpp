@@ -3,6 +3,7 @@
 
 #include <string>
 #include <iomanip>
+#include <chrono>
 
 namespace verifyInputs
 {
@@ -150,5 +151,33 @@ namespace generalFunctions {
     bool checkBetweenDates(Date shorter, Date mid, Date higher)
     {
         return ((shorter <= mid) && (mid <= higher));
+    }
+
+    unsigned int getDays(Date begDate, Date endDate)
+    {
+        using std::chrono::system_clock;
+
+        std::tm timeinfo1 = std::tm();
+        timeinfo1.tm_year = begDate.getYear() - 1900 ;   // year: 2000
+        timeinfo1.tm_mon = begDate.getMonth() - 1;      // month: january
+        timeinfo1.tm_mday = begDate.getDay();
+        std::time_t tt1 = std::mktime (&timeinfo1);
+
+        std::tm timeinfo2 = std::tm();
+        timeinfo2.tm_year = endDate.getYear() - 1900;   // year: 2000
+        timeinfo2.tm_mon = endDate.getMonth() - 1;      // month: january
+        timeinfo2.tm_mday = endDate.getDay();
+        std::time_t tt2 = std::mktime (&timeinfo2);
+
+        system_clock::time_point tp1 = system_clock::from_time_t (tt1);
+        system_clock::time_point tp2 = system_clock::from_time_t (tt2);
+        system_clock::duration d = tp2 - tp1;
+
+        // convert to number of days:
+        typedef std::chrono::duration<int,std::ratio<60*60*24>> days_type;
+        days_type ndays = std::chrono::duration_cast<days_type> (d);
+
+        return ndays.count();
+
     }
 }

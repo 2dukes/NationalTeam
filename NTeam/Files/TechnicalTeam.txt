@@ -1,0 +1,37 @@
+ID: 1500
+Name: Fernando Santos
+Birth Date: 10/10/1954
+Function: Head coach
+Salary: 5000
+
+::::::::::
+
+ID: 1501
+Name: Ilidio Vale
+Birth Date: 10/10/1954
+Function: Assistant Coach
+Salary: 7500
+
+::::::::::
+
+ID: 1502
+Name: Ricardo Santos
+Birth Date: 10/10/1954
+Function: Assistant Coach
+Salary: 2000
+
+::::::::::
+
+ID: 1503
+Name: Jorge Rosario
+Birth Date: 10/10/1954
+Function: Assistant Coach
+Salary: 1500
+
+::::::::::
+
+ID: 1504
+Name: Fernando Justino
+Birth Date: 10/10/1954
+Function: Goalkeeping Coach
+Salary: 1500

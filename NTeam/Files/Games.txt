@@ -1,0 +1,36 @@
+ID: 1000
+Date: 13/03/2019
+City: Lisbon
+Country: Portugal
+Stadium: Alvalade
+Opposite Team: Luxemburgo
+Opposite Team Participants: Anthony Moris, Dirk Carlson, Maxime Channot, Gerson, Jans, Thill, Bohnert, Barreiro, Rodrigues, Turpel
+Refereeing Team: Tim Tam Tum, Shium Jhim, Hirv Jesv, Kjhr Inrm
+Game Statistics: 1000
+Individual Statistics: 2000, 2002
+
+::::::::::
+
+ID: 1001
+Date: 23/12/2019
+City: Lisbon
+Country: Portugal
+Stadium: Luz
+Opposite Team: Espanha
+Opposite Team Participants: Anthony Moris, Dirk Carlson, Maxime Channot, Gerson, Jans, Thill, Bohnert, Barreiro, Rodrigues, Turpel
+Refereeing Team: Tim Tam Tum, Shium Jhim, Hirv Jesv, Kjhr Inrm
+Game Statistics: 1001
+Individual Statistics: 2001
+
+::::::::::
+
+ID: 1002
+Date: 23/12/2019
+City: Lisbon
+Country: Portugal
+Stadium: Luz
+Opposite Team: Espanha
+Opposite Team Participants: Anthony Moris, Dirk Carlson, Maxime Channot, Gerson, Jans, Thill, Bohnert, Barreiro, Rodrigues, Turpel
+Refereeing Team: Tim Tam Tum, Shium Jhim, Hirv Jesv, Kjhr Inrm
+Game Statistics: 1002
+Individual Statistics: 2002

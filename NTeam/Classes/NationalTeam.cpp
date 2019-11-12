@@ -2894,6 +2894,8 @@ void NationalTeam::showPlayerCallStats() {
     cout << "Injuries: " << injuries << endl << endl;
 }
 
+
+
 NationalTeam::~NationalTeam()
 {
     writeTechnicalTeamFile("../Files/TechnicalTeam.txt");
@@ -2904,4 +2906,14 @@ NationalTeam::~NationalTeam()
     writeGamesFile("../Files/Games.txt");
     writeInfCallsFile("../Files/InfCalls.txt");
     writeCallsFile("../Files/Calls.txt");
+
+    /* Vector Destruction */
+    auxiliaryDestructor(technicalTeam);
+    auxiliaryDestructor(otherWorkers);
+    auxiliaryDestructor(players);
+    auxiliaryDestructor(gameStats);
+    auxiliaryDestructor(individualStats);
+    auxiliaryDestructor(games);
+    auxiliaryDestructor(infCalls);
+    auxiliaryDestructor(calls);
 }

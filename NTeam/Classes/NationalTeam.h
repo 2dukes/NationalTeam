@@ -126,7 +126,10 @@ public:
     void showPlayerGlobalStats();
     void showPlayerCallStats();
 
-    virtual ~NationalTeam();
+    ~NationalTeam();
+
+    template<class Type>
+    void auxiliaryDestructor(std::vector<Type> &elements);
 
 private:
     std::vector<OtherWorker*> otherWorkers; // OtherWorkers
@@ -139,6 +142,13 @@ private:
     std::vector<IndividualStatistics*> individualStats;
     std::string name;
 };
+
+template<class Type>
+void NationalTeam::auxiliaryDestructor(std::vector<Type> &elements)
+{
+    for(auto &x: elements)
+        delete x;
+}
 
 template<class Type>
 unsigned int NationalTeam::getLastID(std::vector<Type> &elements)

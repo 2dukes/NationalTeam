@@ -111,6 +111,8 @@ public:
     void playerCallsForMenu();
     std::vector<Game*> playerGames(SoccerPlayer* sP, Call* call); // Jogos em que o jogador participou numa determinada call
     void playerGamesForMenu();
+    void topScorer();
+    void showNumberOfVictoriesDrawsLoses();
 
     /* Costs */
     void getPlayerTotalCost();

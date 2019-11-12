@@ -34,7 +34,7 @@ void mainMenu(NationalTeam &nTeam) {
     string nTeamName = nTeam.getName();
 
     cout << string(100, '\n');
-    vector<string> mainChoices = { "1. Display", "2. Manage", "3. Calls in which a player participated", "4. Games in a call in which a player participated", "5. Show Call Stats", "6. Statistics", "7. Costs","0. Exit" };
+    vector<string> mainChoices = { "1. Display", "2. Manage", "3. Calls in which a player participated", "4. Games in a call in which a player participated", "5. Show Call Stats", "6. Statistics", "7. Costs", "8. Victories, Draws and Loses", "9. Top Scorer", "0. Exit" };
     vector<string> manageChoices = { "1. Create", "2. Alter", "3. Remove", "0. Main Menu" };
     vector<string> manageSecundaryChoices = { "1. Other Worker", "2. Soccer Player", "3. Call", "4. Technical Team Member", "0. Previous Menu" };
     vector<string> viewAvailablePackChoices = { "1. Other Workers", "2. Technical Team", "3. Soccer Players", "4. Games", "5. Summons\' Games", "6. Summons\' Players", "0. Main Menu" };
@@ -433,6 +433,28 @@ void mainMenu(NationalTeam &nTeam) {
                     }
                 }
                 break;
+            }
+            case 8:
+            {
+                // Option 8.
+
+                nTeam.showNumberOfVictoriesDrawsLoses();
+
+                cout << "Press any key to continue...";
+                cin.get();
+                break;
+
+            }
+            case 9:
+            {
+                // Option 8.
+
+                nTeam.topScorer();
+
+                cout << "Press any key to continue...";
+                cin.get();
+                break;
+
             }
             default:
                 break;

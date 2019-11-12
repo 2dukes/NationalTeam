@@ -11,6 +11,7 @@
 #include <iomanip>
 #include <fstream>
 #include <string>
+#include <utility>
 #include <chrono>
 #include <ratio>
 #include <ctime>
@@ -2914,4 +2915,48 @@ NationalTeam::~NationalTeam()
     auxiliaryDestructor(games);
     auxiliaryDestructor(infCalls);
     auxiliaryDestructor(calls);
+}
+
+void NationalTeam::showNumberOfVictoriesDrawsLoses() {
+    unsigned int victories = 0, draws = 0, loses = 0;
+    for (auto it = gameStats.begin(); it != gameStats.end(); it++) {
+        if ((*it)->getGoals() > (*it)->getOppositionGoals())
+            victories++;
+        else if ((*it)->getGoals() < (*it)->getOppositionGoals())
+            loses++;
+        else
+            draws++;
+    }
+    cout << endl << endl << "Victories: " << victories << endl;
+    cout << "Draws: " << draws << endl;
+    cout << "Loses: " << loses << endl << endl;
+}
+
+void NationalTeam::topScorer() {
+    unsigned int goals = 0;
+    SoccerPlayer* sP = players.at(0);
+    vector<pair<SoccerPlayer*,unsigned int>> v;
+    pair<SoccerPlayer*,unsigned int> p;
+    for (auto it = players.begin(); it != players.end(); it++) {
+        goals = 0;
+        for (auto itr = individualStats.begin(); itr != individualStats.end(); itr++) {
+            if ((*it)->getId() == (*itr)->getSoccerPlayerID())
+                goals += (*itr)->getGoals();
+        }
+        p.first = (*it);
+        p.second = goals;
+        v.push_back(p);
+    }
+    unsigned int topGoals = 0;
+    for (auto it = v.begin(); it != v.end(); it++) {
+        if ((*it).second > topGoals)
+            topGoals = (*it).second;
+    }
+    for (auto it = v.begin(); it != v.end(); it++) {
+        if ((*it).second == topGoals)
+            sP = (*it).first;
+    }
+
+    cout << endl << endl << "The top scorer is: " << sP->getName() << endl <<
+        endl << "Goals: " << topGoals << endl << endl;
 }

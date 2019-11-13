@@ -1,4 +1,21 @@
 var searchData=
 [
-  ['arrived_0',['arrived',['../class_inf_call.html#ab6f0881d8ea7eacc9e7f2b8147f1d8d4',1,'InfCall']]]
+  ['addcall_0',['addCall',['../class_national_team.html#a441b301429d2aacb6357e157df42dd13',1,'NationalTeam']]],
+  ['addgame_1',['addGame',['../class_national_team.html#a7b8c0f4d0e58b07bc17eeb1ecfbeaf86',1,'NationalTeam']]],
+  ['addgamestatistics_2',['addGameStatistics',['../class_national_team.html#aae2de13b97aaa5c535b6b312655fc334',1,'NationalTeam']]],
+  ['addindividualstatistic_3',['addIndividualStatistic',['../class_national_team.html#a1ad0ba016d38d44fef434122870bfaf4',1,'NationalTeam']]],
+  ['addinfcall_4',['addInfCall',['../class_national_team.html#a867be13c04bc77b5ca4513b021f45d66',1,'NationalTeam']]],
+  ['addotherworker_5',['addOtherWorker',['../class_national_team.html#a1d53d8e85ff6fb9101dd4be5668da6db',1,'NationalTeam']]],
+  ['addsoccerplayer_6',['addSoccerPlayer',['../class_national_team.html#af8848601555b547655f22034ad7433aa',1,'NationalTeam']]],
+  ['addtechnicalteammember_7',['addTechnicalTeamMember',['../class_national_team.html#a90b07926b22386c5ac177eda7887294c',1,'NationalTeam']]],
+  ['altercall_8',['alterCall',['../class_national_team.html#a91954572d6c3c4e770425bb4ffc365f7',1,'NationalTeam']]],
+  ['altergameglobal_9',['alterGameGlobal',['../class_national_team.html#aa6ff1f496891cfa1821f8d2d0795cc6b',1,'NationalTeam']]],
+  ['altergameglobalopposite_10',['alterGameGlobalOpposite',['../class_national_team.html#aae7c7f8f48c83617408dfa4449460e93',1,'NationalTeam']]],
+  ['alterotherworker_11',['alterOtherWorker',['../class_national_team.html#a3b69b5762bbc2685f96f5ea1a75547d7',1,'NationalTeam']]],
+  ['alterplayerstats_12',['alterPlayerStats',['../class_national_team.html#a20897afd769a490f607585988b3baeb3',1,'NationalTeam']]],
+  ['altersoccerplayer_13',['alterSoccerPlayer',['../class_national_team.html#ad37d1570ef3a7d814b9283da176e6d70',1,'NationalTeam']]],
+  ['altertechnicalteammember_14',['alterTechnicalTeamMember',['../class_national_team.html#ac9c13f8925e69eec3ca93a8efd45865e',1,'NationalTeam']]],
+  ['arrived_15',['arrived',['../class_inf_call.html#ab6f0881d8ea7eacc9e7f2b8147f1d8d4',1,'InfCall']]],
+  ['assists_16',['assists',['../class_individual_statistics.html#a1256465dca99fe980087eb92b57231cf',1,'IndividualStatistics']]],
+  ['auxiliarydestructor_17',['auxiliaryDestructor',['../class_national_team.html#a72f03622c80b30d762f52241cd6e477b',1,'NationalTeam']]]
 ];

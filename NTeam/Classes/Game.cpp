@@ -129,8 +129,10 @@ void Game::info(std::ostream &os) const {
 
 void Game::info() const
 {
+    ostringstream o_stream1;
+    o_stream1 << date;
     cout << left << setw(10) << id <<
-         left << setw(15) << date.getDate() << left << setw(20) << city <<
+         left << setw(15) << o_stream1.str() << left << setw(20) << city <<
          left << setw(20) << country << left << setw(25) << stadium <<
          left << setw(20) << oppositeTeam << endl << endl << "Opposition Team Participants: " <<
          left << setw(80) << generalFunctions::coutVectorString(oppositeTeamParticipants) <<

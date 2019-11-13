@@ -8,6 +8,9 @@
 #include <string>
 #include "Date.h"
 
+/**
+ * @brief - Soccer Player individual Statistics class. Used to store relevant information about a given game.
+ */
 class IndividualStatistics {
 public:
     /**
@@ -169,15 +172,57 @@ public:
     void header();
 
 private:
-    unsigned int id, soccerPlayerID;
+    /**
+     * Individual Statistic ID
+     */
+    unsigned int id;
+    /**
+     * Soccer Player ID
+     */
+    unsigned int soccerPlayerID;
+    /**
+     * Player Goals
+     */
     unsigned short goals;
+    /**
+     * Player assists
+     */
     unsigned short assists;
+    /**
+     * Players passes
+     */
     unsigned short passes;
-    unsigned short shots, shotsTarget;
+    /**
+     * Player shots
+     */
+    unsigned short shots;
+    /**
+     * Player shots on target
+     */
+    unsigned short shotsTarget;
+    /**
+     * Player travelled distance
+     */
     unsigned short travelledDistance; // in km
+    /**
+     * Player played minutes
+     */
     unsigned short playedMinutes;
-    unsigned short yellowCards, redCards;
+    /**
+     * Player yellow cards
+     */
+    unsigned short yellowCards;
+    /**
+     * Player red cards
+     */
+    unsigned short redCards;
+    /**
+     * Player commited fouls
+     */
     unsigned short fouls;
+    /**
+     * Injured (true | false)
+     */
     bool injured;
 };
 

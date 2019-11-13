@@ -51,8 +51,11 @@ void Staff::info(std::ostream &os) const
 
 void Staff::info() const
 {
+    ostringstream o_stream;
+    o_stream << birthDate;
     cout << left << setw(5) << id << left << setw(50) << name <<
-         left << setw(15) << birthDate.getDate();
+         left << setw(15) << o_stream.str();
+
 }
 
 bool Staff::operator==(const Staff &worker) const {

@@ -28,3 +28,25 @@ House-Food: 500
 Games: 1001, 1002
 PlayersID: 2
 InfCalls: 1
+
+::::::::::
+
+ID: 4
+Competition: Friendly
+Begin Date: 21/09/2000
+End Date: 30/09/2000
+House-Food: 3250
+Games: 1003
+PlayersID: 1
+InfCalls: 5
+
+::::::::::
+
+ID: 5
+Competition: Euro
+Begin Date: 30/11/2000
+End Date: 02/12/2000
+House-Food: 3402
+Games: 1004, 1005
+PlayersID: 1, 2, 3
+InfCalls: 6, 7, 8

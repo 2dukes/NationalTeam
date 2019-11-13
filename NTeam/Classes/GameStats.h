@@ -7,6 +7,9 @@
 
 #include <iostream>
 
+/**
+ * @brief - Game Statistics class. Has multiple fields related to a game statistic.
+ */
 class GameStats {
 public:
     /**
@@ -300,24 +303,98 @@ private:
      * Game Statistics ID = Game ID
      */
     unsigned int id; // Same ID as The game...
-    /*
-     * Goals, and opposition goals
-     */
-    unsigned int goals, oppositionGoals;
     /**
-     * asd
+     * Goals
      */
-    unsigned short shots, oppositionShots;
-    unsigned short shotsTarget, oppositionShotsTarget;
+    unsigned int goals;
+    /**
+     * Opposition Team Goals
+     */
+    unsigned int oppositionGoals;
+    /**
+     * Shots
+     */
+    unsigned short shots;
+    /**
+     * Opposition Team shots
+     */
+    unsigned short oppositionShots;
+    /**
+     * Shots on Target
+     */
+    unsigned short shotsTarget;
+    /**
+     * Opposition Team shots on target
+     */
+    unsigned short oppositionShotsTarget;
+    /**
+     * Possession
+     */
     unsigned short possession;
-    unsigned short passes, oppositionPasses;
-    unsigned short passAccuracy, oppositionPassAccuracy;
-    unsigned short fouls, oppositionFouls;
-    unsigned short offsides, oppositionOffsides;
-    unsigned short corners, oppositionCorners;
-    unsigned short yellowCards, oppositionsYellowCards;
-    unsigned short redCards, oppositionRedCards;
-    unsigned short injuries, oppositionInjuries;
+    /**
+     * Passes
+     */
+    unsigned short passes;
+    /**
+     * Opposition Team Passes
+     */
+    unsigned short oppositionPasses;
+    /**
+     * Pass Accuracy
+     */
+    unsigned short passAccuracy;
+    /**
+     * Opposition Team Pass Accuracy
+     */
+    unsigned short oppositionPassAccuracy;
+    /**
+     * Fouls
+     */
+    unsigned short fouls;
+    /**
+     * Opposition Team Fouls
+     */
+    unsigned short oppositionFouls;
+    /**
+     * Offsides
+     */
+    unsigned short offsides;
+    /**
+     * Opposition Team Offsides
+     */
+    unsigned short oppositionOffsides;
+    /**
+     * Corners
+     */
+    unsigned short corners;
+    /**
+     * Opposition Team Corners
+     */
+    unsigned short oppositionCorners;
+    /**
+     * Yellow Cards
+     */
+    unsigned short yellowCards;
+    /**
+     * Opposition Team Yellow Cards
+     */
+    unsigned short oppositionsYellowCards;
+    /**
+     * Red Cards
+     */
+    unsigned short redCards;
+    /**
+     * Opposition Team Red Cards
+     */
+    unsigned short oppositionRedCards;
+    /**
+     * Injuries
+     */
+    unsigned short injuries;
+    /**
+     * Opposition Team Injuries
+     */
+    unsigned short oppositionInjuries;
 };
 
 

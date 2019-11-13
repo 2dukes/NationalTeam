@@ -1,4 +1,23 @@
 var searchData=
 [
-  ['players_84',['players',['../class_call.html#a44c842e39565679fc7173300cb44313a',1,'Call']]]
+  ['offsides_144',['offsides',['../class_game_stats.html#a32c80fd09ce411d2440880e207d694a9',1,'GameStats']]],
+  ['operator_3c_3c_145',['operator&lt;&lt;',['../class_date.html#a979c6b0ce07a9560a2129b81363b84f9',1,'Date']]],
+  ['operator_3c_3d_146',['operator&lt;=',['../class_date.html#a785db62b53b4b926a9141ef7aaa699f5',1,'Date']]],
+  ['operator_3d_3d_147',['operator==',['../class_date.html#ac906e253d7d1343e3e161fb9e1aee707',1,'Date::operator==()'],['../class_staff.html#ac71b5e806ea8dcdb4bdccb4adf727d00',1,'Staff::operator==()']]],
+  ['operator_3e_3e_148',['operator&gt;&gt;',['../class_date.html#a4d7a77dd050b8e3aff2f927d67709065',1,'Date']]],
+  ['oppositeteam_149',['oppositeTeam',['../class_game.html#a05ebe6ad3e1a9101d8c51d64dac8704b',1,'Game']]],
+  ['oppositeteamparticipants_150',['oppositeTeamParticipants',['../class_game.html#a512b84a4343cef5816327277ca5ce516',1,'Game']]],
+  ['oppositioncorners_151',['oppositionCorners',['../class_game_stats.html#a61ded9aed38505f891943bde7c1d42f6',1,'GameStats']]],
+  ['oppositionfouls_152',['oppositionFouls',['../class_game_stats.html#a5c8ae1416ffe6fda5cb5dddbe69ce90b',1,'GameStats']]],
+  ['oppositiongoals_153',['oppositionGoals',['../class_game_stats.html#a3aeb96f454348a3b1fa7661285e3d4b0',1,'GameStats']]],
+  ['oppositioninjuries_154',['oppositionInjuries',['../class_game_stats.html#a9ceecde421fd1b6e121cf359fff59854',1,'GameStats']]],
+  ['oppositionoffsides_155',['oppositionOffsides',['../class_game_stats.html#a379b1736c06e6a9eade0163333c7be37',1,'GameStats']]],
+  ['oppositionpassaccuracy_156',['oppositionPassAccuracy',['../class_game_stats.html#af731cbd98dca97dcc8e2f14073ed41fc',1,'GameStats']]],
+  ['oppositionpasses_157',['oppositionPasses',['../class_game_stats.html#aabad615947ddde711e7e3834f0056a24',1,'GameStats']]],
+  ['oppositionredcards_158',['oppositionRedCards',['../class_game_stats.html#a8773b891d2d6064e9c411f810972402f',1,'GameStats']]],
+  ['oppositionshots_159',['oppositionShots',['../class_game_stats.html#a24a51414f6ac4ec66188e03a7a36d088',1,'GameStats']]],
+  ['oppositionshotstarget_160',['oppositionShotsTarget',['../class_game_stats.html#aa1a1c3a5a34e16a45d89e87dad2db4a2',1,'GameStats']]],
+  ['oppositionsyellowcards_161',['oppositionsYellowCards',['../class_game_stats.html#acc15d03d0ec31ec3635921124a1c0c89',1,'GameStats']]],
+  ['otherworker_162',['OtherWorker',['../class_other_worker.html',1,'OtherWorker'],['../class_other_worker.html#a7ca1f254288a1570f615a118241190be',1,'OtherWorker::OtherWorker()']]],
+  ['otherworkers_163',['otherWorkers',['../class_national_team.html#a4ca16ff93b9d3a4b8729f90e5e38958c',1,'NationalTeam']]]
 ];

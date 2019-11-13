@@ -25,13 +25,6 @@ string NationalTeam::getName() const
     return name;
 }
 
-/* Sets */
-
-string NationalTeam::setName(string &name)
-{
-    this->name = name;
-    return name;
-}
 
 /* OtherWorker Methods */
 
@@ -198,11 +191,6 @@ bool NationalTeam::alterOtherWorker()
 void NationalTeam::addOtherWorker(OtherWorker *oW)
 {
     otherWorkers.push_back(oW);
-}
-
-vector<OtherWorker*>& NationalTeam::getOtherWorkers()
-{
-    return otherWorkers;
 }
 
 void NationalTeam::displayOtherWorkers() const {
@@ -945,6 +933,7 @@ Game* NationalTeam::createGame(vector<SoccerPlayer*> soccerPlayers, Date begin, 
                 throw WrongStatistic("Incorrect Statistic! Try again...");
 
             individualStatistics.push_back(AuxStats);
+            individualStats.push_back(AuxStats);
         }
         catch(WrongStatistic &e) {
             cout << endl << e.getError() << endl << endl;
@@ -1018,7 +1007,7 @@ bool NationalTeam::readGamesFile(std::string filename) {
             individualStatsVectorInt = generalFunctions::convert_vector_str_to_int(individualStatsVectorString);
             for (auto &x: individualStatsVectorInt)
                 individualStatistics.push_back(getByID(individualStats, x));
-
+            cout << id << "..\n";
             Game* game = new Game(id, date, city, country, stadium, oppositeTeam, oppositeTeamParticipants,
                               refereeingTeam, gameStatsPtr, individualStatistics);
             addGame(game);
@@ -1545,7 +1534,6 @@ GameStats* NationalTeam::createGameStatistics(unsigned int gameID) {
 
     if(answer == "Y" || answer == "y")
     {
-        addGameStatistics(gStats);
         cout << "Data successfully inserted!" << endl;
         return gStats;
     }
@@ -2379,7 +2367,7 @@ void NationalTeam::playerCallsForMenu() {
     vector<Call*> playerCallsVector = playerCalls(sP);
     if(playerCallsVector.empty())
     {
-        cout << "Player didn't Participated in any Summon\'s." << endl;
+        cout << "Player didn't Participated in any Summon\\'s." << endl;
         return;
     }
     cout << endl << endl << "Calls: " << endl << endl;
@@ -2929,7 +2917,7 @@ void NationalTeam::showNumberOfVictoriesDrawsLoses() {
     }
     cout << endl << endl << "Victories: " << victories << endl;
     cout << "Draws: " << draws << endl;
-    cout << "Loses: " << loses << endl << endl;
+    cout << "Losses: " << loses << endl << endl;
 }
 
 void NationalTeam::topScorer() {

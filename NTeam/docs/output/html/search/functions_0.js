@@ -1,4 +1,19 @@
 var searchData=
 [
-  ['call_159',['Call',['../class_call.html#a2107ed8b858d3e8f1da87f04c32a7130',1,'Call']]]
+  ['addcall_290',['addCall',['../class_national_team.html#a441b301429d2aacb6357e157df42dd13',1,'NationalTeam']]],
+  ['addgame_291',['addGame',['../class_national_team.html#a7b8c0f4d0e58b07bc17eeb1ecfbeaf86',1,'NationalTeam']]],
+  ['addgamestatistics_292',['addGameStatistics',['../class_national_team.html#aae2de13b97aaa5c535b6b312655fc334',1,'NationalTeam']]],
+  ['addindividualstatistic_293',['addIndividualStatistic',['../class_national_team.html#a1ad0ba016d38d44fef434122870bfaf4',1,'NationalTeam']]],
+  ['addinfcall_294',['addInfCall',['../class_national_team.html#a867be13c04bc77b5ca4513b021f45d66',1,'NationalTeam']]],
+  ['addotherworker_295',['addOtherWorker',['../class_national_team.html#a1d53d8e85ff6fb9101dd4be5668da6db',1,'NationalTeam']]],
+  ['addsoccerplayer_296',['addSoccerPlayer',['../class_national_team.html#af8848601555b547655f22034ad7433aa',1,'NationalTeam']]],
+  ['addtechnicalteammember_297',['addTechnicalTeamMember',['../class_national_team.html#a90b07926b22386c5ac177eda7887294c',1,'NationalTeam']]],
+  ['altercall_298',['alterCall',['../class_national_team.html#a91954572d6c3c4e770425bb4ffc365f7',1,'NationalTeam']]],
+  ['altergameglobal_299',['alterGameGlobal',['../class_national_team.html#aa6ff1f496891cfa1821f8d2d0795cc6b',1,'NationalTeam']]],
+  ['altergameglobalopposite_300',['alterGameGlobalOpposite',['../class_national_team.html#aae7c7f8f48c83617408dfa4449460e93',1,'NationalTeam']]],
+  ['alterotherworker_301',['alterOtherWorker',['../class_national_team.html#a3b69b5762bbc2685f96f5ea1a75547d7',1,'NationalTeam']]],
+  ['alterplayerstats_302',['alterPlayerStats',['../class_national_team.html#a20897afd769a490f607585988b3baeb3',1,'NationalTeam']]],
+  ['altersoccerplayer_303',['alterSoccerPlayer',['../class_national_team.html#ad37d1570ef3a7d814b9283da176e6d70',1,'NationalTeam']]],
+  ['altertechnicalteammember_304',['alterTechnicalTeamMember',['../class_national_team.html#ac9c13f8925e69eec3ca93a8efd45865e',1,'NationalTeam']]],
+  ['auxiliarydestructor_305',['auxiliaryDestructor',['../class_national_team.html#a72f03622c80b30d762f52241cd6e477b',1,'NationalTeam']]]
 ];

@@ -12,7 +12,7 @@
 #include "InfCall.h"
 
 /**
- * Summons Class!
+ * @brief - Summons class. Used to store players summoned, their information about the call and individual statistics, games and game statistics.
  */
 class Call {
 public:

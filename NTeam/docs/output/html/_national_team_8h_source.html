@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.16"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Projeto AEDA: C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.h Source File</title>
+<title>National Team: C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/NationalTeam.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -21,10 +21,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Projeto AEDA
+   <div id="projectname">National Team
    &#160;<span id="projectnumber">1.0.0</span>
    </div>
-   <div id="projectbrief">Projeto Prático da Unidade Curricular AEDA</div>
+   <div id="projectbrief">AEDA - PROJECT 1</div>
   </td>
  </tr>
  </tbody>
@@ -91,358 +91,450 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;../NecessaryFunctions_NameSpaces.h&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;Exceptions.h&quot;</span></div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_national_team.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_national_team.html">NationalTeam</a> {</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_national_team.html">NationalTeam</a>(std::string n):name(n) { };</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="comment">/* Gets */</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::string getName() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;OtherWorker*&gt;&amp; getOtherWorkers(); <span class="comment">// Inserted...</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="comment">/* Sets */</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    std::string setName(std::string &amp;name); <span class="comment">/* Returns string because of menu&#39;s 1st option */</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_national_team.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_national_team.html">NationalTeam</a> {</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="class_national_team.html#a9f60f847ae534fd3de91b3254c0f9f34">   30</a></span>&#160;    <a class="code" href="class_national_team.html#a9f60f847ae534fd3de91b3254c0f9f34">NationalTeam</a>(std::string n):<a class="code" href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">name</a>(n) { };</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">/* OtherWorkers Methods */</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">bool</span> createOtherWorker();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">bool</span> alterOtherWorker();</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">void</span> addOtherWorker(<a class="code" href="class_other_worker.html">OtherWorker</a>* oW);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">bool</span> deleteOtherWorker();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> readOtherWorkersFile(std::string filename);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> writeOtherWorkersFile(std::string filename);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">/* Gets */</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::string <a class="code" href="class_national_team.html#ab706e953afad30b88fc5ed8cbbc17f90">getName</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">/* Other Methods */</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> displayOtherWorkers() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> displaySoccerPlayers() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> displayGames() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> displayTechnicalTeamMembers() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> displayCallsPlayers() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> displayCallsGames() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="comment">/* Other Methods (templates) */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    Type workerLookUp(std::vector&lt;Type&gt; &amp;workers); <span class="comment">// Type varies as: OtherWorker*, TechnicalTeam*, SoccerPlayer*...</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Type&amp; getByID(std::vector&lt;Type&gt; &amp;elements, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getLastID(std::vector&lt;Type&gt; &amp; elements);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// According to the Internet, it should be defined on the .h</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="comment">/* SoccerPlayer Methods */</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">bool</span> createSoccerPlayer();</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordtype">bool</span> alterSoccerPlayer();</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> addSoccerPlayer(<a class="code" href="class_soccer_player.html">SoccerPlayer</a>* sP);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">bool</span> deleteSoccerPlayer();</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> readSoccerPlayersFile(std::string filename);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">bool</span> writeSoccerPlayersFile(std::string filename);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="comment">/* Game Methods */</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_game.html">Game</a>* createGame(std::vector&lt;SoccerPlayer*&gt; soccerPlayers, <a class="code" href="class_date.html">Date</a> begin, <a class="code" href="class_date.html">Date</a> end);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> addGame(<a class="code" href="class_game.html">Game</a>* game);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> alterGameGlobal(<a class="code" href="class_game.html">Game</a>* game);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> alterGameGlobalOpposite(<a class="code" href="class_game.html">Game</a>* game);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> alterPlayerStats(std::vector&lt;IndividualStatistics*&gt; stats, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> playerID);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">bool</span> readGamesFile(std::string filename);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">bool</span> writeGamesFile(std::string filename);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="comment">/* Call Methods */</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">bool</span> createCall();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">void</span> addCall(<a class="code" href="class_call.html">Call</a>* call);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">bool</span> readCallsFile(std::string filename);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">bool</span> alterCall();</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">bool</span> removeCall();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">bool</span> writeCallsFile(std::string filename);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <a class="code" href="class_call.html">Call</a>* callLookUp();</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="comment">/* GameStats Methods */</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <a class="code" href="class_game_stats.html">GameStats</a>* createGameStatistics(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> gameID);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> addGameStatistics(<a class="code" href="class_game_stats.html">GameStats</a>* gStats);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">bool</span> readGameStatisticsFile(std::string filename);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">bool</span> writeGamesStatisticsFile(std::string filename);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="comment">/* IndividualStatistics Methods */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="class_individual_statistics.html">IndividualStatistics</a>* createIndividualStatistics(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> playerID);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> addIndividualStatistic(<a class="code" href="class_individual_statistics.html">IndividualStatistics</a>* iStat);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">bool</span> readIndividualStatisticsFile(std::string filename);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">bool</span> writeIndividualStatisticsFile(std::string filename);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="comment">/* InfCalls */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">bool</span> readInfCalls(std::string filename);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="class_inf_call.html">InfCall</a>* createInfCalls(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sPId);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">void</span> addInfCall(<a class="code" href="class_inf_call.html">InfCall</a>* inf);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">bool</span> writeInfCallsFile(std::string filename);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">/* TechnicalTeam Methods */</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordtype">void</span> addTechnicalTeamMember(<a class="code" href="class_technical_team.html">TechnicalTeam</a>* tTeam);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">bool</span> readTechnicalTeamFile(std::string filename);</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordtype">bool</span> createTechnicalTeamMember();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">bool</span> alterTechnicalTeamMember();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordtype">bool</span> deleteTechnicalTeamMember();</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">bool</span> writeTechnicalTeamFile(std::string filename);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="comment">/* Features */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::vector&lt;Call*&gt; playerCalls(<a class="code" href="class_soccer_player.html">SoccerPlayer</a>* sP); <span class="comment">// Calls em que o jogador participou</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keywordtype">void</span> playerCallsForMenu();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::vector&lt;Game*&gt; playerGames(<a class="code" href="class_soccer_player.html">SoccerPlayer</a>* sP, <a class="code" href="class_call.html">Call</a>* call); <span class="comment">// Jogos em que o jogador participou numa determinada call</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordtype">void</span> playerGamesForMenu();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordtype">void</span> topScorer();</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordtype">void</span> showNumberOfVictoriesDrawsLoses();</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="comment">/* Costs */</span></div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordtype">void</span> getPlayerTotalCost();</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> getTeamTotalCost();</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keywordtype">void</span> getNationalTeamTotalCost();</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> getMonthlyPlayerTotalCost();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keywordtype">void</span> getMonthlyTeamTotalCost();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> getMonthlyNationalTeamTotalCost();</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> showCallStats();</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    <span class="keywordtype">void</span> showGlobalStats();</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordtype">void</span> showPlayerGlobalStats();</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> showPlayerCallStats();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">/* OtherWorkers Methods */</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a3ecce594d0ef8094f0f36c1c3efc0be5">createOtherWorker</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a3b69b5762bbc2685f96f5ea1a75547d7">alterOtherWorker</a>();</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a1d53d8e85ff6fb9101dd4be5668da6db">addOtherWorker</a>(<a class="code" href="class_other_worker.html">OtherWorker</a>* oW);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a35dbb0d8928240d47b18f7d304f678fb">deleteOtherWorker</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#ad9a9c3c2dc1853bb13677399a8f452a2">readOtherWorkersFile</a>(std::string filename);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a7e0b1f7f065e2fee179ae3fe9c7b9ccf">writeOtherWorkersFile</a>(std::string filename);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">/* Other Methods */</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#aa652feda61c78f4b69a9308b6ce7c2ec">displayOtherWorkers</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a77f796f510ee253e3d171b912d1faf60">displaySoccerPlayers</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a3155f83d7b5acefb8833268c08fbb411">displayGames</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a24b30d14fa884824562469157526597d">displayTechnicalTeamMembers</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a6f05e8f84def79bd335de4622b45ca8f">displayCallsPlayers</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a98458d48c9ce3f5eff0623425db81ac3">displayCallsGames</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="comment">/* Other Methods (templates) */</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    Type <a class="code" href="class_national_team.html#af4197b00d38001cb5ba9844b3eb09ba0">workerLookUp</a>(std::vector&lt;Type&gt; &amp;workers);</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    Type&amp; <a class="code" href="class_national_team.html#aa6fc823fbbdb5b874cddfdd0022a0bfb">getByID</a>(std::vector&lt;Type&gt; &amp;elements, <span class="keywordtype">int</span> <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">class</span> Type&gt;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_national_team.html#abede87c658af2706fe21d4e32fdb75b0">getLastID</a>(std::vector&lt;Type&gt; &amp; elements);</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    ~<a class="code" href="class_national_team.html">NationalTeam</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="comment">/* SoccerPlayer Methods */</span></div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">void</span> auxiliaryDestructor(std::vector&lt;Type&gt; &amp;elements);</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    std::vector&lt;OtherWorker*&gt; otherWorkers; <span class="comment">// OtherWorkers</span></div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    std::vector&lt;TechnicalTeam*&gt; technicalTeam;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    std::vector&lt;SoccerPlayer*&gt; players;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    std::vector&lt;InfCall*&gt; infCalls;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    std::vector&lt;Call*&gt; calls;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    std::vector&lt;Game*&gt; games;</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    std::vector&lt;GameStats*&gt; gameStats;</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    std::vector&lt;IndividualStatistics*&gt; individualStats;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    std::string name;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;};</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="keywordtype">void</span> NationalTeam::auxiliaryDestructor(std::vector&lt;Type&gt; &amp;elements)</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;{</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: elements)</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keyword">delete</span> x;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;}</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> NationalTeam::getLastID(std::vector&lt;Type&gt; &amp;elements)</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span>(elements.size() &gt; 0)</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        <span class="keywordflow">return</span> elements.at(elements.size() - 1)-&gt;getId() + 1; <span class="comment">// We suppose all Ids are incremented by 1</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;Type&amp; NationalTeam::getByID(std::vector&lt;Type&gt; &amp;elements, <span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;{</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">if</span>(<span class="keywordtype">id</span> &lt; 1)</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="class_no_object_found.html">NoObjectFound</a>(<span class="stringliteral">&quot;ID Not Valid...&quot;</span>); <span class="comment">// IDs smaller than 1 are not allowed</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;x: elements) {</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            <span class="keywordflow">if</span> (x-&gt;getId() == id)</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                <span class="keywordflow">return</span> x;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        }</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="class_no_object_found.html">NoObjectFound</a>(<span class="stringliteral">&quot;No Corresponding Person Found...&quot;</span>);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;}</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;Type NationalTeam::workerLookUp(std::vector&lt;Type&gt; &amp;workers)</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;{</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordtype">bool</span> ct;</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::string reader;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">int</span> option;</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    std::vector&lt;Type&gt; auxPerson;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>)</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        auxPerson.clear();</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        ct = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Look for a \&#39;Person\&#39; using: &quot;</span> &lt;&lt; std::endl; std::cout &lt;&lt; <span class="stringliteral">&quot;1. Name\n2. Birth Date\n3. Salary\n4. ID\n0. Back\n\n&quot;</span>;</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        std::cin &gt;&gt; option; std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>); std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">switch</span>(option)</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        {</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;            <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;                <span class="keywordflow">return</span> NULL;</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            {</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                <span class="comment">// Name</span></div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                std::string name = readOperations::readString(<span class="stringliteral">&quot;Name:&quot;</span>);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                std::transform(name.begin(), name.end(), name.begin(), toupper); <span class="comment">// Convert to uppercase</span></div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160; </div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                std::string workerName;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160; </div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: workers)</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                {</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    workerName = x-&gt;getName();</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                    std::transform(workerName.begin(), workerName.end(), workerName.begin(), toupper); <span class="comment">// Convert to uppercase</span></div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;                    <span class="keywordflow">if</span>(workerName.find(name) != std::string::npos)</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;                    {</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;                        auxPerson.push_back(x);</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;                        ct = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;                    }</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;                }</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;                <span class="keywordflow">if</span>(!auxPerson.empty())</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;                {</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;                    auxPerson.at(0)-&gt;header(); <span class="comment">// Print corresponding header</span></div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: auxPerson)</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;                    {</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;                        x-&gt;info();</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;                        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;                    }</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;                }</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; </div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;                <span class="keywordflow">if</span>(ct)</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;                {</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the ID of The Choosen One (!ID =&gt; [Go Back]): &quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;                    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;                        std::cin &gt;&gt; option;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                        std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                        <span class="keywordflow">return</span> getByID(auxPerson, option);</div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;                    }</div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;                    <span class="keywordflow">catch</span> (<a class="code" href="class_no_object_found.html">NoObjectFound</a> &amp;e) {</div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;                        std::cout &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">getError</a>() &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;                    }</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;                }</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;                    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;No Corresponding Person Found...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            }</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;            <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;            {</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                <span class="comment">// Birth Date</span></div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                <a class="code" href="class_date.html">Date</a> dBirth1, dBirth2;</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;                <span class="keywordflow">do</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                    dBirth1 = readOperations::readDate(<span class="stringliteral">&quot;Smaller birth Date (DD/MM/YYYY):&quot;</span>);</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                    dBirth2 = readOperations::readDate(<span class="stringliteral">&quot;Bigger birth Date (DD/MM/YYYY):&quot;</span>);</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                    <span class="keywordflow">if</span>(dBirth2 &lt;= dBirth1)</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                        std::cout &lt;&lt; <span class="stringliteral">&quot;First Date Has To Be Less Than or Equal To The Second! Try again...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                        <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;                } <span class="keywordflow">while</span>(!(dBirth1 &lt;= dBirth2));</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: workers)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;                {</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;                    <span class="keywordflow">if</span>(generalFunctions::checkBetweenDates(dBirth1, x-&gt;getDate(), dBirth2))</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                    {</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                        auxPerson.push_back(x);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;                        ct = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;                    }</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;                }</div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160; </div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;                <span class="keywordflow">if</span>(!auxPerson.empty())</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                {</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;                    auxPerson.at(0)-&gt;header(); <span class="comment">// Print corresponding header</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: auxPerson)</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;                    {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;                        x-&gt;info();</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;                        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;                    }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;                }</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160; </div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;                <span class="keywordflow">if</span>(ct)</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;                {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the ID of The Choosen One (!ID =&gt; [Go Back]): &quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;                        std::cin &gt;&gt; option;</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                        std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                        <span class="keywordflow">return</span> getByID(auxPerson, option);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                    }</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;                    <span class="keywordflow">catch</span> (<a class="code" href="class_no_object_found.html">NoObjectFound</a> &amp;e) {</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;                        std::cout &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">getError</a>() &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;                    }</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;                }</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;                    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;No Corresponding Person Found...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160; </div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            }</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordflow">case</span> 3:</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;            {</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;                <span class="comment">// Salary</span></div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;                <span class="keywordtype">float</span> smallerSalary, biggerSalary;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;                <span class="keywordflow">do</span></div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;                {</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;                    smallerSalary = readOperations::readNumber&lt;float&gt;(<span class="stringliteral">&quot;Smaller Salary:&quot;</span>);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;                    biggerSalary = readOperations::readNumber&lt;float&gt;(<span class="stringliteral">&quot;Bigger Salary:&quot;</span>);</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;                    <span class="keywordflow">if</span>(smallerSalary &gt; biggerSalary)</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;                        std::cout &lt;&lt; <span class="stringliteral">&quot;First Date Has To Be Less Than or Equal To The Second! Try again...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;                } <span class="keywordflow">while</span>(smallerSalary &gt; biggerSalary);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#aa4adf7acc2b5972155b0b0a7046523a2">createSoccerPlayer</a>();</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#ad37d1570ef3a7d814b9283da176e6d70">alterSoccerPlayer</a>();</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#af8848601555b547655f22034ad7433aa">addSoccerPlayer</a>(<a class="code" href="class_soccer_player.html">SoccerPlayer</a>* sP);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a8df0a22e78e79ef426a516207df94dca">deleteSoccerPlayer</a>();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a43590625e16f7718286939457243e5b1">readSoccerPlayersFile</a>(std::string filename);</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#ae85b6bf1ee1cbdd2c3cd46ed73d140c1">writeSoccerPlayersFile</a>(std::string filename);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">/* Game Methods */</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <a class="code" href="class_game.html">Game</a>* <a class="code" href="class_national_team.html#a5cb346becbea00519917d83f9c7ec0d9">createGame</a>(std::vector&lt;SoccerPlayer*&gt; soccerPlayers, <a class="code" href="class_date.html">Date</a> begin, <a class="code" href="class_date.html">Date</a> end);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a7b8c0f4d0e58b07bc17eeb1ecfbeaf86">addGame</a>(<a class="code" href="class_game.html">Game</a>* game);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#aa6ff1f496891cfa1821f8d2d0795cc6b">alterGameGlobal</a>(<a class="code" href="class_game.html">Game</a>* game);</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#aae7c7f8f48c83617408dfa4449460e93">alterGameGlobalOpposite</a>(<a class="code" href="class_game.html">Game</a>* game);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a20897afd769a490f607585988b3baeb3">alterPlayerStats</a>(std::vector&lt;IndividualStatistics*&gt; stats, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> playerID);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#aaf00db9a5242f6e3cd0efeff50b60275">readGamesFile</a>(std::string filename);</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#ae1c4dfc5c272a43386a0c888835d295d">writeGamesFile</a>(std::string filename);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    <span class="comment">/* Call Methods */</span></div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a15f0c7e721d40b258a63ec6caf3aeaea">createCall</a>();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a441b301429d2aacb6357e157df42dd13">addCall</a>(<a class="code" href="class_call.html">Call</a>* call);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#ae2b186a40a021fc06bbc4b1550420dac">readCallsFile</a>(std::string filename);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a91954572d6c3c4e770425bb4ffc365f7">alterCall</a>();</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a1458d1a74e9d1eeecf187933eac9dbf4">removeCall</a>();</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#addcbc63dd86eed9a9bf56dcbd2da5ada">writeCallsFile</a>(std::string filename);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    <a class="code" href="class_call.html">Call</a>* <a class="code" href="class_national_team.html#a30d8cdd0c3f5fc934568a4138c5085aa">callLookUp</a>();</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="comment">/* GameStats Methods */</span></div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160; </div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <a class="code" href="class_game_stats.html">GameStats</a>* <a class="code" href="class_national_team.html#aeac3ade82998538f7e14b2029f3c0736">createGameStatistics</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> gameID);</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#aae2de13b97aaa5c535b6b312655fc334">addGameStatistics</a>(<a class="code" href="class_game_stats.html">GameStats</a>* gStats);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a3eb2bf03094c910a450a4ee17ade557b">readGameStatisticsFile</a>(std::string filename);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#acc42c36c935a115bb23b9216ab154e1d">writeGamesStatisticsFile</a>(std::string filename);</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="comment">/* IndividualStatistics Methods */</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <a class="code" href="class_individual_statistics.html">IndividualStatistics</a>* <a class="code" href="class_national_team.html#a1ce69b59f32d5483d3c34e8b7ead7309">createIndividualStatistics</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> playerID);</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a1ad0ba016d38d44fef434122870bfaf4">addIndividualStatistic</a>(<a class="code" href="class_individual_statistics.html">IndividualStatistics</a>* iStat);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a2fd9e28625fb09384c99b40c90396e97">readIndividualStatisticsFile</a>(std::string filename);</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#aca23c3376bbd0098c33a7a5dd70f8756">writeIndividualStatisticsFile</a>(std::string filename);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160; </div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160; </div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: workers)</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                {</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                    <span class="keywordflow">if</span>(x-&gt;getSalary() &gt;= smallerSalary &amp;&amp; x-&gt;getSalary() &lt;= biggerSalary)</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                    {</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                        auxPerson.push_back(x);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;                        ct = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;                    }</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;                }</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;                <span class="keywordflow">if</span>(!auxPerson.empty())</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;                {</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;                    auxPerson.at(0)-&gt;header(); <span class="comment">// Print corresponding header</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: auxPerson)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                    {</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;                        x-&gt;info();</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;                        std::cout &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;                    }</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;                }</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160; </div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;                <span class="keywordflow">if</span>(ct)</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;                {</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the ID of The Choosen One (!ID =&gt; [Go Back]): &quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;                    <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;                        std::cin &gt;&gt; option;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;                        std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;                        <span class="keywordflow">return</span> getByID(auxPerson, option);</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;                    }</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;                    <span class="keywordflow">catch</span> (<a class="code" href="class_no_object_found.html">NoObjectFound</a> &amp;e) {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;                        std::cout &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">getError</a>() &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;                    }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                }</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;                <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;                    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;No Corresponding Person Found...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;            }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;            <span class="keywordflow">case</span> 4:</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            {</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;                <span class="comment">// ID</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                <span class="keywordtype">int</span> <span class="keywordtype">id</span> = readOperations::readNumber&lt;int&gt;(<span class="stringliteral">&quot;ID: &quot;</span>);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;                    <span class="keywordflow">return</span> getByID(workers, <span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;                }</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;                <span class="keywordflow">catch</span> (<a class="code" href="class_no_object_found.html">NoObjectFound</a> &amp;e) {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;                    std::cout &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">getError</a>() &lt;&lt; std::endl &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;                }</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;            }</div>
-<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;        }</div>
-<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;    }</div>
-<div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;}</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
-<div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;<span class="preprocessor">#endif //NTEAM_NATIONALTEAM_H</span></div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <span class="comment">/* InfCalls */</span></div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160; </div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a77c2d55bae2d543ad4bfd8abcf6c6821">readInfCalls</a>(std::string filename);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    <a class="code" href="class_inf_call.html">InfCall</a>* <a class="code" href="class_national_team.html#a1832076330ec7094e874b5959cf201b1">createInfCalls</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sPId);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a867be13c04bc77b5ca4513b021f45d66">addInfCall</a>(<a class="code" href="class_inf_call.html">InfCall</a>* inf);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#ae24b693b352ab91dad81236aa9e7404d">writeInfCallsFile</a>(std::string filename);</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160; </div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    <span class="comment">/* TechnicalTeam Methods */</span></div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160; </div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a90b07926b22386c5ac177eda7887294c">addTechnicalTeamMember</a>(<a class="code" href="class_technical_team.html">TechnicalTeam</a>* tTeam);</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#ab47dab0500967f3d8abcc8de087ac033">readTechnicalTeamFile</a>(std::string filename);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a55e8ae56b7c16f7ff6f860ab3818f72b">createTechnicalTeamMember</a>();</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#ac9c13f8925e69eec3ca93a8efd45865e">alterTechnicalTeamMember</a>();</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a57cb6e3773cd7632948889f2fcff5d08">deleteTechnicalTeamMember</a>();</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_national_team.html#a088ba6b1b26f3277143220e5d9bf88e1">writeTechnicalTeamFile</a>(std::string filename);</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160; </div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;    <span class="comment">/* Features */</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160; </div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;    std::vector&lt;Call*&gt; <a class="code" href="class_national_team.html#aebd8289b56067d67a316c0b86dee9dca">playerCalls</a>(<a class="code" href="class_soccer_player.html">SoccerPlayer</a>* sP);</div>
+<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a02ce087d2912160b1f94159eb48de42b">playerCallsForMenu</a>();</div>
+<div class="line"><a name="l00384"></a><span class="lineno">  384</span>&#160;    std::vector&lt;Game*&gt; <a class="code" href="class_national_team.html#ab37b81c7ecf079cf97b15bb24f3d4c91">playerGames</a>(<a class="code" href="class_soccer_player.html">SoccerPlayer</a>* sP, <a class="code" href="class_call.html">Call</a>* call); <span class="comment">// Jogos em que o jogador participou numa determinada call</span></div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;<span class="comment"></span>    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a20dcac6afa767ba76bb96348cb935b70">playerGamesForMenu</a>();</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a3a0188e3f9c2ef31879fd2e2ad982556">topScorer</a>();</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#af8d3ccbcf70fc048e22b7e591b1a57cc">showNumberOfVictoriesDrawsLoses</a>();</div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160; </div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    <span class="comment">/* Costs */</span></div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160; </div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#acabfd318f70167f5b2cb3dee9eab0bbb">getPlayerTotalCost</a>();</div>
+<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_national_team.html#aca9250aa0d1dc5defbf1878c53f6a408">getTeamTotalCost</a>();</div>
+<div class="line"><a name="l00412"></a><span class="lineno">  412</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a2d19d553dba996fce1b8dbfdf1218566">getNationalTeamTotalCost</a>();</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a7c88c7717aa66a1af8d107854efd0961">getMonthlyPlayerTotalCost</a>();</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a60431a66ad242571dcf49684fe2a077a">getMonthlyTeamTotalCost</a>();</div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a72ebae6287c851e9291f37330d8813fa">getMonthlyNationalTeamTotalCost</a>();</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160; </div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a33da2c871fb38c76d17c6e06f9c1a5f4">showCallStats</a>();</div>
+<div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a2d732f69146cd07807c563697342a30e">showGlobalStats</a>();</div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160; </div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a43d07325177da920479caa62b83dc47a">showPlayerGlobalStats</a>();</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#ad7d97f22dbb3abf5dab0593c5f5c9ecd">showPlayerCallStats</a>();</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160; </div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    <a class="code" href="class_national_team.html#a40875adb68996d3fc1fe00364aaad637">~NationalTeam</a>();</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a72f03622c80b30d762f52241cd6e477b">auxiliaryDestructor</a>(std::vector&lt;Type&gt; &amp;elements);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00461"></a><span class="lineno"><a class="line" href="class_national_team.html#a4ca16ff93b9d3a4b8729f90e5e38958c">  461</a></span>&#160;    std::vector&lt;OtherWorker*&gt; <a class="code" href="class_national_team.html#a4ca16ff93b9d3a4b8729f90e5e38958c">otherWorkers</a>;</div>
+<div class="line"><a name="l00465"></a><span class="lineno"><a class="line" href="class_national_team.html#ae7cb6756815df8679137d66adc5771cb">  465</a></span>&#160;    std::vector&lt;TechnicalTeam*&gt; <a class="code" href="class_national_team.html#ae7cb6756815df8679137d66adc5771cb">technicalTeam</a>;</div>
+<div class="line"><a name="l00469"></a><span class="lineno"><a class="line" href="class_national_team.html#ac7306e9e3aa65f21b13702ad0869f148">  469</a></span>&#160;    std::vector&lt;SoccerPlayer*&gt; <a class="code" href="class_national_team.html#ac7306e9e3aa65f21b13702ad0869f148">players</a>;</div>
+<div class="line"><a name="l00473"></a><span class="lineno"><a class="line" href="class_national_team.html#a915e42dad299d82b0980888194660d6d">  473</a></span>&#160;    std::vector&lt;InfCall*&gt; <a class="code" href="class_national_team.html#a915e42dad299d82b0980888194660d6d">infCalls</a>;</div>
+<div class="line"><a name="l00477"></a><span class="lineno"><a class="line" href="class_national_team.html#a34158c3ab29ba0b24d877591e3284a38">  477</a></span>&#160;    std::vector&lt;Call*&gt; <a class="code" href="class_national_team.html#a34158c3ab29ba0b24d877591e3284a38">calls</a>;</div>
+<div class="line"><a name="l00481"></a><span class="lineno"><a class="line" href="class_national_team.html#aa88e465a3adac31ed3a57e1dbb03ceaa">  481</a></span>&#160;    std::vector&lt;Game*&gt; <a class="code" href="class_national_team.html#aa88e465a3adac31ed3a57e1dbb03ceaa">games</a>;</div>
+<div class="line"><a name="l00485"></a><span class="lineno"><a class="line" href="class_national_team.html#a7493e99b47e3e97d7201363b7bf880b5">  485</a></span>&#160;    std::vector&lt;GameStats*&gt; <a class="code" href="class_national_team.html#a7493e99b47e3e97d7201363b7bf880b5">gameStats</a>;</div>
+<div class="line"><a name="l00489"></a><span class="lineno"><a class="line" href="class_national_team.html#a9b9f12e9c82fa3a228b8e2f0e8bb13f3">  489</a></span>&#160;    std::vector&lt;IndividualStatistics*&gt; <a class="code" href="class_national_team.html#a9b9f12e9c82fa3a228b8e2f0e8bb13f3">individualStats</a>;</div>
+<div class="line"><a name="l00493"></a><span class="lineno"><a class="line" href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">  493</a></span>&#160;    std::string <a class="code" href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">name</a>;</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;};</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
+<div class="line"><a name="l00497"></a><span class="lineno"><a class="line" href="class_national_team.html#a72f03622c80b30d762f52241cd6e477b">  497</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_national_team.html#a72f03622c80b30d762f52241cd6e477b">NationalTeam::auxiliaryDestructor</a>(std::vector&lt;Type&gt; &amp;elements)</div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;{</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: elements)</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;        <span class="keyword">delete</span> x;</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;}</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
+<div class="line"><a name="l00504"></a><span class="lineno"><a class="line" href="class_national_team.html#abede87c658af2706fe21d4e32fdb75b0">  504</a></span>&#160;<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_national_team.html#abede87c658af2706fe21d4e32fdb75b0">NationalTeam::getLastID</a>(std::vector&lt;Type&gt; &amp;elements)</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;{</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordflow">if</span>(elements.size() &gt; 0)</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;        <span class="keywordflow">return</span> elements.at(elements.size() - 1)-&gt;getId() + 1; <span class="comment">// We suppose all Ids are incremented by 1</span></div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;}</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160; </div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
+<div class="line"><a name="l00513"></a><span class="lineno"><a class="line" href="class_national_team.html#aa6fc823fbbdb5b874cddfdd0022a0bfb">  513</a></span>&#160;Type&amp; <a class="code" href="class_national_team.html#aa6fc823fbbdb5b874cddfdd0022a0bfb">NationalTeam::getByID</a>(std::vector&lt;Type&gt; &amp;elements, <span class="keywordtype">int</span> <span class="keywordtype">id</span>)</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;{</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;    <span class="keywordflow">if</span>(<span class="keywordtype">id</span> &lt; 1)</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;        <span class="keywordflow">throw</span> <a class="code" href="class_no_object_found.html">NoObjectFound</a>(<span class="stringliteral">&quot;ID Not Valid...&quot;</span>); <span class="comment">// IDs smaller than 1 are not allowed</span></div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;    {</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;x: elements) {</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;            <span class="keywordflow">if</span> (x-&gt;getId() == id)</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;                <span class="keywordflow">return</span> x;</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;        }</div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;    }</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;    <span class="keywordflow">throw</span> <a class="code" href="class_no_object_found.html">NoObjectFound</a>(<span class="stringliteral">&quot;No Corresponding Person Found...&quot;</span>);</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;}</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160; </div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> Type&gt;</div>
+<div class="line"><a name="l00528"></a><span class="lineno"><a class="line" href="class_national_team.html#af4197b00d38001cb5ba9844b3eb09ba0">  528</a></span>&#160;Type <a class="code" href="class_national_team.html#af4197b00d38001cb5ba9844b3eb09ba0">NationalTeam::workerLookUp</a>(std::vector&lt;Type&gt; &amp;workers)</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;{</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160; </div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;    <span class="keywordtype">bool</span> ct;</div>
+<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160;    std::string reader;</div>
+<div class="line"><a name="l00533"></a><span class="lineno">  533</span>&#160;    <span class="keywordtype">int</span> option;</div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;    std::vector&lt;Type&gt; auxPerson;</div>
+<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>)</div>
+<div class="line"><a name="l00536"></a><span class="lineno">  536</span>&#160;    {</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;        auxPerson.clear();</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;        ct = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;        std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;Look for a \&#39;Person\&#39; using: &quot;</span> &lt;&lt; std::endl; std::cout &lt;&lt; <span class="stringliteral">&quot;1. Name\n2. Birth Date\n3. Salary\n4. ID\n0. Back\n\n&quot;</span>;</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;        std::cin &gt;&gt; option; std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>); std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160;        <span class="keywordflow">switch</span>(option)</div>
+<div class="line"><a name="l00542"></a><span class="lineno">  542</span>&#160;        {</div>
+<div class="line"><a name="l00543"></a><span class="lineno">  543</span>&#160;            <span class="keywordflow">case</span> 0:</div>
+<div class="line"><a name="l00544"></a><span class="lineno">  544</span>&#160;                <span class="keywordflow">return</span> NULL;</div>
+<div class="line"><a name="l00545"></a><span class="lineno">  545</span>&#160;            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;            {</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;                <span class="comment">// Name</span></div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;                std::string <a class="code" href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">name</a> = readOperations::readString(<span class="stringliteral">&quot;Name:&quot;</span>);</div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;                std::transform(<a class="code" href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">name</a>.begin(), <a class="code" href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">name</a>.end(), <a class="code" href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">name</a>.begin(), toupper); <span class="comment">// Convert to uppercase</span></div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160; </div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;                std::string workerName;</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: workers)</div>
+<div class="line"><a name="l00554"></a><span class="lineno">  554</span>&#160;                {</div>
+<div class="line"><a name="l00555"></a><span class="lineno">  555</span>&#160;                    workerName = x-&gt;getName();</div>
+<div class="line"><a name="l00556"></a><span class="lineno">  556</span>&#160;                    std::transform(workerName.begin(), workerName.end(), workerName.begin(), toupper); <span class="comment">// Convert to uppercase</span></div>
+<div class="line"><a name="l00557"></a><span class="lineno">  557</span>&#160;                    <span class="keywordflow">if</span>(workerName.find(<a class="code" href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">name</a>) != std::string::npos)</div>
+<div class="line"><a name="l00558"></a><span class="lineno">  558</span>&#160;                    {</div>
+<div class="line"><a name="l00559"></a><span class="lineno">  559</span>&#160;                        auxPerson.push_back(x);</div>
+<div class="line"><a name="l00560"></a><span class="lineno">  560</span>&#160;                        ct = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00561"></a><span class="lineno">  561</span>&#160;                    }</div>
+<div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;                }</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;                <span class="keywordflow">if</span>(!auxPerson.empty())</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;                {</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;                    auxPerson.at(0)-&gt;header(); <span class="comment">// Print corresponding header</span></div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: auxPerson)</div>
+<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;                    {</div>
+<div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;                        x-&gt;info();</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;                        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;                    }</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;                }</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
+<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
+<div class="line"><a name="l00574"></a><span class="lineno">  574</span>&#160;                <span class="keywordflow">if</span>(ct)</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;                {</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the ID of The Choosen One (!ID =&gt; [Go Back]): &quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;                    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;                        std::cin &gt;&gt; option;</div>
+<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160;                        std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00580"></a><span class="lineno">  580</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="class_national_team.html#aa6fc823fbbdb5b874cddfdd0022a0bfb">getByID</a>(auxPerson, option);</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;                    }</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;                    <span class="keywordflow">catch</span> (<a class="code" href="class_no_object_found.html">NoObjectFound</a> &amp;e) {</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;                        std::cout &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">getError</a>() &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;                    }</div>
+<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160;                }</div>
+<div class="line"><a name="l00586"></a><span class="lineno">  586</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;                    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;No Corresponding Person Found...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;            }</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;            <span class="keywordflow">case</span> 2:</div>
+<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160;            {</div>
+<div class="line"><a name="l00592"></a><span class="lineno">  592</span>&#160;                <span class="comment">// Birth Date</span></div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;                <a class="code" href="class_date.html">Date</a> dBirth1, dBirth2;</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;                <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;                {</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;                    dBirth1 = readOperations::readDate(<span class="stringliteral">&quot;Smaller birth Date (DD/MM/YYYY):&quot;</span>);</div>
+<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160;                    dBirth2 = readOperations::readDate(<span class="stringliteral">&quot;Bigger birth Date (DD/MM/YYYY):&quot;</span>);</div>
+<div class="line"><a name="l00598"></a><span class="lineno">  598</span>&#160;                    <span class="keywordflow">if</span>(dBirth2 &lt;= dBirth1)</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;                        std::cout &lt;&lt; <span class="stringliteral">&quot;First Date Has To Be Less Than or Equal To The Second! Try again...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;                    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;                        <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;                } <span class="keywordflow">while</span>(!(dBirth1 &lt;= dBirth2));</div>
+<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
+<div class="line"><a name="l00604"></a><span class="lineno">  604</span>&#160; </div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: workers)</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;                {</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;                    <span class="keywordflow">if</span>(generalFunctions::checkBetweenDates(dBirth1, x-&gt;<a class="code" href="class_date.html#ac33192f734973548e97e9b5d8da44a5b">getDate</a>(), dBirth2))</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;                    {</div>
+<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160;                        auxPerson.push_back(x);</div>
+<div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;                        ct = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;                    }</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;                }</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160; </div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;                <span class="keywordflow">if</span>(!auxPerson.empty())</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;                {</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;                    auxPerson.at(0)-&gt;header(); <span class="comment">// Print corresponding header</span></div>
+<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: auxPerson)</div>
+<div class="line"><a name="l00618"></a><span class="lineno">  618</span>&#160;                    {</div>
+<div class="line"><a name="l00619"></a><span class="lineno">  619</span>&#160;                        x-&gt;info();</div>
+<div class="line"><a name="l00620"></a><span class="lineno">  620</span>&#160;                        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;                    }</div>
+<div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;                }</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;                <span class="keywordflow">if</span>(ct)</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;                {</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the ID of The Choosen One (!ID =&gt; [Go Back]): &quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160;                    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00628"></a><span class="lineno">  628</span>&#160;                        std::cin &gt;&gt; option;</div>
+<div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160;                        std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00630"></a><span class="lineno">  630</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="class_national_team.html#aa6fc823fbbdb5b874cddfdd0022a0bfb">getByID</a>(auxPerson, option);</div>
+<div class="line"><a name="l00631"></a><span class="lineno">  631</span>&#160;                    }</div>
+<div class="line"><a name="l00632"></a><span class="lineno">  632</span>&#160;                    <span class="keywordflow">catch</span> (<a class="code" href="class_no_object_found.html">NoObjectFound</a> &amp;e) {</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;                        std::cout &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">getError</a>() &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;                    }</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;                }</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160;                    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;No Corresponding Person Found...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00638"></a><span class="lineno">  638</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160; </div>
+<div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;            }</div>
+<div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;            <span class="keywordflow">case</span> 3:</div>
+<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;            {</div>
+<div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;                <span class="comment">// Salary</span></div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;                <span class="keywordtype">float</span> smallerSalary, biggerSalary;</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;                <span class="keywordflow">do</span></div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;                {</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;                    smallerSalary = readOperations::readNumber&lt;float&gt;(<span class="stringliteral">&quot;Smaller Salary:&quot;</span>);</div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;                    biggerSalary = readOperations::readNumber&lt;float&gt;(<span class="stringliteral">&quot;Bigger Salary:&quot;</span>);</div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;                    <span class="keywordflow">if</span>(smallerSalary &gt; biggerSalary)</div>
+<div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160;                        std::cout &lt;&lt; <span class="stringliteral">&quot;First Date Has To Be Less Than or Equal To The Second! Try again...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;                } <span class="keywordflow">while</span>(smallerSalary &gt; biggerSalary);</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160; </div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160; </div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;                <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: workers)</div>
+<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;                {</div>
+<div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160;                    <span class="keywordflow">if</span>(x-&gt;getSalary() &gt;= smallerSalary &amp;&amp; x-&gt;getSalary() &lt;= biggerSalary)</div>
+<div class="line"><a name="l00657"></a><span class="lineno">  657</span>&#160;                    {</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;                        auxPerson.push_back(x);</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;                        ct = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;                    }</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;                }</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;                <span class="keywordflow">if</span>(!auxPerson.empty())</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;                {</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;                    auxPerson.at(0)-&gt;header(); <span class="comment">// Print corresponding header</span></div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;                    <span class="keywordflow">for</span>(<span class="keyword">auto</span> &amp;x: auxPerson)</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;                    {</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;                        x-&gt;info();</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;                        std::cout &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;                    }</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;                }</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160; </div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;                <span class="keywordflow">if</span>(ct)</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;                {</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;                    std::cout &lt;&lt; <span class="stringliteral">&quot;Enter the ID of The Choosen One (!ID =&gt; [Go Back]): &quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;                    <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;                        std::cin &gt;&gt; option;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;                        std::cin.ignore(std::numeric_limits&lt;std::streamsize&gt;::max(), <span class="charliteral">&#39;\n&#39;</span>);</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;                        <span class="keywordflow">return</span> <a class="code" href="class_national_team.html#aa6fc823fbbdb5b874cddfdd0022a0bfb">getByID</a>(auxPerson, option);</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;                    }</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;                    <span class="keywordflow">catch</span> (<a class="code" href="class_no_object_found.html">NoObjectFound</a> &amp;e) {</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;                        std::cout &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">getError</a>() &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;                    }</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;                }</div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;                <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;                    std::cout &lt;&lt; std::endl &lt;&lt; <span class="stringliteral">&quot;No Corresponding Person Found...&quot;</span> &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;            }</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;            <span class="keywordflow">case</span> 4:</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;            {</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;                <span class="comment">// ID</span></div>
+<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;                <span class="keywordtype">int</span> <span class="keywordtype">id</span> = readOperations::readNumber&lt;int&gt;(<span class="stringliteral">&quot;ID: &quot;</span>);</div>
+<div class="line"><a name="l00693"></a><span class="lineno">  693</span>&#160; </div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;                    <span class="keywordflow">return</span> <a class="code" href="class_national_team.html#aa6fc823fbbdb5b874cddfdd0022a0bfb">getByID</a>(workers, <span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;                }</div>
+<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160;                <span class="keywordflow">catch</span> (<a class="code" href="class_no_object_found.html">NoObjectFound</a> &amp;e) {</div>
+<div class="line"><a name="l00698"></a><span class="lineno">  698</span>&#160;                    std::cout &lt;&lt; std::endl &lt;&lt; e.<a class="code" href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">getError</a>() &lt;&lt; std::endl &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;                }</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160; </div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;                <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;            }</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;        }</div>
+<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;    }</div>
+<div class="line"><a name="l00705"></a><span class="lineno">  705</span>&#160;}</div>
+<div class="line"><a name="l00706"></a><span class="lineno">  706</span>&#160; </div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;<span class="preprocessor">#endif //NTEAM_NATIONALTEAM_H</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclass_no_object_found_html"><div class="ttname"><a href="class_no_object_found.html">NoObjectFound</a></div><div class="ttdef"><b>Definition:</b> Exceptions.h:10</div></div>
-<div class="ttc" id="aclass_national_team_html"><div class="ttname"><a href="class_national_team.html">NationalTeam</a></div><div class="ttdef"><b>Definition:</b> NationalTeam.h:21</div></div>
-<div class="ttc" id="aclass_other_worker_html"><div class="ttname"><a href="class_other_worker.html">OtherWorker</a></div><div class="ttdef"><b>Definition:</b> OtherWorker.h:8</div></div>
-<div class="ttc" id="aclass_call_html"><div class="ttname"><a href="class_call.html">Call</a></div><div class="ttdef"><b>Definition:</b> Call.h:17</div></div>
-<div class="ttc" id="aclass_game_stats_html"><div class="ttname"><a href="class_game_stats.html">GameStats</a></div><div class="ttdef"><b>Definition:</b> GameStats.h:10</div></div>
-<div class="ttc" id="aclass_soccer_player_html"><div class="ttname"><a href="class_soccer_player.html">SoccerPlayer</a></div><div class="ttdef"><b>Definition:</b> SoccerPlayer.h:12</div></div>
-<div class="ttc" id="aclass_technical_team_html"><div class="ttname"><a href="class_technical_team.html">TechnicalTeam</a></div><div class="ttdef"><b>Definition:</b> TechnicalTeam.h:10</div></div>
-<div class="ttc" id="aclass_no_object_found_html_a53c9ce3c4833d37953502ef225f19e3b"><div class="ttname"><a href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">NoObjectFound::getError</a></div><div class="ttdeci">std::string getError()</div><div class="ttdef"><b>Definition:</b> Exceptions.h:21</div></div>
-<div class="ttc" id="aclass_individual_statistics_html"><div class="ttname"><a href="class_individual_statistics.html">IndividualStatistics</a></div><div class="ttdef"><b>Definition:</b> IndividualStatistics.h:11</div></div>
-<div class="ttc" id="aclass_inf_call_html"><div class="ttname"><a href="class_inf_call.html">InfCall</a></div><div class="ttdef"><b>Definition:</b> InfCall.h:10</div></div>
-<div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdef"><b>Definition:</b> Date.h:10</div></div>
-<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdef"><b>Definition:</b> Game.h:13</div></div>
+<div class="ttc" id="aclass_national_team_html_a7b8c0f4d0e58b07bc17eeb1ecfbeaf86"><div class="ttname"><a href="class_national_team.html#a7b8c0f4d0e58b07bc17eeb1ecfbeaf86">NationalTeam::addGame</a></div><div class="ttdeci">void addGame(Game *game)</div><div class="ttdoc">Adds a new game.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:952</div></div>
+<div class="ttc" id="aclass_national_team_html_a441b301429d2aacb6357e157df42dd13"><div class="ttname"><a href="class_national_team.html#a441b301429d2aacb6357e157df42dd13">NationalTeam::addCall</a></div><div class="ttdeci">void addCall(Call *call)</div><div class="ttdoc">Add a Summon.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1325</div></div>
+<div class="ttc" id="aclass_national_team_html_a90b07926b22386c5ac177eda7887294c"><div class="ttname"><a href="class_national_team.html#a90b07926b22386c5ac177eda7887294c">NationalTeam::addTechnicalTeamMember</a></div><div class="ttdeci">void addTechnicalTeamMember(TechnicalTeam *tTeam)</div><div class="ttdoc">Add a TechnicalTeam member.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1941</div></div>
+<div class="ttc" id="aclass_national_team_html_aa652feda61c78f4b69a9308b6ce7c2ec"><div class="ttname"><a href="class_national_team.html#aa652feda61c78f4b69a9308b6ce7c2ec">NationalTeam::displayOtherWorkers</a></div><div class="ttdeci">void displayOtherWorkers() const</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:196</div></div>
+<div class="ttc" id="aclass_national_team_html_af8d3ccbcf70fc048e22b7e591b1a57cc"><div class="ttname"><a href="class_national_team.html#af8d3ccbcf70fc048e22b7e591b1a57cc">NationalTeam::showNumberOfVictoriesDrawsLoses</a></div><div class="ttdeci">void showNumberOfVictoriesDrawsLoses()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2908</div></div>
+<div class="ttc" id="aclass_national_team_html_aaf00db9a5242f6e3cd0efeff50b60275"><div class="ttname"><a href="class_national_team.html#aaf00db9a5242f6e3cd0efeff50b60275">NationalTeam::readGamesFile</a></div><div class="ttdeci">bool readGamesFile(std::string filename)</div><div class="ttdoc">Read Games Files.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:957</div></div>
+<div class="ttc" id="aclass_national_team_html_a3155f83d7b5acefb8833268c08fbb411"><div class="ttname"><a href="class_national_team.html#a3155f83d7b5acefb8833268c08fbb411">NationalTeam::displayGames</a></div><div class="ttdeci">void displayGames() const</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:216</div></div>
+<div class="ttc" id="aclass_national_team_html_a3b69b5762bbc2685f96f5ea1a75547d7"><div class="ttname"><a href="class_national_team.html#a3b69b5762bbc2685f96f5ea1a75547d7">NationalTeam::alterOtherWorker</a></div><div class="ttdeci">bool alterOtherWorker()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:120</div></div>
+<div class="ttc" id="aclass_national_team_html_a4ca16ff93b9d3a4b8729f90e5e38958c"><div class="ttname"><a href="class_national_team.html#a4ca16ff93b9d3a4b8729f90e5e38958c">NationalTeam::otherWorkers</a></div><div class="ttdeci">std::vector&lt; OtherWorker * &gt; otherWorkers</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:461</div></div>
+<div class="ttc" id="aclass_national_team_html_ad37d1570ef3a7d814b9283da176e6d70"><div class="ttname"><a href="class_national_team.html#ad37d1570ef3a7d814b9283da176e6d70">NationalTeam::alterSoccerPlayer</a></div><div class="ttdeci">bool alterSoccerPlayer()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:354</div></div>
+<div class="ttc" id="aclass_national_team_html_a9f60f847ae534fd3de91b3254c0f9f34"><div class="ttname"><a href="class_national_team.html#a9f60f847ae534fd3de91b3254c0f9f34">NationalTeam::NationalTeam</a></div><div class="ttdeci">NationalTeam(std::string n)</div><div class="ttdoc">National Team constructor</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:30</div></div>
+<div class="ttc" id="aclass_no_object_found_html"><div class="ttname"><a href="class_no_object_found.html">NoObjectFound</a></div><div class="ttdoc">Exceptions file, used to store exception classes.</div><div class="ttdef"><b>Definition:</b> Exceptions.h:13</div></div>
+<div class="ttc" id="aclass_national_team_html_aa88e465a3adac31ed3a57e1dbb03ceaa"><div class="ttname"><a href="class_national_team.html#aa88e465a3adac31ed3a57e1dbb03ceaa">NationalTeam::games</a></div><div class="ttdeci">std::vector&lt; Game * &gt; games</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:481</div></div>
+<div class="ttc" id="aclass_national_team_html_a1ce69b59f32d5483d3c34e8b7ead7309"><div class="ttname"><a href="class_national_team.html#a1ce69b59f32d5483d3c34e8b7ead7309">NationalTeam::createIndividualStatistics</a></div><div class="ttdeci">IndividualStatistics * createIndividualStatistics(unsigned int playerID)</div><div class="ttdoc">Create Soccer Player Individual Statistics.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1709</div></div>
+<div class="ttc" id="aclass_national_team_html_ab37b81c7ecf079cf97b15bb24f3d4c91"><div class="ttname"><a href="class_national_team.html#ab37b81c7ecf079cf97b15bb24f3d4c91">NationalTeam::playerGames</a></div><div class="ttdeci">std::vector&lt; Game * &gt; playerGames(SoccerPlayer *sP, Call *call)</div><div class="ttdoc">Games in a Call in which a give player participated.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2380</div></div>
+<div class="ttc" id="aclass_national_team_html_a77f796f510ee253e3d171b912d1faf60"><div class="ttname"><a href="class_national_team.html#a77f796f510ee253e3d171b912d1faf60">NationalTeam::displaySoccerPlayers</a></div><div class="ttdeci">void displaySoccerPlayers() const</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:205</div></div>
+<div class="ttc" id="aclass_date_html_ac33192f734973548e97e9b5d8da44a5b"><div class="ttname"><a href="class_date.html#ac33192f734973548e97e9b5d8da44a5b">Date::getDate</a></div><div class="ttdeci">std::string getDate() const</div><div class="ttdef"><b>Definition:</b> Date.cpp:83</div></div>
+<div class="ttc" id="aclass_national_team_html_a3eb2bf03094c910a450a4ee17ade557b"><div class="ttname"><a href="class_national_team.html#a3eb2bf03094c910a450a4ee17ade557b">NationalTeam::readGameStatisticsFile</a></div><div class="ttdeci">bool readGameStatisticsFile(std::string filename)</div><div class="ttdoc">Read Game Statistics file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1545</div></div>
+<div class="ttc" id="aclass_national_team_html_aae2de13b97aaa5c535b6b312655fc334"><div class="ttname"><a href="class_national_team.html#aae2de13b97aaa5c535b6b312655fc334">NationalTeam::addGameStatistics</a></div><div class="ttdeci">void addGameStatistics(GameStats *gStats)</div><div class="ttdoc">Add a Game Statistic.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1459</div></div>
+<div class="ttc" id="aclass_national_team_html_af8848601555b547655f22034ad7433aa"><div class="ttname"><a href="class_national_team.html#af8848601555b547655f22034ad7433aa">NationalTeam::addSoccerPlayer</a></div><div class="ttdeci">void addSoccerPlayer(SoccerPlayer *sP)</div><div class="ttdoc">Add a new SoccerPlayer.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:314</div></div>
+<div class="ttc" id="aclass_national_team_html"><div class="ttname"><a href="class_national_team.html">NationalTeam</a></div><div class="ttdoc">National Team class. The projects' heartwood. It contains all the information about the other classes</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:24</div></div>
+<div class="ttc" id="aclass_national_team_html_a2d19d553dba996fce1b8dbfdf1218566"><div class="ttname"><a href="class_national_team.html#a2d19d553dba996fce1b8dbfdf1218566">NationalTeam::getNationalTeamTotalCost</a></div><div class="ttdeci">void getNationalTeamTotalCost()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2602</div></div>
+<div class="ttc" id="aclass_national_team_html_a867be13c04bc77b5ca4513b021f45d66"><div class="ttname"><a href="class_national_team.html#a867be13c04bc77b5ca4513b021f45d66">NationalTeam::addInfCall</a></div><div class="ttdeci">void addInfCall(InfCall *inf)</div><div class="ttdoc">Add and InfCall.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1933</div></div>
+<div class="ttc" id="aclass_national_team_html_a8df0a22e78e79ef426a516207df94dca"><div class="ttname"><a href="class_national_team.html#a8df0a22e78e79ef426a516207df94dca">NationalTeam::deleteSoccerPlayer</a></div><div class="ttdeci">bool deleteSoccerPlayer()</div><div class="ttdoc">Delete a SoccerPlayer.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:453</div></div>
+<div class="ttc" id="aclass_national_team_html_ae1c4dfc5c272a43386a0c888835d295d"><div class="ttname"><a href="class_national_team.html#ae1c4dfc5c272a43386a0c888835d295d">NationalTeam::writeGamesFile</a></div><div class="ttdeci">bool writeGamesFile(std::string filename)</div><div class="ttdoc">Save Games file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2225</div></div>
+<div class="ttc" id="aclass_national_team_html_a20897afd769a490f607585988b3baeb3"><div class="ttname"><a href="class_national_team.html#a20897afd769a490f607585988b3baeb3">NationalTeam::alterPlayerStats</a></div><div class="ttdeci">bool alterPlayerStats(std::vector&lt; IndividualStatistics * &gt; stats, unsigned int playerID)</div><div class="ttdoc">Modify SoccerPlayer individual statistics.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:712</div></div>
+<div class="ttc" id="aclass_national_team_html_aca9250aa0d1dc5defbf1878c53f6a408"><div class="ttname"><a href="class_national_team.html#aca9250aa0d1dc5defbf1878c53f6a408">NationalTeam::getTeamTotalCost</a></div><div class="ttdeci">unsigned int getTeamTotalCost()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2555</div></div>
+<div class="ttc" id="aclass_national_team_html_a3ecce594d0ef8094f0f36c1c3efc0be5"><div class="ttname"><a href="class_national_team.html#a3ecce594d0ef8094f0f36c1c3efc0be5">NationalTeam::createOtherWorker</a></div><div class="ttdeci">bool createOtherWorker()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:31</div></div>
+<div class="ttc" id="aclass_national_team_html_a15f0c7e721d40b258a63ec6caf3aeaea"><div class="ttname"><a href="class_national_team.html#a15f0c7e721d40b258a63ec6caf3aeaea">NationalTeam::createCall</a></div><div class="ttdeci">bool createCall()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1336</div></div>
+<div class="ttc" id="aclass_national_team_html_aa4adf7acc2b5972155b0b0a7046523a2"><div class="ttname"><a href="class_national_team.html#aa4adf7acc2b5972155b0b0a7046523a2">NationalTeam::createSoccerPlayer</a></div><div class="ttdeci">bool createSoccerPlayer()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:318</div></div>
+<div class="ttc" id="aclass_national_team_html_aa6ff1f496891cfa1821f8d2d0795cc6b"><div class="ttname"><a href="class_national_team.html#aa6ff1f496891cfa1821f8d2d0795cc6b">NationalTeam::alterGameGlobal</a></div><div class="ttdeci">bool alterGameGlobal(Game *game)</div><div class="ttdoc">Modify game global statistics.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:587</div></div>
+<div class="ttc" id="aclass_national_team_html_a33da2c871fb38c76d17c6e06f9c1a5f4"><div class="ttname"><a href="class_national_team.html#a33da2c871fb38c76d17c6e06f9c1a5f4">NationalTeam::showCallStats</a></div><div class="ttdeci">void showCallStats()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2417</div></div>
+<div class="ttc" id="aclass_national_team_html_ac7306e9e3aa65f21b13702ad0869f148"><div class="ttname"><a href="class_national_team.html#ac7306e9e3aa65f21b13702ad0869f148">NationalTeam::players</a></div><div class="ttdeci">std::vector&lt; SoccerPlayer * &gt; players</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:469</div></div>
+<div class="ttc" id="aclass_national_team_html_a43590625e16f7718286939457243e5b1"><div class="ttname"><a href="class_national_team.html#a43590625e16f7718286939457243e5b1">NationalTeam::readSoccerPlayersFile</a></div><div class="ttdeci">bool readSoccerPlayersFile(std::string filename)</div><div class="ttdoc">Reads Soccer Players' file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:255</div></div>
+<div class="ttc" id="aclass_national_team_html_a5cb346becbea00519917d83f9c7ec0d9"><div class="ttname"><a href="class_national_team.html#a5cb346becbea00519917d83f9c7ec0d9">NationalTeam::createGame</a></div><div class="ttdeci">Game * createGame(std::vector&lt; SoccerPlayer * &gt; soccerPlayers, Date begin, Date end)</div><div class="ttdoc">Create a Game.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:838</div></div>
+<div class="ttc" id="aclass_national_team_html_a55e8ae56b7c16f7ff6f860ab3818f72b"><div class="ttname"><a href="class_national_team.html#a55e8ae56b7c16f7ff6f860ab3818f72b">NationalTeam::createTechnicalTeamMember</a></div><div class="ttdeci">bool createTechnicalTeamMember()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1985</div></div>
+<div class="ttc" id="aclass_national_team_html_a02ce087d2912160b1f94159eb48de42b"><div class="ttname"><a href="class_national_team.html#a02ce087d2912160b1f94159eb48de42b">NationalTeam::playerCallsForMenu</a></div><div class="ttdeci">void playerCallsForMenu()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2363</div></div>
+<div class="ttc" id="aclass_national_team_html_acabfd318f70167f5b2cb3dee9eab0bbb"><div class="ttname"><a href="class_national_team.html#acabfd318f70167f5b2cb3dee9eab0bbb">NationalTeam::getPlayerTotalCost</a></div><div class="ttdeci">void getPlayerTotalCost()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2515</div></div>
+<div class="ttc" id="aclass_national_team_html_a915e42dad299d82b0980888194660d6d"><div class="ttname"><a href="class_national_team.html#a915e42dad299d82b0980888194660d6d">NationalTeam::infCalls</a></div><div class="ttdeci">std::vector&lt; InfCall * &gt; infCalls</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:473</div></div>
+<div class="ttc" id="aclass_national_team_html_a72f03622c80b30d762f52241cd6e477b"><div class="ttname"><a href="class_national_team.html#a72f03622c80b30d762f52241cd6e477b">NationalTeam::auxiliaryDestructor</a></div><div class="ttdeci">void auxiliaryDestructor(std::vector&lt; Type &gt; &amp;elements)</div><div class="ttdoc">Destroys dinamically allcoated vectors.</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:497</div></div>
+<div class="ttc" id="aclass_national_team_html_a98458d48c9ce3f5eff0623425db81ac3"><div class="ttname"><a href="class_national_team.html#a98458d48c9ce3f5eff0623425db81ac3">NationalTeam::displayCallsGames</a></div><div class="ttdeci">void displayCallsGames() const</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:243</div></div>
+<div class="ttc" id="aclass_national_team_html_ae7cb6756815df8679137d66adc5771cb"><div class="ttname"><a href="class_national_team.html#ae7cb6756815df8679137d66adc5771cb">NationalTeam::technicalTeam</a></div><div class="ttdeci">std::vector&lt; TechnicalTeam * &gt; technicalTeam</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:465</div></div>
+<div class="ttc" id="aclass_national_team_html_a1d53d8e85ff6fb9101dd4be5668da6db"><div class="ttname"><a href="class_national_team.html#a1d53d8e85ff6fb9101dd4be5668da6db">NationalTeam::addOtherWorker</a></div><div class="ttdeci">void addOtherWorker(OtherWorker *oW)</div><div class="ttdoc">Add a new OtherWorker</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:191</div></div>
+<div class="ttc" id="aclass_national_team_html_ae2b186a40a021fc06bbc4b1550420dac"><div class="ttname"><a href="class_national_team.html#ae2b186a40a021fc06bbc4b1550420dac">NationalTeam::readCallsFile</a></div><div class="ttdeci">bool readCallsFile(std::string filename)</div><div class="ttdoc">Reads Summons' filename</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1250</div></div>
+<div class="ttc" id="aclass_other_worker_html"><div class="ttname"><a href="class_other_worker.html">OtherWorker</a></div><div class="ttdoc">Other Workers class. Represents the smaller workers working for the whole.</div><div class="ttdef"><b>Definition:</b> OtherWorker.h:10</div></div>
+<div class="ttc" id="aclass_national_team_html_ac9c13f8925e69eec3ca93a8efd45865e"><div class="ttname"><a href="class_national_team.html#ac9c13f8925e69eec3ca93a8efd45865e">NationalTeam::alterTechnicalTeamMember</a></div><div class="ttdeci">bool alterTechnicalTeamMember()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2017</div></div>
+<div class="ttc" id="aclass_call_html"><div class="ttname"><a href="class_call.html">Call</a></div><div class="ttdoc">Summons class. Used to store players summoned, their information about the call and individual statis...</div><div class="ttdef"><b>Definition:</b> Call.h:17</div></div>
+<div class="ttc" id="aclass_game_stats_html"><div class="ttname"><a href="class_game_stats.html">GameStats</a></div><div class="ttdoc">Game Statistics class. Has multiple fields related to a game statistic.</div><div class="ttdef"><b>Definition:</b> GameStats.h:13</div></div>
+<div class="ttc" id="aclass_national_team_html_addcbc63dd86eed9a9bf56dcbd2da5ada"><div class="ttname"><a href="class_national_team.html#addcbc63dd86eed9a9bf56dcbd2da5ada">NationalTeam::writeCallsFile</a></div><div class="ttdeci">bool writeCallsFile(std::string filename)</div><div class="ttdoc">Save Summons' file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2283</div></div>
+<div class="ttc" id="aclass_national_team_html_aca23c3376bbd0098c33a7a5dd70f8756"><div class="ttname"><a href="class_national_team.html#aca23c3376bbd0098c33a7a5dd70f8756">NationalTeam::writeIndividualStatisticsFile</a></div><div class="ttdeci">bool writeIndividualStatisticsFile(std::string filename)</div><div class="ttdoc">Svae Individual Statistics file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2152</div></div>
+<div class="ttc" id="aclass_national_team_html_a57cb6e3773cd7632948889f2fcff5d08"><div class="ttname"><a href="class_national_team.html#a57cb6e3773cd7632948889f2fcff5d08">NationalTeam::deleteTechnicalTeamMember</a></div><div class="ttdeci">bool deleteTechnicalTeamMember()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2087</div></div>
+<div class="ttc" id="aclass_national_team_html_a77c2d55bae2d543ad4bfd8abcf6c6821"><div class="ttname"><a href="class_national_team.html#a77c2d55bae2d543ad4bfd8abcf6c6821">NationalTeam::readInfCalls</a></div><div class="ttdeci">bool readInfCalls(std::string filename)</div><div class="ttdoc">Read InfCalls file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1862</div></div>
+<div class="ttc" id="aclass_soccer_player_html"><div class="ttname"><a href="class_soccer_player.html">SoccerPlayer</a></div><div class="ttdoc">SoccerPlayer class. Represents the Soccer Players that are part of the National Team.</div><div class="ttdef"><b>Definition:</b> SoccerPlayer.h:14</div></div>
+<div class="ttc" id="aclass_national_team_html_ad9a9c3c2dc1853bb13677399a8f452a2"><div class="ttname"><a href="class_national_team.html#ad9a9c3c2dc1853bb13677399a8f452a2">NationalTeam::readOtherWorkersFile</a></div><div class="ttdeci">bool readOtherWorkersFile(std::string filename)</div><div class="ttdoc">Reads Other Workers file</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:66</div></div>
+<div class="ttc" id="aclass_national_team_html_aeac3ade82998538f7e14b2029f3c0736"><div class="ttname"><a href="class_national_team.html#aeac3ade82998538f7e14b2029f3c0736">NationalTeam::createGameStatistics</a></div><div class="ttdeci">GameStats * createGameStatistics(unsigned int gameID)</div><div class="ttdoc">Create a Game Statistic.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1463</div></div>
+<div class="ttc" id="aclass_national_team_html_a2fd9e28625fb09384c99b40c90396e97"><div class="ttname"><a href="class_national_team.html#a2fd9e28625fb09384c99b40c90396e97">NationalTeam::readIndividualStatisticsFile</a></div><div class="ttdeci">bool readIndividualStatisticsFile(std::string filename)</div><div class="ttdoc">Read Individual Statistics file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1772</div></div>
+<div class="ttc" id="aclass_technical_team_html"><div class="ttname"><a href="class_technical_team.html">TechnicalTeam</a></div><div class="ttdef"><b>Definition:</b> TechnicalTeam.h:13</div></div>
+<div class="ttc" id="aclass_national_team_html_ae24b693b352ab91dad81236aa9e7404d"><div class="ttname"><a href="class_national_team.html#ae24b693b352ab91dad81236aa9e7404d">NationalTeam::writeInfCallsFile</a></div><div class="ttdeci">bool writeInfCallsFile(std::string filename)</div><div class="ttdoc">Save InfCalls.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2333</div></div>
+<div class="ttc" id="aclass_national_team_html_ab47dab0500967f3d8abcc8de087ac033"><div class="ttname"><a href="class_national_team.html#ab47dab0500967f3d8abcc8de087ac033">NationalTeam::readTechnicalTeamFile</a></div><div class="ttdeci">bool readTechnicalTeamFile(std::string filename)</div><div class="ttdoc">Read TechnicalTeam file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1945</div></div>
+<div class="ttc" id="aclass_national_team_html_a91954572d6c3c4e770425bb4ffc365f7"><div class="ttname"><a href="class_national_team.html#a91954572d6c3c4e770425bb4ffc365f7">NationalTeam::alterCall</a></div><div class="ttdeci">bool alterCall()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1203</div></div>
+<div class="ttc" id="aclass_national_team_html_a6f05e8f84def79bd335de4622b45ca8f"><div class="ttname"><a href="class_national_team.html#a6f05e8f84def79bd335de4622b45ca8f">NationalTeam::displayCallsPlayers</a></div><div class="ttdeci">void displayCallsPlayers() const</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:234</div></div>
+<div class="ttc" id="aclass_national_team_html_a60431a66ad242571dcf49684fe2a077a"><div class="ttname"><a href="class_national_team.html#a60431a66ad242571dcf49684fe2a077a">NationalTeam::getMonthlyTeamTotalCost</a></div><div class="ttdeci">void getMonthlyTeamTotalCost()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2677</div></div>
+<div class="ttc" id="aclass_national_team_html_ae6607010532eb9567c1fd23ff3709653"><div class="ttname"><a href="class_national_team.html#ae6607010532eb9567c1fd23ff3709653">NationalTeam::name</a></div><div class="ttdeci">std::string name</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:493</div></div>
+<div class="ttc" id="aclass_national_team_html_ae85b6bf1ee1cbdd2c3cd46ed73d140c1"><div class="ttname"><a href="class_national_team.html#ae85b6bf1ee1cbdd2c3cd46ed73d140c1">NationalTeam::writeSoccerPlayersFile</a></div><div class="ttdeci">bool writeSoccerPlayersFile(std::string filename)</div><div class="ttdoc">Saves Soccer Players' file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2125</div></div>
+<div class="ttc" id="aclass_national_team_html_a1ad0ba016d38d44fef434122870bfaf4"><div class="ttname"><a href="class_national_team.html#a1ad0ba016d38d44fef434122870bfaf4">NationalTeam::addIndividualStatistic</a></div><div class="ttdeci">void addIndividualStatistic(IndividualStatistics *iStat)</div><div class="ttdoc">Add a Individual Statistic.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1705</div></div>
+<div class="ttc" id="aclass_national_team_html_a1458d1a74e9d1eeecf187933eac9dbf4"><div class="ttname"><a href="class_national_team.html#a1458d1a74e9d1eeecf187933eac9dbf4">NationalTeam::removeCall</a></div><div class="ttdeci">bool removeCall()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1108</div></div>
+<div class="ttc" id="aclass_national_team_html_aa6fc823fbbdb5b874cddfdd0022a0bfb"><div class="ttname"><a href="class_national_team.html#aa6fc823fbbdb5b874cddfdd0022a0bfb">NationalTeam::getByID</a></div><div class="ttdeci">Type &amp; getByID(std::vector&lt; Type &gt; &amp;elements, int id)</div><div class="ttdoc">Gets an 'object' according to a given ID.</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:513</div></div>
+<div class="ttc" id="aclass_national_team_html_a24b30d14fa884824562469157526597d"><div class="ttname"><a href="class_national_team.html#a24b30d14fa884824562469157526597d">NationalTeam::displayTechnicalTeamMembers</a></div><div class="ttdeci">void displayTechnicalTeamMembers() const</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:226</div></div>
+<div class="ttc" id="aclass_national_team_html_aebd8289b56067d67a316c0b86dee9dca"><div class="ttname"><a href="class_national_team.html#aebd8289b56067d67a316c0b86dee9dca">NationalTeam::playerCalls</a></div><div class="ttdeci">std::vector&lt; Call * &gt; playerCalls(SoccerPlayer *sP)</div><div class="ttdoc">Get Calls in which a player has participated.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2354</div></div>
+<div class="ttc" id="aclass_national_team_html_ab706e953afad30b88fc5ed8cbbc17f90"><div class="ttname"><a href="class_national_team.html#ab706e953afad30b88fc5ed8cbbc17f90">NationalTeam::getName</a></div><div class="ttdeci">std::string getName() const</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:23</div></div>
+<div class="ttc" id="aclass_no_object_found_html_a53c9ce3c4833d37953502ef225f19e3b"><div class="ttname"><a href="class_no_object_found.html#a53c9ce3c4833d37953502ef225f19e3b">NoObjectFound::getError</a></div><div class="ttdeci">std::string getError()</div><div class="ttdef"><b>Definition:</b> Exceptions.h:24</div></div>
+<div class="ttc" id="aclass_national_team_html_a1832076330ec7094e874b5959cf201b1"><div class="ttname"><a href="class_national_team.html#a1832076330ec7094e874b5959cf201b1">NationalTeam::createInfCalls</a></div><div class="ttdeci">InfCall * createInfCalls(unsigned int sPId)</div><div class="ttdoc">Create InfCall.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1902</div></div>
+<div class="ttc" id="aclass_national_team_html_af4197b00d38001cb5ba9844b3eb09ba0"><div class="ttname"><a href="class_national_team.html#af4197b00d38001cb5ba9844b3eb09ba0">NationalTeam::workerLookUp</a></div><div class="ttdeci">Type workerLookUp(std::vector&lt; Type &gt; &amp;workers)</div><div class="ttdoc">Template method used to search for a SoccerPlayer, OtherWorker or a TechnicalTeam member.</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:528</div></div>
+<div class="ttc" id="aclass_national_team_html_a3a0188e3f9c2ef31879fd2e2ad982556"><div class="ttname"><a href="class_national_team.html#a3a0188e3f9c2ef31879fd2e2ad982556">NationalTeam::topScorer</a></div><div class="ttdeci">void topScorer()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2923</div></div>
+<div class="ttc" id="aclass_national_team_html_a9b9f12e9c82fa3a228b8e2f0e8bb13f3"><div class="ttname"><a href="class_national_team.html#a9b9f12e9c82fa3a228b8e2f0e8bb13f3">NationalTeam::individualStats</a></div><div class="ttdeci">std::vector&lt; IndividualStatistics * &gt; individualStats</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:489</div></div>
+<div class="ttc" id="aclass_national_team_html_abede87c658af2706fe21d4e32fdb75b0"><div class="ttname"><a href="class_national_team.html#abede87c658af2706fe21d4e32fdb75b0">NationalTeam::getLastID</a></div><div class="ttdeci">unsigned int getLastID(std::vector&lt; Type &gt; &amp;elements)</div><div class="ttdoc">Gets the ID of the last inserted element.</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:504</div></div>
+<div class="ttc" id="aclass_national_team_html_a7e0b1f7f065e2fee179ae3fe9c7b9ccf"><div class="ttname"><a href="class_national_team.html#a7e0b1f7f065e2fee179ae3fe9c7b9ccf">NationalTeam::writeOtherWorkersFile</a></div><div class="ttdeci">bool writeOtherWorkersFile(std::string filename)</div><div class="ttdoc">Saves info into the Other Workers file</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2103</div></div>
+<div class="ttc" id="aclass_individual_statistics_html"><div class="ttname"><a href="class_individual_statistics.html">IndividualStatistics</a></div><div class="ttdoc">Soccer Player individual Statistics class. Used to store relevant information about a given game.</div><div class="ttdef"><b>Definition:</b> IndividualStatistics.h:14</div></div>
+<div class="ttc" id="aclass_national_team_html_a35dbb0d8928240d47b18f7d304f678fb"><div class="ttname"><a href="class_national_team.html#a35dbb0d8928240d47b18f7d304f678fb">NationalTeam::deleteOtherWorker</a></div><div class="ttdeci">bool deleteOtherWorker()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:106</div></div>
+<div class="ttc" id="aclass_national_team_html_aae7c7f8f48c83617408dfa4449460e93"><div class="ttname"><a href="class_national_team.html#aae7c7f8f48c83617408dfa4449460e93">NationalTeam::alterGameGlobalOpposite</a></div><div class="ttdeci">bool alterGameGlobalOpposite(Game *game)</div><div class="ttdoc">Modify opposite team global statistics.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:469</div></div>
+<div class="ttc" id="aclass_national_team_html_a72ebae6287c851e9291f37330d8813fa"><div class="ttname"><a href="class_national_team.html#a72ebae6287c851e9291f37330d8813fa">NationalTeam::getMonthlyNationalTeamTotalCost</a></div><div class="ttdeci">void getMonthlyNationalTeamTotalCost()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2735</div></div>
+<div class="ttc" id="aclass_national_team_html_a7c88c7717aa66a1af8d107854efd0961"><div class="ttname"><a href="class_national_team.html#a7c88c7717aa66a1af8d107854efd0961">NationalTeam::getMonthlyPlayerTotalCost</a></div><div class="ttdeci">void getMonthlyPlayerTotalCost()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2622</div></div>
+<div class="ttc" id="aclass_national_team_html_a43d07325177da920479caa62b83dc47a"><div class="ttname"><a href="class_national_team.html#a43d07325177da920479caa62b83dc47a">NationalTeam::showPlayerGlobalStats</a></div><div class="ttdeci">void showPlayerGlobalStats()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2798</div></div>
+<div class="ttc" id="aclass_national_team_html_a088ba6b1b26f3277143220e5d9bf88e1"><div class="ttname"><a href="class_national_team.html#a088ba6b1b26f3277143220e5d9bf88e1">NationalTeam::writeTechnicalTeamFile</a></div><div class="ttdeci">bool writeTechnicalTeamFile(std::string filename)</div><div class="ttdoc">Save TechnicalTeam file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2261</div></div>
+<div class="ttc" id="aclass_inf_call_html"><div class="ttname"><a href="class_inf_call.html">InfCall</a></div><div class="ttdoc">InfCall class. Used to store information about when does a player arrives and lefts the location of a...</div><div class="ttdef"><b>Definition:</b> InfCall.h:13</div></div>
+<div class="ttc" id="aclass_national_team_html_a40875adb68996d3fc1fe00364aaad637"><div class="ttname"><a href="class_national_team.html#a40875adb68996d3fc1fe00364aaad637">NationalTeam::~NationalTeam</a></div><div class="ttdeci">~NationalTeam()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2886</div></div>
+<div class="ttc" id="aclass_national_team_html_a30d8cdd0c3f5fc934568a4138c5085aa"><div class="ttname"><a href="class_national_team.html#a30d8cdd0c3f5fc934568a4138c5085aa">NationalTeam::callLookUp</a></div><div class="ttdeci">Call * callLookUp()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:1030</div></div>
+<div class="ttc" id="aclass_national_team_html_a20dcac6afa767ba76bb96348cb935b70"><div class="ttname"><a href="class_national_team.html#a20dcac6afa767ba76bb96348cb935b70">NationalTeam::playerGamesForMenu</a></div><div class="ttdeci">void playerGamesForMenu()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2397</div></div>
+<div class="ttc" id="aclass_national_team_html_ad7d97f22dbb3abf5dab0593c5f5c9ecd"><div class="ttname"><a href="class_national_team.html#ad7d97f22dbb3abf5dab0593c5f5c9ecd">NationalTeam::showPlayerCallStats</a></div><div class="ttdeci">void showPlayerCallStats()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2834</div></div>
+<div class="ttc" id="aclass_national_team_html_a7493e99b47e3e97d7201363b7bf880b5"><div class="ttname"><a href="class_national_team.html#a7493e99b47e3e97d7201363b7bf880b5">NationalTeam::gameStats</a></div><div class="ttdeci">std::vector&lt; GameStats * &gt; gameStats</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:485</div></div>
+<div class="ttc" id="aclass_national_team_html_a34158c3ab29ba0b24d877591e3284a38"><div class="ttname"><a href="class_national_team.html#a34158c3ab29ba0b24d877591e3284a38">NationalTeam::calls</a></div><div class="ttdeci">std::vector&lt; Call * &gt; calls</div><div class="ttdef"><b>Definition:</b> NationalTeam.h:477</div></div>
+<div class="ttc" id="aclass_national_team_html_acc42c36c935a115bb23b9216ab154e1d"><div class="ttname"><a href="class_national_team.html#acc42c36c935a115bb23b9216ab154e1d">NationalTeam::writeGamesStatisticsFile</a></div><div class="ttdeci">bool writeGamesStatisticsFile(std::string filename)</div><div class="ttdoc">Save Game Statistics file.</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2183</div></div>
+<div class="ttc" id="aclass_date_html"><div class="ttname"><a href="class_date.html">Date</a></div><div class="ttdoc">Date class. Used to represent dates. Also has a subclass called WrongDateFormat, used when throwing e...</div><div class="ttdef"><b>Definition:</b> Date.h:12</div></div>
+<div class="ttc" id="aclass_game_html"><div class="ttname"><a href="class_game.html">Game</a></div><div class="ttdoc">Game class. Has game information and statistics, opposite team participants, referee team and player ...</div><div class="ttdef"><b>Definition:</b> Game.h:16</div></div>
+<div class="ttc" id="aclass_national_team_html_a2d732f69146cd07807c563697342a30e"><div class="ttname"><a href="class_national_team.html#a2d732f69146cd07807c563697342a30e">NationalTeam::showGlobalStats</a></div><div class="ttdeci">void showGlobalStats()</div><div class="ttdef"><b>Definition:</b> NationalTeam.cpp:2458</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

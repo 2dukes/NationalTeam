@@ -106,7 +106,7 @@ void Date::setYear(unsigned &year) {
 
 ostream& operator<<(ostream& out, const Date & date) {
 
-    out << setfill('0') << setw(2) << date.day << "/" << setfill('0') << setw(2) << date.month << "/" << setfill('0') << setw(4) << date.year;
+    out << setfill('0') << setw(2) << date.day << "/" << setw(2) << date.month << "/" << setfill(' ') << setw(4) << date.year;
     return out;
 }
 

@@ -1,11 +1,6 @@
 var searchData=
 [
-  ['id_65',['id',['../class_call.html#ab890c26b5c8f59eaec77bc0608ca763c',1,'Call::id()'],['../class_game.html#a437d78e3b0cc483fd0be0af651695d3d',1,'Game::id()'],['../class_game_stats.html#a17fb73c49fcfd918be82f1a43c965260',1,'GameStats::id()'],['../class_inf_call.html#aaa93ffaa14226e1f9bf320f908bb833e',1,'InfCall::id()']]],
-  ['individualstatistics_66',['IndividualStatistics',['../class_individual_statistics.html',1,'IndividualStatistics'],['../class_individual_statistics.html#a77dbde178d3f7416e9482e97c9f97e43',1,'IndividualStatistics::IndividualStatistics()'],['../class_game.html#abcf13bc048fb46dd4c8f16b7306fc238',1,'Game::individualStatistics()']]],
-  ['infcall_67',['InfCall',['../class_inf_call.html',1,'InfCall'],['../class_inf_call.html#ad83116442ccbf0d4e52d00b059f4b032',1,'InfCall::InfCall()']]],
-  ['info_68',['info',['../class_call.html#af139a6926536656d4b43acfa33d1b6e5',1,'Call::info()'],['../class_game.html#a1f6240e54cfe41a21b71fd1374cfff2b',1,'Game::info(std::ostream &amp;os) const'],['../class_game.html#a95e42f8d5ed4138d10644d25f031af63',1,'Game::info() const'],['../class_game_stats.html#ae81badec399cc56ad9d67482b861edd1',1,'GameStats::info()'],['../class_inf_call.html#a829f33e292d459c96dbcf8e4c6546716',1,'InfCall::info()']]],
-  ['infogames_69',['infoGames',['../class_call.html#a93dbd5d16149201a65684fd8188423e1',1,'Call']]],
-  ['infoplayers_70',['infoPlayers',['../class_call.html#af30181d51fee189b275d5c2d2ea47452',1,'Call']]],
-  ['infs_71',['infs',['../class_call.html#a8352485df39d8067351e5151d07540c3',1,'Call']]],
-  ['input_72',['input',['../class_date_1_1_wrong_date_format.html#ad925f401b1d99aee6ed50133dc12f217',1,'Date::WrongDateFormat']]]
+  ['header_123',['header',['../class_call.html#a6981b8962c401c556bbbaa0933c27908',1,'Call::header()'],['../class_game.html#afcf691cf70ffbe6b0e6379779712ff30',1,'Game::header()'],['../class_individual_statistics.html#a883c0c52a0ac1f710b695fcc5db4cc51',1,'IndividualStatistics::header()'],['../class_inf_call.html#aac79ef8af832cbf98e8a5a899854a754',1,'InfCall::header()'],['../class_other_worker.html#a0cfd1cafe49936881951896452350b73',1,'OtherWorker::header()'],['../class_soccer_player.html#a7bd5db360e19d7b95c7a4aeae66e600f',1,'SoccerPlayer::header()'],['../class_technical_team.html#ab0c3ecda42d7f0fe4979a3f9ca84f8e9',1,'TechnicalTeam::header()']]],
+  ['height_124',['height',['../class_soccer_player.html#aaa142e69de911ce6b094de685b0aa577',1,'SoccerPlayer']]],
+  ['housing_5ffood_125',['housing_food',['../class_call.html#a26dbc58094f4a6e598e26ef3fb5e845c',1,'Call']]]
 ];

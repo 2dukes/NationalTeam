@@ -7,6 +7,9 @@
 
 #include "Date.h"
 
+/**
+ * @brief - InfCall class. Used to store information about when does a player arrives and lefts the location of a given summon.
+ */
 class InfCall {
 public:
     /**

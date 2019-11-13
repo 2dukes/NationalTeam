@@ -7,6 +7,9 @@
 
 #include <string>
 
+/**
+ * @brief - Exceptions file, used to store exception classes.
+ */
 class NoObjectFound {
 public:
     /**
@@ -20,13 +23,19 @@ public:
      */
     std::string getError() { return error; }
 private:
+    /**
+     * Error string
+     */
     std::string error;
 };
 
+/**
+ * @brief - Exception Class invoked whenever a wrong statistic is found.
+ */
 class WrongStatistic {
 public:
     /**
-     * @brief - Exception Class invoked whenever a wrong statistic is found.
+     * @brief - WrongStatistic constructor.
      * @param e - Error
      */
     WrongStatistic(std::string e): error(e) { }
@@ -36,6 +45,9 @@ public:
      */
     std::string getError() { return error; }
 private:
+    /**
+     * Error string
+     */
     std::string error;
 };
 

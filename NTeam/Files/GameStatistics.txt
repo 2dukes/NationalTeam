@@ -76,3 +76,84 @@ Corners: 7
 Opposing team corners: 2
 Injuries: 0
 Opposing team injuries: 1
+
+::::::::::
+
+Game ID: 1003
+Goals: 0
+Opposing team goals: 0
+Shots: 0
+Opposing team shots: 0
+Shots on target: 0
+Opposing team shots on target: 0
+Possession: 0
+Passes: 0
+Opposing team passes: 0
+Pass accuracy: 0
+Opposing team pass accuracy: 0
+Fouls: 0
+Opposing team fouls: 0
+Yellow cards: 0
+Opposing team yellow cards: 0
+Red cards: 0
+Opposing team red cards: 0
+Offsides: 0
+Opposing team offsides: 0
+Corners: 0
+Opposing team corners: 0
+Injuries: 0
+Opposing team injuries: 0
+
+::::::::::
+
+Game ID: 1004
+Goals: 0
+Opposing team goals: 0
+Shots: 0
+Opposing team shots: 0
+Shots on target: 0
+Opposing team shots on target: 0
+Possession: 0
+Passes: 0
+Opposing team passes: 0
+Pass accuracy: 0
+Opposing team pass accuracy: 0
+Fouls: 0
+Opposing team fouls: 0
+Yellow cards: 0
+Opposing team yellow cards: 0
+Red cards: 0
+Opposing team red cards: 0
+Offsides: 0
+Opposing team offsides: 0
+Corners: 0
+Opposing team corners: 0
+Injuries: 0
+Opposing team injuries: 0
+
+::::::::::
+
+Game ID: 1005
+Goals: 0
+Opposing team goals: 0
+Shots: 0
+Opposing team shots: 0
+Shots on target: 0
+Opposing team shots on target: 0
+Possession: 0
+Passes: 0
+Opposing team passes: 0
+Pass accuracy: 0
+Opposing team pass accuracy: 0
+Fouls: 0
+Opposing team fouls: 0
+Yellow cards: 0
+Opposing team yellow cards: 0
+Red cards: 0
+Opposing team red cards: 0
+Offsides: 0
+Opposing team offsides: 0
+Corners: 0
+Opposing team corners: 0
+Injuries: 0
+Opposing team injuries: 0

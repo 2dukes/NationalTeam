@@ -1,7 +1,19 @@
 var searchData=
 [
-  ['call_2',['Call',['../class_call.html',1,'Call'],['../class_call.html#a2107ed8b858d3e8f1da87f04c32a7130',1,'Call::Call()']]],
-  ['city_3',['city',['../class_game.html#a2492bba3aa5edabd841073848528f8cc',1,'Game']]],
-  ['competition_4',['competition',['../class_call.html#a95c450f3203c95127004ccc673db2350',1,'Call']]],
-  ['country_5',['country',['../class_game.html#a3cfd519b9f868ca05ee9c53f8c9fcb17',1,'Game']]]
+  ['call_20',['Call',['../class_call.html',1,'Call'],['../class_call.html#a2107ed8b858d3e8f1da87f04c32a7130',1,'Call::Call()']]],
+  ['calllookup_21',['callLookUp',['../class_national_team.html#a30d8cdd0c3f5fc934568a4138c5085aa',1,'NationalTeam']]],
+  ['calls_22',['calls',['../class_national_team.html#a34158c3ab29ba0b24d877591e3284a38',1,'NationalTeam']]],
+  ['city_23',['city',['../class_game.html#a2492bba3aa5edabd841073848528f8cc',1,'Game']]],
+  ['club_24',['club',['../class_soccer_player.html#aebc98c0667c0a0431e0532ceb871cf1b',1,'SoccerPlayer']]],
+  ['competition_25',['competition',['../class_call.html#a95c450f3203c95127004ccc673db2350',1,'Call']]],
+  ['corners_26',['corners',['../class_game_stats.html#a7aa87bd0480138c078262d1d9d242d29',1,'GameStats']]],
+  ['country_27',['country',['../class_game.html#a3cfd519b9f868ca05ee9c53f8c9fcb17',1,'Game']]],
+  ['createcall_28',['createCall',['../class_national_team.html#a15f0c7e721d40b258a63ec6caf3aeaea',1,'NationalTeam']]],
+  ['creategame_29',['createGame',['../class_national_team.html#a5cb346becbea00519917d83f9c7ec0d9',1,'NationalTeam']]],
+  ['creategamestatistics_30',['createGameStatistics',['../class_national_team.html#aeac3ade82998538f7e14b2029f3c0736',1,'NationalTeam']]],
+  ['createindividualstatistics_31',['createIndividualStatistics',['../class_national_team.html#a1ce69b59f32d5483d3c34e8b7ead7309',1,'NationalTeam']]],
+  ['createinfcalls_32',['createInfCalls',['../class_national_team.html#a1832076330ec7094e874b5959cf201b1',1,'NationalTeam']]],
+  ['createotherworker_33',['createOtherWorker',['../class_national_team.html#a3ecce594d0ef8094f0f36c1c3efc0be5',1,'NationalTeam']]],
+  ['createsoccerplayer_34',['createSoccerPlayer',['../class_national_team.html#aa4adf7acc2b5972155b0b0a7046523a2',1,'NationalTeam']]],
+  ['createtechnicalteammember_35',['createTechnicalTeamMember',['../class_national_team.html#a55e8ae56b7c16f7ff6f860ab3818f72b',1,'NationalTeam']]]
 ];

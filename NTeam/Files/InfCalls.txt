@@ -16,3 +16,38 @@ ID: 3
 Player ID: 3
 Arrived Date: 15/11/2019
 Left Date: 19/11/2019
+
+::::::::::
+
+ID: 4
+Player ID: 1
+Arrived Date: 21/09/2000
+Left Date: 30/09/2000
+
+::::::::::
+
+ID: 5
+Player ID: 1
+Arrived Date: 21/09/2000
+Left Date: 30/09/2000
+
+::::::::::
+
+ID: 6
+Player ID: 1
+Arrived Date: 30/11/2000
+Left Date: 02/12/2000
+
+::::::::::
+
+ID: 7
+Player ID: 2
+Arrived Date: 30/11/2000
+Left Date: 02/12/2000
+
+::::::::::
+
+ID: 8
+Player ID: 3
+Arrived Date: 30/11/2000
+Left Date: 02/12/2000

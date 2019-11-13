@@ -34,3 +34,42 @@ Opposite Team Participants: Anthony Moris, Dirk Carlson, Maxime Channot, Gerson,
 Refereeing Team: Tim Tam Tum, Shium Jhim, Hirv Jesv, Kjhr Inrm
 Game Statistics: 1002
 Individual Statistics: 2002
+
+::::::::::
+
+ID: 1003
+Date: 23/09/2000
+City: Porto
+Country: POR
+Stadium: Dragao
+Opposite Team: Spain
+Opposite Team Participants: a, a, s, d, a, s, ff, g, g, h, h
+Refereeing Team: Abce
+Game Statistics: 1003
+Individual Statistics: 2015
+
+::::::::::
+
+ID: 1004
+Date: 01/12/2000
+City: Porto
+Country: Portugal
+Stadium: Dragao
+Opposite Team: Spain
+Opposite Team Participants: a, s, d, d, a, s, d, a, sd, s, s
+Refereeing Team: s
+Game Statistics: 1004
+Individual Statistics: 2016, 2017, 2018
+
+::::::::::
+
+ID: 1005
+Date: 02/12/2000
+City: Porto
+Country: Portugal
+Stadium: Dragao
+Opposite Team: Poland
+Opposite Team Participants: a, d, d, d, fg, h, g, h, f, g, h
+Refereeing Team: asdasdasd
+Game Statistics: 1005
+Individual Statistics: 2019, 2020, 2021

@@ -6,7 +6,9 @@
 #define NTEAM_DATE_H
 
 #include <string>
-
+/**
+ * @brief - Date class. Used to represent dates. Also has a subclass called WrongDateFormat, used when throwing exceptions.
+ */
 class Date {
 private:
     /**
@@ -23,6 +25,9 @@ private:
     unsigned year;
 
 public:
+    /**
+     * @brief - WrongDateFormat class. Used when throwing exceptions whenever a date isn't well formatted.
+     */
     class WrongDateFormat { // Used for exceptions
     public:
         /**

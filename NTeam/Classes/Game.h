@@ -10,6 +10,9 @@
 #include "GameStats.h"
 #include <vector>
 
+/**
+ * @brief - Game class. Has game information and statistics, opposite team participants, referee team and player individual statistics.
+ */
 class Game {
 public:
     /**
@@ -30,6 +33,7 @@ public:
          GameStats* gameStats, std::vector<IndividualStatistics*> individualStatistics);
 
     /* Gets */
+
     /**
      *
      * @return - Game ID
@@ -181,7 +185,6 @@ private:
      * Opposite Team Participants
      */
     std::vector<std::string> oppositeTeamParticipants;
-    // Jogadores Convocados -> Jogadores Participantes são os convocados com KMS percorridos
     /**
      * Referee Team
      */

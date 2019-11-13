@@ -62,9 +62,12 @@ unsigned int Call::getHousingFood() const {
 void Call::infoPlayers()
 {
     header();
+    ostringstream o_stream1, o_stream2;
+    o_stream1 << begin;
+    o_stream2 << end;
     cout << left << setw(10) << id <<
-         left << setw(15) << competition << left << setw(20) << begin.getDate() <<
-         left << setw(20) << end.getDate() << left << setw(25) << housing_food << endl << endl;
+         left << setw(15) << competition << left << setw(20) << o_stream1.str() <<
+         left << setw(20) << o_stream2.str() << left << setw(25) << housing_food << endl << endl;
 
     cout << "===================================================================================================== Players =====================================================================================================" << std::endl << endl;
     std::cout << std::endl;
@@ -81,7 +84,10 @@ void Call::infoPlayers()
         {
             if(x->getId() == y->getSoccerPlayerId())
             {
-                std::cout << std::left << std::setw(15) << y->getDateArrived().getDate() << std::left << std::setw(15) << y->getDateLeft().getDate() << std::endl;
+                ostringstream o_stream1_, o_stream2_;
+                o_stream1_ << y->getDateArrived();
+                o_stream2_ << y->getDateLeft();
+                std::cout << std::left << std::setw(15) << o_stream1_.str() << std::left << std::setw(15) << o_stream2_.str() << std::endl;
                 cout << endl;
                 break;
             }
@@ -92,9 +98,12 @@ void Call::infoPlayers()
 void Call::infoGames()
 {
     header();
+    ostringstream o_stream1, o_stream2;
+    o_stream1 << begin;
+    o_stream2 << end;
     cout << left << setw(10) << id <<
-         left << setw(15) << competition << left << setw(20) << begin.getDate() <<
-         left << setw(20) << end.getDate() << left << setw(25) << housing_food << endl << endl;
+         left << setw(15) << competition << left << setw(20) << o_stream1.str() <<
+         left << setw(20) << o_stream2.str() << left << setw(25) << housing_food << endl << endl;
     cout << endl << endl << "===================================================================================================== Games =====================================================================================================" << std::endl << endl;
     for(auto &x: games)
     {

@@ -48,9 +48,12 @@ void InfCall::setDateLeft(Date date)
 
 void InfCall::info()
 {
+    ostringstream o_stream1, o_stream2;
+    o_stream1 << left;
+    o_stream2 << arrived;
     cout << std::left << setw(5) << id <<
-         std::left << setw(30) << soccerPlayerId << std::left << setw(20) << arrived.getDate() <<
-         std::left << setw(20) << left.getDate() << endl;
+         std::left << setw(30) << soccerPlayerId << std::left << setw(20) << o_stream1.str() <<
+         std::left << setw(20) << o_stream2.str() << endl;
 }
 
 void InfCall::header()

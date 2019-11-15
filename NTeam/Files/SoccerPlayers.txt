@@ -6,28 +6,292 @@ Club: Juventus
 Weight: 84
 Height: 187
 Market Price: 100000000
-Days Active: 1573
+Days Active: 6838
 
 ::::::::::
 
 ID: 2
-Name: Um Nome
-Birth Date: 05/03/1995
+Name: Bernardo Silva
+Birth Date: 10/08/1994
 Position: Midfielder
-Club: Team FC
-Weight: 75
-Height: 163
-Market Price: 10000000
-Days Active: 842
+Club: Manchester
+Weight: 64
+Height: 173
+Market Price: 70000000
+Days Active: 2537
 
 ::::::::::
 
 ID: 3
-Name: Outro Nome
-Birth Date: 05/03/1996
+Name: Pepe
+Birth Date: 26/02/1983
 Position: Defender
-Club: Refoios FC
-Weight: 77
-Height: 169
+Club: FC Porto
+Weight: 81
+Height: 187
+Market Price: 9500000
+Days Active: 4377
+
+::::::::::
+
+ID: 4
+Name: Nani
+Birth Date: 17/11/1986
+Position: Forward
+Club: Orlando City
+Weight: 66
+Height: 177
+Market Price: 2500000
+Days Active: 5043
+
+::::::::::
+
+ID: 5
+Name: Joao Moutinho
+Birth Date: 08/09/1986
+Position: Forward
+Club: Wolverhampton
+Weight: 64
+Height: 170
+Market Price: 12500000
+Days Active: 6175
+
+::::::::::
+
+ID: 6
+Name: Rui Patricio
+Birth Date: 08/09/1986
+Position: Goalkeeper
+Club: Wolverhampton
+Weight: 86
+Height: 189
+Market Price: 25000000
+Days Active: 5811
+
+::::::::::
+
+ID: 7
+Name: Ricardo Quaresma
+Birth Date: 26/09/1983
+Position: Goalkeeper
+Club: Kasimpasa SK
+Weight: 70
+Height: 175
+Market Price: 1000000
+Days Active: 7431
+
+::::::::::
+
+ID: 8
+Name: Ricardo Quaresma
+Birth Date: 26/09/1983
+Position: Goalkeeper
+Club: Kasimpasa SK
+Weight: 70
+Height: 175
+Market Price: 1000000
+Days Active: 7431
+
+::::::::::
+
+ID: 9
+Name: Jose Fonte
+Birth Date: 22/12/1983
+Position: Defender
+Club: LOSC Lille
+Weight: 82
+Height: 191
+Market Price: 1000000
+Days Active: 5043
+
+::::::::::
+
+ID: 10
+Name: Danilo
+Birth Date: 09/09/1991
+Position: Midfielder
+Club: FC Porto
+Weight: 79
+Height: 190
+Market Price: 30000000
+Days Active: 3888
+
+::::::::::
+
+ID: 11
+Name: Raphael Guerreiro
+Birth Date: 22/12/1993
+Position: Defender
+Club: Borussia Dortmund
+Weight: 64
+Height: 170
+Market Price: 35000000
+Days Active: 2430
+
+::::::::::
+
+ID: 12
+Name: Andre Silva
+Birth Date: 06/11/1995
+Position: Forward
+Club: Eintracht Frankfurt
+Weight: 78
+Height: 184
+Market Price: 37000000
+Days Active: 3307
+
+::::::::::
+
+ID: 13
+Name: Bruno Fernandes
+Birth Date: 08/09/1994
+Position: Midfielder
+Club: Sporting
+Weight: 76
+Height: 180
+Market Price: 70000000
+Days Active: 2537
+
+::::::::::
+
+ID: 14
+Name: Pizzi
+Birth Date: 06/10/1989
+Position: Midfielder
+Club: SL Benfica
+Weight: 66
+Height: 172
 Market Price: 50000000
-Days Active: 3002
+Days Active: 4315
+
+::::::::::
+
+ID: 15
+Name: Nuben Neves
+Birth Date: 13/03/1997
+Position: Midfielder
+Club: Wolverhampton
+Weight: 75
+Height: 183
+Market Price: 45000000
+Days Active: 2840
+
+::::::::::
+
+ID: 16
+Name: Cedric
+Birth Date: 31/08/1991
+Position: Defender
+Club: SOUTHAMPTON FC
+Weight: 67
+Height: 172
+Market Price: 20000000
+Days Active: 4761
+
+::::::::::
+
+ID: 17
+Name: Ruben Dias
+Birth Date: 14/05/1997
+Position: Defender
+Club: SL Benfica
+Weight: 63
+Height: 178
+Market Price: 23000000
+Days Active: 2569
+
+::::::::::
+
+ID: 18
+Name: Eduardo
+Birth Date: 19/09/1982
+Position: Goalkeeper
+Club: SC Braga
+Weight: 84
+Height: 187
+Market Price: 500000
+Days Active: 4018
+
+::::::::::
+
+ID: 19
+Name: Anthony Lopes
+Birth Date: 01/10/1990
+Position: Goalkeeper
+Club: OLYMPIQUE LYON
+Weight: 81
+Height: 184
+Market Price: 15000000
+Days Active: 4679
+
+::::::::::
+
+ID: 20
+Name: Goncalo Guedes
+Birth Date: 29/11/1996
+Position: Forward
+Club: Valencia CF
+Weight: 64
+Height: 179
+Market Price: 45000000
+Days Active: 3083
+
+::::::::::
+
+ID: 21
+Name: William Carvalho
+Birth Date: 07/04/1992
+Position: Midfielder
+Club: Real Betis
+Weight: 82
+Height: 185
+Market Price: 30000000
+Days Active: 4408
+
+::::::::::
+
+ID: 22
+Name: Joao Mario
+Birth Date: 19/01/1993
+Position: Midfielder
+Club: Lokomitiv de Moscovo
+Weight: 73
+Height: 179
+Market Price: 34000000
+Days Active: 4258
+
+::::::::::
+
+ID: 23
+Name: Goncalo Paciencia
+Birth Date: 01/08/1994
+Position: Forward
+Club: Eintracht Frankfurt
+Weight: 74
+Height: 184
+Market Price: 25000000
+Days Active: 3732
+
+::::::::::
+
+ID: 24
+Name: Andre Gomes
+Birth Date: 30/07/1993
+Position: Midfielder
+Club: Everten FC
+Weight: 73
+Height: 188
+Market Price: 17000000
+Days Active: 5392
+
+::::::::::
+
+ID: 25
+Name: Eder
+Birth Date: 22/12/1987
+Position: Forward
+Club: Lokomotiv de Moscovo
+Weight: 79
+Height: 190
+Market Price: 7500000
+Days Active: 5738

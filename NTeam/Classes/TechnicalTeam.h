@@ -1,6 +1,3 @@
-//
-// Created by Rui Pinto on 10/13/2019.
-//
 
 #ifndef NTEAM_TECHNICALTEAM_H
 #define NTEAM_TECHNICALTEAM_H

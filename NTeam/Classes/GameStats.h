@@ -1,6 +1,3 @@
-//
-// Created by Rui Pinto on 11/5/2019.
-//
 
 #ifndef NTEAM_GAMESTATS_H
 #define NTEAM_GAMESTATS_H

@@ -1,6 +1,3 @@
-//
-// Created by Rui Pinto on 10/11/2019.
-//
 
 #ifndef NTEAM_SOCCERPLAYER_H
 #define NTEAM_SOCCERPLAYER_H

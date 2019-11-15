@@ -1,6 +1,3 @@
-//
-// Created by Rui Pinto on 11/6/2019.
-//
 
 #ifndef NTEAM_EXCEPTIONS_H
 #define NTEAM_EXCEPTIONS_H

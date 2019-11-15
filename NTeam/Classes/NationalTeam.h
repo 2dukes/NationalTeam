@@ -1,7 +1,3 @@
-//
-// Created by Rui Pinto on 10/11/2019.
-//
-
 #ifndef NTEAM_NATIONALTEAM_H
 #define NTEAM_NATIONALTEAM_H
 

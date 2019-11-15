@@ -1,6 +1,3 @@
-//
-// Created by Rui Pinto on 10/11/2019.
-//
 
 #include "NationalTeam.h"
 #include "TechnicalTeam.h"
@@ -1336,7 +1333,7 @@ bool sortPlayers(const SoccerPlayer* player1, const SoccerPlayer* player2)
 bool NationalTeam::createCall()
 {
 
-//    if(players.size() <= 12)
+//    if(players.size() < 11)
 //    {
 //        cout << endl << "Not enough Players To Assign To The Call..." << endl << endl;
 //        return;
@@ -1377,8 +1374,8 @@ bool NationalTeam::createCall()
 
     while(true)
     {
-        numPlayers = readOperations::readNumber<unsigned int>("\nNumber of Players to Insert (12 - 24):");
-//        if(numPlayers < 12 || numPlayers > 24)
+        numPlayers = readOperations::readNumber<unsigned int>("\nNumber of Players to Insert (11 - 24):");
+//        if(numPlayers < 11 || numPlayers > 24)
 //            cout << "Please Insert a Value Between 12 and 24." << endl;
 //        else
             break;

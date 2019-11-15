@@ -8,7 +8,7 @@ Salary: 5000
 
 ID: 1501
 Name: Ilidio Vale
-Birth Date: 10/10/1954
+Birth Date: 11/04/1951
 Function: Assistant Coach
 Salary: 7500
 
@@ -16,7 +16,7 @@ Salary: 7500
 
 ID: 1502
 Name: Ricardo Santos
-Birth Date: 10/10/1954
+Birth Date: 03/12/1957
 Function: Assistant Coach
 Salary: 2000
 

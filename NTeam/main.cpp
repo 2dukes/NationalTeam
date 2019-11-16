@@ -3,7 +3,6 @@
 #include "menuPresent.h"
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
     NationalTeam N("National Team");
 
     N.readTechnicalTeamFile("../Files/TechnicalTeam.txt");

@@ -73,9 +73,9 @@ Days Active: 5811
 ID: 7
 Name: Ricardo Quaresma
 Birth Date: 26/09/1983
-Position: Goalkeeper
+Position: Forward
 Club: Kasimpasa SK
-Weight: 70
+Weight: 77
 Height: 175
 Market Price: 1000000
 Days Active: 7431
@@ -83,14 +83,14 @@ Days Active: 7431
 ::::::::::
 
 ID: 8
-Name: Ricardo Quaresma
-Birth Date: 26/09/1983
-Position: Goalkeeper
-Club: Kasimpasa SK
+Name: Joao Felix
+Birth Date: 10/11/1999
+Position: Forward
+Club: Atletico Madrid
 Weight: 70
-Height: 175
-Market Price: 1000000
-Days Active: 7431
+Height: 181
+Market Price: 120000000
+Days Active: 431
 
 ::::::::::
 

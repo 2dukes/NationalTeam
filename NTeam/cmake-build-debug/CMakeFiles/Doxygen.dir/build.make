@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Users\Rui Pinto\AppData\Local\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam"
+CMAKE_SOURCE_DIR = "C:\Users\Tiago\Desktop\Projeto AEDA\NatTeam\NTeam"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Tiago\Desktop\Projeto AEDA\NatTeam\NTeam\cmake-build-debug"
 
 # Utility rule file for Doxygen.
 
@@ -53,8 +53,8 @@ CMAKE_BINARY_DIR = "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTea
 include CMakeFiles/Doxygen.dir/progress.make
 
 CMakeFiles/Doxygen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating API documentation with Doxygen"
-	"C:\Program Files\doxygen\bin\doxygen.exe" "C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/cmake-build-debug/Doxyfile"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir="C:\Users\Tiago\Desktop\Projeto AEDA\NatTeam\NTeam\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Generating API documentation with Doxygen"
+	"C:\Program Files\doxygen\bin\doxygen.exe" "C:/Users/Tiago/Desktop/Projeto AEDA/NatTeam/NTeam/cmake-build-debug/Doxyfile"
 
 Doxygen: CMakeFiles/Doxygen
 Doxygen: CMakeFiles/Doxygen.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/Doxygen.dir/clean:
 .PHONY : CMakeFiles/Doxygen.dir/clean
 
 CMakeFiles/Doxygen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam" "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam" "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug" "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug" "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles\Doxygen.dir\DependInfo.cmake" --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" "C:\Users\Tiago\Desktop\Projeto AEDA\NatTeam\NTeam" "C:\Users\Tiago\Desktop\Projeto AEDA\NatTeam\NTeam" "C:\Users\Tiago\Desktop\Projeto AEDA\NatTeam\NTeam\cmake-build-debug" "C:\Users\Tiago\Desktop\Projeto AEDA\NatTeam\NTeam\cmake-build-debug" "C:\Users\Tiago\Desktop\Projeto AEDA\NatTeam\NTeam\cmake-build-debug\CMakeFiles\Doxygen.dir\DependInfo.cmake" --color=$(COLOR)
 .PHONY : CMakeFiles/Doxygen.dir/depend
 

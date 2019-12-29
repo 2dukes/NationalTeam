@@ -490,15 +490,55 @@ public:
 
     // HASH TABLE:
 
+    /**
+     * @brief - Add object of type Staff to the hash table.
+     * @param staff - Staff object that will be added to the hash table.
+     */
     void addStaffToHashTable(const Staff &staff);
+    /**
+    * @brief - Add object of type TechnicalTeam to the hash table.
+    * @param member - TechnicalTeam object that will be added to the hash table.
+    */
     void addTechnicalTeamMemberToHashTable(TechnicalTeam member);
+    /**
+    * @brief - Add object of type OtherWorker to the hash table.
+    * @param otherWorker - OtherWorker object that will be added to the hash table.
+    */
     void addOtherWorkerToHashTable(OtherWorker otherWorker);
+    /**
+     * Adds all the current technical team and other workers to the hash table.
+     */
     void addAllTheStaffToHashTable();
+    /**
+     * @brief - Write to the hash table's file
+     * @param filename - Hash table file path.
+     * @return - True upon a successful save. False otherwise.
+     */
     bool writeStaffHashTableFile(std::string filename);
+    /**
+     * @brief - Read the hash table's file
+     * @param filename - Hash table file path.
+     * @return - True upon a successful read. False otherwise.
+     */
     bool readStaffHashTableFile(std::string filename);
+    /**
+     * @brief - Searches in the hash table which staff members are not active in the moment.
+     * @return - A vector of the old staff members
+     */
     std::vector<Staff> getOldStaff() const;
+    /**
+     * Displays all the old staff mambers.
+     */
     void displayOldStaff() const;
+    /**
+     * @brief - Looks for a specific old staff member.
+     * @return - The staff chosen by the user.
+     */
     Staff searchOldStaff() const;
+    /**
+     * The user looks for a specific old staff member; the chosen one is added to respective
+     * vector (otherWorkers or technicalTeam), i.e. becomes part of the current staff of the National Team
+     */
     void hireOldStaff();
 
 
@@ -542,7 +582,9 @@ private:
      * National Team name.
      */
     std::string name;
-
+    /**
+     * Hash Table of all current and old staff
+     */
     HashTabStaff allTimeStaff;
 
     BST<Coach> coachList;
@@ -557,7 +599,6 @@ void NationalTeam::auxiliaryDestructor(std::vector<Type> &elements)
 }
 
 
-// NÃO TESTADO!!
 template<class Type>
 unsigned int NationalTeam::getLastID(std::vector<Type> &elements)
 {

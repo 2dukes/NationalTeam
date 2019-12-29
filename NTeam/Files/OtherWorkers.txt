@@ -27,3 +27,11 @@ Name: Arminda
 Birth Date: 17/08/1974
 Function: Cleaning Employee
 Salary: 700
+
+::::::::::
+
+ID: 201
+Name: Ze Miguel
+Birth Date: 06/11/1953
+Function: Doctor
+Salary: 5000

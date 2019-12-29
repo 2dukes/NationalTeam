@@ -14,6 +14,7 @@
 #include "IndividualStatistics.h"
 #include "../NecessaryFunctions_NameSpaces.h"
 #include "Exceptions.h"
+#include "Coach.h"
 
 
 #define HASH_TABLE_MAX_SIZE 457  // numero primo
@@ -45,8 +46,7 @@ public:
      * @brief - National Team constructor
      * @param n - National Team name
      */
-    NationalTeam(std::string n):name(n) { };
-
+    NationalTeam(std::string n):name(n), coachList(Coach("", 0, std::list<std::pair<std::string, Interval>>())) { };
     /* Gets */
 
     /**
@@ -472,7 +472,21 @@ public:
     template<class Type>
     void auxiliaryDestructor(std::vector<Type> &elements);
 
+    // BST:
 
+    void addCoach();
+
+    void alterCoach();
+
+    void deleteCoach();
+
+    bool readCoachesFile(std::string filename);
+
+    void displayCoachesByCupsWon();
+
+    void displayCoachesThatTrainedNTeam();
+
+    bool writeCoachesFile(std::string filename);
 
     // HASH TABLE:
 
@@ -530,6 +544,8 @@ private:
     std::string name;
 
     HashTabStaff allTimeStaff;
+
+    BST<Coach> coachList;
 
 };
 
@@ -608,14 +624,14 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
             {
                 // Name
                 std::string name = readOperations::readString("Name:");
-                std::transform(name.begin(), name.end(), name.begin(), toupper); // Convert to uppercase
+                std::transform(name.begin(), name.end(), name.begin(), ::toupper); // Convert to uppercase
 
                 std::string workerName;
 
                 for(auto &x: workers)
                 {
                     workerName = x->getName();
-                    std::transform(workerName.begin(), workerName.end(), workerName.begin(), toupper); // Convert to uppercase
+                    std::transform(workerName.begin(), workerName.end(), workerName.begin(), ::toupper); // Convert to uppercase
                     if(workerName.find(name) != std::string::npos)
                     {
                         auxPerson.push_back(x);

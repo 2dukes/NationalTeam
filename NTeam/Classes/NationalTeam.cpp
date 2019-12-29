@@ -2882,6 +2882,7 @@ void NationalTeam::showPlayerCallStats() {
 
 NationalTeam::~NationalTeam()
 {
+    writeCoachesFile("../Files/Coaches.txt");
     writeTechnicalTeamFile("../Files/TechnicalTeam.txt");
     writeOtherWorkersFile("../Files/OtherWorkers.txt");
     writeSoccerPlayersFile("../Files/SoccerPlayers.txt");
@@ -3593,4 +3594,272 @@ void NationalTeam::hireOldStaff() {
     cerr << "\n\nUnable to hire the employee!\n\n";
 }
 
+void NationalTeam::addCoach()
+{
+    cout << endl;
+    string auxName = readOperations::readString("Coach Name:");
+    unsigned int auxCupsWon = readOperations::readNumber<unsigned int>("Cups Won:");
+    Coach toAdd(auxName, auxCupsWon, std::list<std::pair<std::string, Interval>>());
 
+    unsigned int numTrain = readOperations::readNumber<unsigned int>("Number of Trained Teams:");
+
+    for(int i = 0; i < numTrain; i++)
+    {
+        string team = readOperations::readString("Team:");
+        Date begin;
+        Date end;
+        while(true)
+        {
+            begin = readOperations::readDate("Begin Date:");
+            end = readOperations::readDate("End Date:");
+            if(begin <= end)
+                break;
+        }
+        toAdd.addTrainedTeam(pair<string, Interval>(team, Interval(begin, end)));
+    }
+
+    if(coachList.insert(toAdd))
+        cout << "Coach successfully inserted." << endl;
+    else
+        cout << "Info not added. We have located data conflits!" << endl;
+}
+
+void NationalTeam::deleteCoach()
+{
+    cout << endl;
+    string auxName = readOperations::readString("Coach Name:");
+    unsigned int auxCupsWon = readOperations::readNumber<unsigned int>("Cups Won:");
+    Coach toSearch(auxName, auxCupsWon, std::list<std::pair<std::string, Interval>>());
+    Coach toDelete = coachList.find(toSearch);
+    if(toDelete.getName() == "" && toDelete.getCupsWon() == 0)
+    {
+        cout << "Coach doesn\'t exist..." << endl;
+        return;
+    }
+    coachList.remove(toDelete);
+    cout << "Coach successfully deleted!" << endl;
+}
+
+void NationalTeam::alterCoach()
+{
+    bool toggle = true;
+    int repetition = 0, option;
+
+    cout << string(100, '\n') << endl;
+
+    string auxName = readOperations::readString("Coach Name:");
+    unsigned int auxCupsWon = readOperations::readNumber<unsigned int>("Cups Won:");
+    Coach toSearch(auxName, auxCupsWon, std::list<std::pair<std::string, Interval>>());
+    Coach toAlter = coachList.find(toSearch);
+    if(toAlter.getName() == "" && toAlter.getCupsWon() == 0)
+    {
+        cout << "Coach doesn\'t exist..." << endl;
+        return;
+    }
+
+    while (toggle)
+    {
+        if (repetition == 0)
+        {
+            cout << endl << "What do you want to change?\n";
+            repetition++;
+        }
+        else
+            cout << "Do you want to change anything else?\n";
+
+        cout << "1. Name\n2. Cups Won\n3. Add Trained Team\n0. Back\n\n";
+        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << endl;
+
+        switch (option)
+        {
+            case 0:
+            {
+                toggle = false;
+                break;
+            }
+            case 1:
+            {
+                cout << "Previous Name: " << toAlter.getName() << endl;
+                coachList.remove(toAlter);
+                string auxName = readOperations::readString("New Name:");
+                toAlter.setName(auxName);
+                coachList.insert(toAlter);
+
+                cout << endl << "Coach successfully altered!" << endl;
+                break;
+            }
+            case 2:
+            {
+                cout << "Previous Cups: " << toAlter.getCupsWon() << endl;
+                coachList.remove(toAlter);
+                unsigned int auxCupsWon = readOperations::readNumber<unsigned int>("New Cups:");
+                toAlter.setCupsWon(auxCupsWon);
+                coachList.insert(toAlter);
+
+                cout << endl << "Coach successfully altered!" << endl;
+                break;
+            }
+            case 3:
+            {
+                unsigned int numTrain = readOperations::readNumber<unsigned int>("Number of Trained Teams to Add:");
+                coachList.remove(toAlter);
+                for(int i = 0; i < numTrain; i++)
+                {
+                    string team = readOperations::readString("Team:");
+                    Date begin;
+                    Date end;
+                    while(true)
+                    {
+                        begin = readOperations::readDate("Begin Date:");
+                        end = readOperations::readDate("End Date:");
+                        if(begin <= end)
+                            break;
+                    }
+                    toAlter.addTrainedTeam(pair<string, Interval>(team, Interval(begin, end)));
+                }
+
+                coachList.insert(toAlter);
+                cout << endl << "Coach successfully altered!" << endl;
+                break;
+            }
+        }
+    }
+}
+
+bool NationalTeam::readCoachesFile(std::string filename)
+{
+    ifstream f;
+    f.open(filename);
+    unsigned int cups;
+    string name, teams, dates;
+    char delimiter = ',';
+
+    if (f.is_open()) {
+        while(!f.eof()) {
+            getline(f, name);
+            if(name == "")
+                break;
+            f >> cups;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, teams);
+            vector<string> teamsTrained = generalFunctions::separate_string(teams, delimiter);
+            getline(f, dates);
+            vector<string> datesTrained = generalFunctions::separate_string(dates, delimiter);
+            unsigned int ct = 0;
+            list<pair<string, Interval>> trainedTeams;
+            for(auto &x: teamsTrained)
+            {
+                pair<string, Interval> toAdd(x, Interval(Date(datesTrained[ct]), Date(datesTrained[ct + 1])));
+                trainedTeams.push_back(toAdd);
+                ct += 2;
+            }
+
+            Coach newCoach(name, cups, trainedTeams);
+            coachList.insert(newCoach);
+
+            getline(f, name); // blank line
+            getline(f, name); // blank line
+            getline(f, name); // blank line
+
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error reading the file " << filename << endl;
+        return false;
+    }
+}
+
+void NationalTeam::displayCoachesByCupsWon()
+{
+    BSTItrIn<Coach> iTr(coachList);
+
+    while(!iTr.isAtEnd())
+    {
+        Coach::header();
+        Coach coachObj = iTr.retrieve();
+        cout << left << setw(50) << coachObj.getName() << left << setw(10) << coachObj.getCupsWon() << endl << endl;
+        for(auto &x: coachObj.getTeamsTrained())
+            cout << "Team: " << left << setw(20) << x.first << " | " << x.second.getBeginDate().getDate() << "  -  " << x.second.getEndDate().getDate() << endl;
+
+        cout << endl << endl;
+        iTr.advance();
+    }
+}
+
+void NationalTeam::displayCoachesThatTrainedNTeam()
+{
+    BSTItrIn<Coach> iTr(coachList);
+
+    while(!iTr.isAtEnd())
+    {
+        bool hasParticipated = false;
+        Coach coachObj = iTr.retrieve();
+        for(auto &x: coachObj.getTeamsTrained())
+        {
+            string t = x.first;
+            std::transform(t.begin(), t.end(), t.begin(), ::toupper); // Convert to uppercase
+            if(t == "PORTUGAL" || t == "POR" || t == "PORT")
+                hasParticipated = true;
+        }
+
+        if (hasParticipated)
+        {
+            Coach::header();
+            cout << left << setw(50) << coachObj.getName() << left << setw(10) << coachObj.getCupsWon() << endl << endl;
+            for (auto &x: coachObj.getTeamsTrained()) {
+                cout << "Team: " << left << setw(20) << x.first << " | " << x.second.getBeginDate().getDate() << "  -  "
+                     << x.second.getEndDate().getDate() << endl;
+            }
+        }
+        cout << endl << endl;
+        iTr.advance();
+    }
+}
+
+bool NationalTeam::writeCoachesFile(string filename)
+{
+    ofstream f;
+    f.open(filename, ios::out);
+    BSTItrPre<Coach> iTr(coachList);
+    if (f.is_open()) {
+        while(!iTr.isAtEnd())
+        {
+            Coach toPick = iTr.retrieve();
+            f << toPick.getName() << endl;
+            f << toPick.getCupsWon() << endl;
+            string teams, dates;
+            std::list<std::pair<std::string, Interval>> teamsTrained = toPick.getTeamsTrained();
+            std::list<std::pair<std::string, Interval>>::iterator iTER;
+            for(iTER = teamsTrained.begin(); iTER != teamsTrained.end(); iTER++)
+            {
+                if(++iTER != teamsTrained.end())
+                {
+                    iTER--;
+                    teams += iTER->first + ", ";
+                    dates += iTER->second.getBeginDate().getDate() + ", " + iTER->second.getEndDate().getDate() + ", ";
+                }
+                else
+                {
+                    iTER--;
+                    teams += iTER->first;
+                    dates += iTER->second.getBeginDate().getDate() + ", " + iTER->second.getEndDate().getDate();
+                }
+            }
+
+            f << teams << endl;
+            f << dates << endl;
+            f << endl  << "::::::::::" << endl << endl;
+            iTr.advance();
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}

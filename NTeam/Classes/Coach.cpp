@@ -79,7 +79,7 @@ bool Coach::operator<(const Coach &c) const
     if(cupsWon == c.cupsWon)
         return name < c.name;
     else
-        return cupsWon < c.cupsWon;
+        return cupsWon > c.cupsWon;
 }
 
 void Coach::header()

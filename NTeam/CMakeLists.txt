@@ -3,7 +3,7 @@ project(NTeam)
 
 set(CMAKE_CXX_STANDARD 14)
 include_directories(Classes)
-add_executable(NTeam main.cpp Classes/NationalTeam.cpp Classes/NationalTeam.h Classes/Staff.cpp Classes/Staff.h Classes/Date.cpp Classes/Date.h Classes/OtherWorker.cpp Classes/OtherWorker.h Classes/SoccerPlayer.cpp Classes/SoccerPlayer.h Classes/InfCall.cpp Classes/InfCall.h Classes/Game.cpp Classes/Game.h Classes/IndividualStatistics.cpp Classes/IndividualStatistics.h Classes/TechnicalTeam.cpp Classes/TechnicalTeam.h Classes/Call.cpp Classes/Call.h menuPresent.cpp menuPresent.h NecessaryFunctions_NameSpaces.cpp NecessaryFunctions_NameSpaces.h Classes/GameStats.cpp Classes/GameStats.h Classes/Exceptions.cpp Classes/Exceptions.h)
+add_executable(NTeam main.cpp Classes/NationalTeam.cpp Classes/NationalTeam.h Classes/Staff.cpp Classes/Staff.h Classes/Date.cpp Classes/Date.h Classes/OtherWorker.cpp Classes/OtherWorker.h Classes/SoccerPlayer.cpp Classes/SoccerPlayer.h Classes/InfCall.cpp Classes/InfCall.h Classes/Game.cpp Classes/Game.h Classes/IndividualStatistics.cpp Classes/IndividualStatistics.h Classes/TechnicalTeam.cpp Classes/TechnicalTeam.h Classes/Call.cpp Classes/Call.h menuPresent.cpp menuPresent.h NecessaryFunctions_NameSpaces.cpp NecessaryFunctions_NameSpaces.h Classes/GameStats.cpp Classes/GameStats.h Classes/Exceptions.cpp Classes/Exceptions.h Classes/Coach.cpp Classes/Coach.h Classes/bst.h)
 
 # Doxygen Build
 find_package(Doxygen)

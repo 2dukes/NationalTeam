@@ -5,6 +5,7 @@
 int main() {
     NationalTeam N("National Team");
 
+    N.readCoachesFile("../Files/Coaches.txt");
     N.readTechnicalTeamFile("../Files/TechnicalTeam.txt");
     N.readOtherWorkersFile("../Files/OtherWorkers.txt");
     N.readSoccerPlayersFile("../Files/SoccerPlayers.txt");

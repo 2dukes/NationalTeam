@@ -33,14 +33,15 @@ void mainMenu(NationalTeam &nTeam) {
     string nTeamName = nTeam.getName();
 
     cout << string(100, '\n');
-    vector<string> mainChoices = { "1. Display", "2. Manage", "3. Calls in which a player participated", "4. Games in a call in which a player participated", "5. Show Call Stats", "6. Statistics", "7. Costs", "8. Victories, Draws and Loses", "9. Top Scorer", "0. Exit" };
+    vector<string> mainChoices = { "1. Display", "2. Manage", "3. Calls in which a player participated", "4. Games in a call in which a player participated", "5. Show Call Stats", "6. Statistics", "7. Costs", "8. Victories, Draws and Loses", "9. Top Scorer", "10. Coaches", "0. Exit" };
     vector<string> manageChoices = { "1. Create", "2. Alter", "3. Remove", "0. Main Menu" };
     vector<string> manageSecundaryChoices = { "1. Other Worker", "2. Soccer Player", "3. Call", "4. Technical Team Member", "0. Previous Menu" };
     vector<string> viewAvailablePackChoices = { "1. Other Workers", "2. Technical Team", "3. Soccer Players", "4. Games", "5. Summons\' Games", "6. Summons\' Players", "0. Main Menu" };
     vector<string> viewSoldPackChoices = { "1. In a Given Month", "2. Total", "0. Main Menu" };
     vector<string> viewRecommendedChoices = { "1. For a Specific Player", "2. For All The Players", "3. For the National Team", "0. Main Menu" };
     vector<string> statisticsChoices = {"1. Show Call Statistics of the Team", "2. Show Global Statistics of the Team", "3. Show Call Statistics of a Player", "4. Show Global Statistics of a Player", "0. Main Menu"};
-
+    vector<string> coachChoices = { "1. Create Coach", "2. Alter Coach", "3. Remove Coach", "4. Displays", "0. Main Menu" };
+    vector<string> displayCoaches = {"1. Coaches ordered By Number of Cups Won", "2. Coaches that Trained the National Team", "0. Back"};
     do
     {
 
@@ -454,6 +455,66 @@ void mainMenu(NationalTeam &nTeam) {
                 cin.get();
                 break;
 
+            }
+            case 10:
+            {
+                    while(true)
+                    {
+                        option1 = displays(coachChoices, mainChoices.at(mainMenu - 1), nTeamName);
+                        switch (option1)
+                        {
+                            case 1: // Create Coach
+                            {
+                                nTeam.addCoach();
+                                cout << endl << endl << "Press any Enter to continue...";
+                                cin.get();
+                                break;
+                            }
+                            case 2: // Alter Coach
+                            {
+                                nTeam.alterCoach();
+                                cout << endl << endl << "Press any key to continue...";
+                                cin.get();
+                                break;
+                            }
+                            case 3: // Remove Coach
+                            {
+                                nTeam.deleteCoach();
+                                cout << endl << endl << "Press any key to continue...";
+                                cin.get();
+                                break;
+                            }
+                            case 4:  // Display
+                            {
+                                option2 = displays(displayCoaches, mainChoices.at(mainMenu - 1), nTeamName);
+                                switch (option2) {
+                                    case 1:
+                                        {
+                                        nTeam.displayCoachesByCupsWon();
+                                        cout << endl << endl << "Press any key to continue...";
+                                        cin.get();
+                                        break;
+                                    }
+                                    case 2:
+                                    {
+                                        nTeam.displayCoachesThatTrainedNTeam();
+                                        cout << endl << endl << "Press any key to continue...";
+                                        cin.get();
+                                        break;
+                                    }
+                                    case 0: {
+                                        break;
+                                    }
+                                }
+                                break;
+                            }
+
+                            default:
+                                break;
+                        }
+                        if(option1 == 0)
+                            break;
+                    }
             }
             default:
                 break;

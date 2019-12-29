@@ -69,7 +69,7 @@ void Call::infoPlayers()
     cout << "===================================================================================================== Players =====================================================================================================" << std::endl << endl;
     std::cout << std::endl;
     std::cout << std::left << std::setw(5) << "ID" << std::left << std::setw(50) << "Name"<< std::left << std::setw(15) << "Birth Date"
-              << std::left << std::setw(15) << "Position" << std::left << std::setw(20) << "Club" << std::left << std::setw(10) << "Weight"
+              << std::left << std::setw(15) << "Position" << std::left << std::setw(30) << "Club" << std::left << std::setw(10) << "Weight"
               << std::left << std::setw(10) << "Height" << std::left << setw(10) << "Salary" << std::left <<
               std::setw(20) << "Market Price" << std::left << std::setw(20) << "Days Active" << std::left << std::setw(15) << "Arrived" << std::left << std::setw(15) << "Left" << std::endl;
     std::cout << "===================================================================================================================================================================================================================" << endl;

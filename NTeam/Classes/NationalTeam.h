@@ -5,6 +5,7 @@
 #include <limits>
 #include <iostream>
 #include <algorithm>
+#include <unordered_set>
 #include "SoccerPlayer.h"
 #include "OtherWorker.h"
 #include "TechnicalTeam.h"
@@ -13,7 +14,27 @@
 #include "IndividualStatistics.h"
 #include "../NecessaryFunctions_NameSpaces.h"
 #include "Exceptions.h"
-#include "Coach.h"
+
+
+#define HASH_TABLE_MAX_SIZE 457  // numero primo
+
+struct StuffHash {
+    int operator() (const Staff& staff) const {
+        int result = 0;
+        for (int i = 0; i < staff.getName().size(); i++)
+            result += staff.getName().at(i) * staff.getId() * (i + 3);
+
+        return result % HASH_TABLE_MAX_SIZE;
+    }
+
+    bool operator() (const Staff& staff1, const Staff& staff2) const {
+        return staff1 == staff2;
+    }
+};
+
+
+typedef std::unordered_set<Staff, StuffHash, StuffHash> HashTabStaff;
+
 
 /**
  * @brief - National Team class. The projects' heartwood. It contains all the information about the other classes
@@ -24,7 +45,7 @@ public:
      * @brief - National Team constructor
      * @param n - National Team name
      */
-    NationalTeam(std::string n):name(n), coachList(Coach("", 0, std::list<std::pair<std::string, Interval>>())) { };
+    NationalTeam(std::string n):name(n) { };
 
     /* Gets */
 
@@ -451,21 +472,21 @@ public:
     template<class Type>
     void auxiliaryDestructor(std::vector<Type> &elements);
 
-    /** Coach Methods */
 
-    void addCoach();
 
-    void alterCoach();
+    // HASH TABLE:
 
-    void deleteCoach();
+    void addStaffToHashTable(const Staff &staff);
+    void addTechnicalTeamMemberToHashTable(TechnicalTeam member);
+    void addOtherWorkerToHashTable(OtherWorker otherWorker);
+    void addAllTheStaffToHashTable();
+    bool writeStaffHashTableFile(std::string filename);
+    bool readStaffHashTableFile(std::string filename);
+    std::vector<Staff> getOldStaff() const;
+    void displayOldStaff() const;
+    Staff searchOldStaff() const;
+    void hireOldStaff();
 
-    bool readCoachesFile(std::string filename);
-
-    void displayCoachesByCupsWon();
-
-    void displayCoachesThatTrainedNTeam();
-
-    bool writeCoachesFile(std::string filename);
 
 
 
@@ -508,7 +529,8 @@ private:
      */
     std::string name;
 
-    BST<Coach> coachList;
+    HashTabStaff allTimeStaff;
+
 };
 
 template<class Type>
@@ -518,14 +540,36 @@ void NationalTeam::auxiliaryDestructor(std::vector<Type> &elements)
         delete x;
 }
 
+
+// NÃO TESTADO!!
 template<class Type>
 unsigned int NationalTeam::getLastID(std::vector<Type> &elements)
 {
-    if(elements.size() > 0)
-        return elements.at(elements.size() - 1)->getId() + 1; // We suppose all Ids are incremented by 1
-    else
-        return 1;
+    if (elements.size() > 0) {
+        if (elements.at(0)->getId() >= 200) { // se não for soccer player, então procurar o último ID na tabela de dispersão
+            unsigned int lastId = 0;
+            if (elements.at(0)->getId() >= 200 && elements.at(0)->getId() < 1500) { // se for technical team member
+                for (auto it = allTimeStaff.begin(); it != allTimeStaff.end(); it++) {
+                    if (it->getId() > lastId && it->getId() >= 200 && it->getId() < 1500)
+                        lastId = it->getId();
+                }
+                return lastId + 1;
+            }
+            else if (elements.at(0)->getId() >= 1500) {
+                for (auto it = allTimeStaff.begin(); it != allTimeStaff.end(); it++) {
+                    if (it->getId() > lastId && it->getId() >= 1500)
+                        lastId = it->getId();
+                }
+                return lastId + 1;
+            }
+
+        }
+        else return elements.at(elements.size() - 1)->getId() + 1; // se for soccer player
+
+    }
+    return 1;
 }
+
 
 template<class Type>
 Type& NationalTeam::getByID(std::vector<Type> &elements, int id)
@@ -564,14 +608,14 @@ Type NationalTeam::workerLookUp(std::vector<Type> &workers)
             {
                 // Name
                 std::string name = readOperations::readString("Name:");
-                std::transform(name.begin(), name.end(), name.begin(), ::toupper); // Convert to uppercase
+                std::transform(name.begin(), name.end(), name.begin(), toupper); // Convert to uppercase
 
                 std::string workerName;
 
                 for(auto &x: workers)
                 {
                     workerName = x->getName();
-                    std::transform(workerName.begin(), workerName.end(), workerName.begin(), ::toupper); // Convert to uppercase
+                    std::transform(workerName.begin(), workerName.end(), workerName.begin(), toupper); // Convert to uppercase
                     if(workerName.find(name) != std::string::npos)
                     {
                         auxPerson.push_back(x);

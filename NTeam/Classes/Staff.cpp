@@ -6,7 +6,8 @@
 
 using namespace std;
 
-Staff::Staff(unsigned int i, std::string name, Date birthDate): id(i), name(name), birthDate(birthDate) {}
+Staff::Staff(unsigned int i, std::string name, Date birthDate, unsigned int salary, std::string function): id(i), name(name),
+                                                    birthDate(birthDate), salary(salary), function(function) {}
 
 /* Gets */
 
@@ -20,9 +21,16 @@ string Staff::getName() const
     return name;
 }
 
-Date& Staff::getDate()
-{
+const Date Staff::getDate() const {
     return birthDate;
+}
+
+unsigned int Staff::getSalary() const {
+    return salary;
+}
+
+std::string Staff::getRole() const {
+    return function;
 }
 
 /* Sets */
@@ -58,3 +66,15 @@ void Staff::info() const
 bool Staff::operator==(const Staff &worker) const {
     return id == worker.getId();
 }
+
+void Staff::operator=(const Staff &worker) {
+    this->id = worker.getId();
+    this->function = worker.getRole();
+    this->birthDate = worker.getDate();
+    this->name = worker.getName();
+    this->salary = worker.getSalary();
+}
+
+
+
+

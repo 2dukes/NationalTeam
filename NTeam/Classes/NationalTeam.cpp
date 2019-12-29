@@ -451,12 +451,6 @@ bool NationalTeam::deleteSoccerPlayer(){
     SoccerPlayer *sP = workerLookUp(players);
     if(sP == NULL)
         return false;
-    vector<Call*> playerCallsVector = playerCalls(sP);
-    if(!playerCallsVector.empty())
-    {
-        cout << "Player already participated in at least a Summon, so you can\'t remove it!" << endl;
-        return false;
-    }
     for (auto it = players.begin(); it != players.end(); it++) {
         if (*(*it) == *sP) {
             players.erase(it);
@@ -1342,7 +1336,7 @@ bool NationalTeam::createCall()
 //    if(players.size() < 11)
 //    {
 //        cout << endl << "Not enough Players To Assign To The Call..." << endl << endl;
-//        return false;
+//        return;
 //    }
     unsigned int counter = 0;
     vector<SoccerPlayer*> auxSoccerPlayers;
@@ -1382,9 +1376,9 @@ bool NationalTeam::createCall()
     {
         numPlayers = readOperations::readNumber<unsigned int>("\nNumber of Players to Insert (11 - 24):");
 //        if(numPlayers < 11 || numPlayers > 24)
-//            cout << "Please Insert a Value Between 11 and 24." << endl;
+//            cout << "Please Insert a Value Between 12 and 24." << endl;
 //        else
-              break;
+            break;
     }
 
     cout << endl << endl << "1 - Player Selection:" << endl;
@@ -2888,7 +2882,6 @@ void NationalTeam::showPlayerCallStats() {
 
 NationalTeam::~NationalTeam()
 {
-    writeCoachesFile("../Files/Coaches.txt");
     writeTechnicalTeamFile("../Files/TechnicalTeam.txt");
     writeOtherWorkersFile("../Files/OtherWorkers.txt");
     writeSoccerPlayersFile("../Files/SoccerPlayers.txt");
@@ -2897,6 +2890,7 @@ NationalTeam::~NationalTeam()
     writeGamesFile("../Files/Games.txt");
     writeInfCallsFile("../Files/InfCalls.txt");
     writeCallsFile("../Files/Calls.txt");
+    writeStaffHashTableFile("../Files/StaffHashTable.txt");
 
     /* Vector Destruction */
     auxiliaryDestructor(technicalTeam);
@@ -2953,193 +2947,84 @@ void NationalTeam::topScorer() {
         endl << "Goals: " << topGoals << endl << endl;
 }
 
-//bool NationalTeam::canAddCoachOrTeamTrained(Coach coach)
-//{
-//    BSTItrIn<Coach> iTr(coachList);
-//    while(!iTr.isAtEnd())
-//    {
-//        for(const auto &x: iTr.retrieve().getTeamsTrained())
-//        {
-//            for(const auto &y: coach.getTeamsTrained())
-//            {
-//                if(generalFunctions::checkBetweenDates(x.second.getBeginDate(), y.second.getBeginDate(), x.second.getEndDate()) && generalFunctions::checkBetweenDates(x.second.getBeginDate(), y.second.getEndDate(), x.second.getEndDate()))
-//                    return false;
-//            }
-//        }
-//        iTr.advance();
-//    }
-//
-//    return true;
-//}
+// HASH TABLE
 
-void NationalTeam::addCoach()
-{
-    cout << endl;
-    string auxName = readOperations::readString("Coach Name:");
-    unsigned int auxCupsWon = readOperations::readNumber<unsigned int>("Cups Won:");
-    Coach toAdd(auxName, auxCupsWon, std::list<std::pair<std::string, Interval>>());
-
-    unsigned int numTrain = readOperations::readNumber<unsigned int>("Number of Trained Teams:");
-
-    for(int i = 0; i < numTrain; i++)
-    {
-        string team = readOperations::readString("Team:");
-        Date begin;
-        Date end;
-        while(true)
-        {
-            begin = readOperations::readDate("Begin Date:");
-            end = readOperations::readDate("End Date:");
-            if(begin <= end)
-                break;
-        }
-        toAdd.addTrainedTeam(pair<string, Interval>(team, Interval(begin, end)));
-    }
-
-    if(coachList.insert(toAdd))
-        cout << "Coach successfully inserted." << endl;
-    else
-        cout << "Info not added. We have located data conflits!" << endl;
+void NationalTeam::addStaffToHashTable(const Staff &staff) {
+    allTimeStaff.insert(staff);
 }
 
-void NationalTeam::deleteCoach()
-{
-    cout << endl;
-    string auxName = readOperations::readString("Coach Name:");
-    unsigned int auxCupsWon = readOperations::readNumber<unsigned int>("Cups Won:");
-    Coach toSearch(auxName, auxCupsWon, std::list<std::pair<std::string, Interval>>());
-    Coach toDelete = coachList.find(toSearch);
-    if(toDelete.getName() == "" && toDelete.getCupsWon() == 0)
-    {
-        cout << "Coach doesn\'t exist..." << endl;
-        return;
-    }
-    coachList.remove(toDelete);
-    cout << "Coach successfully deleted!" << endl;
+void NationalTeam::addTechnicalTeamMemberToHashTable(TechnicalTeam member) {
+    Staff staff(member.getId(), member.getName(), member.getDate(), member.getSalary(), member.getRole());
+    addStaffToHashTable(staff);
 }
 
-void NationalTeam::alterCoach()
-{
-    bool toggle = true;
-    int repetition = 0, option;
+void NationalTeam::addOtherWorkerToHashTable(OtherWorker otherWorker) {
+    Staff staff(otherWorker.getId(), otherWorker.getName(), otherWorker.getDate(), otherWorker.getSalary(), otherWorker.getRole());
+    addStaffToHashTable(staff);
+}
 
-    cout << string(100, '\n') << endl;
-
-    string auxName = readOperations::readString("Coach Name:");
-    unsigned int auxCupsWon = readOperations::readNumber<unsigned int>("Cups Won:");
-    Coach toSearch(auxName, auxCupsWon, std::list<std::pair<std::string, Interval>>());
-    Coach toAlter = coachList.find(toSearch);
-    if(toAlter.getName() == "" && toAlter.getCupsWon() == 0)
-    {
-        cout << "Coach doesn\'t exist..." << endl;
-        return;
+void NationalTeam::addAllTheStaffToHashTable() { // com exceção de SoccerPlayers
+    for (auto it = otherWorkers.begin(); it != otherWorkers.end(); it++) {
+        addOtherWorkerToHashTable(**it);
     }
-
-    while (toggle)
-    {
-        if (repetition == 0)
-        {
-            cout << endl << "What do you want to change?\n";
-            repetition++;
-        }
-        else
-            cout << "Do you want to change anything else?\n";
-
-        cout << "1. Name\n2. Cups Won\n3. Add Trained Team\n0. Back\n\n";
-        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        cout << endl;
-
-        switch (option)
-        {
-            case 0:
-            {
-                toggle = false;
-                break;
-            }
-            case 1:
-            {
-                cout << "Previous Name: " << toAlter.getName() << endl;
-                coachList.remove(toAlter);
-                string auxName = readOperations::readString("New Name:");
-                toAlter.setName(auxName);
-                coachList.insert(toAlter);
-
-                cout << endl << "Coach successfully altered!" << endl;
-                break;
-            }
-            case 2:
-            {
-                cout << "Previous Cups: " << toAlter.getCupsWon() << endl;
-                coachList.remove(toAlter);
-                unsigned int auxCupsWon = readOperations::readNumber<unsigned int>("New Cups:");
-                toAlter.setCupsWon(auxCupsWon);
-                coachList.insert(toAlter);
-
-                cout << endl << "Coach successfully altered!" << endl;
-                break;
-            }
-            case 3:
-            {
-                unsigned int numTrain = readOperations::readNumber<unsigned int>("Number of Trained Teams to Add:");
-                coachList.remove(toAlter);
-                for(int i = 0; i < numTrain; i++)
-                {
-                    string team = readOperations::readString("Team:");
-                    Date begin;
-                    Date end;
-                    while(true)
-                    {
-                        begin = readOperations::readDate("Begin Date:");
-                        end = readOperations::readDate("End Date:");
-                        if(begin <= end)
-                            break;
-                    }
-                    toAlter.addTrainedTeam(pair<string, Interval>(team, Interval(begin, end)));
-                }
-
-                coachList.insert(toAlter);
-                cout << endl << "Coach successfully altered!" << endl;
-                break;
-            }
-        }
+    for (auto it = technicalTeam.begin(); it != technicalTeam.end(); it++) {
+        addTechnicalTeamMemberToHashTable(**it);
     }
 }
 
-bool NationalTeam::readCoachesFile(std::string filename)
-{
+bool NationalTeam::writeStaffHashTableFile(string filename) {
+    ofstream f;
+    f.open(filename, ios::out);
+    int counter = 0;
+    if (f.is_open()) {
+        for (auto it = allTimeStaff.begin(); it != allTimeStaff.end(); it++) {
+            counter++;
+            f << "ID: " << it->getId() << endl;
+            f << "Name: " << it->getName() << endl;
+            f << "Birth Date: " << it->getDate() << endl;
+            f << "Function: " << it->getRole() << endl;
+            f << "Salary: " << it->getSalary();
+            if (counter != allTimeStaff.size())
+                f << endl << endl << "::::::::::" << endl << endl;
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}
+
+bool NationalTeam::readStaffHashTableFile(string filename) {
     ifstream f;
     f.open(filename);
-    unsigned int cups;
-    string name, teams, dates;
-    char delimiter = ',';
-
+    unsigned int id, salary;
+    string name, aux;
+    char delim = ' ';
+    Date birthday;
+    string function;
     if (f.is_open()) {
         while(!f.eof()) {
-            getline(f, name);
-            if(name == "")
-                break;
-            f >> cups;
+            getline(f, aux, delim);
+            f >> id;
             f.clear();
             f.ignore(1000, '\n');
-            getline(f, teams);
-            vector<string> teamsTrained = generalFunctions::separate_string(teams, delimiter);
-            getline(f, dates);
-            vector<string> datesTrained = generalFunctions::separate_string(dates, delimiter);
-            unsigned int ct = 0;
-            list<pair<string, Interval>> trainedTeams;
-            for(auto &x: teamsTrained)
-            {
-                pair<string, Interval> toAdd(x, Interval(Date(datesTrained[ct]), Date(datesTrained[ct + 1])));
-                trainedTeams.push_back(toAdd);
-                ct += 2;
-            }
+            getline(f, aux, delim);
+            getline(f, name);
+            getline(f, aux, delim);
+            getline(f, aux, delim);
+            f >> birthday;
+            getline(f, aux, delim);
+            getline(f, function);
+            getline(f, aux, delim);
+            f >> salary;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux); // blank line
 
-            Coach newCoach(name, cups, trainedTeams);
-            coachList.insert(newCoach);
-
-            getline(f, name); // blank line
-            getline(f, name); // blank line
-            getline(f, name); // blank line
+            Staff staff(id, name, birthday, salary, function);
+            addStaffToHashTable(staff);
 
         }
         f.close();
@@ -3151,93 +3036,561 @@ bool NationalTeam::readCoachesFile(std::string filename)
     }
 }
 
-void NationalTeam::displayCoachesByCupsWon()
-{
-    BSTItrIn<Coach> iTr(coachList);
+bool staffInOtherWorkersVector(const Staff &staff, vector<OtherWorker*> otherWorkers) {
+    for (auto it = otherWorkers.begin(); it != otherWorkers.end(); it++) {
+        if ((*it)->getId() == staff.getId())
+            return true;
+    }
+    return false;
+}
 
-    while(!iTr.isAtEnd())
-    {
-        Coach::header();
-        Coach coachObj = iTr.retrieve();
-        cout << left << setw(50) << coachObj.getName() << left << setw(10) << coachObj.getCupsWon() << endl << endl;
-        for(auto &x: coachObj.getTeamsTrained())
-            cout << "Team: " << left << setw(20) << x.first << " | " << x.second.getBeginDate().getDate() << "  -  " << x.second.getEndDate().getDate() << endl;
+bool staffInTechnicalTeamVector(const Staff &staff, vector<TechnicalTeam*> technicalTeam) {
+    for (auto it = technicalTeam.begin(); it != technicalTeam.end(); it++) {
+        if ((*it)->getId() == staff.getId())
+            return true;
+    }
+    return false;
+}
 
-        cout << endl << endl;
-        iTr.advance();
+vector<Staff> NationalTeam::getOldStaff() const {
+    vector<Staff> result;
+    for (auto it = allTimeStaff.begin(); it != allTimeStaff.end(); it++) {
+        if (it->getId() >= 200 && it->getId() < 1500) { // otherWorker
+            if (!staffInOtherWorkersVector(*it, otherWorkers))
+                result.push_back(*it);
+        }
+        else if (it->getId() >= 1500) { // technicalTeam
+            if (!staffInTechnicalTeamVector(*it, technicalTeam))
+                result.push_back(*it);
+        }
+    }
+    return result;
+}
+
+void NationalTeam::displayOldStaff() const {
+    vector<Staff> staffVector = getOldStaff();
+    int counter = 0;
+    for (auto it = staffVector.begin(); it != staffVector.end(); it++) {
+        counter++;
+        cout << "ID: " << it->getId() << endl;
+        cout << "Name: " << it->getName() << endl;
+        cout << "Birth Date: " << it->getDate() << endl;
+        cout << "Function: " << it->getRole() << endl;
+        cout << "Salary: " << it->getSalary();
+        if (counter != staffVector.size())
+            cout << endl << endl << "::::::::::" << endl << endl;
     }
 }
 
-void NationalTeam::displayCoachesThatTrainedNTeam()
-{
-    BSTItrIn<Coach> iTr(coachList);
+Staff NationalTeam::searchOldStaff() const {
 
-    while(!iTr.isAtEnd())
-    {
-        bool hasParticipated = false;
-        Coach coachObj = iTr.retrieve();
-        for(auto &x: coachObj.getTeamsTrained())
-        {
-            string t = x.first;
-            std::transform(t.begin(), t.end(), t.begin(), ::toupper); // Convert to uppercase
-            if(t == "PORTUGAL" || t == "POR" || t == "PORT")
-                hasParticipated = true;
-        }
+    vector<Staff> oldStaffVector = getOldStaff();
+    vector<Staff> technicalTeamStaff;
+    vector<Staff> otherWorkersStaff;
 
-        if (hasParticipated)
-        {
-            Coach::header();
-            cout << left << setw(50) << coachObj.getName() << left << setw(10) << coachObj.getCupsWon() << endl << endl;
-            for (auto &x: coachObj.getTeamsTrained()) {
-                cout << "Team: " << left << setw(20) << x.first << " | " << x.second.getBeginDate().getDate() << "  -  "
-                     << x.second.getEndDate().getDate() << endl;
-            }
-        }
-        cout << endl << endl;
-        iTr.advance();
+    for (auto it = oldStaffVector.begin(); it != oldStaffVector.end(); it++) {
+        if (it->getId() >= 200 && it->getId() < 1500)
+            otherWorkersStaff.push_back(*it);
+        else if (it->getId() >= 1500)
+            technicalTeamStaff.push_back(*it);
     }
-}
 
-bool NationalTeam::writeCoachesFile(string filename)
-{
-    ofstream f;
-    f.open(filename, ios::out);
-    BSTItrPre<Coach> iTr(coachList);
-    if (f.is_open()) {
-        while(!iTr.isAtEnd())
-        {
-            Coach toPick = iTr.retrieve();
-            f << toPick.getName() << endl;
-            f << toPick.getCupsWon() << endl;
-            string teams, dates;
-            std::list<std::pair<std::string, Interval>> teamsTrained = toPick.getTeamsTrained();
-            std::list<std::pair<std::string, Interval>>::iterator iTER;
-            for(iTER = teamsTrained.begin(); iTER != teamsTrained.end(); iTER++)
-            {
-                if(++iTER != teamsTrained.end())
-                {
-                    iTER--;
-                    teams += iTER->first + ", ";
-                    dates += iTER->second.getBeginDate().getDate() + ", " + iTER->second.getEndDate().getDate() + ", ";
+    int option = 0;
+    Date auxDate(1,1,1);
+    Staff auxStaff(0, "", auxDate, 0, "");
+
+    vector<Staff> auxPerson;
+    bool ct = false;
+
+    while (true) {
+        string type = readOperations::readString(
+                "Do you want to look for a technical team member or other worker? (tt / ow) ");
+        std::transform(type.begin(), type.end(), type.begin(), ::toupper); // Convert to uppercase
+        if (type == "TT") {
+            auxPerson.clear();
+            ct = false;
+            cout << endl << "Look for a Technical Team member using: " << endl;
+            cout << "1. Name\n2. Birth Date\n3. Function\n4. Salary\n5. ID\n0. Back\n\n";
+            cin >> option;
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << endl;
+            switch (option) {
+                case 0:
+                    return auxStaff;
+
+                case 1: {
+                    // Name
+                    std::string name = readOperations::readString("Name:");
+                    std::transform(name.begin(), name.end(), name.begin(), ::toupper); // Convert to uppercase
+
+                    std::string memberName;
+
+                    for (auto &x: technicalTeamStaff) {
+                        memberName = x.getName();
+                        std::transform(memberName.begin(), memberName.end(), memberName.begin(), ::toupper); // Convert to uppercase
+                        if (memberName.find(name) != std::string::npos) {
+                            auxPerson.push_back(x);
+                            ct = true;
+                        }
+                    }
+                    if (!auxPerson.empty()) {
+                        for (auto &x: auxPerson) {
+                            cout << "ID: " << x.getId() << endl;
+                            cout << "Name: " << x.getName() << endl;
+                            cout << "Birth Date: " << x.getDate() << endl;
+                            cout << "Function: " << x.getRole() << endl;
+                            cout << "Salary: " << x.getSalary();
+                            cout << endl << endl;
+                        }
+                    }
+
+
+                    if (ct) {
+                        cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << endl << endl;
+                        try {
+                            cin >> option;
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            for (auto &x: technicalTeamStaff) {
+                                if (x.getId() == option)
+                                    return x;
+                            }
+                            throw NoObjectFound("No Corresponding Person Found...");
+                        }
+                        catch (NoObjectFound &e) {
+                            cout << endl << e.getError() << endl << endl;
+                        }
+                    } else
+                        cout << endl << "No Corresponding Person Found..." << endl << endl;
+                    break;
                 }
-                else
-                {
-                    iTER--;
-                    teams += iTER->first;
-                    dates += iTER->second.getBeginDate().getDate() + ", " + iTER->second.getEndDate().getDate();
+                case 2: {
+                    // Birth Date
+                    Date dBirth1, dBirth2;
+                    do
+                    {
+                        dBirth1 = readOperations::readDate("Smaller birth Date (DD/MM/YYYY):");
+                        dBirth2 = readOperations::readDate("Bigger birth Date (DD/MM/YYYY):");
+                        if(dBirth2 <= dBirth1)
+                            std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+                        else
+                            break;
+                    } while(!(dBirth1 <= dBirth2));
+
+                    for(auto &x: technicalTeamStaff)
+                    {
+                        if(generalFunctions::checkBetweenDates(dBirth1, x.getDate(), dBirth2))
+                        {
+                            auxPerson.push_back(x);
+                            ct = true;
+                        }
+                    }
+                    if (!auxPerson.empty()) {
+                        for (auto &x: auxPerson) {
+                            cout << "ID: " << x.getId() << endl;
+                            cout << "Name: " << x.getName() << endl;
+                            cout << "Birth Date: " << x.getDate() << endl;
+                            cout << "Function: " << x.getRole() << endl;
+                            cout << "Salary: " << x.getSalary();
+                            cout << endl << endl;
+                        }
+                    }
+
+
+                    if (ct) {
+                        cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << endl << endl;
+                        try {
+                            cin >> option;
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            for (auto &x: technicalTeamStaff) {
+                                if (x.getId() == option)
+                                    return x;
+                            }
+                            throw NoObjectFound("No Corresponding Person Found...");
+                        }
+                        catch (NoObjectFound &e) {
+                            cout << endl << e.getError() << endl << endl;
+                        }
+                    } else
+                        cout << endl << "No Corresponding Person Found..." << endl << endl;
+                    break;
                 }
+                case 3: {
+                    // Function
+                    std::string function = readOperations::readString("Function:");
+                    std::transform(function.begin(), function.end(), function.begin(), ::toupper); // Convert to uppercase
+
+                    std::string memberFunction;
+
+                    for (auto &x: technicalTeamStaff) {
+                        memberFunction = x.getRole();
+                        std::transform(memberFunction.begin(), memberFunction.end(), memberFunction.begin(), ::toupper); // Convert to uppercase
+                        if (memberFunction.find(function) != std::string::npos) {
+                            auxPerson.push_back(x);
+                            ct = true;
+                        }
+                    }
+                    if (!auxPerson.empty()) {
+                        for (auto &x: auxPerson) {
+                            cout << "ID: " << x.getId() << endl;
+                            cout << "Name: " << x.getName() << endl;
+                            cout << "Birth Date: " << x.getDate() << endl;
+                            cout << "Function: " << x.getRole() << endl;
+                            cout << "Salary: " << x.getSalary();
+                            cout << endl << endl;
+                        }
+                    }
+
+
+                    if (ct) {
+                        cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << endl << endl;
+                        try {
+                            cin >> option;
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            for (auto &x: technicalTeamStaff) {
+                                if (x.getId() == option)
+                                    return x;
+                            }
+                            throw NoObjectFound("No Corresponding Person Found...");
+                        }
+                        catch (NoObjectFound &e) {
+                            cout << endl << e.getError() << endl << endl;
+                        }
+                    } else
+                        cout << endl << "No Corresponding Person Found..." << endl << endl;
+                    break;
+                }
+                case 4: {
+                    // Salary
+                    float smallerSalary, biggerSalary;
+                    do
+                    {
+                        smallerSalary = readOperations::readNumber<float>("Smaller Salary:");
+                        biggerSalary = readOperations::readNumber<float>("Bigger Salary:");
+                        if(smallerSalary > biggerSalary)
+                            std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+                    } while(smallerSalary > biggerSalary);
+
+
+                    for(auto &x: technicalTeamStaff)
+                    {
+                        if(x.getSalary() >= smallerSalary && x.getSalary() <= biggerSalary)
+                        {
+                            auxPerson.push_back(x);
+                            ct = true;
+                        }
+                    }
+
+                    if (!auxPerson.empty()) {
+                        for (auto &x: auxPerson) {
+                            cout << "ID: " << x.getId() << endl;
+                            cout << "Name: " << x.getName() << endl;
+                            cout << "Birth Date: " << x.getDate() << endl;
+                            cout << "Function: " << x.getRole() << endl;
+                            cout << "Salary: " << x.getSalary();
+                            cout << endl << endl;
+                        }
+                    }
+
+                    if (ct) {
+                        cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << endl << endl;
+                        try {
+                            cin >> option;
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            for (auto &x: technicalTeamStaff) {
+                                if (x.getId() == option)
+                                    return x;
+                            }
+                            throw NoObjectFound("No Corresponding Person Found...");
+                        }
+                        catch (NoObjectFound &e) {
+                            cout << endl << e.getError() << endl << endl;
+                        }
+                    } else
+                        cout << endl << "No Corresponding Person Found..." << endl << endl;
+                    break;
+                }
+                case 5: {
+                    // ID
+                    int id = readOperations::readNumber<int>("ID: ");
+
+                    try {
+                        cin >> id;
+                        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        for (auto &x: technicalTeamStaff) {
+                            if (x.getId() == id)
+                                return x;
+                        }
+                        throw NoObjectFound("No Corresponding Person Found...");
+                    }
+                    catch (NoObjectFound &e) {
+                        cout << endl << e.getError() << endl << endl;
+                    }
+
+                    break;
+                }
+
+
             }
 
-            f << teams << endl;
-            f << dates << endl;
-            f << endl  << "::::::::::" << endl << endl;
-            iTr.advance();
+
+            break;
         }
-        f.close();
-        return true;
+        if (type == "OW") {
+            auxPerson.clear();
+            ct = false;
+            cout << endl << "Look for Other Worker member using: " << endl;
+            cout << "1. Name\n2. Birth Date\n3. Function\n4. Salary\n5. ID\n0. Back\n\n";
+            cin >> option;
+            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            cout << endl;
+            switch (option) {
+                case 0:
+                    return auxStaff;
+
+                case 1: {
+                    // Name
+                    std::string name = readOperations::readString("Name:");
+                    std::transform(name.begin(), name.end(), name.begin(), ::toupper); // Convert to uppercase
+
+                    std::string memberName;
+
+                    for (auto &x: otherWorkersStaff) {
+                        memberName = x.getName();
+                        std::transform(memberName.begin(), memberName.end(), memberName.begin(), ::toupper); // Convert to uppercase
+                        if (memberName.find(name) != std::string::npos) {
+                            auxPerson.push_back(x);
+                            ct = true;
+                        }
+                    }
+                    if (!auxPerson.empty()) {
+                        for (auto &x: auxPerson) {
+                            cout << "ID: " << x.getId() << endl;
+                            cout << "Name: " << x.getName() << endl;
+                            cout << "Birth Date: " << x.getDate() << endl;
+                            cout << "Function: " << x.getRole() << endl;
+                            cout << "Salary: " << x.getSalary();
+                            cout << endl << endl;
+                        }
+                    }
+
+
+                    if (ct) {
+                        cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << endl << endl;
+                        try {
+                            cin >> option;
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            for (auto &x: otherWorkersStaff) {
+                                if (x.getId() == option)
+                                    return x;
+                            }
+                            throw NoObjectFound("No Corresponding Person Found...");
+                        }
+                        catch (NoObjectFound &e) {
+                            cout << endl << e.getError() << endl << endl;
+                        }
+                    } else
+                        cout << endl << "No Corresponding Person Found..." << endl << endl;
+                    break;
+                }
+                case 2: {
+                    // Birth Date
+                    Date dBirth1, dBirth2;
+                    do
+                    {
+                        dBirth1 = readOperations::readDate("Smaller birth Date (DD/MM/YYYY):");
+                        dBirth2 = readOperations::readDate("Bigger birth Date (DD/MM/YYYY):");
+                        if(dBirth2 <= dBirth1)
+                            std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+                        else
+                            break;
+                    } while(!(dBirth1 <= dBirth2));
+
+                    for(auto &x: otherWorkersStaff)
+                    {
+                        if(generalFunctions::checkBetweenDates(dBirth1, x.getDate(), dBirth2))
+                        {
+                            auxPerson.push_back(x);
+                            ct = true;
+                        }
+                    }
+                    if (!auxPerson.empty()) {
+                        for (auto &x: auxPerson) {
+                            cout << "ID: " << x.getId() << endl;
+                            cout << "Name: " << x.getName() << endl;
+                            cout << "Birth Date: " << x.getDate() << endl;
+                            cout << "Function: " << x.getRole() << endl;
+                            cout << "Salary: " << x.getSalary();
+                            cout << endl << endl;
+                        }
+                    }
+
+
+                    if (ct) {
+                        cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << endl << endl;
+                        try {
+                            cin >> option;
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            for (auto &x: otherWorkersStaff) {
+                                if (x.getId() == option)
+                                    return x;
+                            }
+                            throw NoObjectFound("No Corresponding Person Found...");
+                        }
+                        catch (NoObjectFound &e) {
+                            cout << endl << e.getError() << endl << endl;
+                        }
+                    } else
+                        cout << endl << "No Corresponding Person Found..." << endl << endl;
+                    break;
+                }
+                case 3: {
+                    // Function
+                    std::string function = readOperations::readString("Function:");
+                    std::transform(function.begin(), function.end(), function.begin(), ::toupper); // Convert to uppercase
+
+                    std::string memberFunction;
+
+                    for (auto &x: otherWorkersStaff) {
+                        memberFunction = x.getRole();
+                        std::transform(memberFunction.begin(), memberFunction.end(), memberFunction.begin(), ::toupper); // Convert to uppercase
+                        if (memberFunction.find(function) != std::string::npos) {
+                            auxPerson.push_back(x);
+                            ct = true;
+                        }
+                    }
+                    if (!auxPerson.empty()) {
+                        for (auto &x: auxPerson) {
+                            cout << "ID: " << x.getId() << endl;
+                            cout << "Name: " << x.getName() << endl;
+                            cout << "Birth Date: " << x.getDate() << endl;
+                            cout << "Function: " << x.getRole() << endl;
+                            cout << "Salary: " << x.getSalary();
+                            cout << endl << endl;
+                        }
+                    }
+
+
+                    if (ct) {
+                        cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << endl << endl;
+                        try {
+                            cin >> option;
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            for (auto &x: otherWorkersStaff) {
+                                if (x.getId() == option)
+                                    return x;
+                            }
+                            throw NoObjectFound("No Corresponding Person Found...");
+                        }
+                        catch (NoObjectFound &e) {
+                            cout << endl << e.getError() << endl << endl;
+                        }
+                    } else
+                        cout << endl << "No Corresponding Person Found..." << endl << endl;
+                    break;
+                }
+                case 4: {
+                    // Salary
+                    float smallerSalary, biggerSalary;
+                    do
+                    {
+                        smallerSalary = readOperations::readNumber<float>("Smaller Salary:");
+                        biggerSalary = readOperations::readNumber<float>("Bigger Salary:");
+                        if(smallerSalary > biggerSalary)
+                            std::cout << "First Date Has To Be Less Than or Equal To The Second! Try again..." << std::endl << std::endl;
+                    } while(smallerSalary > biggerSalary);
+
+
+                    for(auto &x: otherWorkersStaff)
+                    {
+                        if(x.getSalary() >= smallerSalary && x.getSalary() <= biggerSalary)
+                        {
+                            auxPerson.push_back(x);
+                            ct = true;
+                        }
+                    }
+
+                    if (!auxPerson.empty()) {
+                        for (auto &x: auxPerson) {
+                            cout << "ID: " << x.getId() << endl;
+                            cout << "Name: " << x.getName() << endl;
+                            cout << "Birth Date: " << x.getDate() << endl;
+                            cout << "Function: " << x.getRole() << endl;
+                            cout << "Salary: " << x.getSalary();
+                            cout << endl << endl;
+                        }
+                    }
+
+                    if (ct) {
+                        cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << endl << endl;
+                        try {
+                            cin >> option;
+                            cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                            for (auto &x: otherWorkersStaff) {
+                                if (x.getId() == option)
+                                    return x;
+                            }
+                            throw NoObjectFound("No Corresponding Person Found...");
+                        }
+                        catch (NoObjectFound &e) {
+                            cout << endl << e.getError() << endl << endl;
+                        }
+                    } else
+                        cout << endl << "No Corresponding Person Found..." << endl << endl;
+                    break;
+                }
+                case 5: {
+                    // ID
+                    int id = readOperations::readNumber<int>("ID: ");
+
+                    try {
+                        cin >> id;
+                        cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        for (auto &x: otherWorkersStaff) {
+                            if (x.getId() == id)
+                                return x;
+                        }
+                        throw NoObjectFound("No Corresponding Person Found...");
+                    }
+                    catch (NoObjectFound &e) {
+                        cout << endl << e.getError() << endl << endl;
+                    }
+
+                    break;
+                }
+
+
+            }
+
+
+
+            break;
+        }
+        cout << "\nOption not valid!\n";
     }
-    else {
-        cerr << "Error opening the file " << filename << endl;
-        return false;
-    }
+    return auxStaff;
+
 }
+
+void NationalTeam::hireOldStaff() {
+    Staff hiredMember = searchOldStaff();
+    if (hiredMember.getId() == 0)
+        return;
+
+    if (hiredMember.getId() > 1500) { // technical team member
+        TechnicalTeam* hiredTechnicalTeamMemer = new TechnicalTeam(hiredMember.getId(), hiredMember.getRole(), hiredMember.getSalary(), hiredMember.getName(), hiredMember.getDate());
+        addTechnicalTeamMember(hiredTechnicalTeamMemer);
+        cout << "\n\nTechnical Team Member hired successfully!\n\n";
+        return;
+
+    }
+    else if (hiredMember.getId() >= 200 && hiredMember.getId() < 1500) {
+        OtherWorker* hiredWorker = new OtherWorker(hiredMember.getId(), hiredMember.getRole(), hiredMember.getSalary(), hiredMember.getName(), hiredMember.getDate());
+        addOtherWorker(hiredWorker);
+        cout << "\n\nOther Worker hired successfully!\n\n";
+        return;
+    }
+
+    cerr << "\n\nUnable to hire the employee!\n\n";
+}
+
+

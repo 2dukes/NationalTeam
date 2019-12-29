@@ -3,9 +3,9 @@
 #include "TechnicalTeam.h"
 #include <iomanip>
 
-TechnicalTeam::TechnicalTeam(unsigned int id, std::string role, unsigned int sal, std::string name, Date birth): Staff(id, name, birth) {
+TechnicalTeam::TechnicalTeam(unsigned int id, std::string role, unsigned int sal, std::string name, Date birth): Staff(id, name, birth, sal, role) {
     this->role = role;
-    salary = sal;
+    this->salary = sal;
 }
 
 unsigned int TechnicalTeam::getSalary() const {

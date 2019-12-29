@@ -7,7 +7,7 @@
 /**
  * @brief - Mother Class. It's the base that contains all the common parameters for SoccerPlayer, OtherWorker and TechnicalTeam.
  */
-class Staff { // It will be abstract class
+class Staff {
 public:
     /**
      * @brief - Staff constructor.
@@ -15,7 +15,7 @@ public:
      * @param name - Name
      * @param birthDate - Birth Date
      */
-    Staff(unsigned int i, std::string name, Date birthDate);
+    Staff(unsigned int i, std::string name, Date birthDate, unsigned int salary, std::string function);
 
     /* Gets */
 
@@ -33,12 +33,14 @@ public:
      *
      * @return - Birth Date
      */
-    Date& getDate();
+    const Date getDate() const;
     /**
      *
      * @return - Person's Salary
      */
-    virtual unsigned int getSalary() const = 0;
+    virtual unsigned int getSalary() const;
+
+    virtual std::string getRole() const;
 
     /* Sets */
 
@@ -75,12 +77,14 @@ public:
      * @return - True if they're the same. False otherwise.
      */
     bool operator==(const Staff &worker) const;
+    void operator=(const Staff &worker);
+
 
 protected:
     /**
      * Person's ID (immutable)
      */
-    const unsigned int id;
+    unsigned int id;
     /**
      * Person's Name
      */
@@ -89,6 +93,10 @@ protected:
      * Person's Birth Date
      */
     Date birthDate;
+
+    unsigned int salary;
+
+    std::string function;
 };
 
 

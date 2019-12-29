@@ -5,7 +5,6 @@
 int main() {
     NationalTeam N("National Team");
 
-    N.readCoachesFile("../Files/Coaches.txt");
     N.readTechnicalTeamFile("../Files/TechnicalTeam.txt");
     N.readOtherWorkersFile("../Files/OtherWorkers.txt");
     N.readSoccerPlayersFile("../Files/SoccerPlayers.txt");
@@ -14,8 +13,16 @@ int main() {
     N.readGamesFile("../Files/Games.txt");
     N.readInfCalls("../Files/InfCalls.txt");
     N.readCallsFile("../Files/Calls.txt");
+    N.readStaffHashTableFile("../Files/StaffHashTable.txt");
+    N.addAllTheStaffToHashTable();
 
-    mainMenu(N);
+    //N.searchOldStaff();
+
+    //N.displayOldStaff();
+
+    N.hireOldStaff();
+
+    //mainMenu(N);
 
     return 0;
 }

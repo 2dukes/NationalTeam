@@ -9,7 +9,7 @@ using namespace std;
 
 SoccerPlayer::SoccerPlayer(unsigned int id, std::string name, Date birthDate, std::string position, std::string club,
                            unsigned short weight, unsigned short height, unsigned long marketPrice,
-                           unsigned int daysActive): Staff(id, name, birthDate),
+                           unsigned int daysActive): Staff(id, name, birthDate, 0.0000005 * marketPrice * daysActive, ""),
                            position(position), club(club), weight(weight), height(height), marketPrice(marketPrice),
                            daysActive(daysActive)
                            { }

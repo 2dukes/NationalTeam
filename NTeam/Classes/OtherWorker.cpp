@@ -8,10 +8,10 @@
 
 using namespace std;
 
-OtherWorker::OtherWorker(unsigned int id, string role, unsigned int sal, string name, Date birth): Staff (id, name, birth)
+OtherWorker::OtherWorker(unsigned int id, string role, unsigned int sal, string name, Date birth): Staff (id, name, birth, sal, role)
 {
     this->role = role;
-    salary = sal;
+    this->salary = sal;
 }
 
 /* Gets */

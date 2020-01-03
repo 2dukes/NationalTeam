@@ -4642,6 +4642,14 @@ void NationalTeam::displaySpecificProvider() {
     providerLookUp();
 }
 
+void NationalTeam::displayAllEquipment() const {
+    cout << endl << endl;
+    for (auto it = equipments.begin(); it != equipments.end(); it++) {
+        cout << "ID: " << it->getID() << endl;
+        cout << "Type: " << it->getType() << endl;
+        cout << "Quantity: " << it->getQuantity() << endl << endl;
+    }
+}
 
 
 

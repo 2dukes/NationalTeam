@@ -568,6 +568,7 @@ public:
     bool quantityOfEquipmentIsAvailable(std::string type, unsigned int quantity) const; // done
     void updateReputation(unsigned int id, unsigned short rate); // done
     void purchaseEquipment(); // done
+    void displayAllEquipment() const;
 
 private:
     /**

@@ -12,6 +12,8 @@
 #include <chrono>
 #include <ratio>
 #include <ctime>
+#include <time.h>
+#include <random>
 
 using namespace std;
 
@@ -449,11 +451,8 @@ bool NationalTeam::alterSoccerPlayer()
 
 bool NationalTeam::deleteSoccerPlayer(){
     SoccerPlayer *sP = workerLookUp(players);
-    if(sP == NULL || sP->getDaysActive() != 0)
-    {
-        cout << endl << "Soccer Player not removed! Either because didn't exist... Or because has already games where it participated!" << endl << endl;
+    if(sP == NULL)
         return false;
-    }
     for (auto it = players.begin(); it != players.end(); it++) {
         if (*(*it) == *sP) {
             players.erase(it);
@@ -2895,6 +2894,8 @@ NationalTeam::~NationalTeam()
     writeInfCallsFile("../Files/InfCalls.txt");
     writeCallsFile("../Files/Calls.txt");
     writeStaffHashTableFile("../Files/StaffHashTable.txt");
+    //writeProviderFile("../Files/Providers.txt");
+    writeEquipmentsFile("../Files/Equipment.txt");
 
     /* Vector Destruction */
     auxiliaryDestructor(technicalTeam);
@@ -3670,7 +3671,7 @@ void NationalTeam::alterCoach()
         else
             cout << "Do you want to change anything else?\n";
 
-        cout << "1. Name\n2. Cups Won\n3. Add Trained Team\n4. Remove Trained Team\n0. Back\n\n";
+        cout << "1. Name\n2. Cups Won\n3. Add Trained Team\n0. Back\n\n";
         cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
         cout << endl;
 
@@ -3723,25 +3724,7 @@ void NationalTeam::alterCoach()
                 }
 
                 coachList.insert(toAlter);
-                break;
-            }
-            case 4:
-            {
-                coachList.remove(toAlter);
-
-                string team = readOperations::readString("Team:");
-                Date begin;
-                Date end;
-                while(true)
-                {
-                    begin = readOperations::readDate("Begin Date:");
-                    end = readOperations::readDate("End Date:");
-                    if(begin <= end)
-                        break;
-                }
-                toAlter.removeTrainedTeam(pair<string, Interval>(team, Interval(begin, end)));
-
-                coachList.insert(toAlter);
+                cout << endl << "Coach successfully altered!" << endl;
                 break;
             }
         }
@@ -3797,17 +3780,8 @@ bool NationalTeam::readCoachesFile(std::string filename)
 void NationalTeam::displayCoachesByCupsWon()
 {
     BSTItrIn<Coach> iTr(coachList);
-    cout << endl;
-    int numCoaches;
-    do
-    {
-        numCoaches = readOperations::readNumber<int>("Number of Coaches to Display:");
-    } while(numCoaches < 0);
 
-    unsigned int counter = 0;
-
-    cout << endl;
-    while(!iTr.isAtEnd() && counter < numCoaches)
+    while(!iTr.isAtEnd())
     {
         Coach::header();
         Coach coachObj = iTr.retrieve();
@@ -3817,7 +3791,6 @@ void NationalTeam::displayCoachesByCupsWon()
 
         cout << endl << endl;
         iTr.advance();
-        counter++;
     }
 }
 
@@ -3895,30 +3868,724 @@ bool NationalTeam::writeCoachesFile(string filename)
     }
 }
 
-void NationalTeam::displayCoach()
-{
-    cout << endl;
-    string auxName = readOperations::readString("Coach Name:");
-    std::transform(auxName.begin(), auxName.end(), auxName.begin(), ::toupper); // Convert to uppercase
-    BSTItrIn<Coach> iTr(coachList);
-    bool found = false;
+void NationalTeam::addProvider(const Provider &pro) {
+    providerList.push(pro);
+}
 
-    while(!iTr.isAtEnd())
-    {
-        string playerName = iTr.retrieve().getName();
-        std::transform(playerName.begin(), playerName.end(), playerName.begin(), ::toupper); // Convert to uppercase
-        if(playerName == auxName)
-        {
-            found = true;
-            Coach::header();
-            cout << left << setw(50) << iTr.retrieve().getName() << left << setw(10) << iTr.retrieve().getCupsWon() << endl << endl;
-            for (auto &x: iTr.retrieve().getTeamsTrained()) {
-                cout << "Team: " << left << setw(20) << x.first << " | " << x.second.getBeginDate().getDate() << "  -  "
-                     << x.second.getEndDate().getDate() << endl;
+
+bool NationalTeam::readProviderFile(string filename) {
+    ifstream f;
+    f.open(filename);
+    unsigned int id, made_purchases, quantity;
+    string name, aux, type, availableString;
+    bool available;
+    char delim = ' ';
+    unsigned short reputation;
+    if (f.is_open()) {
+        while(!f.eof()) {
+            getline(f, aux, delim);
+            f >> id;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, name);
+            getline(f, aux, delim);
+            getline(f, type);
+            getline(f, aux, delim);
+            f >> reputation;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            f >> made_purchases;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, availableString);
+            if (availableString == "true")
+                available = true;
+            else
+                available = false;
+            getline(f, aux, delim);
+            f >> quantity;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, '\n'); // blank line
+
+            Provider pro(id, name, type, reputation, made_purchases, available, quantity);
+            addProvider(pro);
+
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error reading the file " << filename << endl;
+        return false;
+    }
+}
+
+bool NationalTeam::writeProviderFile(std::string filename) {
+    ofstream f;
+    f.open(filename, ios::out);
+    int counter = 0;
+    vector<Provider> proV;
+    priority_queue<Provider> aux = providerList;
+    while(!aux.empty()){
+        proV.push_back(aux.top());
+        aux.pop();
+    }
+    if (f.is_open()) {
+        for (auto &x : proV) {
+            counter++;
+            f << "ID: " << x.getId() << endl;
+            f << "Name: " << x.getName() << endl;
+            f << "Type: " << x.getEquipmentType() << endl;
+            f << "Reputation: " << x.getReputation() << endl;
+            f << "Purchases: " << x.getMade_Purchases() << endl;
+            if (x.getAvailability())
+                f << "Availability: true" << endl;
+            else
+                f << "Availability: false" << endl;
+            f << "Quantity: " << x.getQuantity();
+            if (counter != providerList.size())
+                f << endl << endl << "::::::::::" << endl << endl;
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}
+
+
+bool NationalTeam::readEquipmentsFile(string filename) {
+    ifstream f;
+    f.open(filename);
+    unsigned int id, quantity;
+    string aux, type;
+    char delim = ' ';
+    if (f.is_open()) {
+        while(!f.eof()) {
+            getline(f, aux, delim);
+            f >> id;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux, delim);
+            getline(f, type);
+            getline(f, aux, delim);
+            f >> quantity;
+            f.clear();
+            f.ignore(1000, '\n');
+            getline(f, aux); // blank line
+
+            Equipment equipment(id, type, quantity);
+            addEquipment(equipment);
+
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error reading the file " << filename << endl;
+        return false;
+    }
+}
+
+void NationalTeam::addEquipment(const Equipment &equipment) {
+    for (auto &x: equipments) {
+        if (x.getType() == equipment.getType()) {
+            x.setQuantity(x.getQuantity() + equipment.getQuantity());
+            return;
+        }
+    }
+    equipments.push_back(equipment);
+}
+
+bool NationalTeam::writeEquipmentsFile(std::string filename) {
+    ofstream f;
+    f.open(filename, ios::out);
+    int counter = 0;
+
+    if (f.is_open()) {
+        for (auto &x : equipments) {
+            counter++;
+            f << "ID: " << x.getID() << endl;
+            f << "Type: " << x.getType() << endl;
+            f << "Quantity: " << x.getQuantity();
+            if (counter != equipments.size())
+                f << endl  << endl << "::::::::::" << endl << endl;
+        }
+        f.close();
+        return true;
+    }
+    else {
+        cerr << "Error opening the file " << filename << endl;
+        return false;
+    }
+}
+
+unsigned int NationalTeam::getEquipmentVectorLastID() const {
+    return equipments.at(equipments.size() - 1).getID();
+}
+
+
+bool NationalTeam::typeOfEquipmentIsAvailable(string type) const {
+    std::transform(type.begin(), type.end(), type.begin(), ::toupper); // Convert to uppercase
+    priority_queue<Provider> aux = providerList;
+    while(!aux.empty()) {
+        string currentType = aux.top().getEquipmentType();
+        std::transform(currentType.begin(), currentType.end(), currentType.begin(), ::toupper); // Convert to uppercase
+        if (currentType == type && aux.top().getAvailability()) {
+            return true;
+        }
+        aux.pop();
+    }
+    return false;
+}
+
+
+bool NationalTeam::quantityOfEquipmentIsAvailable(string type, unsigned int quantity) const {
+    std::transform(type.begin(), type.end(), type.begin(), ::toupper); // Convert to uppercase
+    if (!typeOfEquipmentIsAvailable(type))
+        return false;
+
+    priority_queue<Provider> aux = providerList;
+    while(!aux.empty()) {
+        string currentType = aux.top().getEquipmentType();
+        std::transform(currentType.begin(), currentType.end(), currentType.begin(), ::toupper); // Convert to uppercase
+        if (currentType == type) {
+            if (aux.top().getQuantity() >= quantity)
+                return true;
+        }
+        aux.pop();
+    }
+    return false;
+}
+
+void NationalTeam::updateReputation(unsigned int id, unsigned short rate) {
+    vector<Provider> auxVector;
+    priority_queue<Provider> aux = providerList;
+    while (!aux.empty()) {
+        if (aux.top().getId() == id) {
+            unsigned short reputation = aux.top().getReputation();
+            if (rate < 3 && reputation < 3) {
+                Provider updatedProvider = aux.top();
+                updatedProvider.setReputation(0);
+                auxVector.push_back(updatedProvider);
+                aux.pop();
+                break;
+            }
+            if (rate < 3 && reputation >= 3) {
+                Provider updatedProvider = aux.top();
+                updatedProvider.setReputation(reputation - 2);
+                auxVector.push_back(updatedProvider);
+                aux.pop();
+                break;
+            }
+            if ((rate == 3 || rate == 4) && reputation < 2) {
+                Provider updatedProvider = aux.top();
+                updatedProvider.setReputation(0);
+                auxVector.push_back(updatedProvider);
+                aux.pop();
+                break;
+            }
+            if ((rate == 3 || rate == 4) && reputation >= 2) {
+                Provider updatedProvider = aux.top();
+                updatedProvider.setReputation(reputation - 1);
+                auxVector.push_back(updatedProvider);
+                aux.pop();
+                break;
+            }
+            if (rate == 5) {
+                auxVector.push_back(aux.top());
+                aux.pop();
+                break;
+            }
+            if ((rate == 6 || rate == 7) && reputation > 8) {
+                Provider updatedProvider = aux.top();
+                updatedProvider.setReputation(10);
+                auxVector.push_back(updatedProvider);
+                aux.pop();
+                break;
+            }
+            if ((rate == 6 || rate == 7) && reputation <= 8) {
+                Provider updatedProvider = aux.top();
+                updatedProvider.setReputation(reputation + 1);
+                auxVector.push_back(updatedProvider);
+                aux.pop();
+                break;
+            }
+            if (rate > 7 && reputation > 7) {
+                Provider updatedProvider = aux.top();
+                updatedProvider.setReputation(10);
+                auxVector.push_back(updatedProvider);
+                aux.pop();
+                break;
+            }
+            if (rate > 7 && reputation <= 7) {
+                Provider updatedProvider = aux.top();
+                updatedProvider.setReputation(reputation + 2);
+                auxVector.push_back(updatedProvider);
+                aux.pop();
+                break;
             }
         }
-        iTr.advance();
+        auxVector.push_back(aux.top());
+        aux.pop();
     }
-    if(!found)
-        cout << "Coach NOT Found!" << endl << endl;
+
+    for (int i = 0; i < auxVector.size(); i++) {
+        aux.push(auxVector.at(i));
+    }
+
+    providerList = aux;
+
 }
+
+void NationalTeam::purchaseEquipment() {
+
+    unsigned int quantity = 0;
+
+    string type = readOperations::readString("What type of equipment fo you want to buy?");
+    std::transform(type.begin(), type.end(), type.begin(), ::toupper); // Convert to uppercase
+    if (!typeOfEquipmentIsAvailable(type)) {
+        cout << "\nEquipment is not available in the moment!\n";
+        return;
+    }
+
+    cout << "Enter the quantity:";
+    cin >> quantity;
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    cout << endl;
+
+    if (!quantityOfEquipmentIsAvailable(type, quantity)) {
+        cout << "\nThe quantity of equipment available is not enough!\n";
+        return;
+    }
+
+    unsigned int idProvider = 0;
+    vector<Provider> auxVector;
+    priority_queue<Provider> aux = providerList;
+    while(!aux.empty()) {
+        string currentType = aux.top().getEquipmentType();
+        std::transform(currentType.begin(), currentType.end(), currentType.begin(), ::toupper); // Convert to uppercase
+        if (currentType == type) {
+            Equipment equipment(getEquipmentVectorLastID() + 1, aux.top().getEquipmentType(), quantity);
+            addEquipment(equipment);
+            Provider updatedProvider = aux.top();
+            updatedProvider.setMade_Purchases(updatedProvider.getMade_Purchases() + 1);
+            updatedProvider.setQuantity(updatedProvider.getQuantity() - quantity);
+            idProvider = updatedProvider.getId();
+            auxVector.push_back(updatedProvider);
+            aux.pop();
+            break;
+        }
+        auxVector.push_back(aux.top());
+        aux.pop();
+    }
+
+    for (int i = 0; i < auxVector.size(); i++) {
+        aux.push(auxVector.at(i));
+    }
+
+    providerList = aux;
+
+    cout << "\n\nPurchase done!\n\n";
+
+    int rate = 0;
+    while (true) {
+        string answer = readOperations::readString("Do you want to rate the purchase in a scale form 0 to 10? (yes / no)");
+        std::transform(answer.begin(), answer.end(), answer.begin(), ::toupper);
+        if (answer == "YES" or answer == "Y") {
+            while (true) {
+                cout << "Enter the rate from 0 to 10:";
+                cin >> rate;
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                cout << endl;
+                if (rate >= 0 && rate <= 10) {
+                    updateReputation(idProvider, rate);
+                    break;
+                }
+                cout << "\nInvalid rate!\n";
+            }
+            cout << "\nThanks for your feedback!\n";
+            break;
+        }
+        if (answer == "NO" or answer == "N") {
+
+            return;
+        }
+    }
+
+}
+
+bool NationalTeam::createProvider() {
+    string name = readOperations::readString("Name:");
+    string type = readOperations::readString("Type:");
+    unsigned short reputation;
+    while (true) {
+        reputation = readOperations::readNumber<unsigned short>("Reputation (0-10):");
+        if (reputation >= 0 && reputation <= 10)
+            break;
+        cout << "\nInvalid reputation!\n";
+    }
+    unsigned int purchases = readOperations::readNumber<unsigned int>("Purchases:");
+    bool available;
+    while (true) {
+        string auxAvailability = readOperations::readString("Availability (true / false):");
+        std::transform(auxAvailability.begin(), auxAvailability.end(), auxAvailability.begin(), ::toupper); // Convert to uppercase
+        if (auxAvailability == "TRUE" || auxAvailability == "T") {
+            available = true;
+            break;
+        }
+        if (auxAvailability == "FALSE" || auxAvailability == "F") {
+            available = false;
+            break;
+        }
+        cout << "\nInvalid option!\n";
+    }
+    unsigned int quantity = readOperations::readNumber<unsigned int>("Quantity:");
+
+    unsigned int id = getProvidersLastID() + 1;
+
+    Provider provider(id, name, type, reputation, purchases, available, quantity);
+
+    cout << endl << "Are you sure you wnat to insert the following data? (Y|N)" << endl << endl;
+    provider.info(cout);
+    cout << endl << endl;
+    string answer = readOperations::confirmAnswer();
+
+    if(answer == "Y" || answer == "y")
+    {
+        addProvider(provider);
+        cout << "Data successfully inserted!" << endl;
+        return true;
+    }
+    cout << "Data not inserted." << endl;
+    return false;
+
+}
+
+unsigned int NationalTeam::getProvidersLastID() const {
+    unsigned int lastID = 0;
+    priority_queue<Provider> aux = providerList;
+    while (!aux.empty()) {
+        if (aux.top().getId() > lastID) {
+            lastID = aux.top().getId();
+        }
+        aux.pop();
+    }
+    return lastID;
+}
+
+bool NationalTeam::deleteProvider() {
+    Provider providerToDelete = providerLookUp();
+
+    if (providerToDelete.getId() == 0)
+        return false;
+
+    vector<Provider> auxVector;
+    priority_queue<Provider> aux = providerList;
+    while (!aux.empty()) {
+        if (providerToDelete == aux.top()) {
+            aux.pop();
+            for (int i = 0; i < auxVector.size(); i++) {
+                aux.push(auxVector.at(i));
+            }
+            providerList = aux;
+            cout << "Provider successfully removed!" << endl << endl;
+            return true;
+        }
+        auxVector.push_back(aux.top());
+        aux.pop();
+    }
+    return false;
+}
+
+Provider NationalTeam::providerLookUp() {
+    vector<Provider> providersVector;
+    priority_queue<Provider> aux = providerList;
+    while (!aux.empty()) {
+        providersVector.push_back(aux.top());
+        aux.pop();
+    }
+
+
+    bool ct;
+    std::string reader;
+    int option;
+    std::vector<Provider> auxPerson;
+    Provider auxProvider(0, "", "", 0, 0, false, 0);
+    while(true)
+    {
+        auxPerson.clear();
+        ct = false;
+        std::cout << std::endl << "Look for a Provider using: " << std::endl; std::cout << "1. Name\n2. Type\n3. ID\n0. Back\n\n";
+        std::cin >> option; std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); std::cout << std::endl;
+        switch(option)
+        {
+            case 0:
+                return auxProvider;
+            case 1:
+            {
+                // Name
+                std::string name = readOperations::readString("Name:");
+                std::transform(name.begin(), name.end(), name.begin(), ::toupper); // Convert to uppercase
+
+                std::string providerName;
+
+                for(auto &x: providersVector)
+                {
+                    providerName = x.getName();
+                    std::transform(providerName.begin(), providerName.end(), providerName.begin(), ::toupper); // Convert to uppercase
+                    if(providerName.find(name) != std::string::npos)
+                    {
+                        auxPerson.push_back(x);
+                        ct = true;
+                    }
+                }
+                if(!auxPerson.empty())
+                {
+                    for(auto &x: auxPerson)
+                    {
+                        x.info(cout);
+                        cout << endl << endl;
+                    }
+                }
+
+
+                if(ct)
+                {
+                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl << std::endl;
+                    try {
+                        std::cin >> option;
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        for (auto &x: providersVector) {
+                            if (x.getId() == option)
+                                return x;
+                        }
+                        throw NoObjectFound("No Corresponding Provider Found.");
+                    }
+                    catch (NoObjectFound &e) {
+                        std::cout << std::endl << e.getError() << std::endl << std::endl;
+                    }
+                }
+                else
+                    std::cout << std::endl << "No Corresponding Provider Found..." << std::endl << std::endl;
+                break;
+            }
+            case 2:
+            {
+                // Type
+                std::string type = readOperations::readString("Type:");
+                std::transform(type.begin(), type.end(), type.begin(), ::toupper); // Convert to uppercase
+
+                std::string providerType;
+
+                for(auto &x: providersVector)
+                {
+                    providerType = x.getEquipmentType();
+                    std::transform(providerType.begin(), providerType.end(), providerType.begin(), ::toupper); // Convert to uppercase
+                    if(providerType.find(type) != std::string::npos)
+                    {
+                        auxPerson.push_back(x);
+                        ct = true;
+                    }
+                }
+                if(!auxPerson.empty())
+                {
+                    for(auto &x: auxPerson)
+                    {
+                        x.info(cout);
+                        cout << endl << endl;
+                    }
+                }
+
+
+                if(ct)
+                {
+                    std::cout << "Enter the ID of The Choosen One (!ID => [Go Back]): " << std::endl << std::endl;
+                    try {
+                        std::cin >> option;
+                        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                        for (auto &x: providersVector) {
+                            if (x.getId() == option)
+                                return x;
+                        }
+                        throw NoObjectFound("No Corresponding Provider Found.");
+                    }
+                    catch (NoObjectFound &e) {
+                        std::cout << std::endl << e.getError() << std::endl << std::endl;
+                    }
+                }
+                else
+                    std::cout << std::endl << "No Corresponding Provider Found..." << std::endl << std::endl;
+                break;
+
+            }
+            case 3:
+            {
+                // ID
+                unsigned int id = readOperations::readNumber<unsigned int>("ID:");
+
+                try {
+                    cin >> id;
+                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    for (auto &x: providersVector) {
+                        if (x.getId() == id)
+                            return x;
+                    }
+                    throw NoObjectFound("No Corresponding provider Found...");
+                }
+                catch (NoObjectFound &e) {
+                    cout << endl << e.getError() << endl << endl;
+                }
+
+                break;
+            }
+        }
+    }
+}
+
+bool NationalTeam::alterProvider() {
+    bool toggle = true;
+    int repetition = 0, option;
+
+    cout << string(100, '\n');
+    Provider providerToAlter = providerLookUp();
+    if (providerToAlter.getId() == 0)
+        return false;
+
+    while (toggle)
+    {
+        if (repetition == 0)
+        {
+            cout << endl << "What do you want to change?\n";
+            repetition++;
+        }
+        else
+            cout << "Do you want to change anything else?\n";
+
+        cout << "1. Name\n2. Type\n3. Reputation\n4. Purchases\n5. Availability\n6. Quantity\n0. Back\n\n";
+        cin >> option; cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << endl;
+
+        switch (option)
+        {
+            case 0:
+            {
+                toggle = false;
+                break;
+            }
+            case 1:
+            {
+                cout << "Previous Name: " << providerToAlter.getName() << endl;
+                string auxName = readOperations::readString("New Name:");
+                providerToAlter.setName(auxName);
+                break;
+            }
+            case 2:
+            {
+                cout << "Previous Type: " << providerToAlter.getEquipmentType() << endl;
+                string auxType = readOperations::readString("New Type:");
+                providerToAlter.setEquipmentType(auxType);
+                break;
+            }
+            case 3:
+            {
+                cout << "Previous Reputation: " << providerToAlter.getReputation() << endl;
+                unsigned short auxReputation = readOperations::readNumber<unsigned short>("New Reputation:");
+                providerToAlter.setReputation(auxReputation);
+                break;
+            }
+            case 4:
+            {
+                cout << "Previous Purchases: " << providerToAlter.getMade_Purchases() << endl;
+                unsigned int auxPurchases = readOperations::readNumber<unsigned int>("New Purchases:");
+                providerToAlter.setMade_Purchases(auxPurchases);
+                break;
+            }
+            case 5:
+            {
+                if (providerToAlter.getAvailability() == true) {
+                    cout << "Previous Availability: true" << endl;
+                }
+                else {
+                    cout << "Previous Availability: false" << endl;
+                }
+                string auxAvailability;
+                while (true) {
+                    auxAvailability = readOperations::readString("New Availability (true / false):");
+                    if (auxAvailability == "true" || auxAvailability == "t") {
+                        providerToAlter.setAvailability(true);
+                        break;
+                    }
+                    if (auxAvailability == "false" || auxAvailability == "f") {
+                        providerToAlter.setAvailability(false);
+                        break;
+                    }
+                    cout << "\nInvalid option!\n";
+                }
+                break;
+            }
+            case 6:
+            {
+                cout << "Previous Quantity: " << providerToAlter.getQuantity() << endl;
+                unsigned int auxQuantity = readOperations::readNumber<unsigned int>("New Quantity:");
+                providerToAlter.setQuantity(auxQuantity);
+                break;
+            }
+        }
+        if (toggle)
+        {
+            vector<Provider> auxVector;
+            priority_queue<Provider> aux = providerList;
+            while (!aux.empty()) {
+                if (aux.top().getId() == providerToAlter.getId()) {
+                    aux.pop();
+                    aux.push(providerToAlter);
+                    for (int i = 0; i < auxVector.size(); i++) {
+                        aux.push(auxVector.at(i));
+                    }
+                    providerList = aux;
+                    cout << "Provider successfully altered!" << endl << endl;
+                    break;
+                }
+                auxVector.push_back(aux.top());
+                aux.pop();
+            }
+        }
+    }
+    return true;
+}
+
+void NationalTeam::displayAllProviders() const {
+    cout << endl << endl;
+    priority_queue<Provider> aux = providerList;
+    while (!aux.empty()) {
+        cout << "ID: " << aux.top().getId() << endl;
+        cout << "Name: " << aux.top().getName() << endl;
+        cout << "Type: " << aux.top().getEquipmentType() << endl;
+        cout << "Reputation: " << aux.top().getReputation() << endl;
+        cout << "Purchases: " << aux.top().getMade_Purchases() << endl;
+        if (aux.top().getAvailability())
+            cout << "Available: true" << endl;
+        else
+            cout << "Available: false" << endl;
+        cout << "Quantity: " << aux.top().getQuantity() << endl << endl;
+        aux.pop();
+    }
+}
+
+void NationalTeam::displaySpecificProvider() {
+    providerLookUp();
+}
+
+
+
+
+
+
+

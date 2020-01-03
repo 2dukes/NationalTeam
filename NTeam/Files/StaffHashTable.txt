@@ -1,48 +1,8 @@
-ID: 202
-Name: Antonio Aurelio
-Birth Date: 14/05/1974
-Function: Wardrobe Director
-Salary: 1500
-
-::::::::::
-
-ID: 1503
-Name: Jorge Rosario
+ID: 1504
+Name: Fernando Justino
 Birth Date: 10/10/1954
-Function: Head coach
-Salary: 100000
-
-::::::::::
-
-ID: 201
-Name: Ze Miguel
-Birth Date: 06/11/1953
-Function: Doctor
-Salary: 5000
-
-::::::::::
-
-ID: 206
-Name: Peter Thomas
-Birth Date: 16/09/1957
-Function: Doctor
-Salary: 6500
-
-::::::::::
-
-ID: 1501
-Name: Ze Manel
-Birth Date: 03/12/1953
-Function: Assistant Coach
-Salary: 50000
-
-::::::::::
-
-ID: 1500
-Name: Fernando Santos
-Birth Date: 10/10/1954
-Function: Head coach
-Salary: 100000
+Function: Goalkeeping Coach
+Salary: 30000
 
 ::::::::::
 
@@ -54,27 +14,19 @@ Salary: 2000
 
 ::::::::::
 
-ID: 1504
-Name: Fernando Justino
-Birth Date: 10/10/1954
-Function: Goalkeeping Coach
-Salary: 30000
-
-::::::::::
-
 ID: 1502
 Name: Ricardo Santos
 Birth Date: 03/12/1957
 Function: Assistant Coach
-Salary: 5000
+Salary: 50000
 
 ::::::::::
 
-ID: 205
-Name: Arminda
-Birth Date: 17/08/1974
-Function: Cleaning Employee
-Salary: 700
+ID: 1500
+Name: Fernando Santos
+Birth Date: 10/10/1954
+Function: Head coach
+Salary: 100000
 
 ::::::::::
 
@@ -91,3 +43,59 @@ Name: Belmiro Miguel
 Birth Date: 06/11/1957
 Function: Doctor
 Salary: 6000
+
+::::::::::
+
+ID: 202
+Name: Antonio Aurelio
+Birth Date: 14/05/1974
+Function: Wardrobe Director
+Salary: 1500
+
+::::::::::
+
+ID: 204
+Name: Maria de Lurdes Silva
+Birth Date: 12/05/1971
+Function: Cleaning Employee
+Salary: 700
+
+::::::::::
+
+ID: 205
+Name: Arminda
+Birth Date: 17/08/1974
+Function: Cleaning Employee
+Salary: 700
+
+::::::::::
+
+ID: 201
+Name: Ze Miguel
+Birth Date: 06/11/1953
+Function: Doctor
+Salary: 5000
+
+::::::::::
+
+ID: 1501
+Name: Ze Manel
+Birth Date: 03/12/1953
+Function: Assistant Coach
+Salary: 5000
+
+::::::::::
+
+ID: 206
+Name: Peter Thomas
+Birth Date: 16/09/1957
+Function: Doctor
+Salary: 6500
+
+::::::::::
+
+ID: 1503
+Name: Jorge Rosario
+Birth Date: 10/10/1954
+Function: Assistant Coach
+Salary: 40000

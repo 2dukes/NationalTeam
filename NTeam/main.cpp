@@ -16,14 +16,30 @@ int main() {
     N.readCallsFile("../Files/Calls.txt");
     N.readStaffHashTableFile("../Files/StaffHashTable.txt");
     N.addAllTheStaffToHashTable();
+    N.readEquipmentsFile("../Files/Equipment.txt");
+    N.readProviderFile("../Files/Providers.txt");
 
-    //N.searchOldStaff();
 
-    //N.displayOldStaff();
 
-    //N.hireOldStaff();
+    N.writeEquipmentsFile("../Files/Equipment.txt");
 
-    mainMenu(N);
+    //N.purchaseEquipment();
+
+    //N.createProvider();
+
+    //N.deleteProvider();
+
+    //N.alterProvider();
+
+    //N.displaySpecificProvider();
+
+    N.displayAllProviders();
+
+    //N.writeProviderFile("../Files/Providers.txt");
+
+    //mainMenu(N);
+
+
 
     return 0;
 }

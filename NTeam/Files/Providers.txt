@@ -1,0 +1,37 @@
+ID: 5000
+Name: BallMakers
+Type: Balls
+Reputation: 8
+Purchases: 4
+Availability: true
+Quantity: 292
+
+::::::::::
+
+ID: 5001
+Name: ShirtKings
+Type: T-Shirts
+Reputation: 7
+Purchases: 1
+Availability: true
+Quantity: 300
+
+::::::::::
+
+ID: 5003
+Name: BootTech
+Type: Boots
+Reputation: 5
+Purchases: 0
+Availability: true
+Quantity: 300
+
+::::::::::
+
+ID: 5002
+Name: Shorters
+Type: Shorts
+Reputation: 4
+Purchases: 2
+Availability: true
+Quantity: 500

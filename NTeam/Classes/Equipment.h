@@ -1,6 +1,3 @@
-//
-// Created by Administrator on 24/12/2019.
-//
 
 #ifndef RANDOM_EQUIPMENT_H
 #define RANDOM_EQUIPMENT_H
@@ -12,23 +9,20 @@
 
 class Equipment {
 public:
-    Equipment(unsigned int id, std::string type, std::string model, Date date);
-    int getID() const;
+    Equipment(unsigned int id, std::string type, unsigned int quantity);
+    unsigned int getID() const;
     std::string getType() const;
-    std::string getModel() const;
-    Date getDate() const;
+    unsigned int getQuantity() const;
     void setID(unsigned int id);
     void setType(std::string type);
-    void setModel(std::string model);
-    void setDate(Date date);
+    void setQuantity(unsigned int quantity);
+
     //friend void infoE(std::ostream &os, std::priority_queue<Equipment> &e1);
 
 private:
     unsigned int id;
-    static unsigned int id_aux;
     std::string type;
-    std::string model;
-    Date date;
+    unsigned int quantity;
 
 
 };

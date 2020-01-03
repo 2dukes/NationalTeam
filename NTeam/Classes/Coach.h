@@ -39,8 +39,7 @@ public:
 
     void setName(std::string name);
     void setCupsWon(unsigned int cupsWon);
-    bool addTrainedTeam(std::pair<std::string, Interval> toAdd);
-    bool removeTrainedTeam(std::pair<std::string, Interval> toRemove);
+    void addTrainedTeam(std::pair<std::string, Interval> toAdd);
 
     static void header();
 

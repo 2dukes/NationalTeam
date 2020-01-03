@@ -2,6 +2,7 @@
 #define NTEAM_NATIONALTEAM_H
 
 #include <vector>
+#include <queue>
 #include <limits>
 #include <iostream>
 #include <algorithm>
@@ -15,6 +16,8 @@
 #include "../NecessaryFunctions_NameSpaces.h"
 #include "Exceptions.h"
 #include "Coach.h"
+#include "Provider.h"
+#include "Equipment.h"
 
 
 #define HASH_TABLE_MAX_SIZE 457  // numero primo
@@ -117,6 +120,7 @@ public:
      * Displays Games inside of the respective calls
      */
     void displayCallsGames() const;
+
 
     /* Other Methods (templates) */
 
@@ -486,8 +490,6 @@ public:
 
     void displayCoachesThatTrainedNTeam();
 
-    void displayCoach();
-
     bool writeCoachesFile(std::string filename);
 
     // HASH TABLE:
@@ -544,8 +546,26 @@ public:
     void hireOldStaff();
 
 
+    // Priority_Queue:
 
-
+    bool readEquipmentsFile(std::string filename); // done
+    bool writeEquipmentsFile(std::string filename); // done
+    void addEquipment(const Equipment &equipment); // done
+    void addProvider(const Provider &pro); // done
+    bool readProviderFile(std::string filename); // done
+    unsigned int getProvidersLastID() const; // done
+    bool createProvider(); // done
+    bool alterProvider(); // done
+    Provider providerLookUp(); // done
+    bool deleteProvider(); // done
+    bool writeProviderFile(std::string filename); // done
+    void displaySpecificProvider(); // done, mas aparece pra escolher o ID
+    void displayAllProviders() const; // done
+    unsigned int getEquipmentVectorLastID() const; // done
+    bool typeOfEquipmentIsAvailable(std::string type) const; // done
+    bool quantityOfEquipmentIsAvailable(std::string type, unsigned int quantity) const; // done
+    void updateReputation(unsigned int id, unsigned short rate); // done
+    void purchaseEquipment(); // done
 
 private:
     /**
@@ -590,6 +610,9 @@ private:
     HashTabStaff allTimeStaff;
 
     BST<Coach> coachList;
+
+    std::priority_queue<Provider> providerList;
+    std::vector<Equipment> equipments;
 
 };
 

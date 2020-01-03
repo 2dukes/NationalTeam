@@ -1,17 +1,13 @@
-//
-// Created by Administrator on 24/12/2019.
-//
 
 #include "Equipment.h"
 
-Equipment::Equipment(std::string type, std::string model, Date date) {
+Equipment::Equipment(unsigned int id, std::string type, unsigned int quantity) {
     this->id = id;
     this->type = type;
-    this->model = model;
-    this->date = date;
+    this->quantity = quantity;
 }
 
-int Equipment::getID() const {
+unsigned int Equipment::getID() const {
 
     return id;
 }
@@ -21,14 +17,9 @@ std::string Equipment::getType() const {
     return type;
 }
 
-std::string Equipment::getModel() const {
+unsigned int Equipment::getQuantity() const {
 
-    return model;
-}
-
-Date Equipment::getDate() const {
-
-    return date;
+    return quantity;
 }
 
 void Equipment::setID(unsigned int id) {
@@ -39,10 +30,6 @@ void Equipment::setType(std::string type) {
     this->type = type;
 }
 
-void Equipment::setModel(std::string model) {
-    this->model = model;
-}
-
-void Equipment::setDate(Date date) {
-    this->date = date;
+void Equipment::setQuantity(unsigned int quantity) {
+    this->quantity = quantity;
 }

@@ -1,0 +1,21 @@
+ID: 10000
+Type: Balls
+Quantity: 43
+
+::::::::::
+
+ID: 10001
+Type: T-Shirts
+Quantity: 57
+
+::::::::::
+
+ID: 10002
+Type: Shorts
+Quantity: 57
+
+::::::::::
+
+ID: 10003
+Type: Boots
+Quantity: 57

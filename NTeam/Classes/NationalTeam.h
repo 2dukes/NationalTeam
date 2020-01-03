@@ -486,6 +486,8 @@ public:
 
     void displayCoachesThatTrainedNTeam();
 
+    void displayCoach();
+
     bool writeCoachesFile(std::string filename);
 
     // HASH TABLE:

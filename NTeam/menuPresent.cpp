@@ -41,7 +41,7 @@ void mainMenu(NationalTeam &nTeam) {
     vector<string> viewRecommendedChoices = { "1. For a Specific Player", "2. For All The Players", "3. For the National Team", "0. Main Menu" };
     vector<string> statisticsChoices = {"1. Show Call Statistics of the Team", "2. Show Global Statistics of the Team", "3. Show Call Statistics of a Player", "4. Show Global Statistics of a Player", "0. Main Menu"};
     vector<string> coachChoices = { "1. Create Coach", "2. Alter Coach", "3. Remove Coach", "4. Displays", "0. Main Menu" };
-    vector<string> displayCoaches = {"1. Coaches ordered By Number of Cups Won", "2. Coaches that Trained the National Team", "0. Back"};
+    vector<string> displayCoaches = {"1. Coaches ordered By Number of Cups Won", "2. Coaches that Trained the National Team", "3. Specific Coach","0. Back"};
     vector<string> oldStaffChoices = { "1. Display all old staff", "2. Display specific old staff", "3. Hire old staff", "0. Main Menu" };
     do
     {
@@ -503,6 +503,13 @@ void mainMenu(NationalTeam &nTeam) {
                                         cin.get();
                                         break;
                                     }
+                                    case 3:
+                                    {
+                                        nTeam.displayCoach();
+                                        cout << endl << endl << "Press any key to continue...";
+                                        cin.get();
+                                        break;
+                                    }
                                     case 0: {
                                         break;
                                     }
@@ -516,6 +523,7 @@ void mainMenu(NationalTeam &nTeam) {
                         if(option1 == 0)
                             break;
                     }
+                    break;
             }
             case 11:
             {

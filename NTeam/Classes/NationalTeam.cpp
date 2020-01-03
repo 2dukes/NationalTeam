@@ -449,8 +449,11 @@ bool NationalTeam::alterSoccerPlayer()
 
 bool NationalTeam::deleteSoccerPlayer(){
     SoccerPlayer *sP = workerLookUp(players);
-    if(sP == NULL)
+    if(sP == NULL || sP->getDaysActive() != 0)
+    {
+        cout << endl << "Soccer Player not removed! Either because didn't exist... Or because has already games where it participated!" << endl << endl;
         return false;
+    }
     for (auto it = players.begin(); it != players.end(); it++) {
         if (*(*it) == *sP) {
             players.erase(it);
@@ -3776,8 +3779,17 @@ bool NationalTeam::readCoachesFile(std::string filename)
 void NationalTeam::displayCoachesByCupsWon()
 {
     BSTItrIn<Coach> iTr(coachList);
+    cout << endl;
+    int numCoaches;
+    do
+    {
+        numCoaches = readOperations::readNumber<int>("Number of Coaches to Display:");
+    } while(numCoaches < 0);
 
-    while(!iTr.isAtEnd())
+    unsigned int counter = 0;
+
+    cout << endl;
+    while(!iTr.isAtEnd() && counter < numCoaches)
     {
         Coach::header();
         Coach coachObj = iTr.retrieve();
@@ -3787,6 +3799,7 @@ void NationalTeam::displayCoachesByCupsWon()
 
         cout << endl << endl;
         iTr.advance();
+        counter++;
     }
 }
 

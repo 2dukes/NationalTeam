@@ -1,5 +1,4 @@
 
-
 #include "Coach.h"
 #include "../NecessaryFunctions_NameSpaces.h"
 #include <iomanip>
@@ -69,9 +68,37 @@ void Coach::setCupsWon(unsigned int cupsWon)
     this->cupsWon = cupsWon;
 }
 
-void Coach::addTrainedTeam(std::pair<std::string, Interval> toAdd)
+bool Coach::addTrainedTeam(std::pair<std::string, Interval> toAdd)
 {
+    for(auto &x: teamsTrained)
+    {
+        if(generalFunctions::checkBetweenDates(x.second.getBeginDate(), toAdd.second.getBeginDate(), x.second.getEndDate())
+           || generalFunctions::checkBetweenDates(x.second.getBeginDate(), toAdd.second.getEndDate(), x.second.getEndDate())
+           || generalFunctions::checkBetweenDates(toAdd.second.getBeginDate(), x.second.getBeginDate(), toAdd.second.getEndDate())
+           || generalFunctions::checkBetweenDates(toAdd.second.getBeginDate(), x.second.getEndDate(), toAdd.second.getEndDate()))
+        {
+            cout << "Team not Added because of date convergence (" << x.second.getBeginDate().getDate() << " - " << x.second.getEndDate().getDate() << endl << endl;
+            return false;
+        }
+    }
     teamsTrained.push_back(toAdd);
+    cout << "Team successfully added!" << endl << endl;
+    return true;
+}
+
+bool Coach::removeTrainedTeam(std::pair<std::string, Interval> toRemove){
+    for(std::list<std::pair<std::string, Interval>>::iterator iTr = teamsTrained.begin(); iTr != teamsTrained.end(); iTr++)
+    {
+        if(iTr->second.getBeginDate() == toRemove.second.getBeginDate() && iTr->second.getEndDate() == toRemove.second.getEndDate() && iTr->first == toRemove.first)
+        {
+            teamsTrained.erase(iTr);
+            cout << "Team Trained Successfully removed!" << endl << endl;
+            return true;
+        }
+    }
+    cout << "Team Trained not Inserted!" << endl << endl;
+
+    return false;
 }
 
 bool Coach::operator<(const Coach &c) const

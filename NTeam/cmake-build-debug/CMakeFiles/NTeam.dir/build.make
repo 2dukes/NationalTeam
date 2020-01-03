@@ -280,6 +280,34 @@ CMakeFiles/NTeam.dir/Classes/Coach.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NTeam.dir/Classes/Coach.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\Classes\Coach.cpp" -o CMakeFiles\NTeam.dir\Classes\Coach.cpp.s
 
+CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj: CMakeFiles/NTeam.dir/flags.make
+CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj: CMakeFiles/NTeam.dir/includes_CXX.rsp
+CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj: ../Classes/Equipment.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\NTeam.dir\Classes\Equipment.cpp.obj -c "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\Classes\Equipment.cpp"
+
+CMakeFiles/NTeam.dir/Classes/Equipment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NTeam.dir/Classes/Equipment.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\Classes\Equipment.cpp" > CMakeFiles\NTeam.dir\Classes\Equipment.cpp.i
+
+CMakeFiles/NTeam.dir/Classes/Equipment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NTeam.dir/Classes/Equipment.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\Classes\Equipment.cpp" -o CMakeFiles\NTeam.dir\Classes\Equipment.cpp.s
+
+CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj: CMakeFiles/NTeam.dir/flags.make
+CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj: CMakeFiles/NTeam.dir/includes_CXX.rsp
+CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj: ../Classes/Provider.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\NTeam.dir\Classes\Provider.cpp.obj -c "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\Classes\Provider.cpp"
+
+CMakeFiles/NTeam.dir/Classes/Provider.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/NTeam.dir/Classes/Provider.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\Classes\Provider.cpp" > CMakeFiles\NTeam.dir\Classes\Provider.cpp.i
+
+CMakeFiles/NTeam.dir/Classes/Provider.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/NTeam.dir/Classes/Provider.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\Classes\Provider.cpp" -o CMakeFiles\NTeam.dir\Classes\Provider.cpp.s
+
 # Object files for target NTeam
 NTeam_OBJECTS = \
 "CMakeFiles/NTeam.dir/main.cpp.obj" \
@@ -297,7 +325,9 @@ NTeam_OBJECTS = \
 "CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj" \
 "CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj" \
 "CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj" \
-"CMakeFiles/NTeam.dir/Classes/Coach.cpp.obj"
+"CMakeFiles/NTeam.dir/Classes/Coach.cpp.obj" \
+"CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj" \
+"CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj"
 
 # External object files for target NTeam
 NTeam_EXTERNAL_OBJECTS =
@@ -318,11 +348,13 @@ NTeam.exe: CMakeFiles/NTeam.dir/NecessaryFunctions_NameSpaces.cpp.obj
 NTeam.exe: CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj
 NTeam.exe: CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj
 NTeam.exe: CMakeFiles/NTeam.dir/Classes/Coach.cpp.obj
+NTeam.exe: CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj
+NTeam.exe: CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj
 NTeam.exe: CMakeFiles/NTeam.dir/build.make
 NTeam.exe: CMakeFiles/NTeam.dir/linklibs.rsp
 NTeam.exe: CMakeFiles/NTeam.dir/objects1.rsp
 NTeam.exe: CMakeFiles/NTeam.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable NTeam.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Rui Pinto\Documents\FEUP_2Year_1SM\AEDA\NationalTeam\NTeam\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_19) "Linking CXX executable NTeam.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\NTeam.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

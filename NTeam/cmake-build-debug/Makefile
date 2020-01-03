@@ -216,6 +216,33 @@ Classes/Date.cpp.s:
 	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Date.cpp.s
 .PHONY : Classes/Date.cpp.s
 
+Classes/Equipment.obj: Classes/Equipment.cpp.obj
+
+.PHONY : Classes/Equipment.obj
+
+# target to build an object file
+Classes/Equipment.cpp.obj:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj
+.PHONY : Classes/Equipment.cpp.obj
+
+Classes/Equipment.i: Classes/Equipment.cpp.i
+
+.PHONY : Classes/Equipment.i
+
+# target to preprocess a source file
+Classes/Equipment.cpp.i:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Equipment.cpp.i
+.PHONY : Classes/Equipment.cpp.i
+
+Classes/Equipment.s: Classes/Equipment.cpp.s
+
+.PHONY : Classes/Equipment.s
+
+# target to generate assembly for a file
+Classes/Equipment.cpp.s:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Equipment.cpp.s
+.PHONY : Classes/Equipment.cpp.s
+
 Classes/Exceptions.obj: Classes/Exceptions.cpp.obj
 
 .PHONY : Classes/Exceptions.obj
@@ -405,6 +432,33 @@ Classes/OtherWorker.cpp.s:
 	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.s
 .PHONY : Classes/OtherWorker.cpp.s
 
+Classes/Provider.obj: Classes/Provider.cpp.obj
+
+.PHONY : Classes/Provider.obj
+
+# target to build an object file
+Classes/Provider.cpp.obj:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj
+.PHONY : Classes/Provider.cpp.obj
+
+Classes/Provider.i: Classes/Provider.cpp.i
+
+.PHONY : Classes/Provider.i
+
+# target to preprocess a source file
+Classes/Provider.cpp.i:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Provider.cpp.i
+.PHONY : Classes/Provider.cpp.i
+
+Classes/Provider.s: Classes/Provider.cpp.s
+
+.PHONY : Classes/Provider.s
+
+# target to generate assembly for a file
+Classes/Provider.cpp.s:
+	$(MAKE) -f CMakeFiles\NTeam.dir\build.make CMakeFiles/NTeam.dir/Classes/Provider.cpp.s
+.PHONY : Classes/Provider.cpp.s
+
 Classes/SoccerPlayer.obj: Classes/SoccerPlayer.cpp.obj
 
 .PHONY : Classes/SoccerPlayer.obj
@@ -586,6 +640,9 @@ help:
 	@echo ... Classes/Date.obj
 	@echo ... Classes/Date.i
 	@echo ... Classes/Date.s
+	@echo ... Classes/Equipment.obj
+	@echo ... Classes/Equipment.i
+	@echo ... Classes/Equipment.s
 	@echo ... Classes/Exceptions.obj
 	@echo ... Classes/Exceptions.i
 	@echo ... Classes/Exceptions.s
@@ -607,6 +664,9 @@ help:
 	@echo ... Classes/OtherWorker.obj
 	@echo ... Classes/OtherWorker.i
 	@echo ... Classes/OtherWorker.s
+	@echo ... Classes/Provider.obj
+	@echo ... Classes/Provider.i
+	@echo ... Classes/Provider.s
 	@echo ... Classes/SoccerPlayer.obj
 	@echo ... Classes/SoccerPlayer.i
 	@echo ... Classes/SoccerPlayer.s

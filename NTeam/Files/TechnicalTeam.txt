@@ -35,3 +35,11 @@ Name: Ilidio Vale
 Birth Date: 11/04/1951
 Function: Assistant Coach
 Salary: 50000
+
+::::::::::
+
+ID: 1501
+Name: Ze Manel
+Birth Date: 03/12/1953
+Function: Assistant Coach
+Salary: 50000

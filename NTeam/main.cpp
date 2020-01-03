@@ -33,11 +33,11 @@ int main() {
 
     //N.displaySpecificProvider();
 
-    N.displayAllProviders();
+    //N.displayAllProviders();
 
     //N.writeProviderFile("../Files/Providers.txt");
 
-    //mainMenu(N);
+    mainMenu(N);
 
 
 

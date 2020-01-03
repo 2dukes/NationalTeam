@@ -110,6 +110,12 @@
 		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Date.h">
 			<Option target="NTeam"/>
 		</Unit>
+		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Equipment.cpp">
+			<Option target="NTeam"/>
+		</Unit>
+		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Equipment.h">
+			<Option target="NTeam"/>
+		</Unit>
 		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Exceptions.cpp">
 			<Option target="NTeam"/>
 		</Unit>
@@ -150,6 +156,12 @@
 			<Option target="NTeam"/>
 		</Unit>
 		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/OtherWorker.h">
+			<Option target="NTeam"/>
+		</Unit>
+		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Provider.cpp">
+			<Option target="NTeam"/>
+		</Unit>
+		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/Provider.h">
 			<Option target="NTeam"/>
 		</Unit>
 		<Unit filename="C:/Users/Rui Pinto/Documents/FEUP_2Year_1SM/AEDA/NationalTeam/NTeam/Classes/SoccerPlayer.cpp">

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['technicalteam_287',['TechnicalTeam',['../class_technical_team.html',1,'']]]
+  ['otherworker_383',['OtherWorker',['../class_other_worker.html',1,'']]]
 ];

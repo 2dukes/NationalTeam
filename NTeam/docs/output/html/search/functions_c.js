@@ -1,14 +1,17 @@
 var searchData=
 [
-  ['workerlookup_487',['workerLookUp',['../class_national_team.html#af4197b00d38001cb5ba9844b3eb09ba0',1,'NationalTeam']]],
-  ['writecallsfile_488',['writeCallsFile',['../class_national_team.html#addcbc63dd86eed9a9bf56dcbd2da5ada',1,'NationalTeam']]],
-  ['writegamesfile_489',['writeGamesFile',['../class_national_team.html#ae1c4dfc5c272a43386a0c888835d295d',1,'NationalTeam']]],
-  ['writegamesstatisticsfile_490',['writeGamesStatisticsFile',['../class_national_team.html#acc42c36c935a115bb23b9216ab154e1d',1,'NationalTeam']]],
-  ['writeindividualstatisticsfile_491',['writeIndividualStatisticsFile',['../class_national_team.html#aca23c3376bbd0098c33a7a5dd70f8756',1,'NationalTeam']]],
-  ['writeinfcallsfile_492',['writeInfCallsFile',['../class_national_team.html#ae24b693b352ab91dad81236aa9e7404d',1,'NationalTeam']]],
-  ['writeotherworkersfile_493',['writeOtherWorkersFile',['../class_national_team.html#a7e0b1f7f065e2fee179ae3fe9c7b9ccf',1,'NationalTeam']]],
-  ['writesoccerplayersfile_494',['writeSoccerPlayersFile',['../class_national_team.html#ae85b6bf1ee1cbdd2c3cd46ed73d140c1',1,'NationalTeam']]],
-  ['writetechnicalteamfile_495',['writeTechnicalTeamFile',['../class_national_team.html#a088ba6b1b26f3277143220e5d9bf88e1',1,'NationalTeam']]],
-  ['wrongdateformat_496',['WrongDateFormat',['../class_date_1_1_wrong_date_format.html#a0c8a6a067d610bf9e355d0ee0bb78632',1,'Date::WrongDateFormat']]],
-  ['wrongstatistic_497',['WrongStatistic',['../class_wrong_statistic.html#adf146ec984dc47054840785f251fbca8',1,'WrongStatistic']]]
+  ['readcallsfile_554',['readCallsFile',['../class_national_team.html#ae2b186a40a021fc06bbc4b1550420dac',1,'NationalTeam']]],
+  ['readcoachesfile_555',['readCoachesFile',['../class_national_team.html#a783dd45f287e8607b4923fc840ec8ad0',1,'NationalTeam']]],
+  ['readequipmentsfile_556',['readEquipmentsFile',['../class_national_team.html#aec699cedf4dbe6b5273d6c5d17f87cdb',1,'NationalTeam']]],
+  ['readgamesfile_557',['readGamesFile',['../class_national_team.html#aaf00db9a5242f6e3cd0efeff50b60275',1,'NationalTeam']]],
+  ['readgamestatisticsfile_558',['readGameStatisticsFile',['../class_national_team.html#a3eb2bf03094c910a450a4ee17ade557b',1,'NationalTeam']]],
+  ['readindividualstatisticsfile_559',['readIndividualStatisticsFile',['../class_national_team.html#a2fd9e28625fb09384c99b40c90396e97',1,'NationalTeam']]],
+  ['readinfcalls_560',['readInfCalls',['../class_national_team.html#a77c2d55bae2d543ad4bfd8abcf6c6821',1,'NationalTeam']]],
+  ['readotherworkersfile_561',['readOtherWorkersFile',['../class_national_team.html#ad9a9c3c2dc1853bb13677399a8f452a2',1,'NationalTeam']]],
+  ['readproviderfile_562',['readProviderFile',['../class_national_team.html#a3fb23f48ca7ac5e424276111bbdba501',1,'NationalTeam']]],
+  ['readsoccerplayersfile_563',['readSoccerPlayersFile',['../class_national_team.html#a43590625e16f7718286939457243e5b1',1,'NationalTeam']]],
+  ['readstaffhashtablefile_564',['readStaffHashTableFile',['../class_national_team.html#a5a4430b6e172f5b715bd616bd327a36d',1,'NationalTeam']]],
+  ['readtechnicalteamfile_565',['readTechnicalTeamFile',['../class_national_team.html#ab47dab0500967f3d8abcc8de087ac033',1,'NationalTeam']]],
+  ['removecall_566',['removeCall',['../class_national_team.html#a1458d1a74e9d1eeecf187933eac9dbf4',1,'NationalTeam']]],
+  ['removetrainedteam_567',['removeTrainedTeam',['../class_coach.html#a576b22c549c8c2a1c145d1b4e05beaa3',1,'Coach']]]
 ];

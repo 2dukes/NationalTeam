@@ -23,6 +23,11 @@
 #define HASH_TABLE_MAX_SIZE 457  // numero primo
 
 struct StuffHash {
+    /**
+     * @brief - Generates staff member hash.
+     * @param staff - Itself.
+     * @return - Hash.
+     */
     int operator() (const Staff& staff) const {
         int result = 0;
         for (int i = 0; i < staff.getName().size(); i++)
@@ -31,6 +36,12 @@ struct StuffHash {
         return result % HASH_TABLE_MAX_SIZE;
     }
 
+    /**
+     * @brief - Compares if two staff members are equal.
+     * @param staff1 - First staff member
+     * @param staff2 - Second Staff member.
+     * @return - True if equal, False otherwise.
+     */
     bool operator() (const Staff& staff1, const Staff& staff2) const {
         return staff1 == staff2;
     }

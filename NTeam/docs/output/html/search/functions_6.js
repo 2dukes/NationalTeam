@@ -1,5 +1,9 @@
 var searchData=
 [
-  ['nationalteam_402',['NationalTeam',['../class_national_team.html#a9f60f847ae534fd3de91b3254c0f9f34',1,'NationalTeam']]],
-  ['noobjectfound_403',['NoObjectFound',['../class_no_object_found.html#af6df8a1dbde3206b6edab167e2c20e51',1,'NoObjectFound']]]
+  ['individualstatistics_532',['IndividualStatistics',['../class_individual_statistics.html#a77dbde178d3f7416e9482e97c9f97e43',1,'IndividualStatistics']]],
+  ['infcall_533',['InfCall',['../class_inf_call.html#ad83116442ccbf0d4e52d00b059f4b032',1,'InfCall']]],
+  ['info_534',['info',['../class_call.html#af139a6926536656d4b43acfa33d1b6e5',1,'Call::info()'],['../class_game.html#a1f6240e54cfe41a21b71fd1374cfff2b',1,'Game::info(std::ostream &amp;os) const'],['../class_game.html#a95e42f8d5ed4138d10644d25f031af63',1,'Game::info() const'],['../class_game_stats.html#ae81badec399cc56ad9d67482b861edd1',1,'GameStats::info()'],['../class_inf_call.html#a829f33e292d459c96dbcf8e4c6546716',1,'InfCall::info()'],['../class_other_worker.html#ae4e35a57216b517074251eb84ae34897',1,'OtherWorker::info(std::ostream &amp;os) const'],['../class_other_worker.html#ad8dc50b792ea12764f8e217b9b25b76b',1,'OtherWorker::info() const'],['../class_provider.html#ab08633e9696516f82af07dc177844c5f',1,'Provider::info()'],['../class_soccer_player.html#a4d5d83edb08f77e8f642d381d02fa28b',1,'SoccerPlayer::info(std::ostream &amp;os) const'],['../class_soccer_player.html#ad130671e316bd070e6c1c9d9584b0cb2',1,'SoccerPlayer::info() const'],['../class_staff.html#abf33508cbd8aa17524e76780995481b2',1,'Staff::info(std::ostream &amp;os) const'],['../class_staff.html#a4f396203debc866ba9a1b24ed4a89f0f',1,'Staff::info() const'],['../class_technical_team.html#af90fce7278f306e811817d58909256c0',1,'TechnicalTeam::info()']]],
+  ['infogames_535',['infoGames',['../class_call.html#a93dbd5d16149201a65684fd8188423e1',1,'Call']]],
+  ['infoplayers_536',['infoPlayers',['../class_call.html#af30181d51fee189b275d5c2d2ea47452',1,'Call']]],
+  ['interval_537',['Interval',['../class_interval.html#a2f8e583f93f657afe1de372ef7f79f63',1,'Interval']]]
 ];

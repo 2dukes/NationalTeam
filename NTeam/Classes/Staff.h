@@ -14,6 +14,8 @@ public:
      * @param i - ID
      * @param name - Name
      * @param birthDate - Birth Date
+     * @param salary - Salary
+     * @param function - Role
      */
     Staff(unsigned int i, std::string name, Date birthDate, unsigned int salary, std::string function);
 
@@ -40,6 +42,10 @@ public:
      */
     virtual unsigned int getSalary() const;
 
+    /**
+     * @brief - Gets Staff member Role.
+     * @return - Itself.
+     */
     virtual std::string getRole() const;
 
     /* Sets */
@@ -77,6 +83,11 @@ public:
      * @return - True if they're the same. False otherwise.
      */
     bool operator==(const Staff &worker) const;
+
+    /**
+     * @brief - Operator that compares if to Staff members are the same.
+     * @param worker - Worker it self.
+     */
     void operator=(const Staff &worker);
 
 
@@ -94,8 +105,14 @@ protected:
      */
     Date birthDate;
 
+    /**
+     * Salary
+     */
     unsigned int salary;
 
+    /**
+     * Job.
+     */
     std::string function;
 };
 

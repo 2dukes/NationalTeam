@@ -21,22 +21,6 @@ int main() {
 
 
 
-    N.writeEquipmentsFile("../Files/Equipment.txt");
-
-    //N.purchaseEquipment();
-
-    //N.createProvider();
-
-    //N.deleteProvider();
-
-    //N.alterProvider();
-
-    //N.displaySpecificProvider();
-
-    //N.displayAllProviders();
-
-    //N.writeProviderFile("../Files/Providers.txt");
-
     mainMenu(N);
 
 

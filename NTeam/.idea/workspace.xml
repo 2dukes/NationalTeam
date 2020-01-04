@@ -13,9 +13,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3a67552d-4125-40d1-897f-ecf519bcb1a2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Tiago.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Classes/NationalTeam.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NationalTeam.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Classes/NationalTeam.h" beforeDir="false" afterPath="$PROJECT_DIR$/Classes/NationalTeam.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Files/OtherWorkers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/OtherWorkers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/Equipment.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Equipment.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Files/Providers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/Providers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Files/StaffHashTable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Files/StaffHashTable.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.15.3/CMakeCCompiler.cmake" afterDir="false" />
@@ -36,6 +39,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Call.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Call.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Coach.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Coach.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Date.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Date.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Equipment.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Exceptions.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Game.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Game.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/GameStats.cpp.obj" afterDir="false" />
@@ -43,6 +47,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/InfCall.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/NationalTeam.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/OtherWorker.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Provider.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/SoccerPlayer.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/Staff.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/NTeam.dir/Classes/TechnicalTeam.cpp.obj" afterDir="false" />
@@ -64,6 +69,7 @@
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/NTeam.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/NTeam.cbp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/NTeam.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/NTeam.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/menuPresent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/menuPresent.cpp" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -82,6 +88,7 @@
   <component name="ProjectId" id="1S3CviXhpeigpKmxmkw6OufWROU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>

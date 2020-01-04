@@ -1,6 +1,6 @@
 ID: 10000
 Type: Balls
-Quantity: 43
+Quantity: 407
 
 ::::::::::
 
@@ -18,4 +18,16 @@ Quantity: 57
 
 ID: 10003
 Type: Boots
-Quantity: 57
+Quantity: 87
+
+::::::::::
+
+ID: 10004
+Type: Goals
+Quantity: 4
+
+::::::::::
+
+ID: 10005
+Type: Shin Guards
+Quantity: 45

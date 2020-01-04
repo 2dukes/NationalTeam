@@ -525,17 +525,17 @@ public:
     // HASH TABLE:
 
     /**
-     * @brief - Add object of type Staff to the hash table.
+     * @brief - Adds object of type Staff to the hash table.
      * @param staff - Staff object that will be added to the hash table.
      */
     void addStaffToHashTable(const Staff &staff);
     /**
-    * @brief - Add object of type TechnicalTeam to the hash table.
+    * @brief - Adds object of type TechnicalTeam to the hash table.
     * @param member - TechnicalTeam object that will be added to the hash table.
     */
     void addTechnicalTeamMemberToHashTable(TechnicalTeam member);
     /**
-    * @brief - Add object of type OtherWorker to the hash table.
+    * @brief - Adds object of type OtherWorker to the hash table.
     * @param otherWorker - OtherWorker object that will be added to the hash table.
     */
     void addOtherWorkerToHashTable(OtherWorker otherWorker);
@@ -544,13 +544,13 @@ public:
      */
     void addAllTheStaffToHashTable();
     /**
-     * @brief - Write to the hash table's file
+     * @brief - Writes to the hash table's file
      * @param filename - Hash table file path.
      * @return - True upon a successful save. False otherwise.
      */
     bool writeStaffHashTableFile(std::string filename);
     /**
-     * @brief - Read the hash table's file
+     * @brief - Reads the hash table's file
      * @param filename - Hash table file path.
      * @return - True upon a successful read. False otherwise.
      */
@@ -578,24 +578,105 @@ public:
 
     // Priority_Queue:
 
-    bool readEquipmentsFile(std::string filename); // done
-    bool writeEquipmentsFile(std::string filename); // done
-    void addEquipment(const Equipment &equipment); // done
-    void addProvider(const Provider &pro); // done
-    bool readProviderFile(std::string filename); // done
-    unsigned int getProvidersLastID() const; // done
-    bool createProvider(); // done
-    bool alterProvider(); // done
-    Provider providerLookUp(); // done
-    bool deleteProvider(); // done
-    bool writeProviderFile(std::string filename); // done
-    void displaySpecificProvider(); // done, mas aparece pra escolher o ID
-    void displayAllProviders() const; // done
-    unsigned int getEquipmentVectorLastID() const; // done
-    bool typeOfEquipmentIsAvailable(std::string type) const; // done
-    bool quantityOfEquipmentIsAvailable(std::string type, unsigned int quantity) const; // done
-    void updateReputation(unsigned int id, unsigned short rate); // done
-    void purchaseEquipment(); // done
+    /**
+     * @brief - Reads the equipments' file
+     * @param filename - Equipments file path.
+     * @return - True upon a successful read. False otherwise.
+     */
+    bool readEquipmentsFile(std::string filename);
+    /**
+     * @brief - Writes to the equipments' file
+     * @param filename - Equipments file path.
+     * @return - True upon a successful save. False otherwise.
+     */
+    bool writeEquipmentsFile(std::string filename);
+    /**
+    * @brief - Adds object of type Equipment to the vector of equipments.
+    * @param equipment - Equipment object that will be added to the vector of equipments.
+    */
+    void addEquipment(const Equipment &equipment);
+    /**
+    * @brief - Adds object of type Provider to the priority queue of providers.
+    * @param pro - Provider object that will be added to the priority queue of providers.
+    */
+    void addProvider(const Provider &pro);
+    /**
+     * @brief - Reads the providers' file
+     * @param filename - Providers file path.
+     * @return - True upon a successful read. False otherwise.
+     */
+    bool readProviderFile(std::string filename);
+    /**
+    * @brief - Gets the ID of the highest ID provider.
+    * @return - ID of the highest ID provider.
+    */
+    unsigned int getProvidersLastID() const;
+    /**
+    * @brief - Creates a provider.
+    * @return - True upon a successful creation. False otherwise.
+    */
+    bool createProvider();
+    /**
+    * @brief - Alters a provider.
+    * @return - True upon a successful alteration. False otherwise.
+    */
+    bool alterProvider();
+    /**
+    * @brief - Looks up for a provider with a specific name, type or ID.
+    * @return - The user's chosen provider.
+    */
+    Provider providerLookUp();
+    /**
+    * @brief - Deletes a provider.
+    * @return - True upon a successful removal. False otherwise.
+    */
+    bool deleteProvider();
+    /**
+    * @brief - Writes to the providers' file
+    * @param filename - Providers file path.
+    * @return - True upon a successful save. False otherwise.
+    */
+    bool writeProviderFile(std::string filename);
+    /**
+    * Displays a specific provider.
+    */
+    void displaySpecificProvider();
+    /**
+    * Displays all providers.
+    */
+    void displayAllProviders() const;
+    /**
+    * @brief - Gets the last ID of the equipment's vector.
+    * @return - last ID of the equipment's vector.
+    */
+    unsigned int getEquipmentVectorLastID() const;
+    /**
+    * @brief - Checks if a type of equipment is available in the moment.
+    * @param type - Type of equipment.
+    * @return - True if the equipment is available. False otherwise.
+    */
+    bool typeOfEquipmentIsAvailable(std::string type) const;
+    /**
+    * @brief - Checks if the certain quantity of equipment of a certain type is available in the moment.
+    * @param type - Type of equipment.
+    * @param quantity - Quantity of equipment.
+    * @return - True if the quantity of equipment is available. False otherwise.
+    */
+    bool quantityOfEquipmentIsAvailable(std::string type, unsigned int quantity) const;
+    /**
+    * @brief - Updates the reputation of a certain provider, given the rate that a user give him after a purchase.
+    * @param id - ID of the provider.
+    * @param rate - Rate that a user give to the provider after a purchase.
+    */
+    void updateReputation(unsigned int id, unsigned short rate);
+    /**
+    * Lets the user purchase equipment. After the purchase, the user can rate the buying process. This rate will
+    * update the provider's reputation.
+    */
+    void purchaseEquipment();
+    /**
+    * Displays all equipment of the National Team.
+    */
     void displayAllEquipment() const;
 
 private:
@@ -639,13 +720,17 @@ private:
      * Hash Table of all current and old staff
      */
     HashTabStaff allTimeStaff;
-
     /**
      * Coaches' BST.
      */
     BST<Coach> coachList;
-
+    /**
+     * Providers' Priority Queue.
+     */
     std::priority_queue<Provider> providerList;
+    /**
+     * Vector of all equipments.
+     */
     std::vector<Equipment> equipments;
 
 };

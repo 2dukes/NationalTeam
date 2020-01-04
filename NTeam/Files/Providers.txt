@@ -1,10 +1,80 @@
+ID: 5005
+Name: Nike
+Type: Boots
+Reputation: 10
+Purchases: 121
+Availability: true
+Quantity: 14970
+
+::::::::::
+
+ID: 5009
+Name: Nike
+Type: Shorts
+Reputation: 10
+Purchases: 97
+Availability: true
+Quantity: 17500
+
+::::::::::
+
 ID: 5000
 Name: BallMakers
 Type: Balls
-Reputation: 8
-Purchases: 4
+Reputation: 10
+Purchases: 84
 Availability: true
-Quantity: 292
+Quantity: 2450
+
+::::::::::
+
+ID: 5010
+Name: Adidas
+Type: T-Shirts
+Reputation: 9
+Purchases: 128
+Availability: true
+Quantity: 16700
+
+::::::::::
+
+ID: 5006
+Name: Adidas
+Type: Boots
+Reputation: 8
+Purchases: 57
+Availability: true
+Quantity: 9500
+
+::::::::::
+
+ID: 5008
+Name: New Balance
+Type: Boots
+Reputation: 7
+Purchases: 65
+Availability: true
+Quantity: 14300
+
+::::::::::
+
+ID: 5004
+Name: TheBallGuys
+Type: Balls
+Reputation: 7
+Purchases: 38
+Availability: true
+Quantity: 1750
+
+::::::::::
+
+ID: 5011
+Name: Goal Leaders
+Type: Goals
+Reputation: 7
+Purchases: 28
+Availability: true
+Quantity: 116
 
 ::::::::::
 
@@ -14,24 +84,44 @@ Type: T-Shirts
 Reputation: 7
 Purchases: 1
 Availability: true
-Quantity: 300
+Quantity: 7300
 
 ::::::::::
 
-ID: 5003
-Name: BootTech
+ID: 5007
+Name: Puma
 Type: Boots
-Reputation: 5
-Purchases: 0
+Reputation: 6
+Purchases: 32
 Availability: true
-Quantity: 300
+Quantity: 12000
 
 ::::::::::
 
 ID: 5002
 Name: Shorters
 Type: Shorts
-Reputation: 4
+Reputation: 6
 Purchases: 2
 Availability: true
-Quantity: 500
+Quantity: 5000
+
+::::::::::
+
+ID: 5003
+Name: BootTech
+Type: Boots
+Reputation: 6
+Purchases: 1
+Availability: true
+Quantity: 4500
+
+::::::::::
+
+ID: 5012
+Name: Shin Guards Corporation
+Type: Shin Guards
+Reputation: 5
+Purchases: 77
+Availability: true
+Quantity: 3955

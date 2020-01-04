@@ -2897,7 +2897,7 @@ NationalTeam::~NationalTeam()
     writeInfCallsFile("../Files/InfCalls.txt");
     writeCallsFile("../Files/Calls.txt");
     writeStaffHashTableFile("../Files/StaffHashTable.txt");
-    //writeProviderFile("../Files/Providers.txt");
+    writeProviderFile("../Files/Providers.txt");
     writeEquipmentsFile("../Files/Equipment.txt");
 
     /* Vector Destruction */
@@ -4363,7 +4363,8 @@ bool NationalTeam::deleteProvider() {
     return false;
 }
 
-Provider NationalTeam::providerLookUp() {
+Provider NationalTeam::
+providerLookUp() {
     vector<Provider> providersVector;
     priority_queue<Provider> aux = providerList;
     while (!aux.empty()) {

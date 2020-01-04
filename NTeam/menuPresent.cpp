@@ -33,7 +33,7 @@ void mainMenu(NationalTeam &nTeam) {
     string nTeamName = nTeam.getName();
 
     cout << string(100, '\n');
-    vector<string> mainChoices = { "1. Display", "2. Manage", "3. Calls in which a player participated", "4. Games in a call in which a player participated", "5. Show Call Stats", "6. Statistics", "7. Costs", "8. Victories, Draws and Loses", "9. Top Scorer", "10. Coaches", "11. Old Staff","0. Exit" };
+    vector<string> mainChoices = { "1. Display", "2. Manage", "3. Calls in which a player participated", "4. Games in a call in which a player participated", "5. Show Call Stats", "6. Statistics", "7. Costs", "8. Victories, Draws and Loses", "9. Top Scorer", "10. Coaches", "11. Old Staff", "12. Equipment", "0. Exit" };
     vector<string> manageChoices = { "1. Create", "2. Alter", "3. Remove", "0. Main Menu" };
     vector<string> manageSecundaryChoices = { "1. Other Worker", "2. Soccer Player", "3. Call", "4. Technical Team Member", "0. Previous Menu" };
     vector<string> viewAvailablePackChoices = { "1. Other Workers", "2. Technical Team", "3. Soccer Players", "4. Games", "5. Summons\' Games", "6. Summons\' Players", "0. Main Menu" };
@@ -43,6 +43,8 @@ void mainMenu(NationalTeam &nTeam) {
     vector<string> coachChoices = { "1. Create Coach", "2. Alter Coach", "3. Remove Coach", "4. Displays", "0. Main Menu" };
     vector<string> displayCoaches = {"1. Coaches ordered By Number of Cups Won", "2. Coaches that Trained the National Team", "3. Specific Coach","0. Back"};
     vector<string> oldStaffChoices = { "1. Display all old staff", "2. Display specific old staff", "3. Hire old staff", "0. Main Menu" };
+    vector<string> equipmentChoices = { "1. Display All Equipment", "2. Purchase Equipment", "3. Providers", "0. Main Menu" };
+    vector<string> providersChoices = { "1. Display All Providers", "2. Display Specific Provider", "3. Create Provider", "4. Alter Provider", "5. Delete Provider", "0. Previous Menu" };
     do
     {
 
@@ -551,6 +553,79 @@ void mainMenu(NationalTeam &nTeam) {
                             nTeam.hireOldStaff();
                             cout << endl << endl << "Press any key to continue...";
                             cin.get();
+                            break;
+                        }
+                        default:
+                            break;
+                    }
+                    if(option1 == 0)
+                        break;
+                }
+            }
+            case 12:
+            {
+                while(true)
+                {
+                    option1 = displays(equipmentChoices, mainChoices.at(mainMenu - 1), nTeamName);
+                    switch (option1)
+                    {
+                        case 1: // Display All Equipment
+                        {
+                            nTeam.displayAllEquipment();
+                            cout << endl << endl << "Press any Enter to continue...";
+                            cin.get();
+                            break;
+                        }
+                        case 2: // Purchase Equipment
+                        {
+                            nTeam.purchaseEquipment();
+                            cout << endl << endl << "Press any key to continue...";
+                            cin.get();
+                            break;
+                        }
+                        case 3: // Providers
+                        {
+                            option2 = displays(providersChoices, mainChoices.at(mainMenu - 1), nTeamName);
+                            switch (option2) {
+                                case 1: // Display All Providers
+                                {
+                                    nTeam.displayAllProviders();
+                                    cout << endl << endl << "Press any key to continue...";
+                                    cin.get();
+                                    break;
+                                }
+                                case 2: // Display Specific Provider
+                                {
+                                    nTeam.displaySpecificProvider();
+                                    cout << endl << endl << "Press any key to continue...";
+                                    cin.get();
+                                    break;
+                                }
+                                case 3: // Create Provider
+                                {
+                                    nTeam.createProvider();
+                                    cout << endl << endl << "Press any key to continue...";
+                                    cin.get();
+                                    break;
+                                }
+                                case 4: // Alter Provider
+                                {
+                                    nTeam.alterProvider();
+                                    cout << endl << endl << "Press any key to continue...";
+                                    cin.get();
+                                    break;
+                                }
+                                case 5: // Delete Provider
+                                {
+                                    nTeam.deleteProvider();
+                                    cout << endl << endl << "Press any key to continue...";
+                                    cin.get();
+                                    break;
+                                }
+                                case 0: {
+                                    break;
+                                }
+                            }
                             break;
                         }
                         default:

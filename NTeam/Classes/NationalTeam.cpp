@@ -4639,7 +4639,126 @@ void NationalTeam::displayAllProviders() const {
 }
 
 void NationalTeam::displaySpecificProvider() {
-    providerLookUp();
+    vector<Provider> providersVector;
+    priority_queue<Provider> aux = providerList;
+    while (!aux.empty()) {
+        providersVector.push_back(aux.top());
+        aux.pop();
+    }
+
+
+    bool ct;
+    std::string reader;
+    int option;
+    std::vector<Provider> auxPerson;
+    Provider auxProvider(0, "", "", 0, 0, false, 0);
+    while(true)
+    {
+        auxPerson.clear();
+        ct = false;
+        std::cout << std::endl << "Look for a Provider using: " << std::endl; std::cout << "1. Name\n2. Type\n3. ID\n0. Back\n\n";
+        std::cin >> option; std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); std::cout << std::endl;
+        switch(option)
+        {
+            case 0:
+                return;
+            case 1:
+            {
+                // Name
+                std::string name = readOperations::readString("Name:");
+                std::transform(name.begin(), name.end(), name.begin(), ::toupper); // Convert to uppercase
+
+                std::string providerName;
+
+                for(auto &x: providersVector)
+                {
+                    providerName = x.getName();
+                    std::transform(providerName.begin(), providerName.end(), providerName.begin(), ::toupper); // Convert to uppercase
+                    if(providerName.find(name) != std::string::npos)
+                    {
+                        auxPerson.push_back(x);
+                        ct = true;
+                    }
+                }
+                if(!auxPerson.empty())
+                {
+                    for(auto &x: auxPerson)
+                    {
+                        x.info(cout);
+                        cout << endl << endl;
+                    }
+                }
+
+
+                if(ct)
+                {
+                    return;
+                }
+                else
+                    std::cout << std::endl << "No Corresponding Provider Found..." << std::endl << std::endl;
+                break;
+            }
+            case 2:
+            {
+                // Type
+                std::string type = readOperations::readString("Type:");
+                std::transform(type.begin(), type.end(), type.begin(), ::toupper); // Convert to uppercase
+
+                std::string providerType;
+
+                for(auto &x: providersVector)
+                {
+                    providerType = x.getEquipmentType();
+                    std::transform(providerType.begin(), providerType.end(), providerType.begin(), ::toupper); // Convert to uppercase
+                    if(providerType.find(type) != std::string::npos)
+                    {
+                        auxPerson.push_back(x);
+                        ct = true;
+                    }
+                }
+                if(!auxPerson.empty())
+                {
+                    for(auto &x: auxPerson)
+                    {
+                        x.info(cout);
+                        cout << endl << endl;
+                    }
+                }
+
+
+                if(ct)
+                {
+                    return;
+                }
+                else
+                    std::cout << std::endl << "No Corresponding Provider Found..." << std::endl << std::endl;
+                break;
+
+            }
+            case 3:
+            {
+                // ID
+                unsigned int id = readOperations::readNumber<unsigned int>("ID:");
+
+                try {
+                    cin >> id;
+                    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                    for (auto &x: providersVector) {
+                        if (x.getId() == id) {
+                            x.info(cout);
+                            return;
+                        }
+                    }
+                    throw NoObjectFound("No Corresponding provider Found...");
+                }
+                catch (NoObjectFound &e) {
+                    cout << endl << e.getError() << endl << endl;
+                }
+
+                break;
+            }
+        }
+    }
 }
 
 void NationalTeam::displayAllEquipment() const {

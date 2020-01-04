@@ -478,20 +478,48 @@ public:
 
     // BST:
 
+    /**
+     * @brief - Creates and adds a new coach to the Binary Tree.
+     */
     void addCoach();
 
+    /**
+     * @brief - Alters coach info. Name, cups won and trained teams.
+     */
     void alterCoach();
 
+    /**
+     * @brief - Deletes a coach from the binary tree.
+     */
     void deleteCoach();
 
+    /**
+     * @brief - Reads Coaches info from files.
+     * @param filename  - Filename path.
+     * @return - True if succeeded, False otherwise.
+     */
     bool readCoachesFile(std::string filename);
 
+    /**
+     * @brief - Displays Coaches ordered by the number of cups won.
+     */
     void displayCoachesByCupsWon();
 
+    /**
+     * @brief - Displays Coaches that trained the National Team.
+     */
     void displayCoachesThatTrainedNTeam();
 
+    /**
+     * @brief - Displays a specific Coach.
+     */
     void displayCoach();
 
+    /**
+     * @brief - Writes Coaches Info into the corresponding File.
+     * @param filename - Filename path.
+     * @return - True if succeeded, False otherwise.
+     */
     bool writeCoachesFile(std::string filename);
 
     // HASH TABLE:
@@ -612,6 +640,9 @@ private:
      */
     HashTabStaff allTimeStaff;
 
+    /**
+     * Coaches' BST.
+     */
     BST<Coach> coachList;
 
     std::priority_queue<Provider> providerList;

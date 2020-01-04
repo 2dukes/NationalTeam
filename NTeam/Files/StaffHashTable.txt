@@ -1,8 +1,40 @@
-ID: 1503
-Name: Jorge Rosario
+ID: 1505
+Name: Ilidio Vale
+Birth Date: 11/04/1951
+Function: Assistant Coach
+Salary: 50000
+
+::::::::::
+
+ID: 202
+Name: Antonio Aurelio
+Birth Date: 14/05/1974
+Function: Wardrobe Director
+Salary: 1500
+
+::::::::::
+
+ID: 200
+Name: Rui Manuel
+Birth Date: 01/10/1969
+Function: Masseuse
+Salary: 2000
+
+::::::::::
+
+ID: 1504
+Name: Fernando Justino
 Birth Date: 10/10/1954
 Function: Goalkeeping Coach
 Salary: 30000
+
+::::::::::
+
+ID: 1502
+Name: Ricardo Santos
+Birth Date: 03/12/1957
+Function: Assistant Coach
+Salary: 50000
 
 ::::::::::
 
@@ -11,6 +43,14 @@ Name: Ze Miguel
 Birth Date: 06/11/1953
 Function: Doctor
 Salary: 5000
+
+::::::::::
+
+ID: 1503
+Name: Jorge Rosario
+Birth Date: 10/10/1954
+Function: Goalkeeping Coach
+Salary: 30000
 
 ::::::::::
 
@@ -43,43 +83,3 @@ Name: Fernando Santos
 Birth Date: 10/10/1954
 Function: Head coach
 Salary: 100000
-
-::::::::::
-
-ID: 1502
-Name: Ricardo Santos
-Birth Date: 03/12/1957
-Function: Assistant Coach
-Salary: 50000
-
-::::::::::
-
-ID: 1504
-Name: Fernando Justino
-Birth Date: 10/10/1954
-Function: Goalkeeping Coach
-Salary: 30000
-
-::::::::::
-
-ID: 200
-Name: Rui Manuel
-Birth Date: 01/10/1969
-Function: Masseuse
-Salary: 2000
-
-::::::::::
-
-ID: 202
-Name: Antonio Aurelio
-Birth Date: 14/05/1974
-Function: Wardrobe Director
-Salary: 1500
-
-::::::::::
-
-ID: 1505
-Name: Ilidio Vale
-Birth Date: 11/04/1951
-Function: Assistant Coach
-Salary: 50000
